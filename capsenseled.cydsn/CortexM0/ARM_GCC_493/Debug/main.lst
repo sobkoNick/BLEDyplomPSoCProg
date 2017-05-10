@@ -1,0 +1,4188 @@
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.updateLed,"ax",%progbits
+  18              		.align	2
+  19              		.global	updateLed
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	updateLed, %function
+  23              	updateLed:
+  24              	.LFB35:
+  25              		.file 1 "main.c"
+   1:main.c        **** #include <project.h>
+   2:main.c        **** #include <dc_motor_library.h>
+   3:main.c        **** 
+   4:main.c        **** uint16 fingerPos    = 0xFFFF;
+   5:main.c        **** uint16 fingerPosOld = 0xFFFF;
+   6:main.c        **** 
+   7:main.c        **** int capsenseNotify;
+   8:main.c        **** 
+   9:main.c        **** /***************************************************************
+  10:main.c        ****  * Function to update the LED state in the GATT database
+  11:main.c        ****  **************************************************************/
+  12:main.c        **** void updateLed()
+  13:main.c        **** {
+  26              		.loc 1 13 0
+  27              		.cfi_startproc
+  28 0000 00B5     		push	{lr}
+  29              		.cfi_def_cfa_offset 4
+  30              		.cfi_offset 14, -4
+  31 0002 85B0     		sub	sp, sp, #20
+  32              		.cfi_def_cfa_offset 24
+  14:main.c        ****     CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
+  15:main.c        ****    
+  16:main.c        ****     uint8 red_State = !red_Read();
+  33              		.loc 1 16 0
+  34 0004 FFF7FEFF 		bl	red_Read
+  35              	.LVL0:
+  36 0008 4342     		neg	r3, r0
+  37 000a 4341     		adc	r3, r3, r0
+  38 000c 6A46     		mov	r2, sp
+  39 000e D370     		strb	r3, [r2, #3]
+  40 0010 0332     		add	r2, r2, #3
+  17:main.c        ****     
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 2
+
+
+  18:main.c        ****     if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
+  41              		.loc 1 18 0
+  42 0012 084B     		ldr	r3, .L4
+  43 0014 1B78     		ldrb	r3, [r3]
+  44 0016 022B     		cmp	r3, #2
+  45 0018 0AD1     		bne	.L1
+  19:main.c        ****         return;
+  20:main.c        ****     
+  21:main.c        ****     tempHandle.attrHandle = CYBLE_LEDCAPSENSE_LED_CHAR_HANDLE;
+  46              		.loc 1 21 0
+  47 001a 01A8     		add	r0, sp, #4
+  48 001c 0C33     		add	r3, r3, #12
+  49 001e 0381     		strh	r3, [r0, #8]
+  22:main.c        ****   	tempHandle.value.val = (uint8 *) &red_State;
+  50              		.loc 1 22 0
+  51 0020 0192     		str	r2, [sp, #4]
+  23:main.c        ****     tempHandle.value.len = 1;
+  52              		.loc 1 23 0
+  53 0022 0123     		mov	r3, #1
+  54 0024 8380     		strh	r3, [r0, #4]
+  24:main.c        ****     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED)
+  55              		.loc 1 24 0
+  56 0026 0021     		mov	r1, #0
+  57 0028 034A     		ldr	r2, .L4+4
+  58 002a 0023     		mov	r3, #0
+  59 002c FFF7FEFF 		bl	CyBle_GattsWriteAttributeValue
+  60              	.LVL1:
+  61              	.L1:
+  25:main.c        **** }
+  62              		.loc 1 25 0
+  63 0030 05B0     		add	sp, sp, #20
+  64              		@ sp needed
+  65 0032 00BD     		pop	{pc}
+  66              	.L5:
+  67              		.align	2
+  68              	.L4:
+  69 0034 00000000 		.word	cyBle_state
+  70 0038 00000000 		.word	cyBle_connHandle
+  71              		.cfi_endproc
+  72              	.LFE35:
+  73              		.size	updateLed, .-updateLed
+  74              		.section	.text.updateGreenLed,"ax",%progbits
+  75              		.align	2
+  76              		.global	updateGreenLed
+  77              		.code	16
+  78              		.thumb_func
+  79              		.type	updateGreenLed, %function
+  80              	updateGreenLed:
+  81              	.LFB36:
+  26:main.c        **** 
+  27:main.c        **** void updateGreenLed() 
+  28:main.c        **** {
+  82              		.loc 1 28 0
+  83              		.cfi_startproc
+  84 0000 00B5     		push	{lr}
+  85              		.cfi_def_cfa_offset 4
+  86              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 3
+
+
+  87 0002 85B0     		sub	sp, sp, #20
+  88              		.cfi_def_cfa_offset 24
+  29:main.c        **** CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
+  30:main.c        ****    
+  31:main.c        ****     uint8 green_State = !green_Read();
+  89              		.loc 1 31 0
+  90 0004 FFF7FEFF 		bl	green_Read
+  91              	.LVL2:
+  92 0008 4342     		neg	r3, r0
+  93 000a 4341     		adc	r3, r3, r0
+  94 000c 6A46     		mov	r2, sp
+  95 000e D370     		strb	r3, [r2, #3]
+  96 0010 0332     		add	r2, r2, #3
+  32:main.c        ****     
+  33:main.c        ****     if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
+  97              		.loc 1 33 0
+  98 0012 084B     		ldr	r3, .L9
+  99 0014 1B78     		ldrb	r3, [r3]
+ 100 0016 022B     		cmp	r3, #2
+ 101 0018 0AD1     		bne	.L6
+  34:main.c        ****         return;
+  35:main.c        ****     
+  36:main.c        ****     tempHandle.attrHandle = CYBLE_LEDCAPSENSE_GREEN_CHAR_HANDLE;
+ 102              		.loc 1 36 0
+ 103 001a 01A8     		add	r0, sp, #4
+ 104 001c 1333     		add	r3, r3, #19
+ 105 001e 0381     		strh	r3, [r0, #8]
+  37:main.c        ****   	tempHandle.value.val = (uint8 *) &green_State;
+ 106              		.loc 1 37 0
+ 107 0020 0192     		str	r2, [sp, #4]
+  38:main.c        ****     tempHandle.value.len = 1;
+ 108              		.loc 1 38 0
+ 109 0022 0123     		mov	r3, #1
+ 110 0024 8380     		strh	r3, [r0, #4]
+  39:main.c        ****     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED)
+ 111              		.loc 1 39 0
+ 112 0026 0021     		mov	r1, #0
+ 113 0028 034A     		ldr	r2, .L9+4
+ 114 002a 0023     		mov	r3, #0
+ 115 002c FFF7FEFF 		bl	CyBle_GattsWriteAttributeValue
+ 116              	.LVL3:
+ 117              	.L6:
+  40:main.c        **** }
+ 118              		.loc 1 40 0
+ 119 0030 05B0     		add	sp, sp, #20
+ 120              		@ sp needed
+ 121 0032 00BD     		pop	{pc}
+ 122              	.L10:
+ 123              		.align	2
+ 124              	.L9:
+ 125 0034 00000000 		.word	cyBle_state
+ 126 0038 00000000 		.word	cyBle_connHandle
+ 127              		.cfi_endproc
+ 128              	.LFE36:
+ 129              		.size	updateGreenLed, .-updateGreenLed
+ 130              		.section	.text.updateCapsense,"ax",%progbits
+ 131              		.align	2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 4
+
+
+ 132              		.global	updateCapsense
+ 133              		.code	16
+ 134              		.thumb_func
+ 135              		.type	updateCapsense, %function
+ 136              	updateCapsense:
+ 137              	.LFB37:
+  41:main.c        ****     
+  42:main.c        **** 
+  43:main.c        **** /***************************************************************
+  44:main.c        ****  * Function to update the CapSesnse state in the GATT database
+  45:main.c        ****  **************************************************************/
+  46:main.c        **** void updateCapsense()
+  47:main.c        **** {
+ 138              		.loc 1 47 0
+ 139              		.cfi_startproc
+ 140 0000 00B5     		push	{lr}
+ 141              		.cfi_def_cfa_offset 4
+ 142              		.cfi_offset 14, -4
+ 143 0002 85B0     		sub	sp, sp, #20
+ 144              		.cfi_def_cfa_offset 24
+  48:main.c        ****     if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
+ 145              		.loc 1 48 0
+ 146 0004 124B     		ldr	r3, .L15
+ 147 0006 1B78     		ldrb	r3, [r3]
+ 148 0008 022B     		cmp	r3, #2
+ 149 000a 1FD1     		bne	.L11
+  49:main.c        ****         return;
+  50:main.c        ****     
+  51:main.c        **** 	CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
+  52:main.c        ****     
+  53:main.c        ****     tempHandle.attrHandle = CYBLE_LEDCAPSENSE_CAPSENSE_CHAR_HANDLE;
+ 150              		.loc 1 53 0
+ 151 000c 01A8     		add	r0, sp, #4
+ 152 000e 0F33     		add	r3, r3, #15
+ 153 0010 0381     		strh	r3, [r0, #8]
+  54:main.c        ****   	tempHandle.value.val = (uint8 *)&fingerPos;
+ 154              		.loc 1 54 0
+ 155 0012 104B     		ldr	r3, .L15+4
+ 156 0014 0193     		str	r3, [sp, #4]
+  55:main.c        ****     tempHandle.value.len = 2; 
+ 157              		.loc 1 55 0
+ 158 0016 0223     		mov	r3, #2
+ 159 0018 8380     		strh	r3, [r0, #4]
+  56:main.c        ****     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED 
+ 160              		.loc 1 56 0
+ 161 001a 0021     		mov	r1, #0
+ 162 001c 0E4A     		ldr	r2, .L15+8
+ 163 001e 0023     		mov	r3, #0
+ 164 0020 FFF7FEFF 		bl	CyBle_GattsWriteAttributeValue
+ 165              	.LVL4:
+  57:main.c        ****     
+  58:main.c        ****     /* send notification to client if notifications are enabled and finger location has changed */
+  59:main.c        ****     if (capsenseNotify && (fingerPos != fingerPosOld) )
+ 166              		.loc 1 59 0
+ 167 0024 0D4B     		ldr	r3, .L15+12
+ 168 0026 1B68     		ldr	r3, [r3]
+ 169 0028 002B     		cmp	r3, #0
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 5
+
+
+ 170 002a 0CD0     		beq	.L13
+ 171              		.loc 1 59 0 is_stmt 0 discriminator 1
+ 172 002c 094B     		ldr	r3, .L15+4
+ 173 002e 1A88     		ldrh	r2, [r3]
+ 174 0030 5B88     		ldrh	r3, [r3, #2]
+ 175 0032 9A42     		cmp	r2, r3
+ 176 0034 07D0     		beq	.L13
+  60:main.c        ****         CyBle_GattsNotification(cyBle_connHandle,&tempHandle);
+ 177              		.loc 1 60 0 is_stmt 1
+ 178 0036 084A     		ldr	r2, .L15+8
+ 179 0038 1378     		ldrb	r3, [r2]
+ 180 003a 5078     		ldrb	r0, [r2, #1]
+ 181 003c 0002     		lsl	r0, r0, #8
+ 182 003e 1843     		orr	r0, r3
+ 183 0040 01A9     		add	r1, sp, #4
+ 184 0042 FFF7FEFF 		bl	CyBle_GattsNotification
+ 185              	.LVL5:
+ 186              	.L13:
+  61:main.c        ****         fingerPosOld = fingerPos;
+ 187              		.loc 1 61 0
+ 188 0046 034B     		ldr	r3, .L15+4
+ 189 0048 1A88     		ldrh	r2, [r3]
+ 190 004a 5A80     		strh	r2, [r3, #2]
+ 191              	.L11:
+  62:main.c        **** }
+ 192              		.loc 1 62 0
+ 193 004c 05B0     		add	sp, sp, #20
+ 194              		@ sp needed
+ 195 004e 00BD     		pop	{pc}
+ 196              	.L16:
+ 197              		.align	2
+ 198              	.L15:
+ 199 0050 00000000 		.word	cyBle_state
+ 200 0054 00000000 		.word	.LANCHOR0
+ 201 0058 00000000 		.word	cyBle_connHandle
+ 202 005c 00000000 		.word	capsenseNotify
+ 203              		.cfi_endproc
+ 204              	.LFE37:
+ 205              		.size	updateCapsense, .-updateCapsense
+ 206              		.section	.text.BleCallBack,"ax",%progbits
+ 207              		.align	2
+ 208              		.global	BleCallBack
+ 209              		.code	16
+ 210              		.thumb_func
+ 211              		.type	BleCallBack, %function
+ 212              	BleCallBack:
+ 213              	.LFB38:
+  63:main.c        **** 
+  64:main.c        **** /***************************************************************
+  65:main.c        ****  * Function to handle the BLE stack
+  66:main.c        ****  **************************************************************/
+  67:main.c        **** void BleCallBack(uint32 event, void* eventParam)
+  68:main.c        **** {
+ 214              		.loc 1 68 0
+ 215              		.cfi_startproc
+ 216              	.LVL6:
+ 217 0000 38B5     		push	{r3, r4, r5, lr}
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 6
+
+
+ 218              		.cfi_def_cfa_offset 16
+ 219              		.cfi_offset 3, -16
+ 220              		.cfi_offset 4, -12
+ 221              		.cfi_offset 5, -8
+ 222              		.cfi_offset 14, -4
+ 223 0002 0C1C     		mov	r4, r1
+  69:main.c        ****     CYBLE_GATTS_WRITE_REQ_PARAM_T *wrReqParam;
+  70:main.c        **** 
+  71:main.c        ****     switch(event)
+ 224              		.loc 1 71 0
+ 225 0004 2828     		cmp	r0, #40
+ 226 0006 08D0     		beq	.L19
+ 227 0008 02D8     		bhi	.L20
+ 228 000a 0128     		cmp	r0, #1
+ 229 000c 05D0     		beq	.L19
+ 230 000e 8CE0     		b	.L17
+ 231              	.L20:
+ 232 0010 4128     		cmp	r0, #65
+ 233 0012 0BD0     		beq	.L21
+ 234 0014 4C28     		cmp	r0, #76
+ 235 0016 12D0     		beq	.L22
+ 236 0018 87E0     		b	.L17
+ 237              	.L19:
+  72:main.c        ****     {
+  73:main.c        ****         /* if there is a disconnect or the stack just turned on from a reset then start the adverti
+  74:main.c        ****         case CYBLE_EVT_STACK_ON:
+  75:main.c        ****         case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:
+  76:main.c        ****             capsenseNotify = 0;
+ 238              		.loc 1 76 0
+ 239 001a 0022     		mov	r2, #0
+ 240 001c 434B     		ldr	r3, .L25
+ 241 001e 1A60     		str	r2, [r3]
+  77:main.c        ****             CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+ 242              		.loc 1 77 0
+ 243 0020 0020     		mov	r0, #0
+ 244              	.LVL7:
+ 245 0022 FFF7FEFF 		bl	CyBle_GappStartAdvertisement
+ 246              	.LVL8:
+  78:main.c        ****             pwm_Start();
+ 247              		.loc 1 78 0
+ 248 0026 FFF7FEFF 		bl	pwm_Start
+ 249              	.LVL9:
+  79:main.c        ****         break;
+ 250              		.loc 1 79 0
+ 251 002a 7EE0     		b	.L17
+ 252              	.LVL10:
+ 253              	.L21:
+  80:main.c        ****         
+  81:main.c        ****         /* when a connection is made, update the LED and Capsense states in the GATT database and s
+  82:main.c        ****         case CYBLE_EVT_GATT_CONNECT_IND:
+  83:main.c        ****             updateLed();
+ 254              		.loc 1 83 0
+ 255 002c FFF7FEFF 		bl	updateLed
+ 256              	.LVL11:
+  84:main.c        ****             updateGreenLed();
+ 257              		.loc 1 84 0
+ 258 0030 FFF7FEFF 		bl	updateGreenLed
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 7
+
+
+ 259              	.LVL12:
+  85:main.c        ****             updateCapsense();  
+ 260              		.loc 1 85 0
+ 261 0034 FFF7FEFF 		bl	updateCapsense
+ 262              	.LVL13:
+  86:main.c        ****             pwm_Stop();
+ 263              		.loc 1 86 0
+ 264 0038 FFF7FEFF 		bl	pwm_Stop
+ 265              	.LVL14:
+  87:main.c        **** 		break;
+ 266              		.loc 1 87 0
+ 267 003c 75E0     		b	.L17
+ 268              	.LVL15:
+ 269              	.L22:
+  88:main.c        **** 
+  89:main.c        ****         /* handle a write request */
+  90:main.c        ****         case CYBLE_EVT_GATTS_WRITE_REQ:
+  91:main.c        ****             wrReqParam = (CYBLE_GATTS_WRITE_REQ_PARAM_T *) eventParam;
+  92:main.c        **** 			      
+  93:main.c        ****             /* request write the LED value */
+  94:main.c        ****             if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_LED_CHAR_HANDLE)
+ 270              		.loc 1 94 0
+ 271 003e 8B89     		ldrh	r3, [r1, #12]
+ 272 0040 0E2B     		cmp	r3, #14
+ 273 0042 2CD1     		bne	.L23
+  95:main.c        ****             {
+  96:main.c        ****                 /* only update the value and write the response if the requested write is allowed *
+  97:main.c        ****                 if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair
+ 274              		.loc 1 97 0
+ 275 0044 081D     		add	r0, r1, #4
+ 276              	.LVL16:
+ 277 0046 0021     		mov	r1, #0
+ 278              	.LVL17:
+ 279 0048 394A     		ldr	r2, .L25+4
+ 280 004a 3233     		add	r3, r3, #50
+ 281 004c FFF7FEFF 		bl	CyBle_GattsWriteAttributeValue
+ 282              	.LVL18:
+ 283 0050 0028     		cmp	r0, #0
+ 284 0052 24D1     		bne	.L23
+  98:main.c        ****                 {
+  99:main.c        ****                     red_Write(!wrReqParam->handleValPair.value.val[0]);
+ 285              		.loc 1 99 0
+ 286 0054 6368     		ldr	r3, [r4, #4]
+ 287 0056 1B78     		ldrb	r3, [r3]
+ 288 0058 5842     		neg	r0, r3
+ 289 005a 5841     		adc	r0, r0, r3
+ 290 005c C0B2     		uxtb	r0, r0
+ 291 005e FFF7FEFF 		bl	red_Write
+ 292              	.LVL19:
+ 100:main.c        ****                     CyBle_GattsWriteRsp(cyBle_connHandle);
+ 293              		.loc 1 100 0
+ 294 0062 334A     		ldr	r2, .L25+4
+ 295 0064 1378     		ldrb	r3, [r2]
+ 296 0066 5078     		ldrb	r0, [r2, #1]
+ 297 0068 0002     		lsl	r0, r0, #8
+ 298 006a 1843     		orr	r0, r3
+ 299 006c FFF7FEFF 		bl	CyBle_GattsWriteRsp
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 8
+
+
+ 300              	.LVL20:
+ 101:main.c        ****                     
+ 102:main.c        ****                     CyDelay(1000);
+ 301              		.loc 1 102 0
+ 302 0070 FA20     		mov	r0, #250
+ 303 0072 8000     		lsl	r0, r0, #2
+ 304 0074 FFF7FEFF 		bl	CyDelay
+ 305              	.LVL21:
+ 103:main.c        ****                     writeShiftRegisters(0b10101010); // напрямок вперед
+ 306              		.loc 1 103 0
+ 307 0078 AA20     		mov	r0, #170
+ 308 007a FFF7FEFF 		bl	writeShiftRegisters
+ 309              	.LVL22:
+ 104:main.c        ****                     Pin_l293_IC1_EN_12_Write(1);
+ 310              		.loc 1 104 0
+ 311 007e 0120     		mov	r0, #1
+ 312 0080 FFF7FEFF 		bl	Pin_l293_IC1_EN_12_Write
+ 313              	.LVL23:
+ 105:main.c        ****                     Pin_l293_IC1_EN_34_Write(0);
+ 314              		.loc 1 105 0
+ 315 0084 0020     		mov	r0, #0
+ 316 0086 FFF7FEFF 		bl	Pin_l293_IC1_EN_34_Write
+ 317              	.LVL24:
+ 106:main.c        ****                     CyDelay(500);
+ 318              		.loc 1 106 0
+ 319 008a FA20     		mov	r0, #250
+ 320 008c 4000     		lsl	r0, r0, #1
+ 321 008e FFF7FEFF 		bl	CyDelay
+ 322              	.LVL25:
+ 107:main.c        ****                     Pin_l293_IC1_EN_12_Write(0);    // turns off left motor
+ 323              		.loc 1 107 0
+ 324 0092 0020     		mov	r0, #0
+ 325 0094 FFF7FEFF 		bl	Pin_l293_IC1_EN_12_Write
+ 326              	.LVL26:
+ 108:main.c        **** //                    CyDelay(200);                   // left motor ends rotating later
+ 109:main.c        ****                     Pin_l293_IC1_EN_34_Write(0);    // turns off right motor
+ 327              		.loc 1 109 0
+ 328 0098 0020     		mov	r0, #0
+ 329 009a FFF7FEFF 		bl	Pin_l293_IC1_EN_34_Write
+ 330              	.LVL27:
+ 331              	.L23:
+ 110:main.c        ****                     
+ 111:main.c        ****                 }
+ 112:main.c        ****             }
+ 113:main.c        ****              if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_GREEN_CHAR_HANDLE)
+ 332              		.loc 1 113 0
+ 333 009e A389     		ldrh	r3, [r4, #12]
+ 334 00a0 152B     		cmp	r3, #21
+ 335 00a2 2CD1     		bne	.L24
+ 114:main.c        ****             {
+ 115:main.c        ****                 /* only update the value and write the response if the requested write is allowed *
+ 116:main.c        ****                 if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair
+ 336              		.loc 1 116 0
+ 337 00a4 201D     		add	r0, r4, #4
+ 338 00a6 0021     		mov	r1, #0
+ 339 00a8 214A     		ldr	r2, .L25+4
+ 340 00aa 2B33     		add	r3, r3, #43
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 9
+
+
+ 341 00ac FFF7FEFF 		bl	CyBle_GattsWriteAttributeValue
+ 342              	.LVL28:
+ 343 00b0 0028     		cmp	r0, #0
+ 344 00b2 24D1     		bne	.L24
+ 117:main.c        ****                 {
+ 118:main.c        ****                     green_Write(!wrReqParam->handleValPair.value.val[0]);
+ 345              		.loc 1 118 0
+ 346 00b4 6368     		ldr	r3, [r4, #4]
+ 347 00b6 1B78     		ldrb	r3, [r3]
+ 348 00b8 5842     		neg	r0, r3
+ 349 00ba 5841     		adc	r0, r0, r3
+ 350 00bc C0B2     		uxtb	r0, r0
+ 351 00be FFF7FEFF 		bl	green_Write
+ 352              	.LVL29:
+ 119:main.c        ****                     CyBle_GattsWriteRsp(cyBle_connHandle);
+ 353              		.loc 1 119 0
+ 354 00c2 1B4A     		ldr	r2, .L25+4
+ 355 00c4 1378     		ldrb	r3, [r2]
+ 356 00c6 5078     		ldrb	r0, [r2, #1]
+ 357 00c8 0002     		lsl	r0, r0, #8
+ 358 00ca 1843     		orr	r0, r3
+ 359 00cc FFF7FEFF 		bl	CyBle_GattsWriteRsp
+ 360              	.LVL30:
+ 120:main.c        ****                     
+ 121:main.c        ****                     CyDelay(1000);
+ 361              		.loc 1 121 0
+ 362 00d0 FA20     		mov	r0, #250
+ 363 00d2 8000     		lsl	r0, r0, #2
+ 364 00d4 FFF7FEFF 		bl	CyDelay
+ 365              	.LVL31:
+ 122:main.c        ****                     writeShiftRegisters(0b10101010); // напрямок вперед
+ 366              		.loc 1 122 0
+ 367 00d8 AA20     		mov	r0, #170
+ 368 00da FFF7FEFF 		bl	writeShiftRegisters
+ 369              	.LVL32:
+ 123:main.c        ****                     Pin_l293_IC1_EN_12_Write(0);
+ 370              		.loc 1 123 0
+ 371 00de 0020     		mov	r0, #0
+ 372 00e0 FFF7FEFF 		bl	Pin_l293_IC1_EN_12_Write
+ 373              	.LVL33:
+ 124:main.c        ****                     Pin_l293_IC1_EN_34_Write(1);
+ 374              		.loc 1 124 0
+ 375 00e4 0120     		mov	r0, #1
+ 376 00e6 FFF7FEFF 		bl	Pin_l293_IC1_EN_34_Write
+ 377              	.LVL34:
+ 125:main.c        ****                     CyDelay(500);
+ 378              		.loc 1 125 0
+ 379 00ea FA20     		mov	r0, #250
+ 380 00ec 4000     		lsl	r0, r0, #1
+ 381 00ee FFF7FEFF 		bl	CyDelay
+ 382              	.LVL35:
+ 126:main.c        ****                     Pin_l293_IC1_EN_12_Write(0);    // turns off left motor
+ 383              		.loc 1 126 0
+ 384 00f2 0020     		mov	r0, #0
+ 385 00f4 FFF7FEFF 		bl	Pin_l293_IC1_EN_12_Write
+ 386              	.LVL36:
+ 127:main.c        **** //                    CyDelay(200);                   // left motor ends rotating later
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 10
+
+
+ 128:main.c        ****                     Pin_l293_IC1_EN_34_Write(0);    // turns off right motor
+ 387              		.loc 1 128 0
+ 388 00f8 0020     		mov	r0, #0
+ 389 00fa FFF7FEFF 		bl	Pin_l293_IC1_EN_34_Write
+ 390              	.LVL37:
+ 391              	.L24:
+ 129:main.c        ****                     
+ 130:main.c        ****                     
+ 131:main.c        ****                 }
+ 132:main.c        ****             
+ 133:main.c        ****             }
+ 134:main.c        ****             
+ 135:main.c        ****             /* request to update the CapSense notification */
+ 136:main.c        ****             if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_CAPSENSE_CAPSENSECCCD_DESC
+ 392              		.loc 1 136 0
+ 393 00fe A389     		ldrh	r3, [r4, #12]
+ 394 0100 122B     		cmp	r3, #18
+ 395 0102 12D1     		bne	.L17
+ 137:main.c        ****             {
+ 138:main.c        ****                 CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CY
+ 396              		.loc 1 138 0
+ 397 0104 201D     		add	r0, r4, #4
+ 398 0106 0A4D     		ldr	r5, .L25+4
+ 399 0108 0021     		mov	r1, #0
+ 400 010a 2A1C     		mov	r2, r5
+ 401 010c 2E33     		add	r3, r3, #46
+ 402 010e FFF7FEFF 		bl	CyBle_GattsWriteAttributeValue
+ 403              	.LVL38:
+ 139:main.c        ****                 capsenseNotify = wrReqParam->handleValPair.value.val[0] & 0x01;
+ 404              		.loc 1 139 0
+ 405 0112 6368     		ldr	r3, [r4, #4]
+ 406 0114 1B78     		ldrb	r3, [r3]
+ 407 0116 0122     		mov	r2, #1
+ 408 0118 1340     		and	r3, r2
+ 409 011a 044A     		ldr	r2, .L25
+ 410 011c 1360     		str	r3, [r2]
+ 140:main.c        ****                 CyBle_GattsWriteRsp(cyBle_connHandle);
+ 411              		.loc 1 140 0
+ 412 011e 2B78     		ldrb	r3, [r5]
+ 413 0120 6878     		ldrb	r0, [r5, #1]
+ 414 0122 0002     		lsl	r0, r0, #8
+ 415 0124 1843     		orr	r0, r3
+ 416 0126 FFF7FEFF 		bl	CyBle_GattsWriteRsp
+ 417              	.LVL39:
+ 418              	.L17:
+ 141:main.c        ****             }		
+ 142:main.c        **** 			break;  
+ 143:main.c        ****         
+ 144:main.c        ****         default:
+ 145:main.c        ****             break;
+ 146:main.c        ****     }
+ 147:main.c        **** } 
+ 419              		.loc 1 147 0
+ 420              		@ sp needed
+ 421              	.LVL40:
+ 422 012a 38BD     		pop	{r3, r4, r5, pc}
+ 423              	.L26:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 11
+
+
+ 424              		.align	2
+ 425              	.L25:
+ 426 012c 00000000 		.word	capsenseNotify
+ 427 0130 00000000 		.word	cyBle_connHandle
+ 428              		.cfi_endproc
+ 429              	.LFE38:
+ 430              		.size	BleCallBack, .-BleCallBack
+ 431              		.section	.text.main,"ax",%progbits
+ 432              		.align	2
+ 433              		.global	main
+ 434              		.code	16
+ 435              		.thumb_func
+ 436              		.type	main, %function
+ 437              	main:
+ 438              	.LFB39:
+ 148:main.c        **** 
+ 149:main.c        **** /***************************************************************
+ 150:main.c        ****  * Main
+ 151:main.c        ****  **************************************************************/
+ 152:main.c        **** int main()
+ 153:main.c        **** {
+ 439              		.loc 1 153 0
+ 440              		.cfi_startproc
+ 441 0000 08B5     		push	{r3, lr}
+ 442              		.cfi_def_cfa_offset 8
+ 443              		.cfi_offset 3, -8
+ 444              		.cfi_offset 14, -4
+ 154:main.c        ****     CyGlobalIntEnable; 
+ 445              		.loc 1 154 0
+ 446              	@ 154 "main.c" 1
+ 447 0002 62B6     		CPSIE   i
+ 448              	@ 0 "" 2
+ 155:main.c        ****     
+ 156:main.c        ****     writeShiftRegisters(0x00);
+ 449              		.loc 1 156 0
+ 450              		.code	16
+ 451 0004 0020     		mov	r0, #0
+ 452 0006 FFF7FEFF 		bl	writeShiftRegisters
+ 453              	.LVL41:
+ 157:main.c        ****     Pin_l293_IC1_EN_12_Write(1);   /* Start all motors */
+ 454              		.loc 1 157 0
+ 455 000a 0120     		mov	r0, #1
+ 456 000c FFF7FEFF 		bl	Pin_l293_IC1_EN_12_Write
+ 457              	.LVL42:
+ 158:main.c        ****     Pin_l293_IC1_EN_34_Write(1);
+ 458              		.loc 1 158 0
+ 459 0010 0120     		mov	r0, #1
+ 460 0012 FFF7FEFF 		bl	Pin_l293_IC1_EN_34_Write
+ 461              	.LVL43:
+ 159:main.c        ****     Pin_l293_IC2_EN_12_Write(1);
+ 462              		.loc 1 159 0
+ 463 0016 0120     		mov	r0, #1
+ 464 0018 FFF7FEFF 		bl	Pin_l293_IC2_EN_12_Write
+ 465              	.LVL44:
+ 160:main.c        ****     Pin_l293_IC2_EN_34_Write(1);
+ 466              		.loc 1 160 0
+ 467 001c 0120     		mov	r0, #1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 12
+
+
+ 468 001e FFF7FEFF 		bl	Pin_l293_IC2_EN_34_Write
+ 469              	.LVL45:
+ 161:main.c        ****     
+ 162:main.c        ****     capsense_Start();
+ 470              		.loc 1 162 0
+ 471 0022 FFF7FEFF 		bl	capsense_Start
+ 472              	.LVL46:
+ 163:main.c        ****     capsense_InitializeEnabledBaselines();
+ 473              		.loc 1 163 0
+ 474 0026 FFF7FEFF 		bl	capsense_InitializeEnabledBaselines
+ 475              	.LVL47:
+ 164:main.c        ****     
+ 165:main.c        ****     /* Start BLE stack and register the callback function */
+ 166:main.c        ****     CyBle_Start(BleCallBack);
+ 476              		.loc 1 166 0
+ 477 002a 0B48     		ldr	r0, .L30
+ 478 002c FFF7FEFF 		bl	CyBle_Start
+ 479              	.LVL48:
+ 480              	.L29:
+ 167:main.c        **** 
+ 168:main.c        ****     for(;;)
+ 169:main.c        ****     {        
+ 170:main.c        ****         /* if Capsense scan is done, read the value and start another scan */
+ 171:main.c        ****         if(!capsense_IsBusy())
+ 481              		.loc 1 171 0
+ 482 0030 FFF7FEFF 		bl	capsense_IsBusy
+ 483              	.LVL49:
+ 484 0034 0028     		cmp	r0, #0
+ 485 0036 09D1     		bne	.L28
+ 172:main.c        ****         {
+ 173:main.c        ****             fingerPos=capsense_GetCentroidPos(capsense_LINEARSLIDER0__LS);
+ 486              		.loc 1 173 0
+ 487 0038 FFF7FEFF 		bl	capsense_GetCentroidPos
+ 488              	.LVL50:
+ 489 003c 074B     		ldr	r3, .L30+4
+ 490 003e 1880     		strh	r0, [r3]
+ 174:main.c        ****             capsense_UpdateEnabledBaselines();
+ 491              		.loc 1 174 0
+ 492 0040 FFF7FEFF 		bl	capsense_UpdateEnabledBaselines
+ 493              	.LVL51:
+ 175:main.c        ****             capsense_ScanEnabledWidgets();
+ 494              		.loc 1 175 0
+ 495 0044 FFF7FEFF 		bl	capsense_ScanEnabledWidgets
+ 496              	.LVL52:
+ 176:main.c        ****             updateCapsense();
+ 497              		.loc 1 176 0
+ 498 0048 FFF7FEFF 		bl	updateCapsense
+ 499              	.LVL53:
+ 500              	.L28:
+ 177:main.c        ****         }
+ 178:main.c        ****    
+ 179:main.c        ****         CyBle_ProcessEvents();
+ 501              		.loc 1 179 0
+ 502 004c FFF7FEFF 		bl	CyBle_ProcessEvents
+ 503              	.LVL54:
+ 180:main.c        ****         CyBle_EnterLPM(CYBLE_BLESS_DEEPSLEEP);    
+ 504              		.loc 1 180 0
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 13
+
+
+ 505 0050 0320     		mov	r0, #3
+ 506 0052 FFF7FEFF 		bl	CyBle_EnterLPM
+ 507              	.LVL55:
+ 181:main.c        ****     }
+ 508              		.loc 1 181 0
+ 509 0056 EBE7     		b	.L29
+ 510              	.L31:
+ 511              		.align	2
+ 512              	.L30:
+ 513 0058 00000000 		.word	BleCallBack
+ 514 005c 00000000 		.word	.LANCHOR0
+ 515              		.cfi_endproc
+ 516              	.LFE39:
+ 517              		.size	main, .-main
+ 518              		.comm	capsenseNotify,4,4
+ 519              		.global	fingerPosOld
+ 520              		.global	fingerPos
+ 521              		.data
+ 522              		.align	1
+ 523              		.set	.LANCHOR0,. + 0
+ 524              		.type	fingerPos, %object
+ 525              		.size	fingerPos, 2
+ 526              	fingerPos:
+ 527 0000 FFFF     		.short	-1
+ 528              		.type	fingerPosOld, %object
+ 529              		.size	fingerPosOld, 2
+ 530              	fingerPosOld:
+ 531 0002 FFFF     		.short	-1
+ 532              		.text
+ 533              	.Letext0:
+ 534              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 535              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 536              		.file 4 "Generated_Source\\PSoC4/cytypes.h"
+ 537              		.file 5 "Generated_Source\\PSoC4/ble_Stack.h"
+ 538              		.file 6 "Generated_Source\\PSoC4/ble_StackGatt.h"
+ 539              		.file 7 "Generated_Source\\PSoC4/ble_StackGattServer.h"
+ 540              		.file 8 "Generated_Source\\PSoC4/ble.h"
+ 541              		.file 9 "Generated_Source\\PSoC4/ble_eventHandler.h"
+ 542              		.file 10 "Generated_Source\\PSoC4/red.h"
+ 543              		.file 11 "Generated_Source\\PSoC4/green.h"
+ 544              		.file 12 "Generated_Source\\PSoC4/ble_StackGattDb.h"
+ 545              		.file 13 "Generated_Source\\PSoC4/pwm.h"
+ 546              		.file 14 "Generated_Source\\PSoC4/CyLib.h"
+ 547              		.file 15 "./dc_motor_library.h"
+ 548              		.file 16 "Generated_Source\\PSoC4/Pin_l293_IC1_EN_12.h"
+ 549              		.file 17 "Generated_Source\\PSoC4/Pin_l293_IC1_EN_34.h"
+ 550              		.file 18 "Generated_Source\\PSoC4/Pin_l293_IC2_EN_12.h"
+ 551              		.file 19 "Generated_Source\\PSoC4/Pin_l293_IC2_EN_34.h"
+ 552              		.file 20 "Generated_Source\\PSoC4/capsense.h"
+ 553              		.file 21 "Generated_Source\\PSoC4/capsense_CSHL.h"
+ 554              		.section	.debug_info,"",%progbits
+ 555              	.Ldebug_info0:
+ 556 0000 530B0000 		.4byte	0xb53
+ 557 0004 0400     		.2byte	0x4
+ 558 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 559 000a 04       		.byte	0x4
+ 560 000b 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 14
+
+
+ 561 000c 850E0000 		.4byte	.LASF208
+ 562 0010 01       		.byte	0x1
+ 563 0011 4A090000 		.4byte	.LASF209
+ 564 0015 DF090000 		.4byte	.LASF210
+ 565 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 566 001d 00000000 		.4byte	0
+ 567 0021 00000000 		.4byte	.Ldebug_line0
+ 568 0025 02       		.uleb128 0x2
+ 569 0026 01       		.byte	0x1
+ 570 0027 06       		.byte	0x6
+ 571 0028 5C030000 		.4byte	.LASF0
+ 572 002c 03       		.uleb128 0x3
+ 573 002d 8A010000 		.4byte	.LASF9
+ 574 0031 02       		.byte	0x2
+ 575 0032 1D       		.byte	0x1d
+ 576 0033 37000000 		.4byte	0x37
+ 577 0037 02       		.uleb128 0x2
+ 578 0038 01       		.byte	0x1
+ 579 0039 08       		.byte	0x8
+ 580 003a 200E0000 		.4byte	.LASF1
+ 581 003e 02       		.uleb128 0x2
+ 582 003f 02       		.byte	0x2
+ 583 0040 05       		.byte	0x5
+ 584 0041 2E0F0000 		.4byte	.LASF2
+ 585 0045 02       		.uleb128 0x2
+ 586 0046 02       		.byte	0x2
+ 587 0047 07       		.byte	0x7
+ 588 0048 65120000 		.4byte	.LASF3
+ 589 004c 02       		.uleb128 0x2
+ 590 004d 04       		.byte	0x4
+ 591 004e 05       		.byte	0x5
+ 592 004f DA010000 		.4byte	.LASF4
+ 593 0053 02       		.uleb128 0x2
+ 594 0054 04       		.byte	0x4
+ 595 0055 07       		.byte	0x7
+ 596 0056 68070000 		.4byte	.LASF5
+ 597 005a 02       		.uleb128 0x2
+ 598 005b 08       		.byte	0x8
+ 599 005c 05       		.byte	0x5
+ 600 005d 4E030000 		.4byte	.LASF6
+ 601 0061 02       		.uleb128 0x2
+ 602 0062 08       		.byte	0x8
+ 603 0063 07       		.byte	0x7
+ 604 0064 4F060000 		.4byte	.LASF7
+ 605 0068 04       		.uleb128 0x4
+ 606 0069 04       		.byte	0x4
+ 607 006a 05       		.byte	0x5
+ 608 006b 696E7400 		.ascii	"int\000"
+ 609 006f 02       		.uleb128 0x2
+ 610 0070 04       		.byte	0x4
+ 611 0071 07       		.byte	0x7
+ 612 0072 02110000 		.4byte	.LASF8
+ 613 0076 03       		.uleb128 0x3
+ 614 0077 C2130000 		.4byte	.LASF10
+ 615 007b 03       		.byte	0x3
+ 616 007c 15       		.byte	0x15
+ 617 007d 2C000000 		.4byte	0x2c
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 15
+
+
+ 618 0081 03       		.uleb128 0x3
+ 619 0082 E2040000 		.4byte	.LASF11
+ 620 0086 04       		.byte	0x4
+ 621 0087 C2       		.byte	0xc2
+ 622 0088 37000000 		.4byte	0x37
+ 623 008c 03       		.uleb128 0x3
+ 624 008d 2E0E0000 		.4byte	.LASF12
+ 625 0091 04       		.byte	0x4
+ 626 0092 C3       		.byte	0xc3
+ 627 0093 45000000 		.4byte	0x45
+ 628 0097 03       		.uleb128 0x3
+ 629 0098 7D050000 		.4byte	.LASF13
+ 630 009c 04       		.byte	0x4
+ 631 009d C4       		.byte	0xc4
+ 632 009e 53000000 		.4byte	0x53
+ 633 00a2 02       		.uleb128 0x2
+ 634 00a3 04       		.byte	0x4
+ 635 00a4 04       		.byte	0x4
+ 636 00a5 300D0000 		.4byte	.LASF14
+ 637 00a9 02       		.uleb128 0x2
+ 638 00aa 08       		.byte	0x8
+ 639 00ab 04       		.byte	0x4
+ 640 00ac 07050000 		.4byte	.LASF15
+ 641 00b0 02       		.uleb128 0x2
+ 642 00b1 01       		.byte	0x1
+ 643 00b2 08       		.byte	0x8
+ 644 00b3 A9100000 		.4byte	.LASF16
+ 645 00b7 02       		.uleb128 0x2
+ 646 00b8 04       		.byte	0x4
+ 647 00b9 07       		.byte	0x7
+ 648 00ba 200B0000 		.4byte	.LASF17
+ 649 00be 05       		.uleb128 0x5
+ 650 00bf 04       		.byte	0x4
+ 651 00c0 06       		.uleb128 0x6
+ 652 00c1 04       		.byte	0x4
+ 653 00c2 81000000 		.4byte	0x81
+ 654 00c6 07       		.uleb128 0x7
+ 655 00c7 01       		.byte	0x1
+ 656 00c8 05       		.byte	0x5
+ 657 00c9 A4       		.byte	0xa4
+ 658 00ca 4B020000 		.4byte	0x24b
+ 659 00ce 08       		.uleb128 0x8
+ 660 00cf 58080000 		.4byte	.LASF18
+ 661 00d3 00       		.sleb128 0
+ 662 00d4 08       		.uleb128 0x8
+ 663 00d5 68030000 		.4byte	.LASF19
+ 664 00d9 01       		.sleb128 1
+ 665 00da 08       		.uleb128 0x8
+ 666 00db C8010000 		.4byte	.LASF20
+ 667 00df 02       		.sleb128 2
+ 668 00e0 08       		.uleb128 0x8
+ 669 00e1 4C120000 		.4byte	.LASF21
+ 670 00e5 03       		.sleb128 3
+ 671 00e6 08       		.uleb128 0x8
+ 672 00e7 1B020000 		.4byte	.LASF22
+ 673 00eb 04       		.sleb128 4
+ 674 00ec 08       		.uleb128 0x8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 16
+
+
+ 675 00ed 3C000000 		.4byte	.LASF23
+ 676 00f1 05       		.sleb128 5
+ 677 00f2 08       		.uleb128 0x8
+ 678 00f3 44150000 		.4byte	.LASF24
+ 679 00f7 20       		.sleb128 32
+ 680 00f8 08       		.uleb128 0x8
+ 681 00f9 C4030000 		.4byte	.LASF25
+ 682 00fd 21       		.sleb128 33
+ 683 00fe 08       		.uleb128 0x8
+ 684 00ff E4080000 		.4byte	.LASF26
+ 685 0103 22       		.sleb128 34
+ 686 0104 08       		.uleb128 0x8
+ 687 0105 B9090000 		.4byte	.LASF27
+ 688 0109 23       		.sleb128 35
+ 689 010a 08       		.uleb128 0x8
+ 690 010b 3D0C0000 		.4byte	.LASF28
+ 691 010f 24       		.sleb128 36
+ 692 0110 08       		.uleb128 0x8
+ 693 0111 A40B0000 		.4byte	.LASF29
+ 694 0115 25       		.sleb128 37
+ 695 0116 08       		.uleb128 0x8
+ 696 0117 97040000 		.4byte	.LASF30
+ 697 011b 26       		.sleb128 38
+ 698 011c 08       		.uleb128 0x8
+ 699 011d 08090000 		.4byte	.LASF31
+ 700 0121 27       		.sleb128 39
+ 701 0122 08       		.uleb128 0x8
+ 702 0123 E0100000 		.4byte	.LASF32
+ 703 0127 28       		.sleb128 40
+ 704 0128 08       		.uleb128 0x8
+ 705 0129 A5020000 		.4byte	.LASF33
+ 706 012d 29       		.sleb128 41
+ 707 012e 08       		.uleb128 0x8
+ 708 012f 9D0F0000 		.4byte	.LASF34
+ 709 0133 2A       		.sleb128 42
+ 710 0134 08       		.uleb128 0x8
+ 711 0135 51020000 		.4byte	.LASF35
+ 712 0139 2B       		.sleb128 43
+ 713 013a 08       		.uleb128 0x8
+ 714 013b A5140000 		.4byte	.LASF36
+ 715 013f 2C       		.sleb128 44
+ 716 0140 08       		.uleb128 0x8
+ 717 0141 78120000 		.4byte	.LASF37
+ 718 0145 C000     		.sleb128 64
+ 719 0147 08       		.uleb128 0x8
+ 720 0148 2B0A0000 		.4byte	.LASF38
+ 721 014c C100     		.sleb128 65
+ 722 014e 08       		.uleb128 0x8
+ 723 014f 68150000 		.4byte	.LASF39
+ 724 0153 C200     		.sleb128 66
+ 725 0155 08       		.uleb128 0x8
+ 726 0156 68130000 		.4byte	.LASF40
+ 727 015a C300     		.sleb128 67
+ 728 015c 08       		.uleb128 0x8
+ 729 015d B1070000 		.4byte	.LASF41
+ 730 0161 C400     		.sleb128 68
+ 731 0163 08       		.uleb128 0x8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 17
+
+
+ 732 0164 090D0000 		.4byte	.LASF42
+ 733 0168 C500     		.sleb128 69
+ 734 016a 08       		.uleb128 0x8
+ 735 016b E60A0000 		.4byte	.LASF43
+ 736 016f C600     		.sleb128 70
+ 737 0171 08       		.uleb128 0x8
+ 738 0172 6F080000 		.4byte	.LASF44
+ 739 0176 C700     		.sleb128 71
+ 740 0178 08       		.uleb128 0x8
+ 741 0179 69140000 		.4byte	.LASF45
+ 742 017d C800     		.sleb128 72
+ 743 017f 08       		.uleb128 0x8
+ 744 0180 DB030000 		.4byte	.LASF46
+ 745 0184 C900     		.sleb128 73
+ 746 0186 08       		.uleb128 0x8
+ 747 0187 6E110000 		.4byte	.LASF47
+ 748 018b CA00     		.sleb128 74
+ 749 018d 08       		.uleb128 0x8
+ 750 018e 6B010000 		.4byte	.LASF48
+ 751 0192 CB00     		.sleb128 75
+ 752 0194 08       		.uleb128 0x8
+ 753 0195 51090000 		.4byte	.LASF49
+ 754 0199 CC00     		.sleb128 76
+ 755 019b 08       		.uleb128 0x8
+ 756 019c CF0B0000 		.4byte	.LASF50
+ 757 01a0 CD00     		.sleb128 77
+ 758 01a2 08       		.uleb128 0x8
+ 759 01a3 29040000 		.4byte	.LASF51
+ 760 01a7 CE00     		.sleb128 78
+ 761 01a9 08       		.uleb128 0x8
+ 762 01aa EF0F0000 		.4byte	.LASF52
+ 763 01ae CF00     		.sleb128 79
+ 764 01b0 08       		.uleb128 0x8
+ 765 01b1 8D080000 		.4byte	.LASF53
+ 766 01b5 D000     		.sleb128 80
+ 767 01b7 08       		.uleb128 0x8
+ 768 01b8 E8040000 		.4byte	.LASF54
+ 769 01bc D100     		.sleb128 81
+ 770 01be 08       		.uleb128 0x8
+ 771 01bf 6C0C0000 		.4byte	.LASF55
+ 772 01c3 D200     		.sleb128 82
+ 773 01c5 08       		.uleb128 0x8
+ 774 01c6 470F0000 		.4byte	.LASF56
+ 775 01ca D300     		.sleb128 83
+ 776 01cc 08       		.uleb128 0x8
+ 777 01cd 1E100000 		.4byte	.LASF57
+ 778 01d1 D400     		.sleb128 84
+ 779 01d3 08       		.uleb128 0x8
+ 780 01d4 CF070000 		.4byte	.LASF58
+ 781 01d8 D500     		.sleb128 85
+ 782 01da 08       		.uleb128 0x8
+ 783 01db 97060000 		.4byte	.LASF59
+ 784 01df D600     		.sleb128 86
+ 785 01e1 08       		.uleb128 0x8
+ 786 01e2 0F110000 		.4byte	.LASF60
+ 787 01e6 D700     		.sleb128 87
+ 788 01e8 08       		.uleb128 0x8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 18
+
+
+ 789 01e9 D8050000 		.4byte	.LASF61
+ 790 01ed F000     		.sleb128 112
+ 791 01ef 08       		.uleb128 0x8
+ 792 01f0 EA140000 		.4byte	.LASF62
+ 793 01f4 F100     		.sleb128 113
+ 794 01f6 08       		.uleb128 0x8
+ 795 01f7 4C0A0000 		.4byte	.LASF63
+ 796 01fb F200     		.sleb128 114
+ 797 01fd 08       		.uleb128 0x8
+ 798 01fe C80A0000 		.4byte	.LASF64
+ 799 0202 F300     		.sleb128 115
+ 800 0204 08       		.uleb128 0x8
+ 801 0205 C50C0000 		.4byte	.LASF65
+ 802 0209 F400     		.sleb128 116
+ 803 020b 08       		.uleb128 0x8
+ 804 020c 0E050000 		.4byte	.LASF66
+ 805 0210 F500     		.sleb128 117
+ 806 0212 08       		.uleb128 0x8
+ 807 0213 4A010000 		.4byte	.LASF67
+ 808 0217 F600     		.sleb128 118
+ 809 0219 08       		.uleb128 0x8
+ 810 021a 6C000000 		.4byte	.LASF68
+ 811 021e F700     		.sleb128 119
+ 812 0220 08       		.uleb128 0x8
+ 813 0221 00000000 		.4byte	.LASF69
+ 814 0225 F800     		.sleb128 120
+ 815 0227 08       		.uleb128 0x8
+ 816 0228 4B110000 		.4byte	.LASF70
+ 817 022c F900     		.sleb128 121
+ 818 022e 08       		.uleb128 0x8
+ 819 022f 20060000 		.4byte	.LASF71
+ 820 0233 FA00     		.sleb128 122
+ 821 0235 08       		.uleb128 0x8
+ 822 0236 70020000 		.4byte	.LASF72
+ 823 023a FA01     		.sleb128 250
+ 824 023c 08       		.uleb128 0x8
+ 825 023d D7060000 		.4byte	.LASF73
+ 826 0241 FB01     		.sleb128 251
+ 827 0243 08       		.uleb128 0x8
+ 828 0244 A7050000 		.4byte	.LASF74
+ 829 0248 FF01     		.sleb128 255
+ 830 024a 00       		.byte	0
+ 831 024b 09       		.uleb128 0x9
+ 832 024c 02       		.byte	0x2
+ 833 024d 05       		.byte	0x5
+ 834 024e 0C02     		.2byte	0x20c
+ 835 0250 02030000 		.4byte	0x302
+ 836 0254 08       		.uleb128 0x8
+ 837 0255 B5050000 		.4byte	.LASF75
+ 838 0259 00       		.sleb128 0
+ 839 025a 08       		.uleb128 0x8
+ 840 025b 2F050000 		.4byte	.LASF76
+ 841 025f 01       		.sleb128 1
+ 842 0260 08       		.uleb128 0x8
+ 843 0261 C8120000 		.4byte	.LASF77
+ 844 0265 02       		.sleb128 2
+ 845 0266 08       		.uleb128 0x8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 19
+
+
+ 846 0267 D3000000 		.4byte	.LASF78
+ 847 026b 03       		.sleb128 3
+ 848 026c 08       		.uleb128 0x8
+ 849 026d 91130000 		.4byte	.LASF79
+ 850 0271 04       		.sleb128 4
+ 851 0272 08       		.uleb128 0x8
+ 852 0273 B9060000 		.4byte	.LASF80
+ 853 0277 05       		.sleb128 5
+ 854 0278 08       		.uleb128 0x8
+ 855 0279 680F0000 		.4byte	.LASF81
+ 856 027d 06       		.sleb128 6
+ 857 027e 08       		.uleb128 0x8
+ 858 027f 9D030000 		.4byte	.LASF82
+ 859 0283 07       		.sleb128 7
+ 860 0284 08       		.uleb128 0x8
+ 861 0285 AE150000 		.4byte	.LASF83
+ 862 0289 08       		.sleb128 8
+ 863 028a 08       		.uleb128 0x8
+ 864 028b 90140000 		.4byte	.LASF84
+ 865 028f 09       		.sleb128 9
+ 866 0290 08       		.uleb128 0x8
+ 867 0291 C70D0000 		.4byte	.LASF85
+ 868 0295 0A       		.sleb128 10
+ 869 0296 08       		.uleb128 0x8
+ 870 0297 C0100000 		.4byte	.LASF86
+ 871 029b 0B       		.sleb128 11
+ 872 029c 08       		.uleb128 0x8
+ 873 029d 8E020000 		.4byte	.LASF87
+ 874 02a1 0C       		.sleb128 12
+ 875 02a2 08       		.uleb128 0x8
+ 876 02a3 E3010000 		.4byte	.LASF88
+ 877 02a7 0D       		.sleb128 13
+ 878 02a8 08       		.uleb128 0x8
+ 879 02a9 3F070000 		.4byte	.LASF89
+ 880 02ad 0E       		.sleb128 14
+ 881 02ae 08       		.uleb128 0x8
+ 882 02af 04140000 		.4byte	.LASF90
+ 883 02b3 0F       		.sleb128 15
+ 884 02b4 08       		.uleb128 0x8
+ 885 02b5 F1110000 		.4byte	.LASF91
+ 886 02b9 10       		.sleb128 16
+ 887 02ba 08       		.uleb128 0x8
+ 888 02bb 0C080000 		.4byte	.LASF92
+ 889 02bf 11       		.sleb128 17
+ 890 02c0 08       		.uleb128 0x8
+ 891 02c1 BF040000 		.4byte	.LASF93
+ 892 02c5 12       		.sleb128 18
+ 893 02c6 08       		.uleb128 0x8
+ 894 02c7 86150000 		.4byte	.LASF94
+ 895 02cb 13       		.sleb128 19
+ 896 02cc 08       		.uleb128 0x8
+ 897 02cd 7B030000 		.4byte	.LASF95
+ 898 02d1 27       		.sleb128 39
+ 899 02d2 08       		.uleb128 0x8
+ 900 02d3 CC110000 		.4byte	.LASF96
+ 901 02d7 28       		.sleb128 40
+ 902 02d8 08       		.uleb128 0x8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 20
+
+
+ 903 02d9 E8130000 		.4byte	.LASF97
+ 904 02dd 29       		.sleb128 41
+ 905 02de 08       		.uleb128 0x8
+ 906 02df B80A0000 		.4byte	.LASF98
+ 907 02e3 FF01     		.sleb128 255
+ 908 02e5 08       		.uleb128 0x8
+ 909 02e6 AF010000 		.4byte	.LASF99
+ 910 02ea 8002     		.sleb128 256
+ 911 02ec 08       		.uleb128 0x8
+ 912 02ed 8D0C0000 		.4byte	.LASF100
+ 913 02f1 8102     		.sleb128 257
+ 914 02f3 08       		.uleb128 0x8
+ 915 02f4 E10D0000 		.4byte	.LASF101
+ 916 02f8 8202     		.sleb128 258
+ 917 02fa 08       		.uleb128 0x8
+ 918 02fb 0F040000 		.4byte	.LASF102
+ 919 02ff 8302     		.sleb128 259
+ 920 0301 00       		.byte	0
+ 921 0302 0A       		.uleb128 0xa
+ 922 0303 38110000 		.4byte	.LASF103
+ 923 0307 05       		.byte	0x5
+ 924 0308 6902     		.2byte	0x269
+ 925 030a 4B020000 		.4byte	0x24b
+ 926 030e 09       		.uleb128 0x9
+ 927 030f 01       		.byte	0x1
+ 928 0310 05       		.byte	0x5
+ 929 0311 6D02     		.2byte	0x26d
+ 930 0313 37030000 		.4byte	0x337
+ 931 0317 08       		.uleb128 0x8
+ 932 0318 15150000 		.4byte	.LASF104
+ 933 031c 01       		.sleb128 1
+ 934 031d 08       		.uleb128 0x8
+ 935 031e AE100000 		.4byte	.LASF105
+ 936 0322 02       		.sleb128 2
+ 937 0323 08       		.uleb128 0x8
+ 938 0324 53140000 		.4byte	.LASF106
+ 939 0328 03       		.sleb128 3
+ 940 0329 08       		.uleb128 0x8
+ 941 032a E90B0000 		.4byte	.LASF107
+ 942 032e 04       		.sleb128 4
+ 943 032f 08       		.uleb128 0x8
+ 944 0330 9D070000 		.4byte	.LASF108
+ 945 0334 FF01     		.sleb128 255
+ 946 0336 00       		.byte	0
+ 947 0337 0A       		.uleb128 0xa
+ 948 0338 94010000 		.4byte	.LASF109
+ 949 033c 05       		.byte	0x5
+ 950 033d 8902     		.2byte	0x289
+ 951 033f 0E030000 		.4byte	0x30e
+ 952 0343 07       		.uleb128 0x7
+ 953 0344 01       		.byte	0x1
+ 954 0345 06       		.byte	0x6
+ 955 0346 AA       		.byte	0xaa
+ 956 0347 36040000 		.4byte	0x436
+ 957 034b 08       		.uleb128 0x8
+ 958 034c C4050000 		.4byte	.LASF110
+ 959 0350 00       		.sleb128 0
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 21
+
+
+ 960 0351 08       		.uleb128 0x8
+ 961 0352 1D010000 		.4byte	.LASF111
+ 962 0356 01       		.sleb128 1
+ 963 0357 08       		.uleb128 0x8
+ 964 0358 FE050000 		.4byte	.LASF112
+ 965 035c 02       		.sleb128 2
+ 966 035d 08       		.uleb128 0x8
+ 967 035e 84050000 		.4byte	.LASF113
+ 968 0362 03       		.sleb128 3
+ 969 0363 08       		.uleb128 0x8
+ 970 0364 F4030000 		.4byte	.LASF114
+ 971 0368 04       		.sleb128 4
+ 972 0369 08       		.uleb128 0x8
+ 973 036a 0B030000 		.4byte	.LASF115
+ 974 036e 05       		.sleb128 5
+ 975 036f 08       		.uleb128 0x8
+ 976 0370 F8000000 		.4byte	.LASF116
+ 977 0374 06       		.sleb128 6
+ 978 0375 08       		.uleb128 0x8
+ 979 0376 CA130000 		.4byte	.LASF117
+ 980 037a 07       		.sleb128 7
+ 981 037b 08       		.uleb128 0x8
+ 982 037c 130C0000 		.4byte	.LASF118
+ 983 0380 08       		.sleb128 8
+ 984 0381 08       		.uleb128 0x8
+ 985 0382 5E0D0000 		.4byte	.LASF119
+ 986 0386 09       		.sleb128 9
+ 987 0387 08       		.uleb128 0x8
+ 988 0388 7A070000 		.4byte	.LASF120
+ 989 038c 0A       		.sleb128 10
+ 990 038d 08       		.uleb128 0x8
+ 991 038e 36080000 		.4byte	.LASF121
+ 992 0392 0B       		.sleb128 11
+ 993 0393 08       		.uleb128 0x8
+ 994 0394 9F000000 		.4byte	.LASF122
+ 995 0398 0C       		.sleb128 12
+ 996 0399 08       		.uleb128 0x8
+ 997 039a 350E0000 		.4byte	.LASF123
+ 998 039e 0D       		.sleb128 13
+ 999 039f 08       		.uleb128 0x8
+ 1000 03a0 8C110000 		.4byte	.LASF124
+ 1001 03a4 0E       		.sleb128 14
+ 1002 03a5 08       		.uleb128 0x8
+ 1003 03a6 30130000 		.4byte	.LASF125
+ 1004 03aa 0F       		.sleb128 15
+ 1005 03ab 08       		.uleb128 0x8
+ 1006 03ac 57050000 		.4byte	.LASF126
+ 1007 03b0 10       		.sleb128 16
+ 1008 03b1 08       		.uleb128 0x8
+ 1009 03b2 290B0000 		.4byte	.LASF127
+ 1010 03b6 11       		.sleb128 17
+ 1011 03b7 08       		.uleb128 0x8
+ 1012 03b8 73100000 		.4byte	.LASF128
+ 1013 03bc 8001     		.sleb128 128
+ 1014 03be 08       		.uleb128 0x8
+ 1015 03bf E6120000 		.4byte	.LASF129
+ 1016 03c3 8001     		.sleb128 128
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 22
+
+
+ 1017 03c5 08       		.uleb128 0x8
+ 1018 03c6 47040000 		.4byte	.LASF130
+ 1019 03ca 8001     		.sleb128 128
+ 1020 03cc 08       		.uleb128 0x8
+ 1021 03cd 8D090000 		.4byte	.LASF131
+ 1022 03d1 8001     		.sleb128 128
+ 1023 03d3 08       		.uleb128 0x8
+ 1024 03d4 11070000 		.4byte	.LASF132
+ 1025 03d8 8001     		.sleb128 128
+ 1026 03da 08       		.uleb128 0x8
+ 1027 03db E6020000 		.4byte	.LASF133
+ 1028 03df 8001     		.sleb128 128
+ 1029 03e1 08       		.uleb128 0x8
+ 1030 03e2 820F0000 		.4byte	.LASF134
+ 1031 03e6 8001     		.sleb128 128
+ 1032 03e8 08       		.uleb128 0x8
+ 1033 03e9 5A0E0000 		.4byte	.LASF135
+ 1034 03ed 8101     		.sleb128 129
+ 1035 03ef 08       		.uleb128 0x8
+ 1036 03f0 30020000 		.4byte	.LASF136
+ 1037 03f4 8101     		.sleb128 129
+ 1038 03f6 08       		.uleb128 0x8
+ 1039 03f7 F6060000 		.4byte	.LASF137
+ 1040 03fb 8101     		.sleb128 129
+ 1041 03fd 08       		.uleb128 0x8
+ 1042 03fe C60F0000 		.4byte	.LASF138
+ 1043 0402 A001     		.sleb128 160
+ 1044 0404 08       		.uleb128 0x8
+ 1045 0405 C0080000 		.4byte	.LASF139
+ 1046 0409 A001     		.sleb128 160
+ 1047 040b 08       		.uleb128 0x8
+ 1048 040c C2020000 		.4byte	.LASF140
+ 1049 0410 A101     		.sleb128 161
+ 1050 0412 08       		.uleb128 0x8
+ 1051 0413 E30C0000 		.4byte	.LASF141
+ 1052 0417 A201     		.sleb128 162
+ 1053 0419 08       		.uleb128 0x8
+ 1054 041a AA110000 		.4byte	.LASF142
+ 1055 041e A301     		.sleb128 163
+ 1056 0420 08       		.uleb128 0x8
+ 1057 0421 3F100000 		.4byte	.LASF143
+ 1058 0425 FD01     		.sleb128 253
+ 1059 0427 08       		.uleb128 0x8
+ 1060 0428 1F120000 		.4byte	.LASF144
+ 1061 042c FE01     		.sleb128 254
+ 1062 042e 08       		.uleb128 0x8
+ 1063 042f 040E0000 		.4byte	.LASF145
+ 1064 0433 FF01     		.sleb128 255
+ 1065 0435 00       		.byte	0
+ 1066 0436 0A       		.uleb128 0xa
+ 1067 0437 77090000 		.4byte	.LASF146
+ 1068 043b 06       		.byte	0x6
+ 1069 043c 5901     		.2byte	0x159
+ 1070 043e 43030000 		.4byte	0x343
+ 1071 0442 0A       		.uleb128 0xa
+ 1072 0443 28150000 		.4byte	.LASF147
+ 1073 0447 06       		.byte	0x6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 23
+
+
+ 1074 0448 8801     		.2byte	0x188
+ 1075 044a 8C000000 		.4byte	0x8c
+ 1076 044e 0B       		.uleb128 0xb
+ 1077 044f 02       		.byte	0x2
+ 1078 0450 06       		.byte	0x6
+ 1079 0451 9201     		.2byte	0x192
+ 1080 0453 72040000 		.4byte	0x472
+ 1081 0457 0C       		.uleb128 0xc
+ 1082 0458 E1140000 		.4byte	.LASF148
+ 1083 045c 06       		.byte	0x6
+ 1084 045d 9901     		.2byte	0x199
+ 1085 045f 81000000 		.4byte	0x81
+ 1086 0463 00       		.byte	0
+ 1087 0464 0C       		.uleb128 0xc
+ 1088 0465 460A0000 		.4byte	.LASF149
+ 1089 0469 06       		.byte	0x6
+ 1090 046a 9F01     		.2byte	0x19f
+ 1091 046c 81000000 		.4byte	0x81
+ 1092 0470 01       		.byte	0x1
+ 1093 0471 00       		.byte	0
+ 1094 0472 0A       		.uleb128 0xa
+ 1095 0473 8B000000 		.4byte	.LASF150
+ 1096 0477 06       		.byte	0x6
+ 1097 0478 A101     		.2byte	0x1a1
+ 1098 047a 4E040000 		.4byte	0x44e
+ 1099 047e 0B       		.uleb128 0xb
+ 1100 047f 08       		.byte	0x8
+ 1101 0480 06       		.byte	0x6
+ 1102 0481 BD01     		.2byte	0x1bd
+ 1103 0483 AF040000 		.4byte	0x4af
+ 1104 0487 0D       		.uleb128 0xd
+ 1105 0488 76616C00 		.ascii	"val\000"
+ 1106 048c 06       		.byte	0x6
+ 1107 048d C001     		.2byte	0x1c0
+ 1108 048f C0000000 		.4byte	0xc0
+ 1109 0493 00       		.byte	0
+ 1110 0494 0D       		.uleb128 0xd
+ 1111 0495 6C656E00 		.ascii	"len\000"
+ 1112 0499 06       		.byte	0x6
+ 1113 049a C301     		.2byte	0x1c3
+ 1114 049c 8C000000 		.4byte	0x8c
+ 1115 04a0 04       		.byte	0x4
+ 1116 04a1 0C       		.uleb128 0xc
+ 1117 04a2 BA030000 		.4byte	.LASF151
+ 1118 04a6 06       		.byte	0x6
+ 1119 04a7 CA01     		.2byte	0x1ca
+ 1120 04a9 8C000000 		.4byte	0x8c
+ 1121 04ad 06       		.byte	0x6
+ 1122 04ae 00       		.byte	0
+ 1123 04af 0A       		.uleb128 0xa
+ 1124 04b0 08020000 		.4byte	.LASF152
+ 1125 04b4 06       		.byte	0x6
+ 1126 04b5 CC01     		.2byte	0x1cc
+ 1127 04b7 7E040000 		.4byte	0x47e
+ 1128 04bb 0B       		.uleb128 0xb
+ 1129 04bc 0C       		.byte	0xc
+ 1130 04bd 06       		.byte	0x6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 24
+
+
+ 1131 04be CF01     		.2byte	0x1cf
+ 1132 04c0 DF040000 		.4byte	0x4df
+ 1133 04c4 0C       		.uleb128 0xc
+ 1134 04c5 66060000 		.4byte	.LASF153
+ 1135 04c9 06       		.byte	0x6
+ 1136 04ca D201     		.2byte	0x1d2
+ 1137 04cc AF040000 		.4byte	0x4af
+ 1138 04d0 00       		.byte	0
+ 1139 04d1 0C       		.uleb128 0xc
+ 1140 04d2 44060000 		.4byte	.LASF154
+ 1141 04d6 06       		.byte	0x6
+ 1142 04d7 D501     		.2byte	0x1d5
+ 1143 04d9 42040000 		.4byte	0x442
+ 1144 04dd 08       		.byte	0x8
+ 1145 04de 00       		.byte	0
+ 1146 04df 0A       		.uleb128 0xa
+ 1147 04e0 A60C0000 		.4byte	.LASF155
+ 1148 04e4 06       		.byte	0x6
+ 1149 04e5 D701     		.2byte	0x1d7
+ 1150 04e7 BB040000 		.4byte	0x4bb
+ 1151 04eb 03       		.uleb128 0x3
+ 1152 04ec 6C0B0000 		.4byte	.LASF156
+ 1153 04f0 07       		.byte	0x7
+ 1154 04f1 34       		.byte	0x34
+ 1155 04f2 DF040000 		.4byte	0x4df
+ 1156 04f6 0E       		.uleb128 0xe
+ 1157 04f7 10       		.byte	0x10
+ 1158 04f8 07       		.byte	0x7
+ 1159 04f9 8A       		.byte	0x8a
+ 1160 04fa 17050000 		.4byte	0x517
+ 1161 04fe 0F       		.uleb128 0xf
+ 1162 04ff C8000000 		.4byte	.LASF157
+ 1163 0503 07       		.byte	0x7
+ 1164 0504 8D       		.byte	0x8d
+ 1165 0505 72040000 		.4byte	0x472
+ 1166 0509 00       		.byte	0
+ 1167 050a 0F       		.uleb128 0xf
+ 1168 050b 92120000 		.4byte	.LASF158
+ 1169 050f 07       		.byte	0x7
+ 1170 0510 90       		.byte	0x90
+ 1171 0511 DF040000 		.4byte	0x4df
+ 1172 0515 04       		.byte	0x4
+ 1173 0516 00       		.byte	0
+ 1174 0517 03       		.uleb128 0x3
+ 1175 0518 4E0B0000 		.4byte	.LASF159
+ 1176 051c 07       		.byte	0x7
+ 1177 051d 92       		.byte	0x92
+ 1178 051e F6040000 		.4byte	0x4f6
+ 1179 0522 0A       		.uleb128 0xa
+ 1180 0523 57130000 		.4byte	.LASF160
+ 1181 0527 08       		.byte	0x8
+ 1182 0528 4101     		.2byte	0x141
+ 1183 052a 2E050000 		.4byte	0x52e
+ 1184 052e 06       		.uleb128 0x6
+ 1185 052f 04       		.byte	0x4
+ 1186 0530 34050000 		.4byte	0x534
+ 1187 0534 10       		.uleb128 0x10
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 25
+
+
+ 1188 0535 44050000 		.4byte	0x544
+ 1189 0539 11       		.uleb128 0x11
+ 1190 053a 97000000 		.4byte	0x97
+ 1191 053e 11       		.uleb128 0x11
+ 1192 053f BE000000 		.4byte	0xbe
+ 1193 0543 00       		.byte	0
+ 1194 0544 09       		.uleb128 0x9
+ 1195 0545 01       		.byte	0x1
+ 1196 0546 09       		.byte	0x9
+ 1197 0547 3707     		.2byte	0x737
+ 1198 0549 6C050000 		.4byte	0x56c
+ 1199 054d 08       		.uleb128 0x8
+ 1200 054e 58000000 		.4byte	.LASF161
+ 1201 0552 00       		.sleb128 0
+ 1202 0553 08       		.uleb128 0x8
+ 1203 0554 8B0B0000 		.4byte	.LASF162
+ 1204 0558 01       		.sleb128 1
+ 1205 0559 08       		.uleb128 0x8
+ 1206 055a 29140000 		.4byte	.LASF163
+ 1207 055e 02       		.sleb128 2
+ 1208 055f 08       		.uleb128 0x8
+ 1209 0560 36030000 		.4byte	.LASF164
+ 1210 0564 03       		.sleb128 3
+ 1211 0565 08       		.uleb128 0x8
+ 1212 0566 7E040000 		.4byte	.LASF165
+ 1213 056a 04       		.sleb128 4
+ 1214 056b 00       		.byte	0
+ 1215 056c 0A       		.uleb128 0xa
+ 1216 056d B4130000 		.4byte	.LASF166
+ 1217 0571 09       		.byte	0x9
+ 1218 0572 4507     		.2byte	0x745
+ 1219 0574 44050000 		.4byte	0x544
+ 1220 0578 12       		.uleb128 0x12
+ 1221 0579 69100000 		.4byte	.LASF169
+ 1222 057d 01       		.byte	0x1
+ 1223 057e 0C       		.byte	0xc
+ 1224 057f 00000000 		.4byte	.LFB35
+ 1225 0583 3C000000 		.4byte	.LFE35-.LFB35
+ 1226 0587 01       		.uleb128 0x1
+ 1227 0588 9C       		.byte	0x9c
+ 1228 0589 CD050000 		.4byte	0x5cd
+ 1229 058d 13       		.uleb128 0x13
+ 1230 058e A30D0000 		.4byte	.LASF167
+ 1231 0592 01       		.byte	0x1
+ 1232 0593 0E       		.byte	0xe
+ 1233 0594 EB040000 		.4byte	0x4eb
+ 1234 0598 02       		.uleb128 0x2
+ 1235 0599 91       		.byte	0x91
+ 1236 059a 6C       		.sleb128 -20
+ 1237 059b 13       		.uleb128 0x13
+ 1238 059c 4D050000 		.4byte	.LASF168
+ 1239 05a0 01       		.byte	0x1
+ 1240 05a1 10       		.byte	0x10
+ 1241 05a2 81000000 		.4byte	0x81
+ 1242 05a6 02       		.uleb128 0x2
+ 1243 05a7 91       		.byte	0x91
+ 1244 05a8 6B       		.sleb128 -21
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 26
+
+
+ 1245 05a9 14       		.uleb128 0x14
+ 1246 05aa 08000000 		.4byte	.LVL0
+ 1247 05ae C1090000 		.4byte	0x9c1
+ 1248 05b2 15       		.uleb128 0x15
+ 1249 05b3 30000000 		.4byte	.LVL1
+ 1250 05b7 CC090000 		.4byte	0x9cc
+ 1251 05bb 16       		.uleb128 0x16
+ 1252 05bc 01       		.uleb128 0x1
+ 1253 05bd 53       		.byte	0x53
+ 1254 05be 01       		.uleb128 0x1
+ 1255 05bf 30       		.byte	0x30
+ 1256 05c0 16       		.uleb128 0x16
+ 1257 05c1 01       		.uleb128 0x1
+ 1258 05c2 51       		.byte	0x51
+ 1259 05c3 01       		.uleb128 0x1
+ 1260 05c4 30       		.byte	0x30
+ 1261 05c5 16       		.uleb128 0x16
+ 1262 05c6 01       		.uleb128 0x1
+ 1263 05c7 50       		.byte	0x50
+ 1264 05c8 02       		.uleb128 0x2
+ 1265 05c9 91       		.byte	0x91
+ 1266 05ca 6C       		.sleb128 -20
+ 1267 05cb 00       		.byte	0
+ 1268 05cc 00       		.byte	0
+ 1269 05cd 12       		.uleb128 0x12
+ 1270 05ce 4F0D0000 		.4byte	.LASF170
+ 1271 05d2 01       		.byte	0x1
+ 1272 05d3 1B       		.byte	0x1b
+ 1273 05d4 00000000 		.4byte	.LFB36
+ 1274 05d8 3C000000 		.4byte	.LFE36-.LFB36
+ 1275 05dc 01       		.uleb128 0x1
+ 1276 05dd 9C       		.byte	0x9c
+ 1277 05de 22060000 		.4byte	0x622
+ 1278 05e2 13       		.uleb128 0x13
+ 1279 05e3 A30D0000 		.4byte	.LASF167
+ 1280 05e7 01       		.byte	0x1
+ 1281 05e8 1D       		.byte	0x1d
+ 1282 05e9 EB040000 		.4byte	0x4eb
+ 1283 05ed 02       		.uleb128 0x2
+ 1284 05ee 91       		.byte	0x91
+ 1285 05ef 6C       		.sleb128 -20
+ 1286 05f0 13       		.uleb128 0x13
+ 1287 05f1 00080000 		.4byte	.LASF171
+ 1288 05f5 01       		.byte	0x1
+ 1289 05f6 1F       		.byte	0x1f
+ 1290 05f7 81000000 		.4byte	0x81
+ 1291 05fb 02       		.uleb128 0x2
+ 1292 05fc 91       		.byte	0x91
+ 1293 05fd 6B       		.sleb128 -21
+ 1294 05fe 14       		.uleb128 0x14
+ 1295 05ff 08000000 		.4byte	.LVL2
+ 1296 0603 FD090000 		.4byte	0x9fd
+ 1297 0607 15       		.uleb128 0x15
+ 1298 0608 30000000 		.4byte	.LVL3
+ 1299 060c CC090000 		.4byte	0x9cc
+ 1300 0610 16       		.uleb128 0x16
+ 1301 0611 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 27
+
+
+ 1302 0612 53       		.byte	0x53
+ 1303 0613 01       		.uleb128 0x1
+ 1304 0614 30       		.byte	0x30
+ 1305 0615 16       		.uleb128 0x16
+ 1306 0616 01       		.uleb128 0x1
+ 1307 0617 51       		.byte	0x51
+ 1308 0618 01       		.uleb128 0x1
+ 1309 0619 30       		.byte	0x30
+ 1310 061a 16       		.uleb128 0x16
+ 1311 061b 01       		.uleb128 0x1
+ 1312 061c 50       		.byte	0x50
+ 1313 061d 02       		.uleb128 0x2
+ 1314 061e 91       		.byte	0x91
+ 1315 061f 6C       		.sleb128 -20
+ 1316 0620 00       		.byte	0
+ 1317 0621 00       		.byte	0
+ 1318 0622 12       		.uleb128 0x12
+ 1319 0623 3B010000 		.4byte	.LASF172
+ 1320 0627 01       		.byte	0x1
+ 1321 0628 2E       		.byte	0x2e
+ 1322 0629 00000000 		.4byte	.LFB37
+ 1323 062d 60000000 		.4byte	.LFE37-.LFB37
+ 1324 0631 01       		.uleb128 0x1
+ 1325 0632 9C       		.byte	0x9c
+ 1326 0633 74060000 		.4byte	0x674
+ 1327 0637 13       		.uleb128 0x13
+ 1328 0638 A30D0000 		.4byte	.LASF167
+ 1329 063c 01       		.byte	0x1
+ 1330 063d 33       		.byte	0x33
+ 1331 063e EB040000 		.4byte	0x4eb
+ 1332 0642 02       		.uleb128 0x2
+ 1333 0643 91       		.byte	0x91
+ 1334 0644 6C       		.sleb128 -20
+ 1335 0645 17       		.uleb128 0x17
+ 1336 0646 24000000 		.4byte	.LVL4
+ 1337 064a CC090000 		.4byte	0x9cc
+ 1338 064e 63060000 		.4byte	0x663
+ 1339 0652 16       		.uleb128 0x16
+ 1340 0653 01       		.uleb128 0x1
+ 1341 0654 53       		.byte	0x53
+ 1342 0655 01       		.uleb128 0x1
+ 1343 0656 30       		.byte	0x30
+ 1344 0657 16       		.uleb128 0x16
+ 1345 0658 01       		.uleb128 0x1
+ 1346 0659 51       		.byte	0x51
+ 1347 065a 01       		.uleb128 0x1
+ 1348 065b 30       		.byte	0x30
+ 1349 065c 16       		.uleb128 0x16
+ 1350 065d 01       		.uleb128 0x1
+ 1351 065e 50       		.byte	0x50
+ 1352 065f 02       		.uleb128 0x2
+ 1353 0660 91       		.byte	0x91
+ 1354 0661 6C       		.sleb128 -20
+ 1355 0662 00       		.byte	0
+ 1356 0663 15       		.uleb128 0x15
+ 1357 0664 46000000 		.4byte	.LVL5
+ 1358 0668 080A0000 		.4byte	0xa08
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 28
+
+
+ 1359 066c 16       		.uleb128 0x16
+ 1360 066d 01       		.uleb128 0x1
+ 1361 066e 51       		.byte	0x51
+ 1362 066f 02       		.uleb128 0x2
+ 1363 0670 91       		.byte	0x91
+ 1364 0671 6C       		.sleb128 -20
+ 1365 0672 00       		.byte	0
+ 1366 0673 00       		.byte	0
+ 1367 0674 18       		.uleb128 0x18
+ 1368 0675 8B060000 		.4byte	.LASF176
+ 1369 0679 01       		.byte	0x1
+ 1370 067a 43       		.byte	0x43
+ 1371 067b 00000000 		.4byte	.LFB38
+ 1372 067f 34010000 		.4byte	.LFE38-.LFB38
+ 1373 0683 01       		.uleb128 0x1
+ 1374 0684 9C       		.byte	0x9c
+ 1375 0685 89080000 		.4byte	0x889
+ 1376 0689 19       		.uleb128 0x19
+ 1377 068a 30080000 		.4byte	.LASF173
+ 1378 068e 01       		.byte	0x1
+ 1379 068f 43       		.byte	0x43
+ 1380 0690 97000000 		.4byte	0x97
+ 1381 0694 00000000 		.4byte	.LLST0
+ 1382 0698 19       		.uleb128 0x19
+ 1383 0699 86130000 		.4byte	.LASF174
+ 1384 069d 01       		.byte	0x1
+ 1385 069e 43       		.byte	0x43
+ 1386 069f BE000000 		.4byte	0xbe
+ 1387 06a3 53000000 		.4byte	.LLST1
+ 1388 06a7 1A       		.uleb128 0x1a
+ 1389 06a8 A4010000 		.4byte	.LASF175
+ 1390 06ac 01       		.byte	0x1
+ 1391 06ad 45       		.byte	0x45
+ 1392 06ae 89080000 		.4byte	0x889
+ 1393 06b2 AB000000 		.4byte	.LLST2
+ 1394 06b6 17       		.uleb128 0x17
+ 1395 06b7 26000000 		.4byte	.LVL8
+ 1396 06bb 280A0000 		.4byte	0xa28
+ 1397 06bf C9060000 		.4byte	0x6c9
+ 1398 06c3 16       		.uleb128 0x16
+ 1399 06c4 01       		.uleb128 0x1
+ 1400 06c5 50       		.byte	0x50
+ 1401 06c6 01       		.uleb128 0x1
+ 1402 06c7 30       		.byte	0x30
+ 1403 06c8 00       		.byte	0
+ 1404 06c9 14       		.uleb128 0x14
+ 1405 06ca 2A000000 		.4byte	.LVL9
+ 1406 06ce 3E0A0000 		.4byte	0xa3e
+ 1407 06d2 14       		.uleb128 0x14
+ 1408 06d3 30000000 		.4byte	.LVL11
+ 1409 06d7 78050000 		.4byte	0x578
+ 1410 06db 14       		.uleb128 0x14
+ 1411 06dc 34000000 		.4byte	.LVL12
+ 1412 06e0 CD050000 		.4byte	0x5cd
+ 1413 06e4 14       		.uleb128 0x14
+ 1414 06e5 38000000 		.4byte	.LVL13
+ 1415 06e9 22060000 		.4byte	0x622
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 29
+
+
+ 1416 06ed 14       		.uleb128 0x14
+ 1417 06ee 3C000000 		.4byte	.LVL14
+ 1418 06f2 450A0000 		.4byte	0xa45
+ 1419 06f6 17       		.uleb128 0x17
+ 1420 06f7 50000000 		.4byte	.LVL18
+ 1421 06fb CC090000 		.4byte	0x9cc
+ 1422 06ff 0F070000 		.4byte	0x70f
+ 1423 0703 16       		.uleb128 0x16
+ 1424 0704 01       		.uleb128 0x1
+ 1425 0705 51       		.byte	0x51
+ 1426 0706 01       		.uleb128 0x1
+ 1427 0707 30       		.byte	0x30
+ 1428 0708 16       		.uleb128 0x16
+ 1429 0709 01       		.uleb128 0x1
+ 1430 070a 50       		.byte	0x50
+ 1431 070b 02       		.uleb128 0x2
+ 1432 070c 74       		.byte	0x74
+ 1433 070d 04       		.sleb128 4
+ 1434 070e 00       		.byte	0
+ 1435 070f 14       		.uleb128 0x14
+ 1436 0710 62000000 		.4byte	.LVL19
+ 1437 0714 4C0A0000 		.4byte	0xa4c
+ 1438 0718 14       		.uleb128 0x14
+ 1439 0719 70000000 		.4byte	.LVL20
+ 1440 071d 5D0A0000 		.4byte	0xa5d
+ 1441 0721 17       		.uleb128 0x17
+ 1442 0722 78000000 		.4byte	.LVL21
+ 1443 0726 730A0000 		.4byte	0xa73
+ 1444 072a 36070000 		.4byte	0x736
+ 1445 072e 16       		.uleb128 0x16
+ 1446 072f 01       		.uleb128 0x1
+ 1447 0730 50       		.byte	0x50
+ 1448 0731 03       		.uleb128 0x3
+ 1449 0732 0A       		.byte	0xa
+ 1450 0733 E803     		.2byte	0x3e8
+ 1451 0735 00       		.byte	0
+ 1452 0736 17       		.uleb128 0x17
+ 1453 0737 7E000000 		.4byte	.LVL22
+ 1454 073b 840A0000 		.4byte	0xa84
+ 1455 073f 4A070000 		.4byte	0x74a
+ 1456 0743 16       		.uleb128 0x16
+ 1457 0744 01       		.uleb128 0x1
+ 1458 0745 50       		.byte	0x50
+ 1459 0746 02       		.uleb128 0x2
+ 1460 0747 09       		.byte	0x9
+ 1461 0748 AA       		.byte	0xaa
+ 1462 0749 00       		.byte	0
+ 1463 074a 17       		.uleb128 0x17
+ 1464 074b 84000000 		.4byte	.LVL23
+ 1465 074f 950A0000 		.4byte	0xa95
+ 1466 0753 5D070000 		.4byte	0x75d
+ 1467 0757 16       		.uleb128 0x16
+ 1468 0758 01       		.uleb128 0x1
+ 1469 0759 50       		.byte	0x50
+ 1470 075a 01       		.uleb128 0x1
+ 1471 075b 31       		.byte	0x31
+ 1472 075c 00       		.byte	0
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 30
+
+
+ 1473 075d 17       		.uleb128 0x17
+ 1474 075e 8A000000 		.4byte	.LVL24
+ 1475 0762 A60A0000 		.4byte	0xaa6
+ 1476 0766 70070000 		.4byte	0x770
+ 1477 076a 16       		.uleb128 0x16
+ 1478 076b 01       		.uleb128 0x1
+ 1479 076c 50       		.byte	0x50
+ 1480 076d 01       		.uleb128 0x1
+ 1481 076e 30       		.byte	0x30
+ 1482 076f 00       		.byte	0
+ 1483 0770 17       		.uleb128 0x17
+ 1484 0771 92000000 		.4byte	.LVL25
+ 1485 0775 730A0000 		.4byte	0xa73
+ 1486 0779 85070000 		.4byte	0x785
+ 1487 077d 16       		.uleb128 0x16
+ 1488 077e 01       		.uleb128 0x1
+ 1489 077f 50       		.byte	0x50
+ 1490 0780 03       		.uleb128 0x3
+ 1491 0781 0A       		.byte	0xa
+ 1492 0782 F401     		.2byte	0x1f4
+ 1493 0784 00       		.byte	0
+ 1494 0785 17       		.uleb128 0x17
+ 1495 0786 98000000 		.4byte	.LVL26
+ 1496 078a 950A0000 		.4byte	0xa95
+ 1497 078e 98070000 		.4byte	0x798
+ 1498 0792 16       		.uleb128 0x16
+ 1499 0793 01       		.uleb128 0x1
+ 1500 0794 50       		.byte	0x50
+ 1501 0795 01       		.uleb128 0x1
+ 1502 0796 30       		.byte	0x30
+ 1503 0797 00       		.byte	0
+ 1504 0798 17       		.uleb128 0x17
+ 1505 0799 9E000000 		.4byte	.LVL27
+ 1506 079d A60A0000 		.4byte	0xaa6
+ 1507 07a1 AB070000 		.4byte	0x7ab
+ 1508 07a5 16       		.uleb128 0x16
+ 1509 07a6 01       		.uleb128 0x1
+ 1510 07a7 50       		.byte	0x50
+ 1511 07a8 01       		.uleb128 0x1
+ 1512 07a9 30       		.byte	0x30
+ 1513 07aa 00       		.byte	0
+ 1514 07ab 17       		.uleb128 0x17
+ 1515 07ac B0000000 		.4byte	.LVL28
+ 1516 07b0 CC090000 		.4byte	0x9cc
+ 1517 07b4 C4070000 		.4byte	0x7c4
+ 1518 07b8 16       		.uleb128 0x16
+ 1519 07b9 01       		.uleb128 0x1
+ 1520 07ba 51       		.byte	0x51
+ 1521 07bb 01       		.uleb128 0x1
+ 1522 07bc 30       		.byte	0x30
+ 1523 07bd 16       		.uleb128 0x16
+ 1524 07be 01       		.uleb128 0x1
+ 1525 07bf 50       		.byte	0x50
+ 1526 07c0 02       		.uleb128 0x2
+ 1527 07c1 74       		.byte	0x74
+ 1528 07c2 04       		.sleb128 4
+ 1529 07c3 00       		.byte	0
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 31
+
+
+ 1530 07c4 14       		.uleb128 0x14
+ 1531 07c5 C2000000 		.4byte	.LVL29
+ 1532 07c9 B70A0000 		.4byte	0xab7
+ 1533 07cd 14       		.uleb128 0x14
+ 1534 07ce D0000000 		.4byte	.LVL30
+ 1535 07d2 5D0A0000 		.4byte	0xa5d
+ 1536 07d6 17       		.uleb128 0x17
+ 1537 07d7 D8000000 		.4byte	.LVL31
+ 1538 07db 730A0000 		.4byte	0xa73
+ 1539 07df EB070000 		.4byte	0x7eb
+ 1540 07e3 16       		.uleb128 0x16
+ 1541 07e4 01       		.uleb128 0x1
+ 1542 07e5 50       		.byte	0x50
+ 1543 07e6 03       		.uleb128 0x3
+ 1544 07e7 0A       		.byte	0xa
+ 1545 07e8 E803     		.2byte	0x3e8
+ 1546 07ea 00       		.byte	0
+ 1547 07eb 17       		.uleb128 0x17
+ 1548 07ec DE000000 		.4byte	.LVL32
+ 1549 07f0 840A0000 		.4byte	0xa84
+ 1550 07f4 FF070000 		.4byte	0x7ff
+ 1551 07f8 16       		.uleb128 0x16
+ 1552 07f9 01       		.uleb128 0x1
+ 1553 07fa 50       		.byte	0x50
+ 1554 07fb 02       		.uleb128 0x2
+ 1555 07fc 09       		.byte	0x9
+ 1556 07fd AA       		.byte	0xaa
+ 1557 07fe 00       		.byte	0
+ 1558 07ff 17       		.uleb128 0x17
+ 1559 0800 E4000000 		.4byte	.LVL33
+ 1560 0804 950A0000 		.4byte	0xa95
+ 1561 0808 12080000 		.4byte	0x812
+ 1562 080c 16       		.uleb128 0x16
+ 1563 080d 01       		.uleb128 0x1
+ 1564 080e 50       		.byte	0x50
+ 1565 080f 01       		.uleb128 0x1
+ 1566 0810 30       		.byte	0x30
+ 1567 0811 00       		.byte	0
+ 1568 0812 17       		.uleb128 0x17
+ 1569 0813 EA000000 		.4byte	.LVL34
+ 1570 0817 A60A0000 		.4byte	0xaa6
+ 1571 081b 25080000 		.4byte	0x825
+ 1572 081f 16       		.uleb128 0x16
+ 1573 0820 01       		.uleb128 0x1
+ 1574 0821 50       		.byte	0x50
+ 1575 0822 01       		.uleb128 0x1
+ 1576 0823 31       		.byte	0x31
+ 1577 0824 00       		.byte	0
+ 1578 0825 17       		.uleb128 0x17
+ 1579 0826 F2000000 		.4byte	.LVL35
+ 1580 082a 730A0000 		.4byte	0xa73
+ 1581 082e 3A080000 		.4byte	0x83a
+ 1582 0832 16       		.uleb128 0x16
+ 1583 0833 01       		.uleb128 0x1
+ 1584 0834 50       		.byte	0x50
+ 1585 0835 03       		.uleb128 0x3
+ 1586 0836 0A       		.byte	0xa
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 32
+
+
+ 1587 0837 F401     		.2byte	0x1f4
+ 1588 0839 00       		.byte	0
+ 1589 083a 17       		.uleb128 0x17
+ 1590 083b F8000000 		.4byte	.LVL36
+ 1591 083f 950A0000 		.4byte	0xa95
+ 1592 0843 4D080000 		.4byte	0x84d
+ 1593 0847 16       		.uleb128 0x16
+ 1594 0848 01       		.uleb128 0x1
+ 1595 0849 50       		.byte	0x50
+ 1596 084a 01       		.uleb128 0x1
+ 1597 084b 30       		.byte	0x30
+ 1598 084c 00       		.byte	0
+ 1599 084d 17       		.uleb128 0x17
+ 1600 084e FE000000 		.4byte	.LVL37
+ 1601 0852 A60A0000 		.4byte	0xaa6
+ 1602 0856 60080000 		.4byte	0x860
+ 1603 085a 16       		.uleb128 0x16
+ 1604 085b 01       		.uleb128 0x1
+ 1605 085c 50       		.byte	0x50
+ 1606 085d 01       		.uleb128 0x1
+ 1607 085e 30       		.byte	0x30
+ 1608 085f 00       		.byte	0
+ 1609 0860 17       		.uleb128 0x17
+ 1610 0861 12010000 		.4byte	.LVL38
+ 1611 0865 CC090000 		.4byte	0x9cc
+ 1612 0869 7F080000 		.4byte	0x87f
+ 1613 086d 16       		.uleb128 0x16
+ 1614 086e 01       		.uleb128 0x1
+ 1615 086f 52       		.byte	0x52
+ 1616 0870 02       		.uleb128 0x2
+ 1617 0871 75       		.byte	0x75
+ 1618 0872 00       		.sleb128 0
+ 1619 0873 16       		.uleb128 0x16
+ 1620 0874 01       		.uleb128 0x1
+ 1621 0875 51       		.byte	0x51
+ 1622 0876 01       		.uleb128 0x1
+ 1623 0877 30       		.byte	0x30
+ 1624 0878 16       		.uleb128 0x16
+ 1625 0879 01       		.uleb128 0x1
+ 1626 087a 50       		.byte	0x50
+ 1627 087b 02       		.uleb128 0x2
+ 1628 087c 74       		.byte	0x74
+ 1629 087d 04       		.sleb128 4
+ 1630 087e 00       		.byte	0
+ 1631 087f 14       		.uleb128 0x14
+ 1632 0880 2A010000 		.4byte	.LVL39
+ 1633 0884 5D0A0000 		.4byte	0xa5d
+ 1634 0888 00       		.byte	0
+ 1635 0889 06       		.uleb128 0x6
+ 1636 088a 04       		.byte	0x4
+ 1637 088b 17050000 		.4byte	0x517
+ 1638 088f 1B       		.uleb128 0x1b
+ 1639 0890 10150000 		.4byte	.LASF177
+ 1640 0894 01       		.byte	0x1
+ 1641 0895 98       		.byte	0x98
+ 1642 0896 68000000 		.4byte	0x68
+ 1643 089a 00000000 		.4byte	.LFB39
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 33
+
+
+ 1644 089e 60000000 		.4byte	.LFE39-.LFB39
+ 1645 08a2 01       		.uleb128 0x1
+ 1646 08a3 9C       		.byte	0x9c
+ 1647 08a4 76090000 		.4byte	0x976
+ 1648 08a8 17       		.uleb128 0x17
+ 1649 08a9 0A000000 		.4byte	.LVL41
+ 1650 08ad 840A0000 		.4byte	0xa84
+ 1651 08b1 BB080000 		.4byte	0x8bb
+ 1652 08b5 16       		.uleb128 0x16
+ 1653 08b6 01       		.uleb128 0x1
+ 1654 08b7 50       		.byte	0x50
+ 1655 08b8 01       		.uleb128 0x1
+ 1656 08b9 30       		.byte	0x30
+ 1657 08ba 00       		.byte	0
+ 1658 08bb 17       		.uleb128 0x17
+ 1659 08bc 10000000 		.4byte	.LVL42
+ 1660 08c0 950A0000 		.4byte	0xa95
+ 1661 08c4 CE080000 		.4byte	0x8ce
+ 1662 08c8 16       		.uleb128 0x16
+ 1663 08c9 01       		.uleb128 0x1
+ 1664 08ca 50       		.byte	0x50
+ 1665 08cb 01       		.uleb128 0x1
+ 1666 08cc 31       		.byte	0x31
+ 1667 08cd 00       		.byte	0
+ 1668 08ce 17       		.uleb128 0x17
+ 1669 08cf 16000000 		.4byte	.LVL43
+ 1670 08d3 A60A0000 		.4byte	0xaa6
+ 1671 08d7 E1080000 		.4byte	0x8e1
+ 1672 08db 16       		.uleb128 0x16
+ 1673 08dc 01       		.uleb128 0x1
+ 1674 08dd 50       		.byte	0x50
+ 1675 08de 01       		.uleb128 0x1
+ 1676 08df 31       		.byte	0x31
+ 1677 08e0 00       		.byte	0
+ 1678 08e1 17       		.uleb128 0x17
+ 1679 08e2 1C000000 		.4byte	.LVL44
+ 1680 08e6 C80A0000 		.4byte	0xac8
+ 1681 08ea F4080000 		.4byte	0x8f4
+ 1682 08ee 16       		.uleb128 0x16
+ 1683 08ef 01       		.uleb128 0x1
+ 1684 08f0 50       		.byte	0x50
+ 1685 08f1 01       		.uleb128 0x1
+ 1686 08f2 31       		.byte	0x31
+ 1687 08f3 00       		.byte	0
+ 1688 08f4 17       		.uleb128 0x17
+ 1689 08f5 22000000 		.4byte	.LVL45
+ 1690 08f9 D90A0000 		.4byte	0xad9
+ 1691 08fd 07090000 		.4byte	0x907
+ 1692 0901 16       		.uleb128 0x16
+ 1693 0902 01       		.uleb128 0x1
+ 1694 0903 50       		.byte	0x50
+ 1695 0904 01       		.uleb128 0x1
+ 1696 0905 31       		.byte	0x31
+ 1697 0906 00       		.byte	0
+ 1698 0907 14       		.uleb128 0x14
+ 1699 0908 26000000 		.4byte	.LVL46
+ 1700 090c EA0A0000 		.4byte	0xaea
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 34
+
+
+ 1701 0910 14       		.uleb128 0x14
+ 1702 0911 2A000000 		.4byte	.LVL47
+ 1703 0915 F10A0000 		.4byte	0xaf1
+ 1704 0919 17       		.uleb128 0x17
+ 1705 091a 30000000 		.4byte	.LVL48
+ 1706 091e F80A0000 		.4byte	0xaf8
+ 1707 0922 30090000 		.4byte	0x930
+ 1708 0926 16       		.uleb128 0x16
+ 1709 0927 01       		.uleb128 0x1
+ 1710 0928 50       		.byte	0x50
+ 1711 0929 05       		.uleb128 0x5
+ 1712 092a 03       		.byte	0x3
+ 1713 092b 00000000 		.4byte	BleCallBack
+ 1714 092f 00       		.byte	0
+ 1715 0930 14       		.uleb128 0x14
+ 1716 0931 34000000 		.4byte	.LVL49
+ 1717 0935 0E0B0000 		.4byte	0xb0e
+ 1718 0939 14       		.uleb128 0x14
+ 1719 093a 3C000000 		.4byte	.LVL50
+ 1720 093e 190B0000 		.4byte	0xb19
+ 1721 0942 14       		.uleb128 0x14
+ 1722 0943 44000000 		.4byte	.LVL51
+ 1723 0947 2E0B0000 		.4byte	0xb2e
+ 1724 094b 14       		.uleb128 0x14
+ 1725 094c 48000000 		.4byte	.LVL52
+ 1726 0950 350B0000 		.4byte	0xb35
+ 1727 0954 14       		.uleb128 0x14
+ 1728 0955 4C000000 		.4byte	.LVL53
+ 1729 0959 22060000 		.4byte	0x622
+ 1730 095d 14       		.uleb128 0x14
+ 1731 095e 50000000 		.4byte	.LVL54
+ 1732 0962 3C0B0000 		.4byte	0xb3c
+ 1733 0966 15       		.uleb128 0x15
+ 1734 0967 56000000 		.4byte	.LVL55
+ 1735 096b 440B0000 		.4byte	0xb44
+ 1736 096f 16       		.uleb128 0x16
+ 1737 0970 01       		.uleb128 0x1
+ 1738 0971 50       		.byte	0x50
+ 1739 0972 01       		.uleb128 0x1
+ 1740 0973 33       		.byte	0x33
+ 1741 0974 00       		.byte	0
+ 1742 0975 00       		.byte	0
+ 1743 0976 1C       		.uleb128 0x1c
+ 1744 0977 AD090000 		.4byte	.LASF178
+ 1745 097b 09       		.byte	0x9
+ 1746 097c 2C09     		.2byte	0x92c
+ 1747 097e 6C050000 		.4byte	0x56c
+ 1748 0982 1C       		.uleb128 0x1c
+ 1749 0983 BE0B0000 		.4byte	.LASF179
+ 1750 0987 09       		.byte	0x9
+ 1751 0988 2D09     		.2byte	0x92d
+ 1752 098a 72040000 		.4byte	0x472
+ 1753 098e 1D       		.uleb128 0x1d
+ 1754 098f 590C0000 		.4byte	.LASF180
+ 1755 0993 01       		.byte	0x1
+ 1756 0994 04       		.byte	0x4
+ 1757 0995 8C000000 		.4byte	0x8c
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 35
+
+
+ 1758 0999 05       		.uleb128 0x5
+ 1759 099a 03       		.byte	0x3
+ 1760 099b 00000000 		.4byte	fingerPos
+ 1761 099f 1D       		.uleb128 0x1d
+ 1762 09a0 F3070000 		.4byte	.LASF181
+ 1763 09a4 01       		.byte	0x1
+ 1764 09a5 05       		.byte	0x5
+ 1765 09a6 8C000000 		.4byte	0x8c
+ 1766 09aa 05       		.uleb128 0x5
+ 1767 09ab 03       		.byte	0x3
+ 1768 09ac 00000000 		.4byte	fingerPosOld
+ 1769 09b0 1D       		.uleb128 0x1d
+ 1770 09b1 380F0000 		.4byte	.LASF182
+ 1771 09b5 01       		.byte	0x1
+ 1772 09b6 07       		.byte	0x7
+ 1773 09b7 68000000 		.4byte	0x68
+ 1774 09bb 05       		.uleb128 0x5
+ 1775 09bc 03       		.byte	0x3
+ 1776 09bd 00000000 		.4byte	capsenseNotify
+ 1777 09c1 1E       		.uleb128 0x1e
+ 1778 09c2 630C0000 		.4byte	.LASF183
+ 1779 09c6 0A       		.byte	0xa
+ 1780 09c7 20       		.byte	0x20
+ 1781 09c8 81000000 		.4byte	0x81
+ 1782 09cc 1F       		.uleb128 0x1f
+ 1783 09cd 6C060000 		.4byte	.LASF185
+ 1784 09d1 0C       		.byte	0xc
+ 1785 09d2 7701     		.2byte	0x177
+ 1786 09d4 36040000 		.4byte	0x436
+ 1787 09d8 F1090000 		.4byte	0x9f1
+ 1788 09dc 11       		.uleb128 0x11
+ 1789 09dd F1090000 		.4byte	0x9f1
+ 1790 09e1 11       		.uleb128 0x11
+ 1791 09e2 8C000000 		.4byte	0x8c
+ 1792 09e6 11       		.uleb128 0x11
+ 1793 09e7 F7090000 		.4byte	0x9f7
+ 1794 09eb 11       		.uleb128 0x11
+ 1795 09ec 81000000 		.4byte	0x81
+ 1796 09f0 00       		.byte	0
+ 1797 09f1 06       		.uleb128 0x6
+ 1798 09f2 04       		.byte	0x4
+ 1799 09f3 DF040000 		.4byte	0x4df
+ 1800 09f7 06       		.uleb128 0x6
+ 1801 09f8 04       		.byte	0x4
+ 1802 09f9 72040000 		.4byte	0x472
+ 1803 09fd 1E       		.uleb128 0x1e
+ 1804 09fe 3F090000 		.4byte	.LASF184
+ 1805 0a02 0B       		.byte	0xb
+ 1806 0a03 20       		.byte	0x20
+ 1807 0a04 81000000 		.4byte	0x81
+ 1808 0a08 20       		.uleb128 0x20
+ 1809 0a09 C9140000 		.4byte	.LASF186
+ 1810 0a0d 07       		.byte	0x7
+ 1811 0a0e DF       		.byte	0xdf
+ 1812 0a0f 02030000 		.4byte	0x302
+ 1813 0a13 220A0000 		.4byte	0xa22
+ 1814 0a17 11       		.uleb128 0x11
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 36
+
+
+ 1815 0a18 72040000 		.4byte	0x472
+ 1816 0a1c 11       		.uleb128 0x11
+ 1817 0a1d 220A0000 		.4byte	0xa22
+ 1818 0a21 00       		.byte	0
+ 1819 0a22 06       		.uleb128 0x6
+ 1820 0a23 04       		.byte	0x4
+ 1821 0a24 EB040000 		.4byte	0x4eb
+ 1822 0a28 1F       		.uleb128 0x1f
+ 1823 0a29 860D0000 		.4byte	.LASF187
+ 1824 0a2d 08       		.byte	0x8
+ 1825 0a2e B001     		.2byte	0x1b0
+ 1826 0a30 02030000 		.4byte	0x302
+ 1827 0a34 3E0A0000 		.4byte	0xa3e
+ 1828 0a38 11       		.uleb128 0x11
+ 1829 0a39 81000000 		.4byte	0x81
+ 1830 0a3d 00       		.byte	0
+ 1831 0a3e 21       		.uleb128 0x21
+ 1832 0a3f FF0B0000 		.4byte	.LASF188
+ 1833 0a43 0D       		.byte	0xd
+ 1834 0a44 92       		.byte	0x92
+ 1835 0a45 21       		.uleb128 0x21
+ 1836 0a46 9B0A0000 		.4byte	.LASF189
+ 1837 0a4a 0D       		.byte	0xd
+ 1838 0a4b 93       		.byte	0x93
+ 1839 0a4c 22       		.uleb128 0x22
+ 1840 0a4d 090C0000 		.4byte	.LASF191
+ 1841 0a51 0A       		.byte	0xa
+ 1842 0a52 1D       		.byte	0x1d
+ 1843 0a53 5D0A0000 		.4byte	0xa5d
+ 1844 0a57 11       		.uleb128 0x11
+ 1845 0a58 81000000 		.4byte	0x81
+ 1846 0a5c 00       		.byte	0
+ 1847 0a5d 1F       		.uleb128 0x1f
+ 1848 0a5e 3F140000 		.4byte	.LASF190
+ 1849 0a62 07       		.byte	0x7
+ 1850 0a63 B301     		.2byte	0x1b3
+ 1851 0a65 02030000 		.4byte	0x302
+ 1852 0a69 730A0000 		.4byte	0xa73
+ 1853 0a6d 11       		.uleb128 0x11
+ 1854 0a6e 72040000 		.4byte	0x472
+ 1855 0a72 00       		.byte	0
+ 1856 0a73 22       		.uleb128 0x22
+ 1857 0a74 A0120000 		.4byte	.LASF192
+ 1858 0a78 0E       		.byte	0xe
+ 1859 0a79 57       		.byte	0x57
+ 1860 0a7a 840A0000 		.4byte	0xa84
+ 1861 0a7e 11       		.uleb128 0x11
+ 1862 0a7f 97000000 		.4byte	0x97
+ 1863 0a83 00       		.byte	0
+ 1864 0a84 22       		.uleb128 0x22
+ 1865 0a85 A40A0000 		.4byte	.LASF193
+ 1866 0a89 0F       		.byte	0xf
+ 1867 0a8a 07       		.byte	0x7
+ 1868 0a8b 950A0000 		.4byte	0xa95
+ 1869 0a8f 11       		.uleb128 0x11
+ 1870 0a90 76000000 		.4byte	0x76
+ 1871 0a94 00       		.byte	0
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 37
+
+
+ 1872 0a95 22       		.uleb128 0x22
+ 1873 0a96 AE0D0000 		.4byte	.LASF194
+ 1874 0a9a 10       		.byte	0x10
+ 1875 0a9b 33       		.byte	0x33
+ 1876 0a9c A60A0000 		.4byte	0xaa6
+ 1877 0aa0 11       		.uleb128 0x11
+ 1878 0aa1 81000000 		.4byte	0x81
+ 1879 0aa5 00       		.byte	0
+ 1880 0aa6 22       		.uleb128 0x22
+ 1881 0aa7 070B0000 		.4byte	.LASF195
+ 1882 0aab 11       		.byte	0x11
+ 1883 0aac 33       		.byte	0x33
+ 1884 0aad B70A0000 		.4byte	0xab7
+ 1885 0ab1 11       		.uleb128 0x11
+ 1886 0ab2 81000000 		.4byte	0x81
+ 1887 0ab6 00       		.byte	0
+ 1888 0ab7 22       		.uleb128 0x22
+ 1889 0ab8 130F0000 		.4byte	.LASF196
+ 1890 0abc 0B       		.byte	0xb
+ 1891 0abd 1D       		.byte	0x1d
+ 1892 0abe C80A0000 		.4byte	0xac8
+ 1893 0ac2 11       		.uleb128 0x11
+ 1894 0ac3 81000000 		.4byte	0x81
+ 1895 0ac7 00       		.byte	0
+ 1896 0ac8 22       		.uleb128 0x22
+ 1897 0ac9 23000000 		.4byte	.LASF197
+ 1898 0acd 12       		.byte	0x12
+ 1899 0ace 33       		.byte	0x33
+ 1900 0acf D90A0000 		.4byte	0xad9
+ 1901 0ad3 11       		.uleb128 0x11
+ 1902 0ad4 81000000 		.4byte	0x81
+ 1903 0ad8 00       		.byte	0
+ 1904 0ad9 22       		.uleb128 0x22
+ 1905 0ada 360D0000 		.4byte	.LASF198
+ 1906 0ade 13       		.byte	0x13
+ 1907 0adf 33       		.byte	0x33
+ 1908 0ae0 EA0A0000 		.4byte	0xaea
+ 1909 0ae4 11       		.uleb128 0x11
+ 1910 0ae5 81000000 		.4byte	0x81
+ 1911 0ae9 00       		.byte	0
+ 1912 0aea 21       		.uleb128 0x21
+ 1913 0aeb 1F0F0000 		.4byte	.LASF199
+ 1914 0aef 14       		.byte	0x14
+ 1915 0af0 99       		.byte	0x99
+ 1916 0af1 21       		.uleb128 0x21
+ 1917 0af2 680A0000 		.4byte	.LASF200
+ 1918 0af6 15       		.byte	0x15
+ 1919 0af7 AC       		.byte	0xac
+ 1920 0af8 1F       		.uleb128 0x1f
+ 1921 0af9 6B090000 		.4byte	.LASF201
+ 1922 0afd 08       		.byte	0x8
+ 1923 0afe A101     		.2byte	0x1a1
+ 1924 0b00 02030000 		.4byte	0x302
+ 1925 0b04 0E0B0000 		.4byte	0xb0e
+ 1926 0b08 11       		.uleb128 0x11
+ 1927 0b09 22050000 		.4byte	0x522
+ 1928 0b0d 00       		.byte	0
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 38
+
+
+ 1929 0b0e 1E       		.uleb128 0x1e
+ 1930 0b0f 0E100000 		.4byte	.LASF202
+ 1931 0b13 14       		.byte	0x14
+ 1932 0b14 9F       		.byte	0x9f
+ 1933 0b15 97000000 		.4byte	0x97
+ 1934 0b19 20       		.uleb128 0x20
+ 1935 0b1a 27090000 		.4byte	.LASF203
+ 1936 0b1e 15       		.byte	0x15
+ 1937 0b1f E2       		.byte	0xe2
+ 1938 0b20 8C000000 		.4byte	0x8c
+ 1939 0b24 2E0B0000 		.4byte	0xb2e
+ 1940 0b28 11       		.uleb128 0x11
+ 1941 0b29 97000000 		.4byte	0x97
+ 1942 0b2d 00       		.byte	0
+ 1943 0b2e 21       		.uleb128 0x21
+ 1944 0b2f A8120000 		.4byte	.LASF204
+ 1945 0b33 15       		.byte	0x15
+ 1946 0b34 AF       		.byte	0xaf
+ 1947 0b35 21       		.uleb128 0x21
+ 1948 0b36 14130000 		.4byte	.LASF205
+ 1949 0b3a 14       		.byte	0x14
+ 1950 0b3b A2       		.byte	0xa2
+ 1951 0b3c 23       		.uleb128 0x23
+ 1952 0b3d AC080000 		.4byte	.LASF206
+ 1953 0b41 05       		.byte	0x5
+ 1954 0b42 A304     		.2byte	0x4a3
+ 1955 0b44 24       		.uleb128 0x24
+ 1956 0b45 8C0A0000 		.4byte	.LASF207
+ 1957 0b49 05       		.byte	0x5
+ 1958 0b4a 6B04     		.2byte	0x46b
+ 1959 0b4c 37030000 		.4byte	0x337
+ 1960 0b50 11       		.uleb128 0x11
+ 1961 0b51 37030000 		.4byte	0x337
+ 1962 0b55 00       		.byte	0
+ 1963 0b56 00       		.byte	0
+ 1964              		.section	.debug_abbrev,"",%progbits
+ 1965              	.Ldebug_abbrev0:
+ 1966 0000 01       		.uleb128 0x1
+ 1967 0001 11       		.uleb128 0x11
+ 1968 0002 01       		.byte	0x1
+ 1969 0003 25       		.uleb128 0x25
+ 1970 0004 0E       		.uleb128 0xe
+ 1971 0005 13       		.uleb128 0x13
+ 1972 0006 0B       		.uleb128 0xb
+ 1973 0007 03       		.uleb128 0x3
+ 1974 0008 0E       		.uleb128 0xe
+ 1975 0009 1B       		.uleb128 0x1b
+ 1976 000a 0E       		.uleb128 0xe
+ 1977 000b 55       		.uleb128 0x55
+ 1978 000c 17       		.uleb128 0x17
+ 1979 000d 11       		.uleb128 0x11
+ 1980 000e 01       		.uleb128 0x1
+ 1981 000f 10       		.uleb128 0x10
+ 1982 0010 17       		.uleb128 0x17
+ 1983 0011 00       		.byte	0
+ 1984 0012 00       		.byte	0
+ 1985 0013 02       		.uleb128 0x2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 39
+
+
+ 1986 0014 24       		.uleb128 0x24
+ 1987 0015 00       		.byte	0
+ 1988 0016 0B       		.uleb128 0xb
+ 1989 0017 0B       		.uleb128 0xb
+ 1990 0018 3E       		.uleb128 0x3e
+ 1991 0019 0B       		.uleb128 0xb
+ 1992 001a 03       		.uleb128 0x3
+ 1993 001b 0E       		.uleb128 0xe
+ 1994 001c 00       		.byte	0
+ 1995 001d 00       		.byte	0
+ 1996 001e 03       		.uleb128 0x3
+ 1997 001f 16       		.uleb128 0x16
+ 1998 0020 00       		.byte	0
+ 1999 0021 03       		.uleb128 0x3
+ 2000 0022 0E       		.uleb128 0xe
+ 2001 0023 3A       		.uleb128 0x3a
+ 2002 0024 0B       		.uleb128 0xb
+ 2003 0025 3B       		.uleb128 0x3b
+ 2004 0026 0B       		.uleb128 0xb
+ 2005 0027 49       		.uleb128 0x49
+ 2006 0028 13       		.uleb128 0x13
+ 2007 0029 00       		.byte	0
+ 2008 002a 00       		.byte	0
+ 2009 002b 04       		.uleb128 0x4
+ 2010 002c 24       		.uleb128 0x24
+ 2011 002d 00       		.byte	0
+ 2012 002e 0B       		.uleb128 0xb
+ 2013 002f 0B       		.uleb128 0xb
+ 2014 0030 3E       		.uleb128 0x3e
+ 2015 0031 0B       		.uleb128 0xb
+ 2016 0032 03       		.uleb128 0x3
+ 2017 0033 08       		.uleb128 0x8
+ 2018 0034 00       		.byte	0
+ 2019 0035 00       		.byte	0
+ 2020 0036 05       		.uleb128 0x5
+ 2021 0037 0F       		.uleb128 0xf
+ 2022 0038 00       		.byte	0
+ 2023 0039 0B       		.uleb128 0xb
+ 2024 003a 0B       		.uleb128 0xb
+ 2025 003b 00       		.byte	0
+ 2026 003c 00       		.byte	0
+ 2027 003d 06       		.uleb128 0x6
+ 2028 003e 0F       		.uleb128 0xf
+ 2029 003f 00       		.byte	0
+ 2030 0040 0B       		.uleb128 0xb
+ 2031 0041 0B       		.uleb128 0xb
+ 2032 0042 49       		.uleb128 0x49
+ 2033 0043 13       		.uleb128 0x13
+ 2034 0044 00       		.byte	0
+ 2035 0045 00       		.byte	0
+ 2036 0046 07       		.uleb128 0x7
+ 2037 0047 04       		.uleb128 0x4
+ 2038 0048 01       		.byte	0x1
+ 2039 0049 0B       		.uleb128 0xb
+ 2040 004a 0B       		.uleb128 0xb
+ 2041 004b 3A       		.uleb128 0x3a
+ 2042 004c 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 40
+
+
+ 2043 004d 3B       		.uleb128 0x3b
+ 2044 004e 0B       		.uleb128 0xb
+ 2045 004f 01       		.uleb128 0x1
+ 2046 0050 13       		.uleb128 0x13
+ 2047 0051 00       		.byte	0
+ 2048 0052 00       		.byte	0
+ 2049 0053 08       		.uleb128 0x8
+ 2050 0054 28       		.uleb128 0x28
+ 2051 0055 00       		.byte	0
+ 2052 0056 03       		.uleb128 0x3
+ 2053 0057 0E       		.uleb128 0xe
+ 2054 0058 1C       		.uleb128 0x1c
+ 2055 0059 0D       		.uleb128 0xd
+ 2056 005a 00       		.byte	0
+ 2057 005b 00       		.byte	0
+ 2058 005c 09       		.uleb128 0x9
+ 2059 005d 04       		.uleb128 0x4
+ 2060 005e 01       		.byte	0x1
+ 2061 005f 0B       		.uleb128 0xb
+ 2062 0060 0B       		.uleb128 0xb
+ 2063 0061 3A       		.uleb128 0x3a
+ 2064 0062 0B       		.uleb128 0xb
+ 2065 0063 3B       		.uleb128 0x3b
+ 2066 0064 05       		.uleb128 0x5
+ 2067 0065 01       		.uleb128 0x1
+ 2068 0066 13       		.uleb128 0x13
+ 2069 0067 00       		.byte	0
+ 2070 0068 00       		.byte	0
+ 2071 0069 0A       		.uleb128 0xa
+ 2072 006a 16       		.uleb128 0x16
+ 2073 006b 00       		.byte	0
+ 2074 006c 03       		.uleb128 0x3
+ 2075 006d 0E       		.uleb128 0xe
+ 2076 006e 3A       		.uleb128 0x3a
+ 2077 006f 0B       		.uleb128 0xb
+ 2078 0070 3B       		.uleb128 0x3b
+ 2079 0071 05       		.uleb128 0x5
+ 2080 0072 49       		.uleb128 0x49
+ 2081 0073 13       		.uleb128 0x13
+ 2082 0074 00       		.byte	0
+ 2083 0075 00       		.byte	0
+ 2084 0076 0B       		.uleb128 0xb
+ 2085 0077 13       		.uleb128 0x13
+ 2086 0078 01       		.byte	0x1
+ 2087 0079 0B       		.uleb128 0xb
+ 2088 007a 0B       		.uleb128 0xb
+ 2089 007b 3A       		.uleb128 0x3a
+ 2090 007c 0B       		.uleb128 0xb
+ 2091 007d 3B       		.uleb128 0x3b
+ 2092 007e 05       		.uleb128 0x5
+ 2093 007f 01       		.uleb128 0x1
+ 2094 0080 13       		.uleb128 0x13
+ 2095 0081 00       		.byte	0
+ 2096 0082 00       		.byte	0
+ 2097 0083 0C       		.uleb128 0xc
+ 2098 0084 0D       		.uleb128 0xd
+ 2099 0085 00       		.byte	0
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 41
+
+
+ 2100 0086 03       		.uleb128 0x3
+ 2101 0087 0E       		.uleb128 0xe
+ 2102 0088 3A       		.uleb128 0x3a
+ 2103 0089 0B       		.uleb128 0xb
+ 2104 008a 3B       		.uleb128 0x3b
+ 2105 008b 05       		.uleb128 0x5
+ 2106 008c 49       		.uleb128 0x49
+ 2107 008d 13       		.uleb128 0x13
+ 2108 008e 38       		.uleb128 0x38
+ 2109 008f 0B       		.uleb128 0xb
+ 2110 0090 00       		.byte	0
+ 2111 0091 00       		.byte	0
+ 2112 0092 0D       		.uleb128 0xd
+ 2113 0093 0D       		.uleb128 0xd
+ 2114 0094 00       		.byte	0
+ 2115 0095 03       		.uleb128 0x3
+ 2116 0096 08       		.uleb128 0x8
+ 2117 0097 3A       		.uleb128 0x3a
+ 2118 0098 0B       		.uleb128 0xb
+ 2119 0099 3B       		.uleb128 0x3b
+ 2120 009a 05       		.uleb128 0x5
+ 2121 009b 49       		.uleb128 0x49
+ 2122 009c 13       		.uleb128 0x13
+ 2123 009d 38       		.uleb128 0x38
+ 2124 009e 0B       		.uleb128 0xb
+ 2125 009f 00       		.byte	0
+ 2126 00a0 00       		.byte	0
+ 2127 00a1 0E       		.uleb128 0xe
+ 2128 00a2 13       		.uleb128 0x13
+ 2129 00a3 01       		.byte	0x1
+ 2130 00a4 0B       		.uleb128 0xb
+ 2131 00a5 0B       		.uleb128 0xb
+ 2132 00a6 3A       		.uleb128 0x3a
+ 2133 00a7 0B       		.uleb128 0xb
+ 2134 00a8 3B       		.uleb128 0x3b
+ 2135 00a9 0B       		.uleb128 0xb
+ 2136 00aa 01       		.uleb128 0x1
+ 2137 00ab 13       		.uleb128 0x13
+ 2138 00ac 00       		.byte	0
+ 2139 00ad 00       		.byte	0
+ 2140 00ae 0F       		.uleb128 0xf
+ 2141 00af 0D       		.uleb128 0xd
+ 2142 00b0 00       		.byte	0
+ 2143 00b1 03       		.uleb128 0x3
+ 2144 00b2 0E       		.uleb128 0xe
+ 2145 00b3 3A       		.uleb128 0x3a
+ 2146 00b4 0B       		.uleb128 0xb
+ 2147 00b5 3B       		.uleb128 0x3b
+ 2148 00b6 0B       		.uleb128 0xb
+ 2149 00b7 49       		.uleb128 0x49
+ 2150 00b8 13       		.uleb128 0x13
+ 2151 00b9 38       		.uleb128 0x38
+ 2152 00ba 0B       		.uleb128 0xb
+ 2153 00bb 00       		.byte	0
+ 2154 00bc 00       		.byte	0
+ 2155 00bd 10       		.uleb128 0x10
+ 2156 00be 15       		.uleb128 0x15
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 42
+
+
+ 2157 00bf 01       		.byte	0x1
+ 2158 00c0 27       		.uleb128 0x27
+ 2159 00c1 19       		.uleb128 0x19
+ 2160 00c2 01       		.uleb128 0x1
+ 2161 00c3 13       		.uleb128 0x13
+ 2162 00c4 00       		.byte	0
+ 2163 00c5 00       		.byte	0
+ 2164 00c6 11       		.uleb128 0x11
+ 2165 00c7 05       		.uleb128 0x5
+ 2166 00c8 00       		.byte	0
+ 2167 00c9 49       		.uleb128 0x49
+ 2168 00ca 13       		.uleb128 0x13
+ 2169 00cb 00       		.byte	0
+ 2170 00cc 00       		.byte	0
+ 2171 00cd 12       		.uleb128 0x12
+ 2172 00ce 2E       		.uleb128 0x2e
+ 2173 00cf 01       		.byte	0x1
+ 2174 00d0 3F       		.uleb128 0x3f
+ 2175 00d1 19       		.uleb128 0x19
+ 2176 00d2 03       		.uleb128 0x3
+ 2177 00d3 0E       		.uleb128 0xe
+ 2178 00d4 3A       		.uleb128 0x3a
+ 2179 00d5 0B       		.uleb128 0xb
+ 2180 00d6 3B       		.uleb128 0x3b
+ 2181 00d7 0B       		.uleb128 0xb
+ 2182 00d8 11       		.uleb128 0x11
+ 2183 00d9 01       		.uleb128 0x1
+ 2184 00da 12       		.uleb128 0x12
+ 2185 00db 06       		.uleb128 0x6
+ 2186 00dc 40       		.uleb128 0x40
+ 2187 00dd 18       		.uleb128 0x18
+ 2188 00de 9742     		.uleb128 0x2117
+ 2189 00e0 19       		.uleb128 0x19
+ 2190 00e1 01       		.uleb128 0x1
+ 2191 00e2 13       		.uleb128 0x13
+ 2192 00e3 00       		.byte	0
+ 2193 00e4 00       		.byte	0
+ 2194 00e5 13       		.uleb128 0x13
+ 2195 00e6 34       		.uleb128 0x34
+ 2196 00e7 00       		.byte	0
+ 2197 00e8 03       		.uleb128 0x3
+ 2198 00e9 0E       		.uleb128 0xe
+ 2199 00ea 3A       		.uleb128 0x3a
+ 2200 00eb 0B       		.uleb128 0xb
+ 2201 00ec 3B       		.uleb128 0x3b
+ 2202 00ed 0B       		.uleb128 0xb
+ 2203 00ee 49       		.uleb128 0x49
+ 2204 00ef 13       		.uleb128 0x13
+ 2205 00f0 02       		.uleb128 0x2
+ 2206 00f1 18       		.uleb128 0x18
+ 2207 00f2 00       		.byte	0
+ 2208 00f3 00       		.byte	0
+ 2209 00f4 14       		.uleb128 0x14
+ 2210 00f5 898201   		.uleb128 0x4109
+ 2211 00f8 00       		.byte	0
+ 2212 00f9 11       		.uleb128 0x11
+ 2213 00fa 01       		.uleb128 0x1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 43
+
+
+ 2214 00fb 31       		.uleb128 0x31
+ 2215 00fc 13       		.uleb128 0x13
+ 2216 00fd 00       		.byte	0
+ 2217 00fe 00       		.byte	0
+ 2218 00ff 15       		.uleb128 0x15
+ 2219 0100 898201   		.uleb128 0x4109
+ 2220 0103 01       		.byte	0x1
+ 2221 0104 11       		.uleb128 0x11
+ 2222 0105 01       		.uleb128 0x1
+ 2223 0106 31       		.uleb128 0x31
+ 2224 0107 13       		.uleb128 0x13
+ 2225 0108 00       		.byte	0
+ 2226 0109 00       		.byte	0
+ 2227 010a 16       		.uleb128 0x16
+ 2228 010b 8A8201   		.uleb128 0x410a
+ 2229 010e 00       		.byte	0
+ 2230 010f 02       		.uleb128 0x2
+ 2231 0110 18       		.uleb128 0x18
+ 2232 0111 9142     		.uleb128 0x2111
+ 2233 0113 18       		.uleb128 0x18
+ 2234 0114 00       		.byte	0
+ 2235 0115 00       		.byte	0
+ 2236 0116 17       		.uleb128 0x17
+ 2237 0117 898201   		.uleb128 0x4109
+ 2238 011a 01       		.byte	0x1
+ 2239 011b 11       		.uleb128 0x11
+ 2240 011c 01       		.uleb128 0x1
+ 2241 011d 31       		.uleb128 0x31
+ 2242 011e 13       		.uleb128 0x13
+ 2243 011f 01       		.uleb128 0x1
+ 2244 0120 13       		.uleb128 0x13
+ 2245 0121 00       		.byte	0
+ 2246 0122 00       		.byte	0
+ 2247 0123 18       		.uleb128 0x18
+ 2248 0124 2E       		.uleb128 0x2e
+ 2249 0125 01       		.byte	0x1
+ 2250 0126 3F       		.uleb128 0x3f
+ 2251 0127 19       		.uleb128 0x19
+ 2252 0128 03       		.uleb128 0x3
+ 2253 0129 0E       		.uleb128 0xe
+ 2254 012a 3A       		.uleb128 0x3a
+ 2255 012b 0B       		.uleb128 0xb
+ 2256 012c 3B       		.uleb128 0x3b
+ 2257 012d 0B       		.uleb128 0xb
+ 2258 012e 27       		.uleb128 0x27
+ 2259 012f 19       		.uleb128 0x19
+ 2260 0130 11       		.uleb128 0x11
+ 2261 0131 01       		.uleb128 0x1
+ 2262 0132 12       		.uleb128 0x12
+ 2263 0133 06       		.uleb128 0x6
+ 2264 0134 40       		.uleb128 0x40
+ 2265 0135 18       		.uleb128 0x18
+ 2266 0136 9742     		.uleb128 0x2117
+ 2267 0138 19       		.uleb128 0x19
+ 2268 0139 01       		.uleb128 0x1
+ 2269 013a 13       		.uleb128 0x13
+ 2270 013b 00       		.byte	0
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 44
+
+
+ 2271 013c 00       		.byte	0
+ 2272 013d 19       		.uleb128 0x19
+ 2273 013e 05       		.uleb128 0x5
+ 2274 013f 00       		.byte	0
+ 2275 0140 03       		.uleb128 0x3
+ 2276 0141 0E       		.uleb128 0xe
+ 2277 0142 3A       		.uleb128 0x3a
+ 2278 0143 0B       		.uleb128 0xb
+ 2279 0144 3B       		.uleb128 0x3b
+ 2280 0145 0B       		.uleb128 0xb
+ 2281 0146 49       		.uleb128 0x49
+ 2282 0147 13       		.uleb128 0x13
+ 2283 0148 02       		.uleb128 0x2
+ 2284 0149 17       		.uleb128 0x17
+ 2285 014a 00       		.byte	0
+ 2286 014b 00       		.byte	0
+ 2287 014c 1A       		.uleb128 0x1a
+ 2288 014d 34       		.uleb128 0x34
+ 2289 014e 00       		.byte	0
+ 2290 014f 03       		.uleb128 0x3
+ 2291 0150 0E       		.uleb128 0xe
+ 2292 0151 3A       		.uleb128 0x3a
+ 2293 0152 0B       		.uleb128 0xb
+ 2294 0153 3B       		.uleb128 0x3b
+ 2295 0154 0B       		.uleb128 0xb
+ 2296 0155 49       		.uleb128 0x49
+ 2297 0156 13       		.uleb128 0x13
+ 2298 0157 02       		.uleb128 0x2
+ 2299 0158 17       		.uleb128 0x17
+ 2300 0159 00       		.byte	0
+ 2301 015a 00       		.byte	0
+ 2302 015b 1B       		.uleb128 0x1b
+ 2303 015c 2E       		.uleb128 0x2e
+ 2304 015d 01       		.byte	0x1
+ 2305 015e 3F       		.uleb128 0x3f
+ 2306 015f 19       		.uleb128 0x19
+ 2307 0160 03       		.uleb128 0x3
+ 2308 0161 0E       		.uleb128 0xe
+ 2309 0162 3A       		.uleb128 0x3a
+ 2310 0163 0B       		.uleb128 0xb
+ 2311 0164 3B       		.uleb128 0x3b
+ 2312 0165 0B       		.uleb128 0xb
+ 2313 0166 49       		.uleb128 0x49
+ 2314 0167 13       		.uleb128 0x13
+ 2315 0168 11       		.uleb128 0x11
+ 2316 0169 01       		.uleb128 0x1
+ 2317 016a 12       		.uleb128 0x12
+ 2318 016b 06       		.uleb128 0x6
+ 2319 016c 40       		.uleb128 0x40
+ 2320 016d 18       		.uleb128 0x18
+ 2321 016e 9742     		.uleb128 0x2117
+ 2322 0170 19       		.uleb128 0x19
+ 2323 0171 01       		.uleb128 0x1
+ 2324 0172 13       		.uleb128 0x13
+ 2325 0173 00       		.byte	0
+ 2326 0174 00       		.byte	0
+ 2327 0175 1C       		.uleb128 0x1c
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 45
+
+
+ 2328 0176 34       		.uleb128 0x34
+ 2329 0177 00       		.byte	0
+ 2330 0178 03       		.uleb128 0x3
+ 2331 0179 0E       		.uleb128 0xe
+ 2332 017a 3A       		.uleb128 0x3a
+ 2333 017b 0B       		.uleb128 0xb
+ 2334 017c 3B       		.uleb128 0x3b
+ 2335 017d 05       		.uleb128 0x5
+ 2336 017e 49       		.uleb128 0x49
+ 2337 017f 13       		.uleb128 0x13
+ 2338 0180 3F       		.uleb128 0x3f
+ 2339 0181 19       		.uleb128 0x19
+ 2340 0182 3C       		.uleb128 0x3c
+ 2341 0183 19       		.uleb128 0x19
+ 2342 0184 00       		.byte	0
+ 2343 0185 00       		.byte	0
+ 2344 0186 1D       		.uleb128 0x1d
+ 2345 0187 34       		.uleb128 0x34
+ 2346 0188 00       		.byte	0
+ 2347 0189 03       		.uleb128 0x3
+ 2348 018a 0E       		.uleb128 0xe
+ 2349 018b 3A       		.uleb128 0x3a
+ 2350 018c 0B       		.uleb128 0xb
+ 2351 018d 3B       		.uleb128 0x3b
+ 2352 018e 0B       		.uleb128 0xb
+ 2353 018f 49       		.uleb128 0x49
+ 2354 0190 13       		.uleb128 0x13
+ 2355 0191 3F       		.uleb128 0x3f
+ 2356 0192 19       		.uleb128 0x19
+ 2357 0193 02       		.uleb128 0x2
+ 2358 0194 18       		.uleb128 0x18
+ 2359 0195 00       		.byte	0
+ 2360 0196 00       		.byte	0
+ 2361 0197 1E       		.uleb128 0x1e
+ 2362 0198 2E       		.uleb128 0x2e
+ 2363 0199 00       		.byte	0
+ 2364 019a 3F       		.uleb128 0x3f
+ 2365 019b 19       		.uleb128 0x19
+ 2366 019c 03       		.uleb128 0x3
+ 2367 019d 0E       		.uleb128 0xe
+ 2368 019e 3A       		.uleb128 0x3a
+ 2369 019f 0B       		.uleb128 0xb
+ 2370 01a0 3B       		.uleb128 0x3b
+ 2371 01a1 0B       		.uleb128 0xb
+ 2372 01a2 27       		.uleb128 0x27
+ 2373 01a3 19       		.uleb128 0x19
+ 2374 01a4 49       		.uleb128 0x49
+ 2375 01a5 13       		.uleb128 0x13
+ 2376 01a6 3C       		.uleb128 0x3c
+ 2377 01a7 19       		.uleb128 0x19
+ 2378 01a8 00       		.byte	0
+ 2379 01a9 00       		.byte	0
+ 2380 01aa 1F       		.uleb128 0x1f
+ 2381 01ab 2E       		.uleb128 0x2e
+ 2382 01ac 01       		.byte	0x1
+ 2383 01ad 3F       		.uleb128 0x3f
+ 2384 01ae 19       		.uleb128 0x19
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 46
+
+
+ 2385 01af 03       		.uleb128 0x3
+ 2386 01b0 0E       		.uleb128 0xe
+ 2387 01b1 3A       		.uleb128 0x3a
+ 2388 01b2 0B       		.uleb128 0xb
+ 2389 01b3 3B       		.uleb128 0x3b
+ 2390 01b4 05       		.uleb128 0x5
+ 2391 01b5 27       		.uleb128 0x27
+ 2392 01b6 19       		.uleb128 0x19
+ 2393 01b7 49       		.uleb128 0x49
+ 2394 01b8 13       		.uleb128 0x13
+ 2395 01b9 3C       		.uleb128 0x3c
+ 2396 01ba 19       		.uleb128 0x19
+ 2397 01bb 01       		.uleb128 0x1
+ 2398 01bc 13       		.uleb128 0x13
+ 2399 01bd 00       		.byte	0
+ 2400 01be 00       		.byte	0
+ 2401 01bf 20       		.uleb128 0x20
+ 2402 01c0 2E       		.uleb128 0x2e
+ 2403 01c1 01       		.byte	0x1
+ 2404 01c2 3F       		.uleb128 0x3f
+ 2405 01c3 19       		.uleb128 0x19
+ 2406 01c4 03       		.uleb128 0x3
+ 2407 01c5 0E       		.uleb128 0xe
+ 2408 01c6 3A       		.uleb128 0x3a
+ 2409 01c7 0B       		.uleb128 0xb
+ 2410 01c8 3B       		.uleb128 0x3b
+ 2411 01c9 0B       		.uleb128 0xb
+ 2412 01ca 27       		.uleb128 0x27
+ 2413 01cb 19       		.uleb128 0x19
+ 2414 01cc 49       		.uleb128 0x49
+ 2415 01cd 13       		.uleb128 0x13
+ 2416 01ce 3C       		.uleb128 0x3c
+ 2417 01cf 19       		.uleb128 0x19
+ 2418 01d0 01       		.uleb128 0x1
+ 2419 01d1 13       		.uleb128 0x13
+ 2420 01d2 00       		.byte	0
+ 2421 01d3 00       		.byte	0
+ 2422 01d4 21       		.uleb128 0x21
+ 2423 01d5 2E       		.uleb128 0x2e
+ 2424 01d6 00       		.byte	0
+ 2425 01d7 3F       		.uleb128 0x3f
+ 2426 01d8 19       		.uleb128 0x19
+ 2427 01d9 03       		.uleb128 0x3
+ 2428 01da 0E       		.uleb128 0xe
+ 2429 01db 3A       		.uleb128 0x3a
+ 2430 01dc 0B       		.uleb128 0xb
+ 2431 01dd 3B       		.uleb128 0x3b
+ 2432 01de 0B       		.uleb128 0xb
+ 2433 01df 27       		.uleb128 0x27
+ 2434 01e0 19       		.uleb128 0x19
+ 2435 01e1 3C       		.uleb128 0x3c
+ 2436 01e2 19       		.uleb128 0x19
+ 2437 01e3 00       		.byte	0
+ 2438 01e4 00       		.byte	0
+ 2439 01e5 22       		.uleb128 0x22
+ 2440 01e6 2E       		.uleb128 0x2e
+ 2441 01e7 01       		.byte	0x1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 47
+
+
+ 2442 01e8 3F       		.uleb128 0x3f
+ 2443 01e9 19       		.uleb128 0x19
+ 2444 01ea 03       		.uleb128 0x3
+ 2445 01eb 0E       		.uleb128 0xe
+ 2446 01ec 3A       		.uleb128 0x3a
+ 2447 01ed 0B       		.uleb128 0xb
+ 2448 01ee 3B       		.uleb128 0x3b
+ 2449 01ef 0B       		.uleb128 0xb
+ 2450 01f0 27       		.uleb128 0x27
+ 2451 01f1 19       		.uleb128 0x19
+ 2452 01f2 3C       		.uleb128 0x3c
+ 2453 01f3 19       		.uleb128 0x19
+ 2454 01f4 01       		.uleb128 0x1
+ 2455 01f5 13       		.uleb128 0x13
+ 2456 01f6 00       		.byte	0
+ 2457 01f7 00       		.byte	0
+ 2458 01f8 23       		.uleb128 0x23
+ 2459 01f9 2E       		.uleb128 0x2e
+ 2460 01fa 00       		.byte	0
+ 2461 01fb 3F       		.uleb128 0x3f
+ 2462 01fc 19       		.uleb128 0x19
+ 2463 01fd 03       		.uleb128 0x3
+ 2464 01fe 0E       		.uleb128 0xe
+ 2465 01ff 3A       		.uleb128 0x3a
+ 2466 0200 0B       		.uleb128 0xb
+ 2467 0201 3B       		.uleb128 0x3b
+ 2468 0202 05       		.uleb128 0x5
+ 2469 0203 27       		.uleb128 0x27
+ 2470 0204 19       		.uleb128 0x19
+ 2471 0205 3C       		.uleb128 0x3c
+ 2472 0206 19       		.uleb128 0x19
+ 2473 0207 00       		.byte	0
+ 2474 0208 00       		.byte	0
+ 2475 0209 24       		.uleb128 0x24
+ 2476 020a 2E       		.uleb128 0x2e
+ 2477 020b 01       		.byte	0x1
+ 2478 020c 3F       		.uleb128 0x3f
+ 2479 020d 19       		.uleb128 0x19
+ 2480 020e 03       		.uleb128 0x3
+ 2481 020f 0E       		.uleb128 0xe
+ 2482 0210 3A       		.uleb128 0x3a
+ 2483 0211 0B       		.uleb128 0xb
+ 2484 0212 3B       		.uleb128 0x3b
+ 2485 0213 05       		.uleb128 0x5
+ 2486 0214 27       		.uleb128 0x27
+ 2487 0215 19       		.uleb128 0x19
+ 2488 0216 49       		.uleb128 0x49
+ 2489 0217 13       		.uleb128 0x13
+ 2490 0218 3C       		.uleb128 0x3c
+ 2491 0219 19       		.uleb128 0x19
+ 2492 021a 00       		.byte	0
+ 2493 021b 00       		.byte	0
+ 2494 021c 00       		.byte	0
+ 2495              		.section	.debug_loc,"",%progbits
+ 2496              	.Ldebug_loc0:
+ 2497              	.LLST0:
+ 2498 0000 00000000 		.4byte	.LVL6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 48
+
+
+ 2499 0004 22000000 		.4byte	.LVL7
+ 2500 0008 0100     		.2byte	0x1
+ 2501 000a 50       		.byte	0x50
+ 2502 000b 22000000 		.4byte	.LVL7
+ 2503 000f 2C000000 		.4byte	.LVL10
+ 2504 0013 0400     		.2byte	0x4
+ 2505 0015 F3       		.byte	0xf3
+ 2506 0016 01       		.uleb128 0x1
+ 2507 0017 50       		.byte	0x50
+ 2508 0018 9F       		.byte	0x9f
+ 2509 0019 2C000000 		.4byte	.LVL10
+ 2510 001d 2F000000 		.4byte	.LVL11-1
+ 2511 0021 0100     		.2byte	0x1
+ 2512 0023 50       		.byte	0x50
+ 2513 0024 2F000000 		.4byte	.LVL11-1
+ 2514 0028 3E000000 		.4byte	.LVL15
+ 2515 002c 0400     		.2byte	0x4
+ 2516 002e F3       		.byte	0xf3
+ 2517 002f 01       		.uleb128 0x1
+ 2518 0030 50       		.byte	0x50
+ 2519 0031 9F       		.byte	0x9f
+ 2520 0032 3E000000 		.4byte	.LVL15
+ 2521 0036 46000000 		.4byte	.LVL16
+ 2522 003a 0100     		.2byte	0x1
+ 2523 003c 50       		.byte	0x50
+ 2524 003d 46000000 		.4byte	.LVL16
+ 2525 0041 34010000 		.4byte	.LFE38
+ 2526 0045 0400     		.2byte	0x4
+ 2527 0047 F3       		.byte	0xf3
+ 2528 0048 01       		.uleb128 0x1
+ 2529 0049 50       		.byte	0x50
+ 2530 004a 9F       		.byte	0x9f
+ 2531 004b 00000000 		.4byte	0
+ 2532 004f 00000000 		.4byte	0
+ 2533              	.LLST1:
+ 2534 0053 00000000 		.4byte	.LVL6
+ 2535 0057 25000000 		.4byte	.LVL8-1
+ 2536 005b 0100     		.2byte	0x1
+ 2537 005d 51       		.byte	0x51
+ 2538 005e 25000000 		.4byte	.LVL8-1
+ 2539 0062 2C000000 		.4byte	.LVL10
+ 2540 0066 0100     		.2byte	0x1
+ 2541 0068 54       		.byte	0x54
+ 2542 0069 2C000000 		.4byte	.LVL10
+ 2543 006d 2F000000 		.4byte	.LVL11-1
+ 2544 0071 0100     		.2byte	0x1
+ 2545 0073 51       		.byte	0x51
+ 2546 0074 2F000000 		.4byte	.LVL11-1
+ 2547 0078 3E000000 		.4byte	.LVL15
+ 2548 007c 0100     		.2byte	0x1
+ 2549 007e 54       		.byte	0x54
+ 2550 007f 3E000000 		.4byte	.LVL15
+ 2551 0083 48000000 		.4byte	.LVL17
+ 2552 0087 0100     		.2byte	0x1
+ 2553 0089 51       		.byte	0x51
+ 2554 008a 48000000 		.4byte	.LVL17
+ 2555 008e 2A010000 		.4byte	.LVL40
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 49
+
+
+ 2556 0092 0100     		.2byte	0x1
+ 2557 0094 54       		.byte	0x54
+ 2558 0095 2A010000 		.4byte	.LVL40
+ 2559 0099 34010000 		.4byte	.LFE38
+ 2560 009d 0400     		.2byte	0x4
+ 2561 009f F3       		.byte	0xf3
+ 2562 00a0 01       		.uleb128 0x1
+ 2563 00a1 51       		.byte	0x51
+ 2564 00a2 9F       		.byte	0x9f
+ 2565 00a3 00000000 		.4byte	0
+ 2566 00a7 00000000 		.4byte	0
+ 2567              	.LLST2:
+ 2568 00ab 3E000000 		.4byte	.LVL15
+ 2569 00af 48000000 		.4byte	.LVL17
+ 2570 00b3 0100     		.2byte	0x1
+ 2571 00b5 51       		.byte	0x51
+ 2572 00b6 48000000 		.4byte	.LVL17
+ 2573 00ba 2A010000 		.4byte	.LVL39
+ 2574 00be 0100     		.2byte	0x1
+ 2575 00c0 54       		.byte	0x54
+ 2576 00c1 00000000 		.4byte	0
+ 2577 00c5 00000000 		.4byte	0
+ 2578              		.section	.debug_aranges,"",%progbits
+ 2579 0000 3C000000 		.4byte	0x3c
+ 2580 0004 0200     		.2byte	0x2
+ 2581 0006 00000000 		.4byte	.Ldebug_info0
+ 2582 000a 04       		.byte	0x4
+ 2583 000b 00       		.byte	0
+ 2584 000c 0000     		.2byte	0
+ 2585 000e 0000     		.2byte	0
+ 2586 0010 00000000 		.4byte	.LFB35
+ 2587 0014 3C000000 		.4byte	.LFE35-.LFB35
+ 2588 0018 00000000 		.4byte	.LFB36
+ 2589 001c 3C000000 		.4byte	.LFE36-.LFB36
+ 2590 0020 00000000 		.4byte	.LFB37
+ 2591 0024 60000000 		.4byte	.LFE37-.LFB37
+ 2592 0028 00000000 		.4byte	.LFB38
+ 2593 002c 34010000 		.4byte	.LFE38-.LFB38
+ 2594 0030 00000000 		.4byte	.LFB39
+ 2595 0034 60000000 		.4byte	.LFE39-.LFB39
+ 2596 0038 00000000 		.4byte	0
+ 2597 003c 00000000 		.4byte	0
+ 2598              		.section	.debug_ranges,"",%progbits
+ 2599              	.Ldebug_ranges0:
+ 2600 0000 00000000 		.4byte	.LFB35
+ 2601 0004 3C000000 		.4byte	.LFE35
+ 2602 0008 00000000 		.4byte	.LFB36
+ 2603 000c 3C000000 		.4byte	.LFE36
+ 2604 0010 00000000 		.4byte	.LFB37
+ 2605 0014 60000000 		.4byte	.LFE37
+ 2606 0018 00000000 		.4byte	.LFB38
+ 2607 001c 34010000 		.4byte	.LFE38
+ 2608 0020 00000000 		.4byte	.LFB39
+ 2609 0024 60000000 		.4byte	.LFE39
+ 2610 0028 00000000 		.4byte	0
+ 2611 002c 00000000 		.4byte	0
+ 2612              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 50
+
+
+ 2613              	.Ldebug_line0:
+ 2614 0000 10030000 		.section	.debug_str,"MS",%progbits,1
+ 2614      02006902 
+ 2614      00000201 
+ 2614      FB0E0D00 
+ 2614      01010101 
+ 2615              	.LASF69:
+ 2616 0000 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_RX_CREDIT_IND\000"
+ 2616      455F4556 
+ 2616      545F4C32 
+ 2616      4341505F 
+ 2616      43424643 
+ 2617              	.LASF197:
+ 2618 0023 50696E5F 		.ascii	"Pin_l293_IC2_EN_12_Write\000"
+ 2618      6C323933 
+ 2618      5F494332 
+ 2618      5F454E5F 
+ 2618      31325F57 
+ 2619              	.LASF23:
+ 2620 003c 4359424C 		.ascii	"CYBLE_EVT_STACK_BUSY_STATUS\000"
+ 2620      455F4556 
+ 2620      545F5354 
+ 2620      41434B5F 
+ 2620      42555359 
+ 2621              	.LASF161:
+ 2622 0058 4359424C 		.ascii	"CYBLE_STATE_STOPPED\000"
+ 2622      455F5354 
+ 2622      4154455F 
+ 2622      53544F50 
+ 2622      50454400 
+ 2623              	.LASF68:
+ 2624 006c 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_READ\000"
+ 2624      455F4556 
+ 2624      545F4C32 
+ 2624      4341505F 
+ 2624      43424643 
+ 2625              	.LASF150:
+ 2626 008b 4359424C 		.ascii	"CYBLE_CONN_HANDLE_T\000"
+ 2626      455F434F 
+ 2626      4E4E5F48 
+ 2626      414E444C 
+ 2626      455F5400 
+ 2627              	.LASF122:
+ 2628 009f 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_ENC_KEY_SIZE\000"
+ 2628      455F4741 
+ 2628      54545F45 
+ 2628      52525F49 
+ 2628      4E535546 
+ 2629              	.LASF157:
+ 2630 00c8 636F6E6E 		.ascii	"connHandle\000"
+ 2630      48616E64 
+ 2630      6C6500
+ 2631              	.LASF78:
+ 2632 00d3 4359424C 		.ascii	"CYBLE_ERROR_MEMORY_ALLOCATION_FAILED\000"
+ 2632      455F4552 
+ 2632      524F525F 
+ 2632      4D454D4F 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 51
+
+
+ 2632      52595F41 
+ 2633              	.LASF116:
+ 2634 00f8 4359424C 		.ascii	"CYBLE_GATT_ERR_REQUEST_NOT_SUPPORTED\000"
+ 2634      455F4741 
+ 2634      54545F45 
+ 2634      52525F52 
+ 2634      45515545 
+ 2635              	.LASF111:
+ 2636 011d 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_HANDLE\000"
+ 2636      455F4741 
+ 2636      54545F45 
+ 2636      52525F49 
+ 2636      4E56414C 
+ 2637              	.LASF172:
+ 2638 013b 75706461 		.ascii	"updateCapsense\000"
+ 2638      74654361 
+ 2638      7073656E 
+ 2638      736500
+ 2639              	.LASF67:
+ 2640 014a 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
+ 2640      455F4556 
+ 2640      545F4C32 
+ 2640      4341505F 
+ 2640      43424643 
+ 2641              	.LASF48:
+ 2642 016b 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_MULTI_RSP\000"
+ 2642      455F4556 
+ 2642      545F4741 
+ 2642      5454435F 
+ 2642      52454144 
+ 2643              	.LASF9:
+ 2644 018a 5F5F7569 		.ascii	"__uint8_t\000"
+ 2644      6E74385F 
+ 2644      7400
+ 2645              	.LASF109:
+ 2646 0194 4359424C 		.ascii	"CYBLE_LP_MODE_T\000"
+ 2646      455F4C50 
+ 2646      5F4D4F44 
+ 2646      455F5400 
+ 2647              	.LASF175:
+ 2648 01a4 77725265 		.ascii	"wrReqParam\000"
+ 2648      71506172 
+ 2648      616D00
+ 2649              	.LASF99:
+ 2650 01af 4359424C 		.ascii	"CYBLE_ERROR_NTF_DISABLED\000"
+ 2650      455F4552 
+ 2650      524F525F 
+ 2650      4E54465F 
+ 2650      44495341 
+ 2651              	.LASF20:
+ 2652 01c8 4359424C 		.ascii	"CYBLE_EVT_TIMEOUT\000"
+ 2652      455F4556 
+ 2652      545F5449 
+ 2652      4D454F55 
+ 2652      5400
+ 2653              	.LASF4:
+ 2654 01da 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 52
+
+
+ 2654      20696E74 
+ 2654      00
+ 2655              	.LASF88:
+ 2656 01e3 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_WRONG_ENCODING\000"
+ 2656      455F4552 
+ 2656      524F525F 
+ 2656      4C324341 
+ 2656      505F5053 
+ 2657              	.LASF152:
+ 2658 0208 4359424C 		.ascii	"CYBLE_GATT_VALUE_T\000"
+ 2658      455F4741 
+ 2658      54545F56 
+ 2658      414C5545 
+ 2658      5F5400
+ 2659              	.LASF22:
+ 2660 021b 4359424C 		.ascii	"CYBLE_EVT_HCI_STATUS\000"
+ 2660      455F4556 
+ 2660      545F4843 
+ 2660      495F5354 
+ 2660      41545553 
+ 2661              	.LASF136:
+ 2662 0230 4359424C 		.ascii	"CYBLE_GATTS_ERR_OPERATION_FAILED\000"
+ 2662      455F4741 
+ 2662      5454535F 
+ 2662      4552525F 
+ 2662      4F504552 
+ 2663              	.LASF35:
+ 2664 0251 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_START_STOP\000"
+ 2664      455F4556 
+ 2664      545F4741 
+ 2664      50435F53 
+ 2664      43414E5F 
+ 2665              	.LASF72:
+ 2666 0270 4359424C 		.ascii	"CYBLE_EVT_PENDING_FLASH_WRITE\000"
+ 2666      455F4556 
+ 2666      545F5045 
+ 2666      4E44494E 
+ 2666      475F464C 
+ 2667              	.LASF87:
+ 2668 028e 4359424C 		.ascii	"CYBLE_ERROR_SEC_FAILED\000"
+ 2668      455F4552 
+ 2668      524F525F 
+ 2668      5345435F 
+ 2668      4641494C 
+ 2669              	.LASF33:
+ 2670 02a5 4359424C 		.ascii	"CYBLE_EVT_GAP_ENCRYPT_CHANGE\000"
+ 2670      455F4556 
+ 2670      545F4741 
+ 2670      505F454E 
+ 2670      43525950 
+ 2671              	.LASF140:
+ 2672 02c2 4359424C 		.ascii	"CYBLE_GATT_ERR_ANCS_INVALID_COMMAND\000"
+ 2672      455F4741 
+ 2672      54545F45 
+ 2672      52525F41 
+ 2672      4E43535F 
+ 2673              	.LASF133:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 53
+
+
+ 2674 02e6 4359424C 		.ascii	"CYBLE_GATT_ERR_OP_CODE_NOT_SUPPORTED\000"
+ 2674      455F4741 
+ 2674      54545F45 
+ 2674      52525F4F 
+ 2674      505F434F 
+ 2675              	.LASF115:
+ 2676 030b 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_AUTHENTICATION\000"
+ 2676      455F4741 
+ 2676      54545F45 
+ 2676      52525F49 
+ 2676      4E535546 
+ 2677              	.LASF164:
+ 2678 0336 4359424C 		.ascii	"CYBLE_STATE_ADVERTISING\000"
+ 2678      455F5354 
+ 2678      4154455F 
+ 2678      41445645 
+ 2678      52544953 
+ 2679              	.LASF6:
+ 2680 034e 6C6F6E67 		.ascii	"long long int\000"
+ 2680      206C6F6E 
+ 2680      6720696E 
+ 2680      7400
+ 2681              	.LASF0:
+ 2682 035c 7369676E 		.ascii	"signed char\000"
+ 2682      65642063 
+ 2682      68617200 
+ 2683              	.LASF19:
+ 2684 0368 4359424C 		.ascii	"CYBLE_EVT_STACK_ON\000"
+ 2684      455F4556 
+ 2684      545F5354 
+ 2684      41434B5F 
+ 2684      4F4E00
+ 2685              	.LASF95:
+ 2686 037b 4359424C 		.ascii	"CYBLE_ERROR_DEVICE_ALREADY_EXISTS\000"
+ 2686      455F4552 
+ 2686      524F525F 
+ 2686      44455649 
+ 2686      43455F41 
+ 2687              	.LASF82:
+ 2688 039d 4359424C 		.ascii	"CYBLE_ERROR_NO_DEVICE_ENTITY\000"
+ 2688      455F4552 
+ 2688      524F525F 
+ 2688      4E4F5F44 
+ 2688      45564943 
+ 2689              	.LASF151:
+ 2690 03ba 61637475 		.ascii	"actualLen\000"
+ 2690      616C4C65 
+ 2690      6E00
+ 2691              	.LASF25:
+ 2692 03c4 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_REQ\000"
+ 2692      455F4556 
+ 2692      545F4741 
+ 2692      505F4155 
+ 2692      54485F52 
+ 2693              	.LASF46:
+ 2694 03db 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_RSP\000"
+ 2694      455F4556 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 54
+
+
+ 2694      545F4741 
+ 2694      5454435F 
+ 2694      52454144 
+ 2695              	.LASF114:
+ 2696 03f4 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_PDU\000"
+ 2696      455F4741 
+ 2696      54545F45 
+ 2696      52525F49 
+ 2696      4E56414C 
+ 2697              	.LASF102:
+ 2698 040f 4359424C 		.ascii	"CYBLE_ERROR_INVALID_STATE\000"
+ 2698      455F4552 
+ 2698      524F525F 
+ 2698      494E5641 
+ 2698      4C49445F 
+ 2699              	.LASF51:
+ 2700 0429 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_CMD_REQ\000"
+ 2700      455F4556 
+ 2700      545F4741 
+ 2700      5454535F 
+ 2700      57524954 
+ 2701              	.LASF130:
+ 2702 0447 4359424C 		.ascii	"CYBLE_GATT_ERR_CPS_INAPPROPRIATE_CONNECTION_PARAMET"
+ 2702      455F4741 
+ 2702      54545F45 
+ 2702      52525F43 
+ 2702      50535F49 
+ 2703 047a 45525300 		.ascii	"ERS\000"
+ 2704              	.LASF165:
+ 2705 047e 4359424C 		.ascii	"CYBLE_STATE_DISCONNECTED\000"
+ 2705      455F5354 
+ 2705      4154455F 
+ 2705      44495343 
+ 2705      4F4E4E45 
+ 2706              	.LASF30:
+ 2707 0497 4359424C 		.ascii	"CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP\000"
+ 2707      455F4556 
+ 2707      545F4741 
+ 2707      50505F41 
+ 2707      44564552 
+ 2708              	.LASF93:
+ 2709 04bf 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_NOT_IN_RANGE\000"
+ 2709      455F4552 
+ 2709      524F525F 
+ 2709      4C324341 
+ 2709      505F5053 
+ 2710              	.LASF11:
+ 2711 04e2 75696E74 		.ascii	"uint8\000"
+ 2711      3800
+ 2712              	.LASF54:
+ 2713 04e8 4359424C 		.ascii	"CYBLE_EVT_GATTC_EXEC_WRITE_RSP\000"
+ 2713      455F4556 
+ 2713      545F4741 
+ 2713      5454435F 
+ 2713      45584543 
+ 2714              	.LASF15:
+ 2715 0507 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 55
+
+
+ 2715      6C6500
+ 2716              	.LASF66:
+ 2717 050e 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
+ 2717      455F4556 
+ 2717      545F4C32 
+ 2717      4341505F 
+ 2717      43424643 
+ 2718              	.LASF76:
+ 2719 052f 4359424C 		.ascii	"CYBLE_ERROR_INVALID_PARAMETER\000"
+ 2719      455F4552 
+ 2719      524F525F 
+ 2719      494E5641 
+ 2719      4C49445F 
+ 2720              	.LASF168:
+ 2721 054d 7265645F 		.ascii	"red_State\000"
+ 2721      53746174 
+ 2721      6500
+ 2722              	.LASF126:
+ 2723 0557 4359424C 		.ascii	"CYBLE_GATT_ERR_UNSUPPORTED_GROUP_TYPE\000"
+ 2723      455F4741 
+ 2723      54545F45 
+ 2723      52525F55 
+ 2723      4E535550 
+ 2724              	.LASF13:
+ 2725 057d 75696E74 		.ascii	"uint32\000"
+ 2725      333200
+ 2726              	.LASF113:
+ 2727 0584 4359424C 		.ascii	"CYBLE_GATT_ERR_WRITE_NOT_PERMITTED\000"
+ 2727      455F4741 
+ 2727      54545F45 
+ 2727      52525F57 
+ 2727      52495445 
+ 2728              	.LASF74:
+ 2729 05a7 4359424C 		.ascii	"CYBLE_EVT_MAX\000"
+ 2729      455F4556 
+ 2729      545F4D41 
+ 2729      5800
+ 2730              	.LASF75:
+ 2731 05b5 4359424C 		.ascii	"CYBLE_ERROR_OK\000"
+ 2731      455F4552 
+ 2731      524F525F 
+ 2731      4F4B00
+ 2732              	.LASF110:
+ 2733 05c4 4359424C 		.ascii	"CYBLE_GATT_ERR_NONE\000"
+ 2733      455F4741 
+ 2733      54545F45 
+ 2733      52525F4E 
+ 2733      4F4E4500 
+ 2734              	.LASF61:
+ 2735 05d8 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
+ 2735      455F4556 
+ 2735      545F4C32 
+ 2735      4341505F 
+ 2735      434F4E4E 
+ 2736              	.LASF112:
+ 2737 05fe 4359424C 		.ascii	"CYBLE_GATT_ERR_READ_NOT_PERMITTED\000"
+ 2737      455F4741 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 56
+
+
+ 2737      54545F45 
+ 2737      52525F52 
+ 2737      4541445F 
+ 2738              	.LASF71:
+ 2739 0620 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
+ 2739      455F4556 
+ 2739      545F4C32 
+ 2739      4341505F 
+ 2739      43424643 
+ 2740              	.LASF154:
+ 2741 0644 61747472 		.ascii	"attrHandle\000"
+ 2741      48616E64 
+ 2741      6C6500
+ 2742              	.LASF7:
+ 2743 064f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2743      206C6F6E 
+ 2743      6720756E 
+ 2743      7369676E 
+ 2743      65642069 
+ 2744              	.LASF153:
+ 2745 0666 76616C75 		.ascii	"value\000"
+ 2745      6500
+ 2746              	.LASF185:
+ 2747 066c 4379426C 		.ascii	"CyBle_GattsWriteAttributeValue\000"
+ 2747      655F4761 
+ 2747      74747357 
+ 2747      72697465 
+ 2747      41747472 
+ 2748              	.LASF176:
+ 2749 068b 426C6543 		.ascii	"BleCallBack\000"
+ 2749      616C6C42 
+ 2749      61636B00 
+ 2750              	.LASF59:
+ 2751 0697 4359424C 		.ascii	"CYBLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
+ 2751      455F4556 
+ 2751      545F4741 
+ 2751      5454435F 
+ 2751      53544F50 
+ 2752              	.LASF80:
+ 2753 06b9 4359424C 		.ascii	"CYBLE_ERROR_OOB_NOT_AVAILABLE\000"
+ 2753      455F4552 
+ 2753      524F525F 
+ 2753      4F4F425F 
+ 2753      4E4F545F 
+ 2754              	.LASF73:
+ 2755 06d7 4359424C 		.ascii	"CYBLE_EVT_LE_PING_AUTH_TIMEOUT\000"
+ 2755      455F4556 
+ 2755      545F4C45 
+ 2755      5F50494E 
+ 2755      475F4155 
+ 2756              	.LASF137:
+ 2757 06f6 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_CRC\000"
+ 2757      455F4741 
+ 2757      54545F45 
+ 2757      52525F49 
+ 2757      4E56414C 
+ 2758              	.LASF132:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 57
+
+
+ 2759 0711 4359424C 		.ascii	"CYBLE_GATTS_ERR_PROCEDURE_ALREADY_IN_PROGRESS\000"
+ 2759      455F4741 
+ 2759      5454535F 
+ 2759      4552525F 
+ 2759      50524F43 
+ 2760              	.LASF89:
+ 2761 073f 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_ALREADY_REGISTERED\000"
+ 2761      455F4552 
+ 2761      524F525F 
+ 2761      4C324341 
+ 2761      505F5053 
+ 2762              	.LASF5:
+ 2763 0768 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2763      20756E73 
+ 2763      69676E65 
+ 2763      6420696E 
+ 2763      7400
+ 2764              	.LASF120:
+ 2765 077a 4359424C 		.ascii	"CYBLE_GATT_ERR_ATTRIBUTE_NOT_FOUND\000"
+ 2765      455F4741 
+ 2765      54545F45 
+ 2765      52525F41 
+ 2765      54545249 
+ 2766              	.LASF108:
+ 2767 079d 4359424C 		.ascii	"CYBLE_BLESS_INVALID\000"
+ 2767      455F424C 
+ 2767      4553535F 
+ 2767      494E5641 
+ 2767      4C494400 
+ 2768              	.LASF41:
+ 2769 07b1 4359424C 		.ascii	"CYBLE_EVT_GATTC_XCHNG_MTU_RSP\000"
+ 2769      455F4556 
+ 2769      545F4741 
+ 2769      5454435F 
+ 2769      5843484E 
+ 2770              	.LASF58:
+ 2771 07cf 4359424C 		.ascii	"CYBLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
+ 2771      455F4556 
+ 2771      545F4741 
+ 2771      5454535F 
+ 2771      44415441 
+ 2772              	.LASF181:
+ 2773 07f3 66696E67 		.ascii	"fingerPosOld\000"
+ 2773      6572506F 
+ 2773      734F6C64 
+ 2773      00
+ 2774              	.LASF171:
+ 2775 0800 67726565 		.ascii	"green_State\000"
+ 2775      6E5F5374 
+ 2775      61746500 
+ 2776              	.LASF92:
+ 2777 080c 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_CHANNEL_NOT_FOUND\000"
+ 2777      455F4552 
+ 2777      524F525F 
+ 2777      4C324341 
+ 2777      505F4348 
+ 2778              	.LASF173:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 58
+
+
+ 2779 0830 6576656E 		.ascii	"event\000"
+ 2779      7400
+ 2780              	.LASF121:
+ 2781 0836 4359424C 		.ascii	"CYBLE_GATT_ERR_ATTRIBUTE_NOT_LONG\000"
+ 2781      455F4741 
+ 2781      54545F45 
+ 2781      52525F41 
+ 2781      54545249 
+ 2782              	.LASF18:
+ 2783 0858 4359424C 		.ascii	"CYBLE_EVT_HOST_INVALID\000"
+ 2783      455F4556 
+ 2783      545F484F 
+ 2783      53545F49 
+ 2783      4E56414C 
+ 2784              	.LASF44:
+ 2785 086f 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_INFO_RSP\000"
+ 2785      455F4556 
+ 2785      545F4741 
+ 2785      5454435F 
+ 2785      46494E44 
+ 2786              	.LASF53:
+ 2787 088d 4359424C 		.ascii	"CYBLE_EVT_GATTS_EXEC_WRITE_REQ\000"
+ 2787      455F4556 
+ 2787      545F4741 
+ 2787      5454535F 
+ 2787      45584543 
+ 2788              	.LASF206:
+ 2789 08ac 4379426C 		.ascii	"CyBle_ProcessEvents\000"
+ 2789      655F5072 
+ 2789      6F636573 
+ 2789      73457665 
+ 2789      6E747300 
+ 2790              	.LASF139:
+ 2791 08c0 4359424C 		.ascii	"CYBLE_GATT_ERR_ANCS_UNKNOWN_COMMAND\000"
+ 2791      455F4741 
+ 2791      54545F45 
+ 2791      52525F41 
+ 2791      4E43535F 
+ 2792              	.LASF26:
+ 2793 08e4 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
+ 2793      455F4556 
+ 2793      545F4741 
+ 2793      505F5041 
+ 2793      53534B45 
+ 2794              	.LASF31:
+ 2795 0908 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_CONNECTED\000"
+ 2795      455F4556 
+ 2795      545F4741 
+ 2795      505F4445 
+ 2795      56494345 
+ 2796              	.LASF203:
+ 2797 0927 63617073 		.ascii	"capsense_GetCentroidPos\000"
+ 2797      656E7365 
+ 2797      5F476574 
+ 2797      43656E74 
+ 2797      726F6964 
+ 2798              	.LASF184:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 59
+
+
+ 2799 093f 67726565 		.ascii	"green_Read\000"
+ 2799      6E5F5265 
+ 2799      616400
+ 2800              	.LASF209:
+ 2801 094a 6D61696E 		.ascii	"main.c\000"
+ 2801      2E6300
+ 2802              	.LASF49:
+ 2803 0951 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_REQ\000"
+ 2803      455F4556 
+ 2803      545F4741 
+ 2803      5454535F 
+ 2803      57524954 
+ 2804              	.LASF201:
+ 2805 096b 4379426C 		.ascii	"CyBle_Start\000"
+ 2805      655F5374 
+ 2805      61727400 
+ 2806              	.LASF146:
+ 2807 0977 4359424C 		.ascii	"CYBLE_GATT_ERR_CODE_T\000"
+ 2807      455F4741 
+ 2807      54545F45 
+ 2807      52525F43 
+ 2807      4F44455F 
+ 2808              	.LASF131:
+ 2809 098d 4359424C 		.ascii	"CYBLE_GATT_ERR_HTS_OUT_OF_RANGE\000"
+ 2809      455F4741 
+ 2809      54545F45 
+ 2809      52525F48 
+ 2809      54535F4F 
+ 2810              	.LASF178:
+ 2811 09ad 6379426C 		.ascii	"cyBle_state\000"
+ 2811      655F7374 
+ 2811      61746500 
+ 2812              	.LASF27:
+ 2813 09b9 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
+ 2813      455F4556 
+ 2813      545F4741 
+ 2813      505F5041 
+ 2813      53534B45 
+ 2814              	.LASF210:
+ 2815 09df 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\1\\bleapp-master\\PSoC_Creator\\"
+ 2815      6E697665 
+ 2815      725C4479 
+ 2815      706C6F6D 
+ 2815      5C315C62 
+ 2816 0a0d 63617073 		.ascii	"capsenseled\\capsenseled.cydsn\000"
+ 2816      656E7365 
+ 2816      6C65645C 
+ 2816      63617073 
+ 2816      656E7365 
+ 2817              	.LASF38:
+ 2818 0a2b 4359424C 		.ascii	"CYBLE_EVT_GATT_CONNECT_IND\000"
+ 2818      455F4556 
+ 2818      545F4741 
+ 2818      54545F43 
+ 2818      4F4E4E45 
+ 2819              	.LASF149:
+ 2820 0a46 61747449 		.ascii	"attId\000"
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 60
+
+
+ 2820      6400
+ 2821              	.LASF63:
+ 2822 0a4c 4359424C 		.ascii	"CYBLE_EVT_L2CAP_COMMAND_REJ\000"
+ 2822      455F4556 
+ 2822      545F4C32 
+ 2822      4341505F 
+ 2822      434F4D4D 
+ 2823              	.LASF200:
+ 2824 0a68 63617073 		.ascii	"capsense_InitializeEnabledBaselines\000"
+ 2824      656E7365 
+ 2824      5F496E69 
+ 2824      7469616C 
+ 2824      697A6545 
+ 2825              	.LASF207:
+ 2826 0a8c 4379426C 		.ascii	"CyBle_EnterLPM\000"
+ 2826      655F456E 
+ 2826      7465724C 
+ 2826      504D00
+ 2827              	.LASF189:
+ 2828 0a9b 70776D5F 		.ascii	"pwm_Stop\000"
+ 2828      53746F70 
+ 2828      00
+ 2829              	.LASF193:
+ 2830 0aa4 77726974 		.ascii	"writeShiftRegisters\000"
+ 2830      65536869 
+ 2830      66745265 
+ 2830      67697374 
+ 2830      65727300 
+ 2831              	.LASF98:
+ 2832 0ab8 4359424C 		.ascii	"CYBLE_ERROR_MAX\000"
+ 2832      455F4552 
+ 2832      524F525F 
+ 2832      4D415800 
+ 2833              	.LASF64:
+ 2834 0ac8 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_IND\000"
+ 2834      455F4556 
+ 2834      545F4C32 
+ 2834      4341505F 
+ 2834      43424643 
+ 2835              	.LASF43:
+ 2836 0ae6 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
+ 2836      455F4556 
+ 2836      545F4741 
+ 2836      5454435F 
+ 2836      52454144 
+ 2837              	.LASF195:
+ 2838 0b07 50696E5F 		.ascii	"Pin_l293_IC1_EN_34_Write\000"
+ 2838      6C323933 
+ 2838      5F494331 
+ 2838      5F454E5F 
+ 2838      33345F57 
+ 2839              	.LASF17:
+ 2840 0b20 73697A65 		.ascii	"sizetype\000"
+ 2840      74797065 
+ 2840      00
+ 2841              	.LASF127:
+ 2842 0b29 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_RESOURCE\000"
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 61
+
+
+ 2842      455F4741 
+ 2842      54545F45 
+ 2842      52525F49 
+ 2842      4E535546 
+ 2843              	.LASF159:
+ 2844 0b4e 4359424C 		.ascii	"CYBLE_GATTS_WRITE_REQ_PARAM_T\000"
+ 2844      455F4741 
+ 2844      5454535F 
+ 2844      57524954 
+ 2844      455F5245 
+ 2845              	.LASF156:
+ 2846 0b6c 4359424C 		.ascii	"CYBLE_GATTS_HANDLE_VALUE_NTF_T\000"
+ 2846      455F4741 
+ 2846      5454535F 
+ 2846      48414E44 
+ 2846      4C455F56 
+ 2847              	.LASF162:
+ 2848 0b8b 4359424C 		.ascii	"CYBLE_STATE_INITIALIZING\000"
+ 2848      455F5354 
+ 2848      4154455F 
+ 2848      494E4954 
+ 2848      49414C49 
+ 2849              	.LASF29:
+ 2850 0ba4 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_FAILED\000"
+ 2850      455F4556 
+ 2850      545F4741 
+ 2850      505F4155 
+ 2850      54485F46 
+ 2851              	.LASF179:
+ 2852 0bbe 6379426C 		.ascii	"cyBle_connHandle\000"
+ 2852      655F636F 
+ 2852      6E6E4861 
+ 2852      6E646C65 
+ 2852      00
+ 2853              	.LASF50:
+ 2854 0bcf 4359424C 		.ascii	"CYBLE_EVT_GATTC_WRITE_RSP\000"
+ 2854      455F4556 
+ 2854      545F4741 
+ 2854      5454435F 
+ 2854      57524954 
+ 2855              	.LASF107:
+ 2856 0be9 4359424C 		.ascii	"CYBLE_BLESS_HIBERNATE\000"
+ 2856      455F424C 
+ 2856      4553535F 
+ 2856      48494245 
+ 2856      524E4154 
+ 2857              	.LASF188:
+ 2858 0bff 70776D5F 		.ascii	"pwm_Start\000"
+ 2858      53746172 
+ 2858      7400
+ 2859              	.LASF191:
+ 2860 0c09 7265645F 		.ascii	"red_Write\000"
+ 2860      57726974 
+ 2860      6500
+ 2861              	.LASF118:
+ 2862 0c13 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_AUTHORIZATION\000"
+ 2862      455F4741 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 62
+
+
+ 2862      54545F45 
+ 2862      52525F49 
+ 2862      4E535546 
+ 2863              	.LASF28:
+ 2864 0c3d 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_COMPLETE\000"
+ 2864      455F4556 
+ 2864      545F4741 
+ 2864      505F4155 
+ 2864      54485F43 
+ 2865              	.LASF180:
+ 2866 0c59 66696E67 		.ascii	"fingerPos\000"
+ 2866      6572506F 
+ 2866      7300
+ 2867              	.LASF183:
+ 2868 0c63 7265645F 		.ascii	"red_Read\000"
+ 2868      52656164 
+ 2868      00
+ 2869              	.LASF55:
+ 2870 0c6c 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_NTF\000"
+ 2870      455F4556 
+ 2870      545F4741 
+ 2870      5454435F 
+ 2870      48414E44 
+ 2871              	.LASF100:
+ 2872 0c8d 4359424C 		.ascii	"CYBLE_ERROR_IND_DISABLED\000"
+ 2872      455F4552 
+ 2872      524F525F 
+ 2872      494E445F 
+ 2872      44495341 
+ 2873              	.LASF155:
+ 2874 0ca6 4359424C 		.ascii	"CYBLE_GATT_HANDLE_VALUE_PAIR_T\000"
+ 2874      455F4741 
+ 2874      54545F48 
+ 2874      414E444C 
+ 2874      455F5641 
+ 2875              	.LASF65:
+ 2876 0cc5 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_CNF\000"
+ 2876      455F4556 
+ 2876      545F4C32 
+ 2876      4341505F 
+ 2876      43424643 
+ 2877              	.LASF141:
+ 2878 0ce3 4359424C 		.ascii	"CYBLE_GATT_ERR_ANCS_INVALID_PARAMETER\000"
+ 2878      455F4741 
+ 2878      54545F45 
+ 2878      52525F41 
+ 2878      4E43535F 
+ 2879              	.LASF42:
+ 2880 0d09 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 2880      455F4556 
+ 2880      545F4741 
+ 2880      5454435F 
+ 2880      52454144 
+ 2881              	.LASF14:
+ 2882 0d30 666C6F61 		.ascii	"float\000"
+ 2882      7400
+ 2883              	.LASF198:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 63
+
+
+ 2884 0d36 50696E5F 		.ascii	"Pin_l293_IC2_EN_34_Write\000"
+ 2884      6C323933 
+ 2884      5F494332 
+ 2884      5F454E5F 
+ 2884      33345F57 
+ 2885              	.LASF170:
+ 2886 0d4f 75706461 		.ascii	"updateGreenLed\000"
+ 2886      74654772 
+ 2886      65656E4C 
+ 2886      656400
+ 2887              	.LASF119:
+ 2888 0d5e 4359424C 		.ascii	"CYBLE_GATT_ERR_PREPARE_WRITE_QUEUE_FULL\000"
+ 2888      455F4741 
+ 2888      54545F45 
+ 2888      52525F50 
+ 2888      52455041 
+ 2889              	.LASF187:
+ 2890 0d86 4379426C 		.ascii	"CyBle_GappStartAdvertisement\000"
+ 2890      655F4761 
+ 2890      70705374 
+ 2890      61727441 
+ 2890      64766572 
+ 2891              	.LASF167:
+ 2892 0da3 74656D70 		.ascii	"tempHandle\000"
+ 2892      48616E64 
+ 2892      6C6500
+ 2893              	.LASF194:
+ 2894 0dae 50696E5F 		.ascii	"Pin_l293_IC1_EN_12_Write\000"
+ 2894      6C323933 
+ 2894      5F494331 
+ 2894      5F454E5F 
+ 2894      31325F57 
+ 2895              	.LASF85:
+ 2896 0dc7 4359424C 		.ascii	"CYBLE_ERROR_TX_POWER_READ\000"
+ 2896      455F4552 
+ 2896      524F525F 
+ 2896      54585F50 
+ 2896      4F574552 
+ 2897              	.LASF101:
+ 2898 0de1 4359424C 		.ascii	"CYBLE_ERROR_CHAR_IS_NOT_DISCOVERED\000"
+ 2898      455F4552 
+ 2898      524F525F 
+ 2898      43484152 
+ 2898      5F49535F 
+ 2899              	.LASF145:
+ 2900 0e04 4359424C 		.ascii	"CYBLE_GATT_ERR_OUT_OF_RANGE\000"
+ 2900      455F4741 
+ 2900      54545F45 
+ 2900      52525F4F 
+ 2900      55545F4F 
+ 2901              	.LASF1:
+ 2902 0e20 756E7369 		.ascii	"unsigned char\000"
+ 2902      676E6564 
+ 2902      20636861 
+ 2902      7200
+ 2903              	.LASF12:
+ 2904 0e2e 75696E74 		.ascii	"uint16\000"
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 64
+
+
+ 2904      313600
+ 2905              	.LASF123:
+ 2906 0e35 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_ATTRIBUTE_LEN\000"
+ 2906      455F4741 
+ 2906      54545F45 
+ 2906      52525F49 
+ 2906      4E56414C 
+ 2907              	.LASF135:
+ 2908 0e5a 4359424C 		.ascii	"CYBLE_GATTS_ERR_CCCD_IMPROPERLY_CONFIGURED\000"
+ 2908      455F4741 
+ 2908      5454535F 
+ 2908      4552525F 
+ 2908      43434344 
+ 2909              	.LASF208:
+ 2910 0e85 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2910      4320342E 
+ 2910      392E3320 
+ 2910      32303135 
+ 2910      30333033 
+ 2911 0eb8 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 2911      20726576 
+ 2911      6973696F 
+ 2911      6E203232 
+ 2911      31323230 
+ 2912 0eeb 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2912      66756E63 
+ 2912      74696F6E 
+ 2912      2D736563 
+ 2912      74696F6E 
+ 2913              	.LASF196:
+ 2914 0f13 67726565 		.ascii	"green_Write\000"
+ 2914      6E5F5772 
+ 2914      69746500 
+ 2915              	.LASF199:
+ 2916 0f1f 63617073 		.ascii	"capsense_Start\000"
+ 2916      656E7365 
+ 2916      5F537461 
+ 2916      727400
+ 2917              	.LASF2:
+ 2918 0f2e 73686F72 		.ascii	"short int\000"
+ 2918      7420696E 
+ 2918      7400
+ 2919              	.LASF182:
+ 2920 0f38 63617073 		.ascii	"capsenseNotify\000"
+ 2920      656E7365 
+ 2920      4E6F7469 
+ 2920      667900
+ 2921              	.LASF56:
+ 2922 0f47 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_IND\000"
+ 2922      455F4556 
+ 2922      545F4741 
+ 2922      5454435F 
+ 2922      48414E44 
+ 2923              	.LASF81:
+ 2924 0f68 4359424C 		.ascii	"CYBLE_ERROR_NO_CONNECTION\000"
+ 2924      455F4552 
+ 2924      524F525F 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 65
+
+
+ 2924      4E4F5F43 
+ 2924      4F4E4E45 
+ 2925              	.LASF134:
+ 2926 0f82 4359424C 		.ascii	"CYBLE_GATT_ERR_MISSING_CRC\000"
+ 2926      455F4741 
+ 2926      54545F45 
+ 2926      52525F4D 
+ 2926      49535349 
+ 2927              	.LASF34:
+ 2928 0f9d 4359424C 		.ascii	"CYBLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
+ 2928      455F4556 
+ 2928      545F4741 
+ 2928      505F434F 
+ 2928      4E4E4543 
+ 2929              	.LASF138:
+ 2930 0fc6 4359424C 		.ascii	"CYBLE_GATT_ERR_ANS_COMMAND_NOT_SUPPORTED\000"
+ 2930      455F4741 
+ 2930      54545F45 
+ 2930      52525F41 
+ 2930      4E535F43 
+ 2931              	.LASF52:
+ 2932 0fef 4359424C 		.ascii	"CYBLE_EVT_GATTS_PREP_WRITE_REQ\000"
+ 2932      455F4556 
+ 2932      545F4741 
+ 2932      5454535F 
+ 2932      50524550 
+ 2933              	.LASF202:
+ 2934 100e 63617073 		.ascii	"capsense_IsBusy\000"
+ 2934      656E7365 
+ 2934      5F497342 
+ 2934      75737900 
+ 2935              	.LASF57:
+ 2936 101e 4359424C 		.ascii	"CYBLE_EVT_GATTS_HANDLE_VALUE_CNF\000"
+ 2936      455F4556 
+ 2936      545F4741 
+ 2936      5454535F 
+ 2936      48414E44 
+ 2937              	.LASF143:
+ 2938 103f 4359424C 		.ascii	"CYBLE_GATT_ERR_CCCD_IMPROPERLY_CONFIGURED\000"
+ 2938      455F4741 
+ 2938      54545F45 
+ 2938      52525F43 
+ 2938      4343445F 
+ 2939              	.LASF169:
+ 2940 1069 75706461 		.ascii	"updateLed\000"
+ 2940      74654C65 
+ 2940      6400
+ 2941              	.LASF128:
+ 2942 1073 4359424C 		.ascii	"CYBLE_GATT_ERR_HEART_RATE_CONTROL_POINT_NOT_SUPPORT"
+ 2942      455F4741 
+ 2942      54545F45 
+ 2942      52525F48 
+ 2942      45415254 
+ 2943 10a6 454400   		.ascii	"ED\000"
+ 2944              	.LASF16:
+ 2945 10a9 63686172 		.ascii	"char\000"
+ 2945      00
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 66
+
+
+ 2946              	.LASF105:
+ 2947 10ae 4359424C 		.ascii	"CYBLE_BLESS_SLEEP\000"
+ 2947      455F424C 
+ 2947      4553535F 
+ 2947      534C4545 
+ 2947      5000
+ 2948              	.LASF86:
+ 2949 10c0 4359424C 		.ascii	"CYBLE_ERROR_BT_ON_NOT_COMPLETED\000"
+ 2949      455F4552 
+ 2949      524F525F 
+ 2949      42545F4F 
+ 2949      4E5F4E4F 
+ 2950              	.LASF32:
+ 2951 10e0 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_DISCONNECTED\000"
+ 2951      455F4556 
+ 2951      545F4741 
+ 2951      505F4445 
+ 2951      56494345 
+ 2952              	.LASF8:
+ 2953 1102 756E7369 		.ascii	"unsigned int\000"
+ 2953      676E6564 
+ 2953      20696E74 
+ 2953      00
+ 2954              	.LASF60:
+ 2955 110f 4359424C 		.ascii	"CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ\000"
+ 2955      455F4556 
+ 2955      545F4741 
+ 2955      5454535F 
+ 2955      52454144 
+ 2956              	.LASF103:
+ 2957 1138 4359424C 		.ascii	"CYBLE_API_RESULT_T\000"
+ 2957      455F4150 
+ 2957      495F5245 
+ 2957      53554C54 
+ 2957      5F5400
+ 2958              	.LASF70:
+ 2959 114b 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_TX_CREDIT_IND\000"
+ 2959      455F4556 
+ 2959      545F4C32 
+ 2959      4341505F 
+ 2959      43424643 
+ 2960              	.LASF47:
+ 2961 116e 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BLOB_RSP\000"
+ 2961      455F4556 
+ 2961      545F4741 
+ 2961      5454435F 
+ 2961      52454144 
+ 2962              	.LASF124:
+ 2963 118c 4359424C 		.ascii	"CYBLE_GATT_ERR_UNLIKELY_ERROR\000"
+ 2963      455F4741 
+ 2963      54545F45 
+ 2963      52525F55 
+ 2963      4E4C494B 
+ 2964              	.LASF142:
+ 2965 11aa 4359424C 		.ascii	"CYBLE_GATT_ERR_ANCS_ACTION_FAILED\000"
+ 2965      455F4741 
+ 2965      54545F45 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 67
+
+
+ 2965      52525F41 
+ 2965      4E43535F 
+ 2966              	.LASF96:
+ 2967 11cc 4359424C 		.ascii	"CYBLE_ERROR_FLASH_WRITE_NOT_PERMITED\000"
+ 2967      455F4552 
+ 2967      524F525F 
+ 2967      464C4153 
+ 2967      485F5752 
+ 2968              	.LASF91:
+ 2969 11f1 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_CONNECTION_ENTITY_NOT_FOUND\000"
+ 2969      455F4552 
+ 2969      524F525F 
+ 2969      4C324341 
+ 2969      505F434F 
+ 2970              	.LASF144:
+ 2971 121f 4359424C 		.ascii	"CYBLE_GATT_ERR_PROCEDURE_ALREADY_IN_PROGRESS\000"
+ 2971      455F4741 
+ 2971      54545F45 
+ 2971      52525F50 
+ 2971      524F4345 
+ 2972              	.LASF21:
+ 2973 124c 4359424C 		.ascii	"CYBLE_EVT_HARDWARE_ERROR\000"
+ 2973      455F4556 
+ 2973      545F4841 
+ 2973      52445741 
+ 2973      52455F45 
+ 2974              	.LASF3:
+ 2975 1265 73686F72 		.ascii	"short unsigned int\000"
+ 2975      7420756E 
+ 2975      7369676E 
+ 2975      65642069 
+ 2975      6E7400
+ 2976              	.LASF37:
+ 2977 1278 4359424C 		.ascii	"CYBLE_EVT_GATTC_ERROR_RSP\000"
+ 2977      455F4556 
+ 2977      545F4741 
+ 2977      5454435F 
+ 2977      4552524F 
+ 2978              	.LASF158:
+ 2979 1292 68616E64 		.ascii	"handleValPair\000"
+ 2979      6C655661 
+ 2979      6C506169 
+ 2979      7200
+ 2980              	.LASF192:
+ 2981 12a0 43794465 		.ascii	"CyDelay\000"
+ 2981      6C617900 
+ 2982              	.LASF204:
+ 2983 12a8 63617073 		.ascii	"capsense_UpdateEnabledBaselines\000"
+ 2983      656E7365 
+ 2983      5F557064 
+ 2983      61746545 
+ 2983      6E61626C 
+ 2984              	.LASF77:
+ 2985 12c8 4359424C 		.ascii	"CYBLE_ERROR_INVALID_OPERATION\000"
+ 2985      455F4552 
+ 2985      524F525F 
+ 2985      494E5641 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 68
+
+
+ 2985      4C49445F 
+ 2986              	.LASF129:
+ 2987 12e6 4359424C 		.ascii	"CYBLE_GATT_ERR_USER_DATA_ACCESS_NOT_PERMITTED\000"
+ 2987      455F4741 
+ 2987      54545F45 
+ 2987      52525F55 
+ 2987      5345525F 
+ 2988              	.LASF205:
+ 2989 1314 63617073 		.ascii	"capsense_ScanEnabledWidgets\000"
+ 2989      656E7365 
+ 2989      5F536361 
+ 2989      6E456E61 
+ 2989      626C6564 
+ 2990              	.LASF125:
+ 2991 1330 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_ENCRYPTION\000"
+ 2991      455F4741 
+ 2991      54545F45 
+ 2991      52525F49 
+ 2991      4E535546 
+ 2992              	.LASF160:
+ 2993 1357 4359424C 		.ascii	"CYBLE_CALLBACK_T\000"
+ 2993      455F4341 
+ 2993      4C4C4241 
+ 2993      434B5F54 
+ 2993      00
+ 2994              	.LASF40:
+ 2995 1368 4359424C 		.ascii	"CYBLE_EVT_GATTS_XCNHG_MTU_REQ\000"
+ 2995      455F4556 
+ 2995      545F4741 
+ 2995      5454535F 
+ 2995      58434E48 
+ 2996              	.LASF174:
+ 2997 1386 6576656E 		.ascii	"eventParam\000"
+ 2997      74506172 
+ 2997      616D00
+ 2998              	.LASF79:
+ 2999 1391 4359424C 		.ascii	"CYBLE_ERROR_INSUFFICIENT_RESOURCES\000"
+ 2999      455F4552 
+ 2999      524F525F 
+ 2999      494E5355 
+ 2999      46464943 
+ 3000              	.LASF166:
+ 3001 13b4 4359424C 		.ascii	"CYBLE_STATE_T\000"
+ 3001      455F5354 
+ 3001      4154455F 
+ 3001      5400
+ 3002              	.LASF10:
+ 3003 13c2 75696E74 		.ascii	"uint8_t\000"
+ 3003      385F7400 
+ 3004              	.LASF117:
+ 3005 13ca 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_OFFSET\000"
+ 3005      455F4741 
+ 3005      54545F45 
+ 3005      52525F49 
+ 3005      4E56414C 
+ 3006              	.LASF97:
+ 3007 13e8 4359424C 		.ascii	"CYBLE_ERROR_MIC_AUTH_FAILED\000"
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 69
+
+
+ 3007      455F4552 
+ 3007      524F525F 
+ 3007      4D49435F 
+ 3007      41555448 
+ 3008              	.LASF90:
+ 3009 1404 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_NOT_REGISTERED\000"
+ 3009      455F4552 
+ 3009      524F525F 
+ 3009      4C324341 
+ 3009      505F5053 
+ 3010              	.LASF163:
+ 3011 1429 4359424C 		.ascii	"CYBLE_STATE_CONNECTED\000"
+ 3011      455F5354 
+ 3011      4154455F 
+ 3011      434F4E4E 
+ 3011      45435445 
+ 3012              	.LASF190:
+ 3013 143f 4379426C 		.ascii	"CyBle_GattsWriteRsp\000"
+ 3013      655F4761 
+ 3013      74747357 
+ 3013      72697465 
+ 3013      52737000 
+ 3014              	.LASF106:
+ 3015 1453 4359424C 		.ascii	"CYBLE_BLESS_DEEPSLEEP\000"
+ 3015      455F424C 
+ 3015      4553535F 
+ 3015      44454550 
+ 3015      534C4545 
+ 3016              	.LASF45:
+ 3017 1469 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP\000"
+ 3017      455F4556 
+ 3017      545F4741 
+ 3017      5454435F 
+ 3017      46494E44 
+ 3018              	.LASF84:
+ 3019 1490 4359424C 		.ascii	"CYBLE_ERROR_GAP_ROLE\000"
+ 3019      455F4552 
+ 3019      524F525F 
+ 3019      4741505F 
+ 3019      524F4C45 
+ 3020              	.LASF36:
+ 3021 14a5 4359424C 		.ascii	"CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
+ 3021      455F4556 
+ 3021      545F4741 
+ 3021      505F4B45 
+ 3021      59494E46 
+ 3022              	.LASF186:
+ 3023 14c9 4379426C 		.ascii	"CyBle_GattsNotification\000"
+ 3023      655F4761 
+ 3023      7474734E 
+ 3023      6F746966 
+ 3023      69636174 
+ 3024              	.LASF148:
+ 3025 14e1 62644861 		.ascii	"bdHandle\000"
+ 3025      6E646C65 
+ 3025      00
+ 3026              	.LASF62:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccjYK543.s 			page 70
+
+
+ 3027 14ea 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
+ 3027      455F4556 
+ 3027      545F4C32 
+ 3027      4341505F 
+ 3027      434F4E4E 
+ 3028              	.LASF177:
+ 3029 1510 6D61696E 		.ascii	"main\000"
+ 3029      00
+ 3030              	.LASF104:
+ 3031 1515 4359424C 		.ascii	"CYBLE_BLESS_ACTIVE\000"
+ 3031      455F424C 
+ 3031      4553535F 
+ 3031      41435449 
+ 3031      564500
+ 3032              	.LASF147:
+ 3033 1528 4359424C 		.ascii	"CYBLE_GATT_DB_ATTR_HANDLE_T\000"
+ 3033      455F4741 
+ 3033      54545F44 
+ 3033      425F4154 
+ 3033      54525F48 
+ 3034              	.LASF24:
+ 3035 1544 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
+ 3035      455F4556 
+ 3035      545F4741 
+ 3035      50435F53 
+ 3035      43414E5F 
+ 3036              	.LASF39:
+ 3037 1568 4359424C 		.ascii	"CYBLE_EVT_GATT_DISCONNECT_IND\000"
+ 3037      455F4556 
+ 3037      545F4741 
+ 3037      54545F44 
+ 3037      4953434F 
+ 3038              	.LASF94:
+ 3039 1586 4359424C 		.ascii	"CYBLE_ERROR_GATT_DB_INVALID_ATTR_HANDLE\000"
+ 3039      455F4552 
+ 3039      524F525F 
+ 3039      47415454 
+ 3039      5F44425F 
+ 3040              	.LASF83:
+ 3041 15ae 4359424C 		.ascii	"CYBLE_ERROR_REPEATED_ATTEMPTS\000"
+ 3041      455F4552 
+ 3041      524F525F 
+ 3041      52455045 
+ 3041      41544544 
+ 3042              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
