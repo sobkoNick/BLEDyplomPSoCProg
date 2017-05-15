@@ -94,7 +94,7 @@ CYBLE_STATE_T cyBle_state;
     0x000Bu,    /* Handle of the Client Characteristic Configuration descriptor */
 };
     
-    static uint8 cyBle_attValues[0x30u] = {
+    static uint8 cyBle_attValues[0x3Bu] = {
     /* Device Name */
     (uint8)'c', (uint8)'a', (uint8)'p', (uint8)'l', (uint8)'e', (uint8)'d', 
 
@@ -124,7 +124,8 @@ CYBLE_STATE_T cyBle_state;
     0x00u, 
 
     /* Characteristic User Description */
-    
+    (uint8)'g', (uint8)'r', (uint8)'e', (uint8)'e', (uint8)'n', (uint8)' ', (uint8)'u', (uint8)'i', (uint8)'n', (uint8)'t',
+(uint8)'8', 
 
 };
 uint8 cyBle_attValuesCCCD[CYBLE_GATT_DB_CCCD_COUNT];
@@ -156,7 +157,7 @@ CYBLE_GATTS_ATT_GEN_VAL_LEN_T cyBle_attValuesLen[CYBLE_GATT_DB_ATT_VAL_COUNT] = 
     { 0x000Fu, (void *)&cyBle_attValues[32] }, /* Characteristic User Description */
     { 0x0010u, (void *)&cyBle_attUuid128[3] }, /* green UUID */
     { 0x0001u, (void *)&cyBle_attValues[47] }, /* green */
-    { 0x0000u, (void *)&cyBle_attValues[48] }, /* Characteristic User Description */
+    { 0x000Bu, (void *)&cyBle_attValues[48] }, /* Characteristic User Description */
 };
 
 const CYBLE_GATTS_DB_T cyBle_gattDB[0x16u] = {
@@ -181,7 +182,7 @@ const CYBLE_GATTS_DB_T cyBle_gattDB[0x16u] = {
     { 0x0013u, 0x2901u /* Characteristic User Description     */, 0x00010201u /* rd     */, 0x0013u, {{0x000Fu, (void *)&cyBle_attValuesLen[12]}} },
     { 0x0014u, 0x2803u /* Characteristic                      */, 0x00000A01u /* rd,wr  */, 0x0016u, {{0x0010u, (void *)&cyBle_attValuesLen[13]}} },
     { 0x0015u, 0x0000u /* green                               */, 0x00090A04u /* rd,wr  */, 0x0016u, {{0x0001u, (void *)&cyBle_attValuesLen[14]}} },
-    { 0x0016u, 0x2901u /* Characteristic User Description     */, 0x00010201u /* rd     */, 0x0016u, {{0x0000u, (void *)&cyBle_attValuesLen[15]}} },
+    { 0x0016u, 0x2901u /* Characteristic User Description     */, 0x00010201u /* rd     */, 0x0016u, {{0x000Bu, (void *)&cyBle_attValuesLen[15]}} },
 };
 
 

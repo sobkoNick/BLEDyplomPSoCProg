@@ -26,7 +26,7 @@ void updateLed()
 
 void updateGreenLed() 
 {
-CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
+    CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
    
     uint8 green_State = !green_Read();
     
@@ -96,17 +96,36 @@ void BleCallBack(uint32 event, void* eventParam)
                 /* only update the value and write the response if the requested write is allowed */
                 if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))
                 {
+                    if(!wrReqParam->handleValPair.value.val[0]) // off
+                    {
                     red_Write(!wrReqParam->handleValPair.value.val[0]);
                     CyBle_GattsWriteRsp(cyBle_connHandle);
-                    
+
+                    } else { // on
+                        red_Write(!wrReqParam->handleValPair.value.val[0]);
+                    CyBle_GattsWriteRsp(cyBle_connHandle);
+                                        
                     CyDelay(1000);
                     writeShiftRegisters(0b10101010); // напрямок вперед
                     Pin_l293_IC1_EN_12_Write(1);
                     Pin_l293_IC1_EN_34_Write(0);
                     CyDelay(500);
                     Pin_l293_IC1_EN_12_Write(0);    // turns off left motor
-//                    CyDelay(200);                   // left motor ends rotating later
+//                  CyDelay(200);                   // left motor ends rotating later
                     Pin_l293_IC1_EN_34_Write(0);    // turns off right motor
+                    }   
+                    
+//                    red_Write(!wrReqParam->handleValPair.value.val[0]);
+//                    CyBle_GattsWriteRsp(cyBle_connHandle);
+//                    
+//                    CyDelay(1000);
+//                    writeShiftRegisters(0b10101010); // напрямок вперед
+//                    Pin_l293_IC1_EN_12_Write(1);
+//                    Pin_l293_IC1_EN_34_Write(0);
+//                    CyDelay(500);
+//                    Pin_l293_IC1_EN_12_Write(0);    // turns off left motor
+////                    CyDelay(200);                   // left motor ends rotating later
+//                    Pin_l293_IC1_EN_34_Write(0);    // turns off right motor
                     
                 }
             }
@@ -115,18 +134,40 @@ void BleCallBack(uint32 event, void* eventParam)
                 /* only update the value and write the response if the requested write is allowed */
                 if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))
                 {
+                    
+                    if(!wrReqParam->handleValPair.value.val[0])
+                    {
+                    green_Write(!wrReqParam->handleValPair.value.val[0]);
+                    CyBle_GattsWriteRsp(cyBle_connHandle);
+                    }
+                    else
+                    {
                     green_Write(!wrReqParam->handleValPair.value.val[0]);
                     CyBle_GattsWriteRsp(cyBle_connHandle);
                     
+                         // -------------left motors ahead
                     CyDelay(1000);
                     writeShiftRegisters(0b10101010); // напрямок вперед
                     Pin_l293_IC1_EN_12_Write(0);
                     Pin_l293_IC1_EN_34_Write(1);
                     CyDelay(500);
                     Pin_l293_IC1_EN_12_Write(0);    // turns off left motor
-//                    CyDelay(200);                   // left motor ends rotating later
+                    //CyDelay(200);                   // left motor ends rotating later
                     Pin_l293_IC1_EN_34_Write(0);    // turns off right motor
+                    }
                     
+//                    green_Write(!wrReqParam->handleValPair.value.val[0]);
+//                    CyBle_GattsWriteRsp(cyBle_connHandle);
+//                    
+//                     // -------------right motors ahead
+//                    CyDelay(3000);
+//                    writeShiftRegisters(0b10101010); // напрямок вперед
+//                    Pin_l293_IC1_EN_12_Write(1);
+//                    Pin_l293_IC1_EN_34_Write(0);
+//                    CyDelay(500);
+//                    Pin_l293_IC1_EN_12_Write(0);    // turns off left motor
+//                    CyDelay(200);                   // left motor ends rotating later
+//                    Pin_l293_IC1_EN_34_Write(0);    // turns off right motor
                     
                 }
             
@@ -152,7 +193,6 @@ void BleCallBack(uint32 event, void* eventParam)
 int main()
 {
     CyGlobalIntEnable; 
-    
     writeShiftRegisters(0x00);
     Pin_l293_IC1_EN_12_Write(1);   /* Start all motors */
     Pin_l293_IC1_EN_34_Write(1);

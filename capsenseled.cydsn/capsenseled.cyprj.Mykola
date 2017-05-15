@@ -1057,7 +1057,7 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="131388881773161613" />
+<deps_time v="131393450533682450" />
 <top_block v="TopDesign" />
 <last_generation v="2" />
 <pdl_path v="C:\Users\Mykola\Documents\Cypress\PDL\2.1.0" />
@@ -1205,6 +1205,28 @@
 <file name=".\Generated_Source\PSoC4\red_aliases.h" />
 <file name=".\dc_motor_library.h" />
 <file name=".\main.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\ble_gatt.o">
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\ble.h" />
+<dep name=".\Generated_Source\PSoC4\ble_Stack.h" />
+<dep name=".\Generated_Source\PSoC4\ble_StackGap.h" />
+<dep name=".\Generated_Source\PSoC4\ble_StackGatt.h" />
+<dep name=".\Generated_Source\PSoC4\ble_StackGattClient.h" />
+<dep name=".\Generated_Source\PSoC4\ble_StackGattDb.h" />
+<dep name=".\Generated_Source\PSoC4\ble_StackGattServer.h" />
+<dep name=".\Generated_Source\PSoC4\ble_StackHostMain.h" />
+<dep name=".\Generated_Source\PSoC4\ble_StackL2cap.h" />
+<dep name=".\Generated_Source\PSoC4\ble_custom.h" />
+<dep name=".\Generated_Source\PSoC4\ble_eventHandler.h" />
+<dep name=".\Generated_Source\PSoC4\ble_gatt.c" />
+<dep name=".\Generated_Source\PSoC4\ble_gatt.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ble_gatt.c" />
 <file name=".\CortexM0\ARM_GCC_493\Debug\ble.o">
 <dep name=".\Generated_Source\PSoC4\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
@@ -1324,28 +1346,6 @@
 <dep name=".\Generated_Source\PSoC4\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC4\ble_eventHandler.c" />
-<file name=".\CortexM0\ARM_GCC_493\Debug\ble_gatt.o">
-<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
-<dep name=".\Generated_Source\PSoC4\CyLib.h" />
-<dep name=".\Generated_Source\PSoC4\ble.h" />
-<dep name=".\Generated_Source\PSoC4\ble_Stack.h" />
-<dep name=".\Generated_Source\PSoC4\ble_StackGap.h" />
-<dep name=".\Generated_Source\PSoC4\ble_StackGatt.h" />
-<dep name=".\Generated_Source\PSoC4\ble_StackGattClient.h" />
-<dep name=".\Generated_Source\PSoC4\ble_StackGattDb.h" />
-<dep name=".\Generated_Source\PSoC4\ble_StackGattServer.h" />
-<dep name=".\Generated_Source\PSoC4\ble_StackHostMain.h" />
-<dep name=".\Generated_Source\PSoC4\ble_StackL2cap.h" />
-<dep name=".\Generated_Source\PSoC4\ble_custom.h" />
-<dep name=".\Generated_Source\PSoC4\ble_eventHandler.h" />
-<dep name=".\Generated_Source\PSoC4\ble_gatt.c" />
-<dep name=".\Generated_Source\PSoC4\ble_gatt.h" />
-<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC4\cytypes.h" />
-</file>
-<file name=".\Generated_Source\PSoC4\ble_gatt.c" />
 <file name=".\CortexM0\ARM_GCC_493\Debug\dc_motor_library.o">
 <dep name=".\Generated_Source\PSoC4\Clock_1.h" />
 <dep name=".\Generated_Source\PSoC4\Pin_OE.h" />
@@ -2006,7 +2006,7 @@
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="131388881782610142" />
+<deps_time v="131393526226883241" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 </userData>
