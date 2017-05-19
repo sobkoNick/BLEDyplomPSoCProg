@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
   30:Generated_Source\PSoC4/capsense_SampleClk.c **** *
   31:Generated_Source\PSoC4/capsense_SampleClk.c **** * Parameters:
   32:Generated_Source\PSoC4/capsense_SampleClk.c **** *  alignClkDiv:  The divider to which phase alignment is performed when the
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 2
 
 
   33:Generated_Source\PSoC4/capsense_SampleClk.c **** *    clock is started.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
   60              	capsense_SampleClk_Stop:
   61              	.LFB1:
   52:Generated_Source\PSoC4/capsense_SampleClk.c **** 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 3
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 3
 
 
   53:Generated_Source\PSoC4/capsense_SampleClk.c **** #else
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
   68 0004 002B     		cmp	r3, #0
   69 0006 FBDB     		blt	.L6
  101:Generated_Source\PSoC4/capsense_SampleClk.c ****     {
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 4
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 4
 
 
  102:Generated_Source\PSoC4/capsense_SampleClk.c ****     }
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  133:Generated_Source\PSoC4/capsense_SampleClk.c **** *******************************************************************************/
  134:Generated_Source\PSoC4/capsense_SampleClk.c **** void capsense_SampleClk_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
  135:Generated_Source\PSoC4/capsense_SampleClk.c **** {
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 5
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 5
 
 
   93              		.loc 1 135 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  122              		.loc 1 158 0
  123              		@ sp needed
  124 0018 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 6
 
 
  125              	.L11:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  156              		.cfi_endproc
  157              	.LFE3:
  158              		.size	capsense_SampleClk_GetDividerRegister, .-capsense_SampleClk_GetDividerRegister
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 7
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 7
 
 
  159              		.section	.text.capsense_SampleClk_GetFractionalDividerRegister,"ax",%progbits
@@ -415,48 +415,48 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  183 0006 00000000 		.4byte	.Ldebug_abbrev0
  184 000a 04       		.byte	0x4
  185 000b 01       		.uleb128 0x1
- 186 000c F0010000 		.4byte	.LASF25
+ 186 000c A4010000 		.4byte	.LASF25
  187 0010 01       		.byte	0x1
- 188 0011 B1010000 		.4byte	.LASF26
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 8
+ 188 0011 65010000 		.4byte	.LASF26
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 8
 
 
- 189 0015 56000000 		.4byte	.LASF27
+ 189 0015 57020000 		.4byte	.LASF27
  190 0019 00000000 		.4byte	.Ldebug_ranges0+0
  191 001d 00000000 		.4byte	0
  192 0021 00000000 		.4byte	.Ldebug_line0
  193 0025 02       		.uleb128 0x2
  194 0026 01       		.byte	0x1
  195 0027 06       		.byte	0x6
- 196 0028 97020000 		.4byte	.LASF0
+ 196 0028 4B020000 		.4byte	.LASF0
  197 002c 02       		.uleb128 0x2
  198 002d 01       		.byte	0x1
  199 002e 08       		.byte	0x8
- 200 002f A8000000 		.4byte	.LASF1
+ 200 002f 5C000000 		.4byte	.LASF1
  201 0033 02       		.uleb128 0x2
  202 0034 02       		.byte	0x2
  203 0035 05       		.byte	0x5
- 204 0036 7E020000 		.4byte	.LASF2
+ 204 0036 32020000 		.4byte	.LASF2
  205 003a 02       		.uleb128 0x2
  206 003b 02       		.byte	0x2
  207 003c 07       		.byte	0x7
- 208 003d F8000000 		.4byte	.LASF3
+ 208 003d AC000000 		.4byte	.LASF3
  209 0041 02       		.uleb128 0x2
  210 0042 04       		.byte	0x4
  211 0043 05       		.byte	0x5
- 212 0044 8E020000 		.4byte	.LASF4
+ 212 0044 42020000 		.4byte	.LASF4
  213 0048 02       		.uleb128 0x2
  214 0049 04       		.byte	0x4
  215 004a 07       		.byte	0x7
- 216 004b E6000000 		.4byte	.LASF5
+ 216 004b 9A000000 		.4byte	.LASF5
  217 004f 02       		.uleb128 0x2
  218 0050 08       		.byte	0x8
  219 0051 05       		.byte	0x5
- 220 0052 DD010000 		.4byte	.LASF6
+ 220 0052 91010000 		.4byte	.LASF6
  221 0056 02       		.uleb128 0x2
  222 0057 08       		.byte	0x8
  223 0058 07       		.byte	0x7
- 224 0059 9A010000 		.4byte	.LASF7
+ 224 0059 4E010000 		.4byte	.LASF7
  225 005d 03       		.uleb128 0x3
  226 005e 04       		.byte	0x4
  227 005f 05       		.byte	0x5
@@ -464,21 +464,21 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  229 0064 02       		.uleb128 0x2
  230 0065 04       		.byte	0x4
  231 0066 07       		.byte	0x7
- 232 0067 8D010000 		.4byte	.LASF8
+ 232 0067 41010000 		.4byte	.LASF8
  233 006b 04       		.uleb128 0x4
- 234 006c 88020000 		.4byte	.LASF9
+ 234 006c 3C020000 		.4byte	.LASF9
  235 0070 02       		.byte	0x2
  236 0071 C2       		.byte	0xc2
  237 0072 2C000000 		.4byte	0x2c
  238 0076 04       		.uleb128 0x4
- 239 0077 7F010000 		.4byte	.LASF10
+ 239 0077 33010000 		.4byte	.LASF10
  240 007b 02       		.byte	0x2
  241 007c C3       		.byte	0xc3
  242 007d 3A000000 		.4byte	0x3a
  243 0081 04       		.uleb128 0x4
- 244 0082 86010000 		.4byte	.LASF11
+ 244 0082 3A010000 		.4byte	.LASF11
  245 0086 02       		.byte	0x2
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 9
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 9
 
 
  246 0087 C4       		.byte	0xc4
@@ -486,15 +486,15 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  248 008c 02       		.uleb128 0x2
  249 008d 04       		.byte	0x4
  250 008e 04       		.byte	0x4
- 251 008f A2000000 		.4byte	.LASF12
+ 251 008f 56000000 		.4byte	.LASF12
  252 0093 02       		.uleb128 0x2
  253 0094 08       		.byte	0x8
  254 0095 04       		.byte	0x4
- 255 0096 57010000 		.4byte	.LASF13
+ 255 0096 0B010000 		.4byte	.LASF13
  256 009a 02       		.uleb128 0x2
  257 009b 01       		.byte	0x1
  258 009c 08       		.byte	0x8
- 259 009d EB010000 		.4byte	.LASF14
+ 259 009d 9F010000 		.4byte	.LASF14
  260 00a1 05       		.uleb128 0x5
  261 00a2 18000000 		.4byte	.LASF15
  262 00a6 02       		.byte	0x2
@@ -503,7 +503,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  265 00ad 06       		.uleb128 0x6
  266 00ae 81000000 		.4byte	0x81
  267 00b2 07       		.uleb128 0x7
- 268 00b3 31010000 		.4byte	.LASF16
+ 268 00b3 E5000000 		.4byte	.LASF16
  269 00b7 01       		.byte	0x1
  270 00b8 27       		.byte	0x27
  271 00b9 00000000 		.4byte	.LFB0
@@ -512,7 +512,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  274 00c2 9C       		.byte	0x9c
  275 00c3 D7000000 		.4byte	0xd7
  276 00c7 08       		.uleb128 0x8
- 277 00c8 65010000 		.4byte	.LASF18
+ 277 00c8 19010000 		.4byte	.LASF18
  278 00cc 01       		.byte	0x1
  279 00cd 27       		.byte	0x27
  280 00ce 81000000 		.4byte	0x81
@@ -527,7 +527,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  289 00e6 01       		.uleb128 0x1
  290 00e7 9C       		.byte	0x9c
  291 00e8 07       		.uleb128 0x7
- 292 00e9 B6000000 		.4byte	.LASF17
+ 292 00e9 6A000000 		.4byte	.LASF17
  293 00ed 01       		.byte	0x1
  294 00ee 86       		.byte	0x86
  295 00ef 00000000 		.4byte	.LFB2
@@ -536,16 +536,16 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  298 00f8 9C       		.byte	0x9c
  299 00f9 38010000 		.4byte	0x138
  300 00fd 08       		.uleb128 0x8
- 301 00fe 4C010000 		.4byte	.LASF19
+ 301 00fe 00010000 		.4byte	.LASF19
  302 0102 01       		.byte	0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 10
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 10
 
 
  303 0103 86       		.byte	0x86
  304 0104 76000000 		.4byte	0x76
  305 0108 21000000 		.4byte	.LLST1
  306 010c 08       		.uleb128 0x8
- 307 010d 71010000 		.4byte	.LASF20
+ 307 010d 25010000 		.4byte	.LASF20
  308 0111 01       		.byte	0x1
  309 0112 86       		.byte	0x86
  310 0113 6B000000 		.4byte	0x6b
@@ -557,7 +557,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  316 0122 81000000 		.4byte	0x81
  317 0126 63000000 		.4byte	.LLST3
  318 012a 0B       		.uleb128 0xb
- 319 012b 5E010000 		.4byte	.LASF22
+ 319 012b 12010000 		.4byte	.LASF22
  320 012f 01       		.byte	0x1
  321 0130 89       		.byte	0x89
  322 0131 81000000 		.4byte	0x81
@@ -565,7 +565,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  324 0136 51       		.byte	0x51
  325 0137 00       		.byte	0
  326 0138 0C       		.uleb128 0xc
- 327 0139 0B010000 		.4byte	.LASF23
+ 327 0139 BF000000 		.4byte	.LASF23
  328 013d 01       		.byte	0x1
  329 013e B0       		.byte	0xb0
  330 013f 76000000 		.4byte	0x76
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  357 000a 0E       		.uleb128 0xe
  358 000b 55       		.uleb128 0x55
  359 000c 17       		.uleb128 0x17
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 11
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 11
 
 
  360 000d 11       		.uleb128 0x11
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  414 0043 06       		.uleb128 0x6
  415 0044 35       		.uleb128 0x35
  416 0045 00       		.byte	0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 12
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 12
 
 
  417 0046 49       		.uleb128 0x49
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  471 007d 0B       		.uleb128 0xb
  472 007e 27       		.uleb128 0x27
  473 007f 19       		.uleb128 0x19
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 13
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 13
 
 
  474 0080 11       		.uleb128 0x11
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  528 00b7 13       		.uleb128 0x13
  529 00b8 11       		.uleb128 0x11
  530 00b9 01       		.uleb128 0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 14
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 14
 
 
  531 00ba 12       		.uleb128 0x12
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  585 0063 0A000000 		.4byte	.LVL3
  586 0067 10000000 		.4byte	.LVL5
  587 006b 0100     		.2byte	0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 15
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 15
 
 
  588 006d 53       		.byte	0x53
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  633 001e 63617073 		.ascii	"capsense_SampleClk_GetFractionalDividerRegister\000"
  633      656E7365 
  633      5F53616D 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 16
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 16
 
 
  633      706C6543 
@@ -906,140 +906,137 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 1
  634              	.LASF21:
  635 004e 6D61736B 		.ascii	"maskVal\000"
  635      56616C00 
- 636              	.LASF27:
- 637 0056 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\1\\bleapp-master\\PSoC_Creator\\"
- 637      6E697665 
- 637      725C4479 
- 637      706C6F6D 
- 637      5C315C62 
- 638 0084 63617073 		.ascii	"capsenseled\\capsenseled.cydsn\000"
- 638      656E7365 
- 638      6C65645C 
- 638      63617073 
- 638      656E7365 
- 639              	.LASF12:
- 640 00a2 666C6F61 		.ascii	"float\000"
- 640      7400
- 641              	.LASF1:
- 642 00a8 756E7369 		.ascii	"unsigned char\000"
- 642      676E6564 
- 642      20636861 
- 642      7200
- 643              	.LASF17:
- 644 00b6 63617073 		.ascii	"capsense_SampleClk_SetFractionalDividerRegister\000"
- 644      656E7365 
- 644      5F53616D 
- 644      706C6543 
- 644      6C6B5F53 
- 645              	.LASF5:
- 646 00e6 6C6F6E67 		.ascii	"long unsigned int\000"
- 646      20756E73 
- 646      69676E65 
- 646      6420696E 
- 646      7400
- 647              	.LASF3:
- 648 00f8 73686F72 		.ascii	"short unsigned int\000"
- 648      7420756E 
- 648      7369676E 
- 648      65642069 
- 648      6E7400
- 649              	.LASF23:
- 650 010b 63617073 		.ascii	"capsense_SampleClk_GetDividerRegister\000"
- 650      656E7365 
- 650      5F53616D 
- 650      706C6543 
- 650      6C6B5F47 
- 651              	.LASF16:
- 652 0131 63617073 		.ascii	"capsense_SampleClk_StartEx\000"
- 652      656E7365 
- 652      5F53616D 
- 652      706C6543 
- 652      6C6B5F53 
- 653              	.LASF19:
- 654 014c 636C6B44 		.ascii	"clkDivider\000"
- 654      69766964 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 17
+ 636              	.LASF12:
+ 637 0056 666C6F61 		.ascii	"float\000"
+ 637      7400
+ 638              	.LASF1:
+ 639 005c 756E7369 		.ascii	"unsigned char\000"
+ 639      676E6564 
+ 639      20636861 
+ 639      7200
+ 640              	.LASF17:
+ 641 006a 63617073 		.ascii	"capsense_SampleClk_SetFractionalDividerRegister\000"
+ 641      656E7365 
+ 641      5F53616D 
+ 641      706C6543 
+ 641      6C6B5F53 
+ 642              	.LASF5:
+ 643 009a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 643      20756E73 
+ 643      69676E65 
+ 643      6420696E 
+ 643      7400
+ 644              	.LASF3:
+ 645 00ac 73686F72 		.ascii	"short unsigned int\000"
+ 645      7420756E 
+ 645      7369676E 
+ 645      65642069 
+ 645      6E7400
+ 646              	.LASF23:
+ 647 00bf 63617073 		.ascii	"capsense_SampleClk_GetDividerRegister\000"
+ 647      656E7365 
+ 647      5F53616D 
+ 647      706C6543 
+ 647      6C6B5F47 
+ 648              	.LASF16:
+ 649 00e5 63617073 		.ascii	"capsense_SampleClk_StartEx\000"
+ 649      656E7365 
+ 649      5F53616D 
+ 649      706C6543 
+ 649      6C6B5F53 
+ 650              	.LASF19:
+ 651 0100 636C6B44 		.ascii	"clkDivider\000"
+ 651      69766964 
+ 651      657200
+ 652              	.LASF13:
+ 653 010b 646F7562 		.ascii	"double\000"
+ 653      6C6500
+ 654              	.LASF22:
+ 655 0112 72656756 		.ascii	"regVal\000"
+ 655      616C00
+ 656              	.LASF18:
+ 657 0119 616C6967 		.ascii	"alignClkDiv\000"
+ 657      6E436C6B 
+ 657      44697600 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 17
 
 
- 654      657200
- 655              	.LASF13:
- 656 0157 646F7562 		.ascii	"double\000"
- 656      6C6500
- 657              	.LASF22:
- 658 015e 72656756 		.ascii	"regVal\000"
- 658      616C00
- 659              	.LASF18:
- 660 0165 616C6967 		.ascii	"alignClkDiv\000"
- 660      6E436C6B 
- 660      44697600 
- 661              	.LASF20:
- 662 0171 636C6B46 		.ascii	"clkFractional\000"
- 662      72616374 
- 662      696F6E61 
- 662      6C00
- 663              	.LASF10:
- 664 017f 75696E74 		.ascii	"uint16\000"
- 664      313600
- 665              	.LASF11:
- 666 0186 75696E74 		.ascii	"uint32\000"
- 666      333200
- 667              	.LASF8:
- 668 018d 756E7369 		.ascii	"unsigned int\000"
- 668      676E6564 
- 668      20696E74 
- 668      00
- 669              	.LASF7:
- 670 019a 6C6F6E67 		.ascii	"long long unsigned int\000"
- 670      206C6F6E 
- 670      6720756E 
- 670      7369676E 
- 670      65642069 
- 671              	.LASF26:
- 672 01b1 47656E65 		.ascii	"Generated_Source\\PSoC4\\capsense_SampleClk.c\000"
- 672      72617465 
- 672      645F536F 
- 672      75726365 
- 672      5C50536F 
- 673              	.LASF6:
- 674 01dd 6C6F6E67 		.ascii	"long long int\000"
- 674      206C6F6E 
- 674      6720696E 
- 674      7400
- 675              	.LASF14:
- 676 01eb 63686172 		.ascii	"char\000"
- 676      00
- 677              	.LASF25:
- 678 01f0 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 678      4320342E 
- 678      392E3320 
- 678      32303135 
- 678      30333033 
- 679 0223 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
- 679      20726576 
- 679      6973696F 
- 679      6E203232 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc79lqGn.s 			page 18
+ 658              	.LASF20:
+ 659 0125 636C6B46 		.ascii	"clkFractional\000"
+ 659      72616374 
+ 659      696F6E61 
+ 659      6C00
+ 660              	.LASF10:
+ 661 0133 75696E74 		.ascii	"uint16\000"
+ 661      313600
+ 662              	.LASF11:
+ 663 013a 75696E74 		.ascii	"uint32\000"
+ 663      333200
+ 664              	.LASF8:
+ 665 0141 756E7369 		.ascii	"unsigned int\000"
+ 665      676E6564 
+ 665      20696E74 
+ 665      00
+ 666              	.LASF7:
+ 667 014e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 667      206C6F6E 
+ 667      6720756E 
+ 667      7369676E 
+ 667      65642069 
+ 668              	.LASF26:
+ 669 0165 47656E65 		.ascii	"Generated_Source\\PSoC4\\capsense_SampleClk.c\000"
+ 669      72617465 
+ 669      645F536F 
+ 669      75726365 
+ 669      5C50536F 
+ 670              	.LASF6:
+ 671 0191 6C6F6E67 		.ascii	"long long int\000"
+ 671      206C6F6E 
+ 671      6720696E 
+ 671      7400
+ 672              	.LASF14:
+ 673 019f 63686172 		.ascii	"char\000"
+ 673      00
+ 674              	.LASF25:
+ 675 01a4 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 675      4320342E 
+ 675      392E3320 
+ 675      32303135 
+ 675      30333033 
+ 676 01d7 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 676      20726576 
+ 676      6973696F 
+ 676      6E203232 
+ 676      31323230 
+ 677 020a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 677      66756E63 
+ 677      74696F6E 
+ 677      2D736563 
+ 677      74696F6E 
+ 678              	.LASF2:
+ 679 0232 73686F72 		.ascii	"short int\000"
+ 679      7420696E 
+ 679      7400
+ 680              	.LASF9:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccMNw9se.s 			page 18
 
 
- 679      31323230 
- 680 0256 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 680      66756E63 
- 680      74696F6E 
- 680      2D736563 
- 680      74696F6E 
- 681              	.LASF2:
- 682 027e 73686F72 		.ascii	"short int\000"
- 682      7420696E 
- 682      7400
- 683              	.LASF9:
- 684 0288 75696E74 		.ascii	"uint8\000"
- 684      3800
- 685              	.LASF4:
- 686 028e 6C6F6E67 		.ascii	"long int\000"
- 686      20696E74 
- 686      00
- 687              	.LASF0:
- 688 0297 7369676E 		.ascii	"signed char\000"
- 688      65642063 
- 688      68617200 
+ 681 023c 75696E74 		.ascii	"uint8\000"
+ 681      3800
+ 682              	.LASF4:
+ 683 0242 6C6F6E67 		.ascii	"long int\000"
+ 683      20696E74 
+ 683      00
+ 684              	.LASF0:
+ 685 024b 7369676E 		.ascii	"signed char\000"
+ 685      65642063 
+ 685      68617200 
+ 686              	.LASF27:
+ 687 0257 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\BLEDyplomPSoCProg\\capsenseled."
+ 687      6E697665 
+ 687      725C4479 
+ 687      706C6F6D 
+ 687      5C424C45 
+ 688 0286 63796473 		.ascii	"cydsn\000"
+ 688      6E00
  689              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

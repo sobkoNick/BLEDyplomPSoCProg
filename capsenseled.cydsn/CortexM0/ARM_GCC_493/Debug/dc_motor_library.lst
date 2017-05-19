@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
   30:dc_motor_library.c **** void writeShiftRegisters(uint8_t shift_reg)
   31:dc_motor_library.c **** {
   26              		.loc 1 31 0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 2
 
 
   27              		.cfi_startproc
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
   70              		.loc 1 42 0 discriminator 3
   71 0030 0020     		mov	r0, #0
   72 0032 FFF7FEFF 		bl	Pin_SRCLK_Write
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 3
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 3
 
 
   73              	.LVL10:
@@ -175,45 +175,45 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  117 0006 00000000 		.4byte	.Ldebug_abbrev0
  118 000a 04       		.byte	0x4
  119 000b 01       		.uleb128 0x1
- 120 000c 5C010000 		.4byte	.LASF21
+ 120 000c 45010000 		.4byte	.LASF21
  121 0010 01       		.byte	0x1
  122 0011 2A000000 		.4byte	.LASF22
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 4
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 4
 
 
- 123 0015 3D000000 		.4byte	.LASF23
+ 123 0015 AF000000 		.4byte	.LASF23
  124 0019 00000000 		.4byte	.Ldebug_ranges0+0
  125 001d 00000000 		.4byte	0
  126 0021 00000000 		.4byte	.Ldebug_line0
  127 0025 02       		.uleb128 0x2
  128 0026 01       		.byte	0x1
  129 0027 06       		.byte	0x6
- 130 0028 46010000 		.4byte	.LASF0
+ 130 0028 2F010000 		.4byte	.LASF0
  131 002c 03       		.uleb128 0x3
- 132 002d C7000000 		.4byte	.LASF9
+ 132 002d 7B000000 		.4byte	.LASF9
  133 0031 02       		.byte	0x2
  134 0032 1D       		.byte	0x1d
  135 0033 37000000 		.4byte	0x37
  136 0037 02       		.uleb128 0x2
  137 0038 01       		.byte	0x1
  138 0039 08       		.byte	0x8
- 139 003a DF000000 		.4byte	.LASF1
+ 139 003a 93000000 		.4byte	.LASF1
  140 003e 02       		.uleb128 0x2
  141 003f 02       		.byte	0x2
  142 0040 05       		.byte	0x5
- 143 0041 F8010000 		.4byte	.LASF2
+ 143 0041 E1010000 		.4byte	.LASF2
  144 0045 02       		.uleb128 0x2
  145 0046 02       		.byte	0x2
  146 0047 07       		.byte	0x7
- 147 0048 33010000 		.4byte	.LASF3
+ 147 0048 1C010000 		.4byte	.LASF3
  148 004c 02       		.uleb128 0x2
  149 004d 04       		.byte	0x4
  150 004e 05       		.byte	0x5
- 151 004f F2000000 		.4byte	.LASF4
+ 151 004f A6000000 		.4byte	.LASF4
  152 0053 02       		.uleb128 0x2
  153 0054 04       		.byte	0x4
  154 0055 07       		.byte	0x7
- 155 0056 9E000000 		.4byte	.LASF5
+ 155 0056 52000000 		.4byte	.LASF5
  156 005a 02       		.uleb128 0x2
  157 005b 08       		.byte	0x8
  158 005c 05       		.byte	0x5
@@ -221,7 +221,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  160 0061 02       		.uleb128 0x2
  161 0062 08       		.byte	0x8
  162 0063 07       		.byte	0x7
- 163 0064 B0000000 		.4byte	.LASF7
+ 163 0064 64000000 		.4byte	.LASF7
  164 0068 04       		.uleb128 0x4
  165 0069 04       		.byte	0x4
  166 006a 05       		.byte	0x5
@@ -231,14 +231,14 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  170 0071 07       		.byte	0x7
  171 0072 15000000 		.4byte	.LASF8
  172 0076 03       		.uleb128 0x3
- 173 0077 D7000000 		.4byte	.LASF10
+ 173 0077 8B000000 		.4byte	.LASF10
  174 007b 03       		.byte	0x3
  175 007c 15       		.byte	0x15
  176 007d 2C000000 		.4byte	0x2c
  177 0081 03       		.uleb128 0x3
- 178 0082 98000000 		.4byte	.LASF11
+ 178 0082 4C000000 		.4byte	.LASF11
  179 0086 04       		.byte	0x4
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 5
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 5
 
 
  180 0087 C2       		.byte	0xc2
@@ -251,21 +251,21 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  187 0097 02       		.uleb128 0x2
  188 0098 04       		.byte	0x4
  189 0099 04       		.byte	0x4
- 190 009a D1000000 		.4byte	.LASF13
+ 190 009a 85000000 		.4byte	.LASF13
  191 009e 02       		.uleb128 0x2
  192 009f 08       		.byte	0x8
  193 00a0 04       		.byte	0x4
- 194 00a1 0F010000 		.4byte	.LASF14
+ 194 00a1 F8000000 		.4byte	.LASF14
  195 00a5 02       		.uleb128 0x2
  196 00a6 01       		.byte	0x1
  197 00a7 08       		.byte	0x8
- 198 00a8 ED000000 		.4byte	.LASF15
+ 198 00a8 A1000000 		.4byte	.LASF15
  199 00ac 02       		.uleb128 0x2
  200 00ad 04       		.byte	0x4
  201 00ae 07       		.byte	0x7
- 202 00af 02020000 		.4byte	.LASF16
+ 202 00af EB010000 		.4byte	.LASF16
  203 00b3 05       		.uleb128 0x5
- 204 00b4 FB000000 		.4byte	.LASF24
+ 204 00b4 E4000000 		.4byte	.LASF24
  205 00b8 01       		.byte	0x1
  206 00b9 1E       		.byte	0x1e
  207 00ba 00000000 		.4byte	.LFB35
@@ -274,7 +274,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  210 00c3 9C       		.byte	0x9c
  211 00c4 A2010000 		.4byte	0x1a2
  212 00c8 06       		.uleb128 0x6
- 213 00c9 52010000 		.4byte	.LASF25
+ 213 00c9 3B010000 		.4byte	.LASF25
  214 00cd 01       		.byte	0x1
  215 00ce 1E       		.byte	0x1e
  216 00cf 76000000 		.4byte	0x76
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  234 00f7 08       		.uleb128 0x8
  235 00f8 10000000 		.4byte	.LVL3
  236 00fc B3010000 		.4byte	0x1b3
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 6
 
 
  237 0100 0A010000 		.4byte	0x10a
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  291 0166 09       		.uleb128 0x9
  292 0167 01       		.uleb128 0x1
  293 0168 50       		.byte	0x50
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 7
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 7
 
 
  294 0169 01       		.uleb128 0x1
@@ -395,7 +395,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  325 01a0 00       		.byte	0
  326 01a1 00       		.byte	0
  327 01a2 0B       		.uleb128 0xb
- 328 01a3 16010000 		.4byte	.LASF17
+ 328 01a3 FF000000 		.4byte	.LASF17
  329 01a7 05       		.byte	0x5
  330 01a8 33       		.byte	0x33
  331 01a9 B3010000 		.4byte	0x1b3
@@ -403,7 +403,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  333 01ae 81000000 		.4byte	0x81
  334 01b2 00       		.byte	0
  335 01b3 0B       		.uleb128 0xb
- 336 01b4 EA010000 		.4byte	.LASF18
+ 336 01b4 D3010000 		.4byte	.LASF18
  337 01b8 06       		.byte	0x6
  338 01b9 33       		.byte	0x33
  339 01ba C4010000 		.4byte	0x1c4
@@ -411,18 +411,18 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  341 01bf 81000000 		.4byte	0x81
  342 01c3 00       		.byte	0
  343 01c4 0B       		.uleb128 0xb
- 344 01c5 23010000 		.4byte	.LASF19
+ 344 01c5 0C010000 		.4byte	.LASF19
  345 01c9 07       		.byte	0x7
  346 01ca 33       		.byte	0x33
  347 01cb D5010000 		.4byte	0x1d5
  348 01cf 0C       		.uleb128 0xc
  349 01d0 81000000 		.4byte	0x81
  350 01d4 00       		.byte	0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 8
 
 
  351 01d5 0B       		.uleb128 0xb
- 352 01d6 89000000 		.4byte	.LASF20
+ 352 01d6 3D000000 		.4byte	.LASF20
  353 01da 08       		.byte	0x8
  354 01db 33       		.byte	0x33
  355 01dc E6010000 		.4byte	0x1e6
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  405 0024 0B       		.uleb128 0xb
  406 0025 3B       		.uleb128 0x3b
  407 0026 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 9
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 9
 
 
  408 0027 49       		.uleb128 0x49
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  462 005e 00       		.byte	0
  463 005f 07       		.uleb128 0x7
  464 0060 34       		.uleb128 0x34
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 10
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 10
 
 
  465 0061 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  519 009e 19       		.uleb128 0x19
  520 009f 3C       		.uleb128 0x3c
  521 00a0 19       		.uleb128 0x19
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 11
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 11
 
 
  522 00a1 01       		.uleb128 0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  576 0037 9F       		.byte	0x9f
  577 0038 14000000 		.4byte	.LVL4
  578 003c 44000000 		.4byte	.LVL13
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 12
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 12
 
 
  579 0040 0100     		.2byte	0x1
@@ -716,128 +716,122 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 1
  617      5F6C6962 
  617      72617279 
  617      2E6300
- 618              	.LASF23:
- 619 003d 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\1\\bleapp-master\\PSoC_Creator\\"
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 13
+ 618              	.LASF20:
+ 619 003d 50696E5F 		.ascii	"Pin_RCLK_Write\000"
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 13
 
 
- 619      6E697665 
- 619      725C4479 
- 619      706C6F6D 
- 619      5C315C62 
- 620 006b 63617073 		.ascii	"capsenseled\\capsenseled.cydsn\000"
- 620      656E7365 
- 620      6C65645C 
- 620      63617073 
- 620      656E7365 
- 621              	.LASF20:
- 622 0089 50696E5F 		.ascii	"Pin_RCLK_Write\000"
- 622      52434C4B 
- 622      5F577269 
- 622      746500
- 623              	.LASF11:
- 624 0098 75696E74 		.ascii	"uint8\000"
- 624      3800
- 625              	.LASF5:
- 626 009e 6C6F6E67 		.ascii	"long unsigned int\000"
- 626      20756E73 
- 626      69676E65 
- 626      6420696E 
- 626      7400
- 627              	.LASF7:
- 628 00b0 6C6F6E67 		.ascii	"long long unsigned int\000"
- 628      206C6F6E 
- 628      6720756E 
- 628      7369676E 
- 628      65642069 
- 629              	.LASF9:
- 630 00c7 5F5F7569 		.ascii	"__uint8_t\000"
- 630      6E74385F 
- 630      7400
- 631              	.LASF13:
- 632 00d1 666C6F61 		.ascii	"float\000"
- 632      7400
- 633              	.LASF10:
- 634 00d7 75696E74 		.ascii	"uint8_t\000"
- 634      385F7400 
- 635              	.LASF1:
- 636 00df 756E7369 		.ascii	"unsigned char\000"
- 636      676E6564 
- 636      20636861 
- 636      7200
- 637              	.LASF15:
- 638 00ed 63686172 		.ascii	"char\000"
- 638      00
- 639              	.LASF4:
- 640 00f2 6C6F6E67 		.ascii	"long int\000"
- 640      20696E74 
- 640      00
+ 619      52434C4B 
+ 619      5F577269 
+ 619      746500
+ 620              	.LASF11:
+ 621 004c 75696E74 		.ascii	"uint8\000"
+ 621      3800
+ 622              	.LASF5:
+ 623 0052 6C6F6E67 		.ascii	"long unsigned int\000"
+ 623      20756E73 
+ 623      69676E65 
+ 623      6420696E 
+ 623      7400
+ 624              	.LASF7:
+ 625 0064 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 625      206C6F6E 
+ 625      6720756E 
+ 625      7369676E 
+ 625      65642069 
+ 626              	.LASF9:
+ 627 007b 5F5F7569 		.ascii	"__uint8_t\000"
+ 627      6E74385F 
+ 627      7400
+ 628              	.LASF13:
+ 629 0085 666C6F61 		.ascii	"float\000"
+ 629      7400
+ 630              	.LASF10:
+ 631 008b 75696E74 		.ascii	"uint8_t\000"
+ 631      385F7400 
+ 632              	.LASF1:
+ 633 0093 756E7369 		.ascii	"unsigned char\000"
+ 633      676E6564 
+ 633      20636861 
+ 633      7200
+ 634              	.LASF15:
+ 635 00a1 63686172 		.ascii	"char\000"
+ 635      00
+ 636              	.LASF4:
+ 637 00a6 6C6F6E67 		.ascii	"long int\000"
+ 637      20696E74 
+ 637      00
+ 638              	.LASF23:
+ 639 00af 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\BLEDyplomPSoCProg\\capsenseled."
+ 639      6E697665 
+ 639      725C4479 
+ 639      706C6F6D 
+ 639      5C424C45 
+ 640 00de 63796473 		.ascii	"cydsn\000"
+ 640      6E00
  641              	.LASF24:
- 642 00fb 77726974 		.ascii	"writeShiftRegisters\000"
+ 642 00e4 77726974 		.ascii	"writeShiftRegisters\000"
  642      65536869 
  642      66745265 
  642      67697374 
  642      65727300 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 14
-
-
  643              	.LASF14:
- 644 010f 646F7562 		.ascii	"double\000"
+ 644 00f8 646F7562 		.ascii	"double\000"
  644      6C6500
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccTAlxYm.s 			page 14
+
+
  645              	.LASF17:
- 646 0116 50696E5F 		.ascii	"Pin_OE_Write\000"
+ 646 00ff 50696E5F 		.ascii	"Pin_OE_Write\000"
  646      4F455F57 
  646      72697465 
  646      00
  647              	.LASF19:
- 648 0123 50696E5F 		.ascii	"Pin_SRCLK_Write\000"
+ 648 010c 50696E5F 		.ascii	"Pin_SRCLK_Write\000"
  648      5352434C 
  648      4B5F5772 
  648      69746500 
  649              	.LASF3:
- 650 0133 73686F72 		.ascii	"short unsigned int\000"
+ 650 011c 73686F72 		.ascii	"short unsigned int\000"
  650      7420756E 
  650      7369676E 
  650      65642069 
  650      6E7400
  651              	.LASF0:
- 652 0146 7369676E 		.ascii	"signed char\000"
+ 652 012f 7369676E 		.ascii	"signed char\000"
  652      65642063 
  652      68617200 
  653              	.LASF25:
- 654 0152 73686966 		.ascii	"shift_reg\000"
+ 654 013b 73686966 		.ascii	"shift_reg\000"
  654      745F7265 
  654      6700
  655              	.LASF21:
- 656 015c 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 656 0145 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  656      4320342E 
  656      392E3320 
  656      32303135 
  656      30333033 
- 657 018f 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 657 0178 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
  657      20726576 
  657      6973696F 
  657      6E203232 
  657      31323230 
- 658 01c2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 658 01ab 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  658      66756E63 
  658      74696F6E 
  658      2D736563 
  658      74696F6E 
  659              	.LASF18:
- 660 01ea 50696E5F 		.ascii	"Pin_SER_Write\000"
+ 660 01d3 50696E5F 		.ascii	"Pin_SER_Write\000"
  660      5345525F 
  660      57726974 
  660      6500
  661              	.LASF2:
- 662 01f8 73686F72 		.ascii	"short int\000"
+ 662 01e1 73686F72 		.ascii	"short int\000"
  662      7420696E 
  662      7400
  663              	.LASF16:
- 664 0202 73697A65 		.ascii	"sizetype\000"
+ 664 01eb 73697A65 		.ascii	"sizetype\000"
  664      74797065 
  664      00
  665              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc7Tb6na.s 			page 15
-
-

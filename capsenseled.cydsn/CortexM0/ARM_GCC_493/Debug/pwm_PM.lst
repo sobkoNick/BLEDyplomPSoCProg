@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
   30:Generated_Source\PSoC4/pwm_PM.c **** * Parameters:
   31:Generated_Source\PSoC4/pwm_PM.c **** *  None
   32:Generated_Source\PSoC4/pwm_PM.c **** *
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 2
 
 
   33:Generated_Source\PSoC4/pwm_PM.c **** * Return:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
   48 001a 2071     		strb	r0, [r4, #4]
   65:Generated_Source\PSoC4/pwm_PM.c ****         #endif /* (pwm_UseControl) */
   66:Generated_Source\PSoC4/pwm_PM.c ****     #endif  /* (!pwm_UsingFixedFunction) */
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 3
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 3
 
 
   67:Generated_Source\PSoC4/pwm_PM.c **** }
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
   77 0006 FFF7FEFF 		bl	pwm_WritePeriod
   78              	.LVL3:
   93:Generated_Source\PSoC4/pwm_PM.c ****             #endif /* (!pwm_PWMModeIsCenterAligned) */
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 4
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 4
 
 
   94:Generated_Source\PSoC4/pwm_PM.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  117:Generated_Source\PSoC4/pwm_PM.c **** /*******************************************************************************
  118:Generated_Source\PSoC4/pwm_PM.c **** * Function Name: pwm_Sleep
  119:Generated_Source\PSoC4/pwm_PM.c **** ********************************************************************************
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 5
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 5
 
 
  120:Generated_Source\PSoC4/pwm_PM.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  151:Generated_Source\PSoC4/pwm_PM.c ****     /* Stop component */
  152:Generated_Source\PSoC4/pwm_PM.c ****     pwm_Stop();
  133              		.loc 1 152 0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 6
 
 
  134 001a FFF7FEFF 		bl	pwm_Stop
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  161              		.cfi_def_cfa_offset 8
  162              		.cfi_offset 3, -8
  163              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 7
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 7
 
 
  180:Generated_Source\PSoC4/pwm_PM.c ****      /* Restore registers values */
@@ -412,48 +412,48 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  201 0006 00000000 		.4byte	.Ldebug_abbrev0
  202 000a 04       		.byte	0x4
  203 000b 01       		.uleb128 0x1
- 204 000c AF010000 		.4byte	.LASF33
+ 204 000c 63010000 		.4byte	.LASF33
  205 0010 01       		.byte	0x1
- 206 0011 73020000 		.4byte	.LASF34
- 207 0015 34000000 		.4byte	.LASF35
+ 206 0011 27020000 		.4byte	.LASF34
+ 207 0015 53020000 		.4byte	.LASF35
  208 0019 00000000 		.4byte	.Ldebug_ranges0+0
  209 001d 00000000 		.4byte	0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 8
 
 
  210 0021 00000000 		.4byte	.Ldebug_line0
  211 0025 02       		.uleb128 0x2
  212 0026 01       		.byte	0x1
  213 0027 06       		.byte	0x6
- 214 0028 93020000 		.4byte	.LASF0
+ 214 0028 47020000 		.4byte	.LASF0
  215 002c 02       		.uleb128 0x2
  216 002d 01       		.byte	0x1
  217 002e 08       		.byte	0x8
- 218 002f BC000000 		.4byte	.LASF1
+ 218 002f 70000000 		.4byte	.LASF1
  219 0033 02       		.uleb128 0x2
  220 0034 02       		.byte	0x2
  221 0035 05       		.byte	0x5
- 222 0036 46020000 		.4byte	.LASF2
+ 222 0036 FA010000 		.4byte	.LASF2
  223 003a 02       		.uleb128 0x2
  224 003b 02       		.byte	0x2
  225 003c 07       		.byte	0x7
- 226 003d 80000000 		.4byte	.LASF3
+ 226 003d 34000000 		.4byte	.LASF3
  227 0041 02       		.uleb128 0x2
  228 0042 04       		.byte	0x4
  229 0043 05       		.byte	0x5
- 230 0044 6A020000 		.4byte	.LASF4
+ 230 0044 1E020000 		.4byte	.LASF4
  231 0048 02       		.uleb128 0x2
  232 0049 04       		.byte	0x4
  233 004a 07       		.byte	0x7
- 234 004b D9000000 		.4byte	.LASF5
+ 234 004b 8D000000 		.4byte	.LASF5
  235 004f 02       		.uleb128 0x2
  236 0050 08       		.byte	0x8
  237 0051 05       		.byte	0x5
- 238 0052 8C010000 		.4byte	.LASF6
+ 238 0052 40010000 		.4byte	.LASF6
  239 0056 02       		.uleb128 0x2
  240 0057 08       		.byte	0x8
  241 0058 07       		.byte	0x7
- 242 0059 33010000 		.4byte	.LASF7
+ 242 0059 E7000000 		.4byte	.LASF7
  243 005d 03       		.uleb128 0x3
  244 005e 04       		.byte	0x4
  245 005f 05       		.byte	0x5
@@ -461,29 +461,29 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  247 0064 02       		.uleb128 0x2
  248 0065 04       		.byte	0x4
  249 0066 07       		.byte	0x7
- 250 0067 26010000 		.4byte	.LASF8
+ 250 0067 DA000000 		.4byte	.LASF8
  251 006b 04       		.uleb128 0x4
- 252 006c EB000000 		.4byte	.LASF12
+ 252 006c 9F000000 		.4byte	.LASF12
  253 0070 02       		.byte	0x2
  254 0071 C2       		.byte	0xc2
  255 0072 2C000000 		.4byte	0x2c
  256 0076 02       		.uleb128 0x2
  257 0077 04       		.byte	0x4
  258 0078 04       		.byte	0x4
- 259 0079 B6000000 		.4byte	.LASF9
+ 259 0079 6A000000 		.4byte	.LASF9
  260 007d 02       		.uleb128 0x2
  261 007e 08       		.byte	0x8
  262 007f 04       		.byte	0x4
- 263 0080 14010000 		.4byte	.LASF10
+ 263 0080 C8000000 		.4byte	.LASF10
  264 0084 02       		.uleb128 0x2
  265 0085 01       		.byte	0x1
  266 0086 08       		.byte	0x8
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 9
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 9
 
 
- 267 0087 AA010000 		.4byte	.LASF11
+ 267 0087 5E010000 		.4byte	.LASF11
  268 008b 05       		.uleb128 0x5
- 269 008c 74010000 		.4byte	.LASF13
+ 269 008c 28010000 		.4byte	.LASF13
  270 0090 02       		.byte	0x2
  271 0091 6C01     		.2byte	0x16c
  272 0093 97000000 		.4byte	0x97
@@ -492,14 +492,14 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  275 009c 02       		.uleb128 0x2
  276 009d 04       		.byte	0x4
  277 009e 07       		.byte	0x7
- 278 009f 83010000 		.4byte	.LASF14
+ 278 009f 37010000 		.4byte	.LASF14
  279 00a3 07       		.uleb128 0x7
  280 00a4 05       		.byte	0x5
  281 00a5 03       		.byte	0x3
  282 00a6 6B       		.byte	0x6b
  283 00a7 E8000000 		.4byte	0xe8
  284 00ab 08       		.uleb128 0x8
- 285 00ac CA000000 		.4byte	.LASF15
+ 285 00ac 7E000000 		.4byte	.LASF15
  286 00b0 03       		.byte	0x3
  287 00b1 6E       		.byte	0x6e
  288 00b2 6B000000 		.4byte	0x6b
@@ -517,13 +517,13 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  300 00ca 6B000000 		.4byte	0x6b
  301 00ce 02       		.byte	0x2
  302 00cf 08       		.uleb128 0x8
- 303 00d0 9F020000 		.4byte	.LASF18
+ 303 00d0 88020000 		.4byte	.LASF18
  304 00d4 03       		.byte	0x3
  305 00d5 76       		.byte	0x76
  306 00d6 6B000000 		.4byte	0x6b
  307 00da 03       		.byte	0x3
  308 00db 08       		.uleb128 0x8
- 309 00dc 01010000 		.4byte	.LASF19
+ 309 00dc B5000000 		.4byte	.LASF19
  310 00e0 03       		.byte	0x3
  311 00e1 86       		.byte	0x86
  312 00e2 6B000000 		.4byte	0x6b
@@ -535,10 +535,10 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  318 00ee 8B       		.byte	0x8b
  319 00ef A3000000 		.4byte	0xa3
  320 00f3 09       		.uleb128 0x9
- 321 00f4 B2020000 		.4byte	.LASF21
+ 321 00f4 9B020000 		.4byte	.LASF21
  322 00f8 01       		.byte	0x1
  323 00f9 2A       		.byte	0x2a
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 10
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 10
 
 
  324 00fa 00000000 		.4byte	.LFB2
@@ -576,7 +576,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  356 0150 F9010000 		.4byte	0x1f9
  357 0154 00       		.byte	0
  358 0155 09       		.uleb128 0x9
- 359 0156 79010000 		.4byte	.LASF23
+ 359 0156 2D010000 		.4byte	.LASF23
  360 015a 01       		.byte	0x1
  361 015b 88       		.byte	0x88
  362 015c 00000000 		.4byte	.LFB4
@@ -592,13 +592,13 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  372 0178 F3000000 		.4byte	0xf3
  373 017c 00       		.byte	0
  374 017d 09       		.uleb128 0x9
- 375 017e 1B010000 		.4byte	.LASF24
+ 375 017e CF000000 		.4byte	.LASF24
  376 0182 01       		.byte	0x1
  377 0183 B2       		.byte	0xb2
  378 0184 00000000 		.4byte	.LFB5
  379 0188 18000000 		.4byte	.LFE5-.LFB5
  380 018c 01       		.uleb128 0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 11
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 11
 
 
  381 018d 9C       		.byte	0x9c
@@ -611,7 +611,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  388 01a0 11020000 		.4byte	0x211
  389 01a4 00       		.byte	0
  390 01a5 0B       		.uleb128 0xb
- 391 01a6 93000000 		.4byte	.LASF36
+ 391 01a6 47000000 		.4byte	.LASF36
  392 01aa 01       		.byte	0x1
  393 01ab 14       		.byte	0x14
  394 01ac E8000000 		.4byte	0xe8
@@ -619,22 +619,22 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  396 01b1 03       		.byte	0x3
  397 01b2 00000000 		.4byte	pwm_backup
  398 01b6 0C       		.uleb128 0xc
- 399 01b7 5B020000 		.4byte	.LASF25
+ 399 01b7 0F020000 		.4byte	.LASF25
  400 01bb 03       		.byte	0x3
  401 01bc C0       		.byte	0xc0
  402 01bd 6B000000 		.4byte	0x6b
  403 01c1 0C       		.uleb128 0xc
- 404 01c2 F1000000 		.4byte	.LASF26
+ 404 01c2 A5000000 		.4byte	.LASF26
  405 01c6 03       		.byte	0x3
  406 01c7 B3       		.byte	0xb3
  407 01c8 6B000000 		.4byte	0x6b
  408 01cc 0C       		.uleb128 0xc
- 409 01cd 9E000000 		.4byte	.LASF27
+ 409 01cd 52000000 		.4byte	.LASF27
  410 01d1 03       		.byte	0x3
  411 01d2 9D       		.byte	0x9d
  412 01d3 6B000000 		.4byte	0x6b
  413 01d7 0D       		.uleb128 0xd
- 414 01d8 9A010000 		.4byte	.LASF28
+ 414 01d8 4E010000 		.4byte	.LASF28
  415 01dc 03       		.byte	0x3
  416 01dd BE       		.byte	0xbe
  417 01de E8010000 		.4byte	0x1e8
@@ -642,7 +642,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  419 01e3 6B000000 		.4byte	0x6b
  420 01e7 00       		.byte	0
  421 01e8 0D       		.uleb128 0xd
- 422 01e9 4A010000 		.4byte	.LASF29
+ 422 01e9 FE000000 		.4byte	.LASF29
  423 01ed 03       		.byte	0x3
  424 01ee BA       		.byte	0xba
  425 01ef F9010000 		.4byte	0x1f9
@@ -650,7 +650,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  427 01f4 6B000000 		.4byte	0x6b
  428 01f8 00       		.byte	0
  429 01f9 0D       		.uleb128 0xd
- 430 01fa 5B010000 		.4byte	.LASF30
+ 430 01fa 0F010000 		.4byte	.LASF30
  431 01fe 03       		.byte	0x3
  432 01ff 9E       		.byte	0x9e
  433 0200 0A020000 		.4byte	0x20a
@@ -658,14 +658,14 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  435 0205 6B000000 		.4byte	0x6b
  436 0209 00       		.byte	0
  437 020a 0F       		.uleb128 0xf
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 12
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 12
 
 
- 438 020b 3D020000 		.4byte	.LASF31
+ 438 020b F1010000 		.4byte	.LASF31
  439 020f 03       		.byte	0x3
  440 0210 93       		.byte	0x93
  441 0211 0F       		.uleb128 0xf
- 442 0212 50020000 		.4byte	.LASF32
+ 442 0212 04020000 		.4byte	.LASF32
  443 0216 03       		.byte	0x3
  444 0217 DB       		.byte	0xdb
  445 0218 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  492 002c 03       		.uleb128 0x3
  493 002d 0E       		.uleb128 0xe
  494 002e 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 13
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 13
 
 
  495 002f 0B       		.uleb128 0xb
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  549 0065 00       		.byte	0
  550 0066 09       		.uleb128 0x9
  551 0067 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 14
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 14
 
 
  552 0068 01       		.byte	0x1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  606 00a1 3A       		.uleb128 0x3a
  607 00a2 0B       		.uleb128 0xb
  608 00a3 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 15
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 15
 
 
  609 00a4 0B       		.uleb128 0xb
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  663 0000 34000000 		.4byte	0x34
  664 0004 0200     		.2byte	0x2
  665 0006 00000000 		.4byte	.Ldebug_info0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 16
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 16
 
 
  666 000a 04       		.byte	0x4
@@ -953,184 +953,181 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 1
  702      75705374 
  702      72756374 
  702      00
- 703              	.LASF35:
- 704 0034 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\1\\bleapp-master\\PSoC_Creator\\"
- 704      6E697665 
- 704      725C4479 
- 704      706C6F6D 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 17
+ 703              	.LASF3:
+ 704 0034 73686F72 		.ascii	"short unsigned int\000"
+ 704      7420756E 
+ 704      7369676E 
+ 704      65642069 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 17
 
 
- 704      5C315C62 
- 705 0062 63617073 		.ascii	"capsenseled\\capsenseled.cydsn\000"
- 705      656E7365 
- 705      6C65645C 
- 705      63617073 
- 705      656E7365 
- 706              	.LASF3:
- 707 0080 73686F72 		.ascii	"short unsigned int\000"
- 707      7420756E 
- 707      7369676E 
- 707      65642069 
- 707      6E7400
- 708              	.LASF36:
- 709 0093 70776D5F 		.ascii	"pwm_backup\000"
- 709      6261636B 
- 709      757000
- 710              	.LASF27:
- 711 009e 70776D5F 		.ascii	"pwm_ReadControlRegister\000"
- 711      52656164 
- 711      436F6E74 
- 711      726F6C52 
- 711      65676973 
- 712              	.LASF9:
- 713 00b6 666C6F61 		.ascii	"float\000"
- 713      7400
- 714              	.LASF1:
- 715 00bc 756E7369 		.ascii	"unsigned char\000"
- 715      676E6564 
- 715      20636861 
- 715      7200
- 716              	.LASF15:
- 717 00ca 50574D45 		.ascii	"PWMEnableState\000"
- 717      6E61626C 
- 717      65537461 
- 717      746500
- 718              	.LASF5:
- 719 00d9 6C6F6E67 		.ascii	"long unsigned int\000"
- 719      20756E73 
- 719      69676E65 
- 719      6420696E 
- 719      7400
- 720              	.LASF12:
- 721 00eb 75696E74 		.ascii	"uint8\000"
- 721      3800
- 722              	.LASF26:
- 723 00f1 70776D5F 		.ascii	"pwm_ReadCounter\000"
- 723      52656164 
- 723      436F756E 
- 723      74657200 
- 724              	.LASF19:
- 725 0101 50574D43 		.ascii	"PWMControlRegister\000"
- 725      6F6E7472 
- 725      6F6C5265 
- 725      67697374 
- 725      657200
- 726              	.LASF10:
- 727 0114 646F7562 		.ascii	"double\000"
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 18
+ 704      6E7400
+ 705              	.LASF36:
+ 706 0047 70776D5F 		.ascii	"pwm_backup\000"
+ 706      6261636B 
+ 706      757000
+ 707              	.LASF27:
+ 708 0052 70776D5F 		.ascii	"pwm_ReadControlRegister\000"
+ 708      52656164 
+ 708      436F6E74 
+ 708      726F6C52 
+ 708      65676973 
+ 709              	.LASF9:
+ 710 006a 666C6F61 		.ascii	"float\000"
+ 710      7400
+ 711              	.LASF1:
+ 712 0070 756E7369 		.ascii	"unsigned char\000"
+ 712      676E6564 
+ 712      20636861 
+ 712      7200
+ 713              	.LASF15:
+ 714 007e 50574D45 		.ascii	"PWMEnableState\000"
+ 714      6E61626C 
+ 714      65537461 
+ 714      746500
+ 715              	.LASF5:
+ 716 008d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 716      20756E73 
+ 716      69676E65 
+ 716      6420696E 
+ 716      7400
+ 717              	.LASF12:
+ 718 009f 75696E74 		.ascii	"uint8\000"
+ 718      3800
+ 719              	.LASF26:
+ 720 00a5 70776D5F 		.ascii	"pwm_ReadCounter\000"
+ 720      52656164 
+ 720      436F756E 
+ 720      74657200 
+ 721              	.LASF19:
+ 722 00b5 50574D43 		.ascii	"PWMControlRegister\000"
+ 722      6F6E7472 
+ 722      6F6C5265 
+ 722      67697374 
+ 722      657200
+ 723              	.LASF10:
+ 724 00c8 646F7562 		.ascii	"double\000"
+ 724      6C6500
+ 725              	.LASF24:
+ 726 00cf 70776D5F 		.ascii	"pwm_Wakeup\000"
+ 726      57616B65 
+ 726      757000
+ 727              	.LASF8:
+ 728 00da 756E7369 		.ascii	"unsigned int\000"
+ 728      676E6564 
+ 728      20696E74 
+ 728      00
+ 729              	.LASF7:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 18
 
 
- 727      6C6500
- 728              	.LASF24:
- 729 011b 70776D5F 		.ascii	"pwm_Wakeup\000"
- 729      57616B65 
- 729      757000
- 730              	.LASF8:
- 731 0126 756E7369 		.ascii	"unsigned int\000"
- 731      676E6564 
- 731      20696E74 
- 731      00
- 732              	.LASF7:
- 733 0133 6C6F6E67 		.ascii	"long long unsigned int\000"
- 733      206C6F6E 
- 733      6720756E 
- 733      7369676E 
- 733      65642069 
- 734              	.LASF29:
- 735 014a 70776D5F 		.ascii	"pwm_WriteCounter\000"
- 735      57726974 
- 735      65436F75 
- 735      6E746572 
- 735      00
- 736              	.LASF30:
- 737 015b 70776D5F 		.ascii	"pwm_WriteControlRegister\000"
- 737      57726974 
- 737      65436F6E 
- 737      74726F6C 
- 737      52656769 
- 738              	.LASF13:
- 739 0174 72656738 		.ascii	"reg8\000"
- 739      00
- 740              	.LASF23:
- 741 0179 70776D5F 		.ascii	"pwm_Sleep\000"
- 741      536C6565 
- 741      7000
- 742              	.LASF14:
- 743 0183 73697A65 		.ascii	"sizetype\000"
- 743      74797065 
- 743      00
- 744              	.LASF6:
- 745 018c 6C6F6E67 		.ascii	"long long int\000"
- 745      206C6F6E 
- 745      6720696E 
- 745      7400
- 746              	.LASF28:
- 747 019a 70776D5F 		.ascii	"pwm_WritePeriod\000"
- 747      57726974 
- 747      65506572 
- 747      696F6400 
- 748              	.LASF11:
- 749 01aa 63686172 		.ascii	"char\000"
- 749      00
- 750              	.LASF33:
- 751 01af 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 751      4320342E 
- 751      392E3320 
- 751      32303135 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccyKPASh.s 			page 19
+ 730 00e7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 730      206C6F6E 
+ 730      6720756E 
+ 730      7369676E 
+ 730      65642069 
+ 731              	.LASF29:
+ 732 00fe 70776D5F 		.ascii	"pwm_WriteCounter\000"
+ 732      57726974 
+ 732      65436F75 
+ 732      6E746572 
+ 732      00
+ 733              	.LASF30:
+ 734 010f 70776D5F 		.ascii	"pwm_WriteControlRegister\000"
+ 734      57726974 
+ 734      65436F6E 
+ 734      74726F6C 
+ 734      52656769 
+ 735              	.LASF13:
+ 736 0128 72656738 		.ascii	"reg8\000"
+ 736      00
+ 737              	.LASF23:
+ 738 012d 70776D5F 		.ascii	"pwm_Sleep\000"
+ 738      536C6565 
+ 738      7000
+ 739              	.LASF14:
+ 740 0137 73697A65 		.ascii	"sizetype\000"
+ 740      74797065 
+ 740      00
+ 741              	.LASF6:
+ 742 0140 6C6F6E67 		.ascii	"long long int\000"
+ 742      206C6F6E 
+ 742      6720696E 
+ 742      7400
+ 743              	.LASF28:
+ 744 014e 70776D5F 		.ascii	"pwm_WritePeriod\000"
+ 744      57726974 
+ 744      65506572 
+ 744      696F6400 
+ 745              	.LASF11:
+ 746 015e 63686172 		.ascii	"char\000"
+ 746      00
+ 747              	.LASF33:
+ 748 0163 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 748      4320342E 
+ 748      392E3320 
+ 748      32303135 
+ 748      30333033 
+ 749 0196 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 749      20726576 
+ 749      6973696F 
+ 749      6E203232 
+ 749      31323230 
+ 750 01c9 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 750      66756E63 
+ 750      74696F6E 
+ 750      2D736563 
+ 750      74696F6E 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKu8E1.s 			page 19
 
 
- 751      30333033 
- 752 01e2 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
- 752      20726576 
- 752      6973696F 
- 752      6E203232 
- 752      31323230 
- 753 0215 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 753      66756E63 
- 753      74696F6E 
- 753      2D736563 
- 753      74696F6E 
- 754              	.LASF31:
- 755 023d 70776D5F 		.ascii	"pwm_Stop\000"
- 755      53746F70 
- 755      00
- 756              	.LASF2:
- 757 0246 73686F72 		.ascii	"short int\000"
- 757      7420696E 
- 757      7400
- 758              	.LASF32:
- 759 0250 70776D5F 		.ascii	"pwm_Enable\000"
- 759      456E6162 
- 759      6C6500
- 760              	.LASF25:
- 761 025b 70776D5F 		.ascii	"pwm_ReadPeriod\000"
- 761      52656164 
- 761      50657269 
- 761      6F6400
- 762              	.LASF4:
- 763 026a 6C6F6E67 		.ascii	"long int\000"
- 763      20696E74 
- 763      00
- 764              	.LASF34:
- 765 0273 47656E65 		.ascii	"Generated_Source\\PSoC4\\pwm_PM.c\000"
- 765      72617465 
- 765      645F536F 
- 765      75726365 
- 765      5C50536F 
- 766              	.LASF0:
- 767 0293 7369676E 		.ascii	"signed char\000"
- 767      65642063 
- 767      68617200 
+ 751              	.LASF31:
+ 752 01f1 70776D5F 		.ascii	"pwm_Stop\000"
+ 752      53746F70 
+ 752      00
+ 753              	.LASF2:
+ 754 01fa 73686F72 		.ascii	"short int\000"
+ 754      7420696E 
+ 754      7400
+ 755              	.LASF32:
+ 756 0204 70776D5F 		.ascii	"pwm_Enable\000"
+ 756      456E6162 
+ 756      6C6500
+ 757              	.LASF25:
+ 758 020f 70776D5F 		.ascii	"pwm_ReadPeriod\000"
+ 758      52656164 
+ 758      50657269 
+ 758      6F6400
+ 759              	.LASF4:
+ 760 021e 6C6F6E67 		.ascii	"long int\000"
+ 760      20696E74 
+ 760      00
+ 761              	.LASF34:
+ 762 0227 47656E65 		.ascii	"Generated_Source\\PSoC4\\pwm_PM.c\000"
+ 762      72617465 
+ 762      645F536F 
+ 762      75726365 
+ 762      5C50536F 
+ 763              	.LASF0:
+ 764 0247 7369676E 		.ascii	"signed char\000"
+ 764      65642063 
+ 764      68617200 
+ 765              	.LASF35:
+ 766 0253 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\BLEDyplomPSoCProg\\capsenseled."
+ 766      6E697665 
+ 766      725C4479 
+ 766      706C6F6D 
+ 766      5C424C45 
+ 767 0282 63796473 		.ascii	"cydsn\000"
+ 767      6E00
  768              	.LASF18:
- 769 029f 496E7465 		.ascii	"InterruptMaskValue\000"
+ 769 0288 496E7465 		.ascii	"InterruptMaskValue\000"
  769      72727570 
  769      744D6173 
  769      6B56616C 
  769      756500
  770              	.LASF21:
- 771 02b2 70776D5F 		.ascii	"pwm_SaveConfig\000"
+ 771 029b 70776D5F 		.ascii	"pwm_SaveConfig\000"
  771      53617665 
  771      436F6E66 
  771      696700

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
   30:Generated_Source\PSoC4/Clock_1.c **** *
   31:Generated_Source\PSoC4/Clock_1.c **** * Parameters:
   32:Generated_Source\PSoC4/Clock_1.c **** *  alignClkDiv:  The divider to which phase alignment is performed when the
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 2
 
 
   33:Generated_Source\PSoC4/Clock_1.c **** *    clock is started.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
   60              	Clock_1_Stop:
   61              	.LFB1:
   52:Generated_Source\PSoC4/Clock_1.c **** 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 3
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 3
 
 
   53:Generated_Source\PSoC4/Clock_1.c **** #else
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
   68 0004 002B     		cmp	r3, #0
   69 0006 FBDB     		blt	.L6
  101:Generated_Source\PSoC4/Clock_1.c ****     {
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 4
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 4
 
 
  102:Generated_Source\PSoC4/Clock_1.c ****     }
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  133:Generated_Source\PSoC4/Clock_1.c **** *******************************************************************************/
  134:Generated_Source\PSoC4/Clock_1.c **** void Clock_1_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
  135:Generated_Source\PSoC4/Clock_1.c **** {
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 5
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 5
 
 
   93              		.loc 1 135 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  122              		.loc 1 158 0
  123              		@ sp needed
  124 0018 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 6
 
 
  125              	.L11:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  156              		.cfi_endproc
  157              	.LFE3:
  158              		.size	Clock_1_GetDividerRegister, .-Clock_1_GetDividerRegister
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 7
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 7
 
 
  159              		.section	.text.Clock_1_GetFractionalDividerRegister,"ax",%progbits
@@ -415,48 +415,48 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  183 0006 00000000 		.4byte	.Ldebug_abbrev0
  184 000a 04       		.byte	0x4
  185 000b 01       		.uleb128 0x1
- 186 000c 4D010000 		.4byte	.LASF25
+ 186 000c 01010000 		.4byte	.LASF25
  187 0010 01       		.byte	0x1
- 188 0011 19020000 		.4byte	.LASF26
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 8
+ 188 0011 CD010000 		.4byte	.LASF26
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 8
 
 
- 189 0015 0E000000 		.4byte	.LASF27
+ 189 0015 15020000 		.4byte	.LASF27
  190 0019 00000000 		.4byte	.Ldebug_ranges0+0
  191 001d 00000000 		.4byte	0
  192 0021 00000000 		.4byte	.Ldebug_line0
  193 0025 02       		.uleb128 0x2
  194 0026 01       		.byte	0x1
  195 0027 06       		.byte	0x6
- 196 0028 3A020000 		.4byte	.LASF0
+ 196 0028 EE010000 		.4byte	.LASF0
  197 002c 02       		.uleb128 0x2
  198 002d 01       		.byte	0x1
  199 002e 08       		.byte	0x8
- 200 002f 7D000000 		.4byte	.LASF1
+ 200 002f 31000000 		.4byte	.LASF1
  201 0033 02       		.uleb128 0x2
  202 0034 02       		.byte	0x2
  203 0035 05       		.byte	0x5
- 204 0036 DB010000 		.4byte	.LASF2
+ 204 0036 8F010000 		.4byte	.LASF2
  205 003a 02       		.uleb128 0x2
  206 003b 02       		.byte	0x2
  207 003c 07       		.byte	0x7
- 208 003d 9D000000 		.4byte	.LASF3
+ 208 003d 51000000 		.4byte	.LASF3
  209 0041 02       		.uleb128 0x2
  210 0042 04       		.byte	0x4
  211 0043 05       		.byte	0x5
- 212 0044 10020000 		.4byte	.LASF4
+ 212 0044 C4010000 		.4byte	.LASF4
  213 0048 02       		.uleb128 0x2
  214 0049 04       		.byte	0x4
  215 004a 07       		.byte	0x7
- 216 004b 8B000000 		.4byte	.LASF5
+ 216 004b 3F000000 		.4byte	.LASF5
  217 004f 02       		.uleb128 0x2
  218 0050 08       		.byte	0x8
  219 0051 05       		.byte	0x5
- 220 0052 3A010000 		.4byte	.LASF6
+ 220 0052 EE000000 		.4byte	.LASF6
  221 0056 02       		.uleb128 0x2
  222 0057 08       		.byte	0x8
  223 0058 07       		.byte	0x7
- 224 0059 FE000000 		.4byte	.LASF7
+ 224 0059 B2000000 		.4byte	.LASF7
  225 005d 03       		.uleb128 0x3
  226 005e 04       		.byte	0x4
  227 005f 05       		.byte	0x5
@@ -464,21 +464,21 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  229 0064 02       		.uleb128 0x2
  230 0065 04       		.byte	0x4
  231 0066 07       		.byte	0x7
- 232 0067 F1000000 		.4byte	.LASF8
+ 232 0067 A5000000 		.4byte	.LASF8
  233 006b 04       		.uleb128 0x4
- 234 006c E5010000 		.4byte	.LASF9
+ 234 006c 99010000 		.4byte	.LASF9
  235 0070 02       		.byte	0x2
  236 0071 C2       		.byte	0xc2
  237 0072 2C000000 		.4byte	0x2c
  238 0076 04       		.uleb128 0x4
- 239 0077 E3000000 		.4byte	.LASF10
+ 239 0077 97000000 		.4byte	.LASF10
  240 007b 02       		.byte	0x2
  241 007c C3       		.byte	0xc3
  242 007d 3A000000 		.4byte	0x3a
  243 0081 04       		.uleb128 0x4
- 244 0082 EA000000 		.4byte	.LASF11
+ 244 0082 9E000000 		.4byte	.LASF11
  245 0086 02       		.byte	0x2
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 9
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 9
 
 
  246 0087 C4       		.byte	0xc4
@@ -486,15 +486,15 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  248 008c 02       		.uleb128 0x2
  249 008d 04       		.byte	0x4
  250 008e 04       		.byte	0x4
- 251 008f 5A000000 		.4byte	.LASF12
+ 251 008f 0E000000 		.4byte	.LASF12
  252 0093 02       		.uleb128 0x2
  253 0094 08       		.byte	0x8
  254 0095 04       		.byte	0x4
- 255 0096 BB000000 		.4byte	.LASF13
+ 255 0096 6F000000 		.4byte	.LASF13
  256 009a 02       		.uleb128 0x2
  257 009b 01       		.byte	0x1
  258 009c 08       		.byte	0x8
- 259 009d 48010000 		.4byte	.LASF14
+ 259 009d FC000000 		.4byte	.LASF14
  260 00a1 05       		.uleb128 0x5
  261 00a2 00000000 		.4byte	.LASF15
  262 00a6 02       		.byte	0x2
@@ -503,7 +503,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  265 00ad 06       		.uleb128 0x6
  266 00ae 81000000 		.4byte	0x81
  267 00b2 07       		.uleb128 0x7
- 268 00b3 60000000 		.4byte	.LASF16
+ 268 00b3 14000000 		.4byte	.LASF16
  269 00b7 01       		.byte	0x1
  270 00b8 27       		.byte	0x27
  271 00b9 00000000 		.4byte	.LFB0
@@ -512,14 +512,14 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  274 00c2 9C       		.byte	0x9c
  275 00c3 D7000000 		.4byte	0xd7
  276 00c7 08       		.uleb128 0x8
- 277 00c8 C9000000 		.4byte	.LASF18
+ 277 00c8 7D000000 		.4byte	.LASF18
  278 00cc 01       		.byte	0x1
  279 00cd 27       		.byte	0x27
  280 00ce 81000000 		.4byte	0x81
  281 00d2 00000000 		.4byte	.LLST0
  282 00d6 00       		.byte	0
  283 00d7 09       		.uleb128 0x9
- 284 00d8 70000000 		.4byte	.LASF28
+ 284 00d8 24000000 		.4byte	.LASF28
  285 00dc 01       		.byte	0x1
  286 00dd 5F       		.byte	0x5f
  287 00de 00000000 		.4byte	.LFB1
@@ -527,7 +527,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  289 00e6 01       		.uleb128 0x1
  290 00e7 9C       		.byte	0x9c
  291 00e8 07       		.uleb128 0x7
- 292 00e9 EB010000 		.4byte	.LASF17
+ 292 00e9 9F010000 		.4byte	.LASF17
  293 00ed 01       		.byte	0x1
  294 00ee 86       		.byte	0x86
  295 00ef 00000000 		.4byte	.LFB2
@@ -536,16 +536,16 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  298 00f8 9C       		.byte	0x9c
  299 00f9 38010000 		.4byte	0x138
  300 00fd 08       		.uleb128 0x8
- 301 00fe B0000000 		.4byte	.LASF19
+ 301 00fe 64000000 		.4byte	.LASF19
  302 0102 01       		.byte	0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 10
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 10
 
 
  303 0103 86       		.byte	0x86
  304 0104 76000000 		.4byte	0x76
  305 0108 21000000 		.4byte	.LLST1
  306 010c 08       		.uleb128 0x8
- 307 010d D5000000 		.4byte	.LASF20
+ 307 010d 89000000 		.4byte	.LASF20
  308 0111 01       		.byte	0x1
  309 0112 86       		.byte	0x86
  310 0113 6B000000 		.4byte	0x6b
@@ -557,7 +557,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  316 0122 81000000 		.4byte	0x81
  317 0126 63000000 		.4byte	.LLST3
  318 012a 0B       		.uleb128 0xb
- 319 012b C2000000 		.4byte	.LASF22
+ 319 012b 76000000 		.4byte	.LASF22
  320 012f 01       		.byte	0x1
  321 0130 89       		.byte	0x89
  322 0131 81000000 		.4byte	0x81
@@ -565,7 +565,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  324 0136 51       		.byte	0x51
  325 0137 00       		.byte	0
  326 0138 0C       		.uleb128 0xc
- 327 0139 46020000 		.4byte	.LASF23
+ 327 0139 FA010000 		.4byte	.LASF23
  328 013d 01       		.byte	0x1
  329 013e B0       		.byte	0xb0
  330 013f 76000000 		.4byte	0x76
@@ -574,7 +574,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  333 014b 01       		.uleb128 0x1
  334 014c 9C       		.byte	0x9c
  335 014d 0C       		.uleb128 0xc
- 336 014e 15010000 		.4byte	.LASF24
+ 336 014e C9000000 		.4byte	.LASF24
  337 0152 01       		.byte	0x1
  338 0153 C6       		.byte	0xc6
  339 0154 6B000000 		.4byte	0x6b
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  357 000a 0E       		.uleb128 0xe
  358 000b 55       		.uleb128 0x55
  359 000c 17       		.uleb128 0x17
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 11
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 11
 
 
  360 000d 11       		.uleb128 0x11
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  414 0043 06       		.uleb128 0x6
  415 0044 35       		.uleb128 0x35
  416 0045 00       		.byte	0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 12
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 12
 
 
  417 0046 49       		.uleb128 0x49
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  471 007d 0B       		.uleb128 0xb
  472 007e 27       		.uleb128 0x27
  473 007f 19       		.uleb128 0x19
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 13
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 13
 
 
  474 0080 11       		.uleb128 0x11
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  528 00b7 13       		.uleb128 0x13
  529 00b8 11       		.uleb128 0x11
  530 00b9 01       		.uleb128 0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 14
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 14
 
 
  531 00ba 12       		.uleb128 0x12
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  585 0063 0A000000 		.4byte	.LVL3
  586 0067 10000000 		.4byte	.LVL5
  587 006b 0100     		.2byte	0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 15
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 15
 
 
  588 006d 53       		.byte	0x53
@@ -891,153 +891,150 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 1
  630              	.LASF21:
  631 0006 6D61736B 		.ascii	"maskVal\000"
  631      56616C00 
- 632              	.LASF27:
- 633 000e 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\1\\bleapp-master\\PSoC_Creator\\"
- 633      6E697665 
- 633      725C4479 
- 633      706C6F6D 
- 633      5C315C62 
- 634 003c 63617073 		.ascii	"capsenseled\\capsenseled.cydsn\000"
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 16
+ 632              	.LASF12:
+ 633 000e 666C6F61 		.ascii	"float\000"
+ 633      7400
+ 634              	.LASF16:
+ 635 0014 436C6F63 		.ascii	"Clock_1_StartEx\000"
+ 635      6B5F315F 
+ 635      53746172 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 16
 
 
- 634      656E7365 
- 634      6C65645C 
- 634      63617073 
- 634      656E7365 
- 635              	.LASF12:
- 636 005a 666C6F61 		.ascii	"float\000"
- 636      7400
- 637              	.LASF16:
- 638 0060 436C6F63 		.ascii	"Clock_1_StartEx\000"
- 638      6B5F315F 
- 638      53746172 
- 638      74457800 
- 639              	.LASF28:
- 640 0070 436C6F63 		.ascii	"Clock_1_Stop\000"
- 640      6B5F315F 
- 640      53746F70 
- 640      00
- 641              	.LASF1:
- 642 007d 756E7369 		.ascii	"unsigned char\000"
- 642      676E6564 
- 642      20636861 
- 642      7200
- 643              	.LASF5:
- 644 008b 6C6F6E67 		.ascii	"long unsigned int\000"
- 644      20756E73 
- 644      69676E65 
- 644      6420696E 
- 644      7400
- 645              	.LASF3:
- 646 009d 73686F72 		.ascii	"short unsigned int\000"
- 646      7420756E 
- 646      7369676E 
- 646      65642069 
- 646      6E7400
- 647              	.LASF19:
- 648 00b0 636C6B44 		.ascii	"clkDivider\000"
- 648      69766964 
- 648      657200
- 649              	.LASF13:
- 650 00bb 646F7562 		.ascii	"double\000"
- 650      6C6500
- 651              	.LASF22:
- 652 00c2 72656756 		.ascii	"regVal\000"
- 652      616C00
- 653              	.LASF18:
- 654 00c9 616C6967 		.ascii	"alignClkDiv\000"
- 654      6E436C6B 
- 654      44697600 
- 655              	.LASF20:
- 656 00d5 636C6B46 		.ascii	"clkFractional\000"
- 656      72616374 
- 656      696F6E61 
- 656      6C00
- 657              	.LASF10:
- 658 00e3 75696E74 		.ascii	"uint16\000"
- 658      313600
- 659              	.LASF11:
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 17
+ 635      74457800 
+ 636              	.LASF28:
+ 637 0024 436C6F63 		.ascii	"Clock_1_Stop\000"
+ 637      6B5F315F 
+ 637      53746F70 
+ 637      00
+ 638              	.LASF1:
+ 639 0031 756E7369 		.ascii	"unsigned char\000"
+ 639      676E6564 
+ 639      20636861 
+ 639      7200
+ 640              	.LASF5:
+ 641 003f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 641      20756E73 
+ 641      69676E65 
+ 641      6420696E 
+ 641      7400
+ 642              	.LASF3:
+ 643 0051 73686F72 		.ascii	"short unsigned int\000"
+ 643      7420756E 
+ 643      7369676E 
+ 643      65642069 
+ 643      6E7400
+ 644              	.LASF19:
+ 645 0064 636C6B44 		.ascii	"clkDivider\000"
+ 645      69766964 
+ 645      657200
+ 646              	.LASF13:
+ 647 006f 646F7562 		.ascii	"double\000"
+ 647      6C6500
+ 648              	.LASF22:
+ 649 0076 72656756 		.ascii	"regVal\000"
+ 649      616C00
+ 650              	.LASF18:
+ 651 007d 616C6967 		.ascii	"alignClkDiv\000"
+ 651      6E436C6B 
+ 651      44697600 
+ 652              	.LASF20:
+ 653 0089 636C6B46 		.ascii	"clkFractional\000"
+ 653      72616374 
+ 653      696F6E61 
+ 653      6C00
+ 654              	.LASF10:
+ 655 0097 75696E74 		.ascii	"uint16\000"
+ 655      313600
+ 656              	.LASF11:
+ 657 009e 75696E74 		.ascii	"uint32\000"
+ 657      333200
+ 658              	.LASF8:
+ 659 00a5 756E7369 		.ascii	"unsigned int\000"
+ 659      676E6564 
+ 659      20696E74 
+ 659      00
+ 660              	.LASF7:
+ 661 00b2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 661      206C6F6E 
+ 661      6720756E 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 17
 
 
- 660 00ea 75696E74 		.ascii	"uint32\000"
- 660      333200
- 661              	.LASF8:
- 662 00f1 756E7369 		.ascii	"unsigned int\000"
- 662      676E6564 
- 662      20696E74 
- 662      00
- 663              	.LASF7:
- 664 00fe 6C6F6E67 		.ascii	"long long unsigned int\000"
- 664      206C6F6E 
- 664      6720756E 
- 664      7369676E 
- 664      65642069 
- 665              	.LASF24:
- 666 0115 436C6F63 		.ascii	"Clock_1_GetFractionalDividerRegister\000"
- 666      6B5F315F 
- 666      47657446 
- 666      72616374 
- 666      696F6E61 
- 667              	.LASF6:
- 668 013a 6C6F6E67 		.ascii	"long long int\000"
- 668      206C6F6E 
- 668      6720696E 
- 668      7400
- 669              	.LASF14:
- 670 0148 63686172 		.ascii	"char\000"
- 670      00
- 671              	.LASF25:
- 672 014d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 672      4320342E 
- 672      392E3320 
- 672      32303135 
- 672      30333033 
- 673 0180 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
- 673      20726576 
- 673      6973696F 
- 673      6E203232 
- 673      31323230 
- 674 01b3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 674      66756E63 
- 674      74696F6E 
- 674      2D736563 
- 674      74696F6E 
- 675              	.LASF2:
- 676 01db 73686F72 		.ascii	"short int\000"
- 676      7420696E 
- 676      7400
- 677              	.LASF9:
- 678 01e5 75696E74 		.ascii	"uint8\000"
- 678      3800
- 679              	.LASF17:
- 680 01eb 436C6F63 		.ascii	"Clock_1_SetFractionalDividerRegister\000"
- 680      6B5F315F 
- 680      53657446 
- 680      72616374 
- 680      696F6E61 
- 681              	.LASF4:
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccHKArng.s 			page 18
+ 661      7369676E 
+ 661      65642069 
+ 662              	.LASF24:
+ 663 00c9 436C6F63 		.ascii	"Clock_1_GetFractionalDividerRegister\000"
+ 663      6B5F315F 
+ 663      47657446 
+ 663      72616374 
+ 663      696F6E61 
+ 664              	.LASF6:
+ 665 00ee 6C6F6E67 		.ascii	"long long int\000"
+ 665      206C6F6E 
+ 665      6720696E 
+ 665      7400
+ 666              	.LASF14:
+ 667 00fc 63686172 		.ascii	"char\000"
+ 667      00
+ 668              	.LASF25:
+ 669 0101 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 669      4320342E 
+ 669      392E3320 
+ 669      32303135 
+ 669      30333033 
+ 670 0134 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 670      20726576 
+ 670      6973696F 
+ 670      6E203232 
+ 670      31323230 
+ 671 0167 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 671      66756E63 
+ 671      74696F6E 
+ 671      2D736563 
+ 671      74696F6E 
+ 672              	.LASF2:
+ 673 018f 73686F72 		.ascii	"short int\000"
+ 673      7420696E 
+ 673      7400
+ 674              	.LASF9:
+ 675 0199 75696E74 		.ascii	"uint8\000"
+ 675      3800
+ 676              	.LASF17:
+ 677 019f 436C6F63 		.ascii	"Clock_1_SetFractionalDividerRegister\000"
+ 677      6B5F315F 
+ 677      53657446 
+ 677      72616374 
+ 677      696F6E61 
+ 678              	.LASF4:
+ 679 01c4 6C6F6E67 		.ascii	"long int\000"
+ 679      20696E74 
+ 679      00
+ 680              	.LASF26:
+ 681 01cd 47656E65 		.ascii	"Generated_Source\\PSoC4\\Clock_1.c\000"
+ 681      72617465 
+ 681      645F536F 
+ 681      75726365 
+ 681      5C50536F 
+ 682              	.LASF0:
+ 683 01ee 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccYlVjQ6.s 			page 18
 
 
- 682 0210 6C6F6E67 		.ascii	"long int\000"
- 682      20696E74 
- 682      00
- 683              	.LASF26:
- 684 0219 47656E65 		.ascii	"Generated_Source\\PSoC4\\Clock_1.c\000"
- 684      72617465 
- 684      645F536F 
- 684      75726365 
- 684      5C50536F 
- 685              	.LASF0:
- 686 023a 7369676E 		.ascii	"signed char\000"
- 686      65642063 
- 686      68617200 
- 687              	.LASF23:
- 688 0246 436C6F63 		.ascii	"Clock_1_GetDividerRegister\000"
- 688      6B5F315F 
- 688      47657444 
- 688      69766964 
- 688      65725265 
+ 683      65642063 
+ 683      68617200 
+ 684              	.LASF23:
+ 685 01fa 436C6F63 		.ascii	"Clock_1_GetDividerRegister\000"
+ 685      6B5F315F 
+ 685      47657444 
+ 685      69766964 
+ 685      65725265 
+ 686              	.LASF27:
+ 687 0215 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\BLEDyplomPSoCProg\\capsenseled."
+ 687      6E697665 
+ 687      725C4479 
+ 687      706C6F6D 
+ 687      5C424C45 
+ 688 0244 63796473 		.ascii	"cydsn\000"
+ 688      6E00
  689              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

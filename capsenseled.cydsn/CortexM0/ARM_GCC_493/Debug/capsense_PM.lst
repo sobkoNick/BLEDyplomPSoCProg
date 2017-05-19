@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
   30:Generated_Source\PSoC4/capsense_PM.c **** *  Saves the customer configuration of CapSense.
   31:Generated_Source\PSoC4/capsense_PM.c **** *
   32:Generated_Source\PSoC4/capsense_PM.c **** * Parameters:
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 2
 
 
   33:Generated_Source\PSoC4/capsense_PM.c **** *  None
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
   56:Generated_Source\PSoC4/capsense_PM.c **** * Function Name: capsense_Sleep
   57:Generated_Source\PSoC4/capsense_PM.c **** ********************************************************************************
   58:Generated_Source\PSoC4/capsense_PM.c **** *
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 3
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 3
 
 
   59:Generated_Source\PSoC4/capsense_PM.c **** * Summary:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
   82 001e FFF7FEFF 		bl	capsense_SenseClk_Stop
   83              	.LVL2:
   88:Generated_Source\PSoC4/capsense_PM.c ****     capsense_SampleClk_Stop();
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 4
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 4
 
 
   84              		.loc 1 88 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  109              		@ sp needed
  110 0000 7047     		bx	lr
  111              		.cfi_endproc
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 5
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 5
 
 
  112              	.LFE37:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  136              		.loc 1 147 0
  137 000e 034B     		ldr	r3, .L11
  138 0010 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 6
 
 
  139 0012 002B     		cmp	r3, #0
@@ -342,48 +342,48 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  173 0006 00000000 		.4byte	.Ldebug_abbrev0
  174 000a 04       		.byte	0x4
  175 000b 01       		.uleb128 0x1
- 176 000c E9010000 		.4byte	.LASF27
+ 176 000c 9D010000 		.4byte	.LASF27
  177 0010 01       		.byte	0x1
- 178 0011 98010000 		.4byte	.LASF28
- 179 0015 4C000000 		.4byte	.LASF29
+ 178 0011 4C010000 		.4byte	.LASF28
+ 179 0015 63020000 		.4byte	.LASF29
  180 0019 00000000 		.4byte	.Ldebug_ranges0+0
  181 001d 00000000 		.4byte	0
  182 0021 00000000 		.4byte	.Ldebug_line0
  183 0025 02       		.uleb128 0x2
  184 0026 01       		.byte	0x1
  185 0027 06       		.byte	0x6
- 186 0028 A3020000 		.4byte	.LASF0
+ 186 0028 57020000 		.4byte	.LASF0
  187 002c 02       		.uleb128 0x2
  188 002d 01       		.byte	0x1
  189 002e 08       		.byte	0x8
- 190 002f EE000000 		.4byte	.LASF1
+ 190 002f A2000000 		.4byte	.LASF1
  191 0033 02       		.uleb128 0x2
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 7
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 7
 
 
  192 0034 02       		.byte	0x2
  193 0035 05       		.byte	0x5
- 194 0036 84020000 		.4byte	.LASF2
+ 194 0036 38020000 		.4byte	.LASF2
  195 003a 02       		.uleb128 0x2
  196 003b 02       		.byte	0x2
  197 003c 07       		.byte	0x7
- 198 003d AF000000 		.4byte	.LASF3
+ 198 003d 63000000 		.4byte	.LASF3
  199 0041 02       		.uleb128 0x2
  200 0042 04       		.byte	0x4
  201 0043 05       		.byte	0x5
- 202 0044 8E020000 		.4byte	.LASF4
+ 202 0044 42020000 		.4byte	.LASF4
  203 0048 02       		.uleb128 0x2
  204 0049 04       		.byte	0x4
  205 004a 07       		.byte	0x7
- 206 004b 1C010000 		.4byte	.LASF5
+ 206 004b D0000000 		.4byte	.LASF5
  207 004f 02       		.uleb128 0x2
  208 0050 08       		.byte	0x8
  209 0051 05       		.byte	0x5
- 210 0052 D6010000 		.4byte	.LASF6
+ 210 0052 8A010000 		.4byte	.LASF6
  211 0056 02       		.uleb128 0x2
  212 0057 08       		.byte	0x8
  213 0058 07       		.byte	0x7
- 214 0059 81010000 		.4byte	.LASF7
+ 214 0059 35010000 		.4byte	.LASF7
  215 005d 03       		.uleb128 0x3
  216 005e 04       		.byte	0x4
  217 005f 05       		.byte	0x5
@@ -391,34 +391,34 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  219 0064 02       		.uleb128 0x2
  220 0065 04       		.byte	0x4
  221 0066 07       		.byte	0x7
- 222 0067 74010000 		.4byte	.LASF8
+ 222 0067 28010000 		.4byte	.LASF8
  223 006b 04       		.uleb128 0x4
- 224 006c 2E010000 		.4byte	.LASF9
+ 224 006c E2000000 		.4byte	.LASF9
  225 0070 02       		.byte	0x2
  226 0071 C2       		.byte	0xc2
  227 0072 2C000000 		.4byte	0x2c
  228 0076 04       		.uleb128 0x4
- 229 0077 6D010000 		.4byte	.LASF10
+ 229 0077 21010000 		.4byte	.LASF10
  230 007b 02       		.byte	0x2
  231 007c C4       		.byte	0xc4
  232 007d 48000000 		.4byte	0x48
  233 0081 02       		.uleb128 0x2
  234 0082 04       		.byte	0x4
  235 0083 04       		.byte	0x4
- 236 0084 D1000000 		.4byte	.LASF11
+ 236 0084 85000000 		.4byte	.LASF11
  237 0088 02       		.uleb128 0x2
  238 0089 08       		.byte	0x8
  239 008a 04       		.byte	0x4
- 240 008b 4F010000 		.4byte	.LASF12
+ 240 008b 03010000 		.4byte	.LASF12
  241 008f 02       		.uleb128 0x2
  242 0090 01       		.byte	0x1
  243 0091 08       		.byte	0x8
- 244 0092 E4010000 		.4byte	.LASF13
+ 244 0092 98010000 		.4byte	.LASF13
  245 0096 05       		.uleb128 0x5
  246 0097 32000000 		.4byte	.LASF14
  247 009b 02       		.byte	0x2
  248 009c 6E01     		.2byte	0x16e
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 8
 
 
  249 009e A2000000 		.4byte	0xa2
@@ -427,21 +427,21 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  252 00a7 02       		.uleb128 0x2
  253 00a8 04       		.byte	0x4
  254 00a9 07       		.byte	0x7
- 255 00aa CD010000 		.4byte	.LASF15
+ 255 00aa 81010000 		.4byte	.LASF15
  256 00ae 07       		.uleb128 0x7
  257 00af 01       		.byte	0x1
  258 00b0 03       		.byte	0x3
  259 00b1 8D       		.byte	0x8d
  260 00b2 C3000000 		.4byte	0xc3
  261 00b6 08       		.uleb128 0x8
- 262 00b7 97020000 		.4byte	.LASF30
+ 262 00b7 4B020000 		.4byte	.LASF30
  263 00bb 03       		.byte	0x3
  264 00bc 8F       		.byte	0x8f
  265 00bd 6B000000 		.4byte	0x6b
  266 00c1 00       		.byte	0
  267 00c2 00       		.byte	0
  268 00c3 04       		.uleb128 0x4
- 269 00c4 98000000 		.4byte	.LASF16
+ 269 00c4 4C000000 		.4byte	.LASF16
  270 00c8 03       		.byte	0x3
  271 00c9 90       		.byte	0x90
  272 00ca AE000000 		.4byte	0xae
@@ -454,7 +454,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  279 00dd 01       		.uleb128 0x1
  280 00de 9C       		.byte	0x9c
  281 00df 0A       		.uleb128 0xa
- 282 00e0 C2000000 		.4byte	.LASF19
+ 282 00e0 76000000 		.4byte	.LASF19
  283 00e4 01       		.byte	0x1
  284 00e5 49       		.byte	0x49
  285 00e6 00000000 		.4byte	.LFB36
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  303 0110 0B       		.uleb128 0xb
  304 0111 22000000 		.4byte	.LVL2
  305 0115 9D010000 		.4byte	0x19d
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 9
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 9
 
 
  306 0119 0B       		.uleb128 0xb
@@ -486,7 +486,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  308 011e A4010000 		.4byte	0x1a4
  309 0122 00       		.byte	0
  310 0123 09       		.uleb128 0x9
- 311 0124 D7000000 		.4byte	.LASF18
+ 311 0124 8B000000 		.4byte	.LASF18
  312 0128 01       		.byte	0x1
  313 0129 72       		.byte	0x72
  314 012a 00000000 		.4byte	.LFB37
@@ -494,7 +494,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  316 0132 01       		.uleb128 0x1
  317 0133 9C       		.byte	0x9c
  318 0134 0A       		.uleb128 0xa
- 319 0135 FC000000 		.4byte	.LASF20
+ 319 0135 B0000000 		.4byte	.LASF20
  320 0139 01       		.byte	0x1
  321 013a 8C       		.byte	0x8c
  322 013b 00000000 		.4byte	.LFB38
@@ -529,7 +529,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  351 0176 CD010000 		.4byte	0x1cd
  352 017a 00       		.byte	0
  353 017b 0E       		.uleb128 0xe
- 354 017c BD010000 		.4byte	.LASF31
+ 354 017c 71010000 		.4byte	.LASF31
  355 0180 01       		.byte	0x1
  356 0181 13       		.byte	0x13
  357 0182 C3000000 		.4byte	0xc3
@@ -537,8 +537,8 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  359 0187 03       		.byte	0x3
  360 0188 00000000 		.4byte	capsense_backup
  361 018c 0F       		.uleb128 0xf
- 362 018d 77020000 		.4byte	.LASF23
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 10
+ 362 018d 2B020000 		.4byte	.LASF23
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 10
 
 
  363 0191 06       		.byte	0x6
@@ -548,7 +548,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  367 0198 6B000000 		.4byte	0x6b
  368 019c 00       		.byte	0
  369 019d 11       		.uleb128 0x11
- 370 019e 56010000 		.4byte	.LASF21
+ 370 019e 0A010000 		.4byte	.LASF21
  371 01a2 04       		.byte	0x4
  372 01a3 27       		.byte	0x27
  373 01a4 11       		.uleb128 0x11
@@ -564,7 +564,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  383 01b7 76000000 		.4byte	0x76
  384 01bb 00       		.byte	0
  385 01bc 0F       		.uleb128 0xf
- 386 01bd 34010000 		.4byte	.LASF25
+ 386 01bd E8000000 		.4byte	.LASF25
  387 01c1 05       		.byte	0x5
  388 01c2 1D       		.byte	0x1d
  389 01c3 CD010000 		.4byte	0x1cd
@@ -572,7 +572,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  391 01c8 76000000 		.4byte	0x76
  392 01cc 00       		.byte	0
  393 01cd 11       		.uleb128 0x11
- 394 01ce 0C010000 		.4byte	.LASF26
+ 394 01ce C0000000 		.4byte	.LASF26
  395 01d2 03       		.byte	0x3
  396 01d3 98       		.byte	0x98
  397 01d4 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  417 0011 00       		.byte	0
  418 0012 00       		.byte	0
  419 0013 02       		.uleb128 0x2
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 11
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 11
 
 
  420 0014 24       		.uleb128 0x24
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  474 004a 07       		.uleb128 0x7
  475 004b 13       		.uleb128 0x13
  476 004c 01       		.byte	0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 12
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 12
 
 
  477 004d 0B       		.uleb128 0xb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  531 0084 0E       		.uleb128 0xe
  532 0085 3A       		.uleb128 0x3a
  533 0086 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 13
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 13
 
 
  534 0087 3B       		.uleb128 0x3b
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  588 00c5 49       		.uleb128 0x49
  589 00c6 13       		.uleb128 0x13
  590 00c7 02       		.uleb128 0x2
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 14
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 14
 
 
  591 00c8 18       		.uleb128 0x18
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  645 000e 0000     		.2byte	0
  646 0010 00000000 		.4byte	.LFB35
  647 0014 18000000 		.4byte	.LFE35-.LFB35
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 15
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 15
 
 
  648 0018 00000000 		.4byte	.LFB36
@@ -889,163 +889,160 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 1
  678      5F536176 
  678      65436F6E 
  678      66696700 
- 679              	.LASF29:
- 680 004c 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\1\\bleapp-master\\PSoC_Creator\\"
- 680      6E697665 
- 680      725C4479 
- 680      706C6F6D 
- 680      5C315C62 
- 681 007a 63617073 		.ascii	"capsenseled\\capsenseled.cydsn\000"
- 681      656E7365 
- 681      6C65645C 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 16
+ 679              	.LASF16:
+ 680 004c 63617073 		.ascii	"capsense_BACKUP_STRUCT\000"
+ 680      656E7365 
+ 680      5F424143 
+ 680      4B55505F 
+ 680      53545255 
+ 681              	.LASF3:
+ 682 0063 73686F72 		.ascii	"short unsigned int\000"
+ 682      7420756E 
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 16
 
 
- 681      63617073 
- 681      656E7365 
- 682              	.LASF16:
- 683 0098 63617073 		.ascii	"capsense_BACKUP_STRUCT\000"
- 683      656E7365 
- 683      5F424143 
- 683      4B55505F 
- 683      53545255 
- 684              	.LASF3:
- 685 00af 73686F72 		.ascii	"short unsigned int\000"
- 685      7420756E 
- 685      7369676E 
- 685      65642069 
- 685      6E7400
- 686              	.LASF19:
- 687 00c2 63617073 		.ascii	"capsense_Sleep\000"
- 687      656E7365 
- 687      5F536C65 
- 687      657000
- 688              	.LASF11:
- 689 00d1 666C6F61 		.ascii	"float\000"
- 689      7400
- 690              	.LASF18:
- 691 00d7 63617073 		.ascii	"capsense_RestoreConfig\000"
- 691      656E7365 
- 691      5F526573 
- 691      746F7265 
- 691      436F6E66 
- 692              	.LASF1:
- 693 00ee 756E7369 		.ascii	"unsigned char\000"
- 693      676E6564 
- 693      20636861 
- 693      7200
- 694              	.LASF20:
- 695 00fc 63617073 		.ascii	"capsense_Wakeup\000"
- 695      656E7365 
- 695      5F57616B 
- 695      65757000 
- 696              	.LASF26:
- 697 010c 63617073 		.ascii	"capsense_Enable\000"
- 697      656E7365 
- 697      5F456E61 
- 697      626C6500 
- 698              	.LASF5:
- 699 011c 6C6F6E67 		.ascii	"long unsigned int\000"
- 699      20756E73 
- 699      69676E65 
- 699      6420696E 
- 699      7400
- 700              	.LASF9:
- 701 012e 75696E74 		.ascii	"uint8\000"
- 701      3800
- 702              	.LASF25:
- 703 0134 63617073 		.ascii	"capsense_SampleClk_StartEx\000"
- 703      656E7365 
- 703      5F53616D 
- 703      706C6543 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 17
+ 682      7369676E 
+ 682      65642069 
+ 682      6E7400
+ 683              	.LASF19:
+ 684 0076 63617073 		.ascii	"capsense_Sleep\000"
+ 684      656E7365 
+ 684      5F536C65 
+ 684      657000
+ 685              	.LASF11:
+ 686 0085 666C6F61 		.ascii	"float\000"
+ 686      7400
+ 687              	.LASF18:
+ 688 008b 63617073 		.ascii	"capsense_RestoreConfig\000"
+ 688      656E7365 
+ 688      5F526573 
+ 688      746F7265 
+ 688      436F6E66 
+ 689              	.LASF1:
+ 690 00a2 756E7369 		.ascii	"unsigned char\000"
+ 690      676E6564 
+ 690      20636861 
+ 690      7200
+ 691              	.LASF20:
+ 692 00b0 63617073 		.ascii	"capsense_Wakeup\000"
+ 692      656E7365 
+ 692      5F57616B 
+ 692      65757000 
+ 693              	.LASF26:
+ 694 00c0 63617073 		.ascii	"capsense_Enable\000"
+ 694      656E7365 
+ 694      5F456E61 
+ 694      626C6500 
+ 695              	.LASF5:
+ 696 00d0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 696      20756E73 
+ 696      69676E65 
+ 696      6420696E 
+ 696      7400
+ 697              	.LASF9:
+ 698 00e2 75696E74 		.ascii	"uint8\000"
+ 698      3800
+ 699              	.LASF25:
+ 700 00e8 63617073 		.ascii	"capsense_SampleClk_StartEx\000"
+ 700      656E7365 
+ 700      5F53616D 
+ 700      706C6543 
+ 700      6C6B5F53 
+ 701              	.LASF12:
+ 702 0103 646F7562 		.ascii	"double\000"
+ 702      6C6500
+ 703              	.LASF21:
+ 704 010a 63617073 		.ascii	"capsense_SenseClk_Stop\000"
+ 704      656E7365 
+ 704      5F53656E 
+ 704      7365436C 
+ 704      6B5F5374 
+ 705              	.LASF10:
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 17
 
 
- 703      6C6B5F53 
- 704              	.LASF12:
- 705 014f 646F7562 		.ascii	"double\000"
- 705      6C6500
- 706              	.LASF21:
- 707 0156 63617073 		.ascii	"capsense_SenseClk_Stop\000"
- 707      656E7365 
- 707      5F53656E 
- 707      7365436C 
- 707      6B5F5374 
- 708              	.LASF10:
- 709 016d 75696E74 		.ascii	"uint32\000"
- 709      333200
- 710              	.LASF8:
- 711 0174 756E7369 		.ascii	"unsigned int\000"
- 711      676E6564 
- 711      20696E74 
- 711      00
- 712              	.LASF7:
- 713 0181 6C6F6E67 		.ascii	"long long unsigned int\000"
- 713      206C6F6E 
- 713      6720756E 
- 713      7369676E 
- 713      65642069 
- 714              	.LASF28:
- 715 0198 47656E65 		.ascii	"Generated_Source\\PSoC4\\capsense_PM.c\000"
- 715      72617465 
- 715      645F536F 
- 715      75726365 
- 715      5C50536F 
- 716              	.LASF31:
- 717 01bd 63617073 		.ascii	"capsense_backup\000"
- 717      656E7365 
- 717      5F626163 
- 717      6B757000 
- 718              	.LASF15:
- 719 01cd 73697A65 		.ascii	"sizetype\000"
- 719      74797065 
- 719      00
- 720              	.LASF6:
- 721 01d6 6C6F6E67 		.ascii	"long long int\000"
- 721      206C6F6E 
- 721      6720696E 
- 721      7400
- 722              	.LASF13:
- 723 01e4 63686172 		.ascii	"char\000"
- 723      00
- 724              	.LASF27:
- 725 01e9 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 725      4320342E 
- 725      392E3320 
- 725      32303135 
- 725      30333033 
- 726 021c 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
- 726      20726576 
- 726      6973696F 
- 726      6E203232 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccY0VamG.s 			page 18
+ 706 0121 75696E74 		.ascii	"uint32\000"
+ 706      333200
+ 707              	.LASF8:
+ 708 0128 756E7369 		.ascii	"unsigned int\000"
+ 708      676E6564 
+ 708      20696E74 
+ 708      00
+ 709              	.LASF7:
+ 710 0135 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 710      206C6F6E 
+ 710      6720756E 
+ 710      7369676E 
+ 710      65642069 
+ 711              	.LASF28:
+ 712 014c 47656E65 		.ascii	"Generated_Source\\PSoC4\\capsense_PM.c\000"
+ 712      72617465 
+ 712      645F536F 
+ 712      75726365 
+ 712      5C50536F 
+ 713              	.LASF31:
+ 714 0171 63617073 		.ascii	"capsense_backup\000"
+ 714      656E7365 
+ 714      5F626163 
+ 714      6B757000 
+ 715              	.LASF15:
+ 716 0181 73697A65 		.ascii	"sizetype\000"
+ 716      74797065 
+ 716      00
+ 717              	.LASF6:
+ 718 018a 6C6F6E67 		.ascii	"long long int\000"
+ 718      206C6F6E 
+ 718      6720696E 
+ 718      7400
+ 719              	.LASF13:
+ 720 0198 63686172 		.ascii	"char\000"
+ 720      00
+ 721              	.LASF27:
+ 722 019d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 722      4320342E 
+ 722      392E3320 
+ 722      32303135 
+ 722      30333033 
+ 723 01d0 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 723      20726576 
+ 723      6973696F 
+ 723      6E203232 
+ 723      31323230 
+ 724 0203 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 724      66756E63 
+ 724      74696F6E 
+ 724      2D736563 
+ 724      74696F6E 
+ 725              	.LASF23:
+ 726 022b 4379496E 		.ascii	"CyIntDisable\000"
+ 726      74446973 
+ 726      61626C65 
+ 726      00
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccynZstD.s 			page 18
 
 
- 726      31323230 
- 727 024f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 727      66756E63 
- 727      74696F6E 
- 727      2D736563 
- 727      74696F6E 
- 728              	.LASF23:
- 729 0277 4379496E 		.ascii	"CyIntDisable\000"
- 729      74446973 
- 729      61626C65 
- 729      00
- 730              	.LASF2:
- 731 0284 73686F72 		.ascii	"short int\000"
- 731      7420696E 
- 731      7400
- 732              	.LASF4:
- 733 028e 6C6F6E67 		.ascii	"long int\000"
- 733      20696E74 
- 733      00
- 734              	.LASF30:
- 735 0297 656E6162 		.ascii	"enableState\000"
- 735      6C655374 
- 735      61746500 
- 736              	.LASF0:
- 737 02a3 7369676E 		.ascii	"signed char\000"
- 737      65642063 
- 737      68617200 
+ 727              	.LASF2:
+ 728 0238 73686F72 		.ascii	"short int\000"
+ 728      7420696E 
+ 728      7400
+ 729              	.LASF4:
+ 730 0242 6C6F6E67 		.ascii	"long int\000"
+ 730      20696E74 
+ 730      00
+ 731              	.LASF30:
+ 732 024b 656E6162 		.ascii	"enableState\000"
+ 732      6C655374 
+ 732      61746500 
+ 733              	.LASF0:
+ 734 0257 7369676E 		.ascii	"signed char\000"
+ 734      65642063 
+ 734      68617200 
+ 735              	.LASF29:
+ 736 0263 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\BLEDyplomPSoCProg\\capsenseled."
+ 736      6E697665 
+ 736      725C4479 
+ 736      706C6F6D 
+ 736      5C424C45 
+ 737 0292 63796473 		.ascii	"cydsn\000"
+ 737      6E00
  738              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

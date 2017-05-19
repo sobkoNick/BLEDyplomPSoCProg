@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
   30:Generated_Source\PSoC4/Pin_not_SRCLR.c ****         #define Pin_not_SRCLR_SetP4PinDriveMode(shift, mode)  \
   31:Generated_Source\PSoC4/Pin_not_SRCLR.c ****         do { \
   32:Generated_Source\PSoC4/Pin_not_SRCLR.c ****             Pin_not_SRCLR_USBIO_CTRL_REG = (Pin_not_SRCLR_USBIO_CTRL_REG & \
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 2
 
 
   33:Generated_Source\PSoC4/Pin_not_SRCLR.c ****                                     (uint32)(~(uint32)(Pin_not_SRCLR_DRIVE_MODE_IND_MASK << \
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
   75:Generated_Source\PSoC4/Pin_not_SRCLR.c ****     }
   38              		.loc 1 75 0
   39              		@ sp needed
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 3
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 3
 
 
   40 000e 7047     		bx	lr
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
   57              		.loc 1 112 0
   58              		.cfi_startproc
   59              	.LVL2:
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 4
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 4
 
 
  113:Generated_Source\PSoC4/Pin_not_SRCLR.c ****     uint8 drVal = (uint8)(Pin_not_SRCLR_DR & (uint8)(~Pin_not_SRCLR_MASK));
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  134:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  \snippet Pin_not_SRCLR_SUT.c usage_Pin_not_SRCLR_Read  
  135:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *******************************************************************************/
  136:Generated_Source\PSoC4/Pin_not_SRCLR.c **** uint8 Pin_not_SRCLR_Read(void)
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 5
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 5
 
 
  137:Generated_Source\PSoC4/Pin_not_SRCLR.c **** {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  118              		.loc 1 165 0
  119              		.cfi_startproc
  166:Generated_Source\PSoC4/Pin_not_SRCLR.c ****     return (uint8)((Pin_not_SRCLR_DR & Pin_not_SRCLR_MASK) >> Pin_not_SRCLR_SHIFT);
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 6
 
 
  120              		.loc 1 166 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  198:Generated_Source\PSoC4/Pin_not_SRCLR.c **** * \sideeffect
  199:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  It is recommended that the interrupt be disabled before calling this 
  200:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  function to avoid unintended interrupt requests. Note that the interrupt
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 7
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 7
 
 
  201:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  type is port wide, and therefore will trigger for any enabled pin on the 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  224:Generated_Source\PSoC4/Pin_not_SRCLR.c **** * \return 
  225:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  The right-shifted current value of the interrupt status register. Each pin 
  226:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  has one bit set if it generated an interrupt event. For example, bit 0 is 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 8
 
 
  227:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  for pin 0 and bit 1 is for pin 1 of the Pins component.
@@ -470,48 +470,48 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  205 0006 00000000 		.4byte	.Ldebug_abbrev0
  206 000a 04       		.byte	0x4
  207 000b 01       		.uleb128 0x1
- 208 000c 7F010000 		.4byte	.LASF28
+ 208 000c 33010000 		.4byte	.LASF28
  209 0010 01       		.byte	0x1
- 210 0011 51020000 		.4byte	.LASF29
- 211 0015 37000000 		.4byte	.LASF30
+ 210 0011 3A020000 		.4byte	.LASF29
+ 211 0015 05020000 		.4byte	.LASF30
  212 0019 00000000 		.4byte	.Ldebug_ranges0+0
  213 001d 00000000 		.4byte	0
  214 0021 00000000 		.4byte	.Ldebug_line0
  215 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 9
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 9
 
 
  216 0026 01       		.byte	0x1
  217 0027 06       		.byte	0x6
- 218 0028 45020000 		.4byte	.LASF0
+ 218 0028 F9010000 		.4byte	.LASF0
  219 002c 02       		.uleb128 0x2
  220 002d 01       		.byte	0x1
  221 002e 08       		.byte	0x8
- 222 002f 9C000000 		.4byte	.LASF1
+ 222 002f 56000000 		.4byte	.LASF1
  223 0033 02       		.uleb128 0x2
  224 0034 02       		.byte	0x2
  225 0035 05       		.byte	0x5
- 226 0036 0D020000 		.4byte	.LASF2
+ 226 0036 C1010000 		.4byte	.LASF2
  227 003a 02       		.uleb128 0x2
  228 003b 02       		.byte	0x2
  229 003c 07       		.byte	0x7
- 230 003d D7000000 		.4byte	.LASF3
+ 230 003d 91000000 		.4byte	.LASF3
  231 0041 02       		.uleb128 0x2
  232 0042 04       		.byte	0x4
  233 0043 05       		.byte	0x5
- 234 0044 3C020000 		.4byte	.LASF4
+ 234 0044 F0010000 		.4byte	.LASF4
  235 0048 02       		.uleb128 0x2
  236 0049 04       		.byte	0x4
  237 004a 07       		.byte	0x7
- 238 004b C5000000 		.4byte	.LASF5
+ 238 004b 7F000000 		.4byte	.LASF5
  239 004f 02       		.uleb128 0x2
  240 0050 08       		.byte	0x8
  241 0051 05       		.byte	0x5
- 242 0052 3F010000 		.4byte	.LASF6
+ 242 0052 F9000000 		.4byte	.LASF6
  243 0056 02       		.uleb128 0x2
  244 0057 08       		.byte	0x8
  245 0058 07       		.byte	0x7
- 246 0059 1D010000 		.4byte	.LASF7
+ 246 0059 D7000000 		.4byte	.LASF7
  247 005d 03       		.uleb128 0x3
  248 005e 04       		.byte	0x4
  249 005f 05       		.byte	0x5
@@ -519,37 +519,37 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  251 0064 02       		.uleb128 0x2
  252 0065 04       		.byte	0x4
  253 0066 07       		.byte	0x7
- 254 0067 10010000 		.4byte	.LASF8
+ 254 0067 CA000000 		.4byte	.LASF8
  255 006b 04       		.uleb128 0x4
- 256 006c 17020000 		.4byte	.LASF9
+ 256 006c CB010000 		.4byte	.LASF9
  257 0070 02       		.byte	0x2
  258 0071 C2       		.byte	0xc2
  259 0072 2C000000 		.4byte	0x2c
  260 0076 04       		.uleb128 0x4
- 261 0077 F1000000 		.4byte	.LASF10
+ 261 0077 AB000000 		.4byte	.LASF10
  262 007b 02       		.byte	0x2
  263 007c C3       		.byte	0xc3
  264 007d 3A000000 		.4byte	0x3a
  265 0081 04       		.uleb128 0x4
- 266 0082 01010000 		.4byte	.LASF11
+ 266 0082 BB000000 		.4byte	.LASF11
  267 0086 02       		.byte	0x2
  268 0087 C4       		.byte	0xc4
  269 0088 48000000 		.4byte	0x48
  270 008c 02       		.uleb128 0x2
  271 008d 04       		.byte	0x4
  272 008e 04       		.byte	0x4
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 10
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 10
 
 
- 273 008f 83000000 		.4byte	.LASF12
+ 273 008f 3D000000 		.4byte	.LASF12
  274 0093 02       		.uleb128 0x2
  275 0094 08       		.byte	0x8
  276 0095 04       		.byte	0x4
- 277 0096 EA000000 		.4byte	.LASF13
+ 277 0096 A4000000 		.4byte	.LASF13
  278 009a 02       		.uleb128 0x2
  279 009b 01       		.byte	0x1
  280 009c 08       		.byte	0x8
- 281 009d 74010000 		.4byte	.LASF14
+ 281 009d 2E010000 		.4byte	.LASF14
  282 00a1 05       		.uleb128 0x5
  283 00a2 31000000 		.4byte	.LASF15
  284 00a6 02       		.byte	0x2
@@ -558,7 +558,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  287 00ad 06       		.uleb128 0x6
  288 00ae 81000000 		.4byte	0x81
  289 00b2 07       		.uleb128 0x7
- 290 00b3 AA000000 		.4byte	.LASF16
+ 290 00b3 64000000 		.4byte	.LASF16
  291 00b7 01       		.byte	0x1
  292 00b8 48       		.byte	0x48
  293 00b9 00000000 		.4byte	.LFB0
@@ -567,7 +567,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  296 00c2 9C       		.byte	0x9c
  297 00c3 D7000000 		.4byte	0xd7
  298 00c7 08       		.uleb128 0x8
- 299 00c8 3A010000 		.4byte	.LASF18
+ 299 00c8 F4000000 		.4byte	.LASF18
  300 00cc 01       		.byte	0x1
  301 00cd 48       		.byte	0x48
  302 00ce 6B000000 		.4byte	0x6b
@@ -583,22 +583,22 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  312 00e7 9C       		.byte	0x9c
  313 00e8 0B010000 		.4byte	0x10b
  314 00ec 08       		.uleb128 0x8
- 315 00ed 79010000 		.4byte	.LASF19
+ 315 00ed 37000000 		.4byte	.LASF19
  316 00f1 01       		.byte	0x1
  317 00f2 6F       		.byte	0x6f
  318 00f3 6B000000 		.4byte	0x6b
  319 00f7 21000000 		.4byte	.LLST1
  320 00fb 09       		.uleb128 0x9
- 321 00fc 34010000 		.4byte	.LASF24
+ 321 00fc EE000000 		.4byte	.LASF24
  322 0100 01       		.byte	0x1
  323 0101 71       		.byte	0x71
  324 0102 6B000000 		.4byte	0x6b
  325 0106 42000000 		.4byte	.LLST2
  326 010a 00       		.byte	0
  327 010b 0A       		.uleb128 0xa
- 328 010c 89000000 		.4byte	.LASF20
+ 328 010c 43000000 		.4byte	.LASF20
  329 0110 01       		.byte	0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 11
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 11
 
 
  330 0111 88       		.byte	0x88
@@ -608,7 +608,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  334 011e 01       		.uleb128 0x1
  335 011f 9C       		.byte	0x9c
  336 0120 0A       		.uleb128 0xa
- 337 0121 4D010000 		.4byte	.LASF21
+ 337 0121 07010000 		.4byte	.LASF21
  338 0125 01       		.byte	0x1
  339 0126 A4       		.byte	0xa4
  340 0127 6B000000 		.4byte	0x6b
@@ -617,7 +617,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  343 0133 01       		.uleb128 0x1
  344 0134 9C       		.byte	0x9c
  345 0135 07       		.uleb128 0x7
- 346 0136 1D020000 		.4byte	.LASF22
+ 346 0136 D1010000 		.4byte	.LASF22
  347 013a 01       		.byte	0x1
  348 013b CF       		.byte	0xcf
  349 013c 00000000 		.4byte	.LFB4
@@ -626,20 +626,20 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  352 0145 9C       		.byte	0x9c
  353 0146 74010000 		.4byte	0x174
  354 014a 0B       		.uleb128 0xb
- 355 014b F8000000 		.4byte	.LASF23
+ 355 014b B2000000 		.4byte	.LASF23
  356 014f 01       		.byte	0x1
  357 0150 CF       		.byte	0xcf
  358 0151 76000000 		.4byte	0x76
  359 0155 01       		.uleb128 0x1
  360 0156 50       		.byte	0x50
  361 0157 08       		.uleb128 0x8
- 362 0158 3A010000 		.4byte	.LASF18
+ 362 0158 F4000000 		.4byte	.LASF18
  363 015c 01       		.byte	0x1
  364 015d CF       		.byte	0xcf
  365 015e 76000000 		.4byte	0x76
  366 0162 60000000 		.4byte	.LLST3
  367 0166 0C       		.uleb128 0xc
- 368 0167 08010000 		.4byte	.LASF25
+ 368 0167 C2000000 		.4byte	.LASF25
  369 016b 01       		.byte	0x1
  370 016c D1       		.byte	0xd1
  371 016d 81000000 		.4byte	0x81
@@ -656,9 +656,9 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  382 0187 01       		.uleb128 0x1
  383 0188 9C       		.byte	0x9c
  384 0189 09       		.uleb128 0x9
- 385 018a 67010000 		.4byte	.LASF27
+ 385 018a 21010000 		.4byte	.LASF27
  386 018e 01       		.byte	0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 12
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 12
 
 
  387 018f EE       		.byte	0xee
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  441 002f 0B       		.uleb128 0xb
  442 0030 3B       		.uleb128 0x3b
  443 0031 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 13
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 13
 
 
  444 0032 49       		.uleb128 0x49
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  498 0069 3A       		.uleb128 0x3a
  499 006a 0B       		.uleb128 0xb
  500 006b 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 14
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 14
 
 
  501 006c 0B       		.uleb128 0xb
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  555 00a3 3B       		.uleb128 0x3b
  556 00a4 0B       		.uleb128 0xb
  557 00a5 49       		.uleb128 0x49
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 15
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 15
 
 
  558 00a6 13       		.uleb128 0x13
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  612 000f 18000000 		.4byte	.LFE0
  613 0013 0400     		.2byte	0x4
  614 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 16
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 16
 
 
  615 0016 01       		.uleb128 0x1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  669 0098 06       		.byte	0x6
  670 0099 9F       		.byte	0x9f
  671 009a 00000000 		.4byte	0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 17
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 17
 
 
  672 009e 00000000 		.4byte	0
@@ -1018,156 +1018,153 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 1
  717      6E6F745F 
  717      5352434C 
  717      525F5772 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 18
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 18
 
 
  717      69746500 
  718              	.LASF15:
  719 0031 72656733 		.ascii	"reg32\000"
  719      3200
- 720              	.LASF30:
- 721 0037 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\1\\bleapp-master\\PSoC_Creator\\"
- 721      6E697665 
- 721      725C4479 
- 721      706C6F6D 
- 721      5C315C62 
- 722 0065 63617073 		.ascii	"capsenseled\\capsenseled.cydsn\000"
- 722      656E7365 
- 722      6C65645C 
- 722      63617073 
- 722      656E7365 
- 723              	.LASF12:
- 724 0083 666C6F61 		.ascii	"float\000"
- 724      7400
- 725              	.LASF20:
- 726 0089 50696E5F 		.ascii	"Pin_not_SRCLR_Read\000"
- 726      6E6F745F 
- 726      5352434C 
- 726      525F5265 
- 726      616400
- 727              	.LASF1:
- 728 009c 756E7369 		.ascii	"unsigned char\000"
- 728      676E6564 
- 728      20636861 
- 728      7200
- 729              	.LASF16:
- 730 00aa 50696E5F 		.ascii	"Pin_not_SRCLR_SetDriveMode\000"
- 730      6E6F745F 
- 730      5352434C 
- 730      525F5365 
- 730      74447269 
- 731              	.LASF5:
- 732 00c5 6C6F6E67 		.ascii	"long unsigned int\000"
- 732      20756E73 
- 732      69676E65 
- 732      6420696E 
- 732      7400
- 733              	.LASF3:
- 734 00d7 73686F72 		.ascii	"short unsigned int\000"
- 734      7420756E 
- 734      7369676E 
- 734      65642069 
- 734      6E7400
- 735              	.LASF13:
- 736 00ea 646F7562 		.ascii	"double\000"
- 736      6C6500
- 737              	.LASF10:
- 738 00f1 75696E74 		.ascii	"uint16\000"
- 738      313600
- 739              	.LASF23:
- 740 00f8 706F7369 		.ascii	"position\000"
- 740      74696F6E 
- 740      00
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 19
+ 720              	.LASF19:
+ 721 0037 76616C75 		.ascii	"value\000"
+ 721      6500
+ 722              	.LASF12:
+ 723 003d 666C6F61 		.ascii	"float\000"
+ 723      7400
+ 724              	.LASF20:
+ 725 0043 50696E5F 		.ascii	"Pin_not_SRCLR_Read\000"
+ 725      6E6F745F 
+ 725      5352434C 
+ 725      525F5265 
+ 725      616400
+ 726              	.LASF1:
+ 727 0056 756E7369 		.ascii	"unsigned char\000"
+ 727      676E6564 
+ 727      20636861 
+ 727      7200
+ 728              	.LASF16:
+ 729 0064 50696E5F 		.ascii	"Pin_not_SRCLR_SetDriveMode\000"
+ 729      6E6F745F 
+ 729      5352434C 
+ 729      525F5365 
+ 729      74447269 
+ 730              	.LASF5:
+ 731 007f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 731      20756E73 
+ 731      69676E65 
+ 731      6420696E 
+ 731      7400
+ 732              	.LASF3:
+ 733 0091 73686F72 		.ascii	"short unsigned int\000"
+ 733      7420756E 
+ 733      7369676E 
+ 733      65642069 
+ 733      6E7400
+ 734              	.LASF13:
+ 735 00a4 646F7562 		.ascii	"double\000"
+ 735      6C6500
+ 736              	.LASF10:
+ 737 00ab 75696E74 		.ascii	"uint16\000"
+ 737      313600
+ 738              	.LASF23:
+ 739 00b2 706F7369 		.ascii	"position\000"
+ 739      74696F6E 
+ 739      00
+ 740              	.LASF11:
+ 741 00bb 75696E74 		.ascii	"uint32\000"
+ 741      333200
+ 742              	.LASF25:
+ 743 00c2 696E7472 		.ascii	"intrCfg\000"
+ 743      43666700 
+ 744              	.LASF8:
+ 745 00ca 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 19
 
 
- 741              	.LASF11:
- 742 0101 75696E74 		.ascii	"uint32\000"
- 742      333200
- 743              	.LASF25:
- 744 0108 696E7472 		.ascii	"intrCfg\000"
- 744      43666700 
- 745              	.LASF8:
- 746 0110 756E7369 		.ascii	"unsigned int\000"
- 746      676E6564 
- 746      20696E74 
- 746      00
- 747              	.LASF7:
- 748 011d 6C6F6E67 		.ascii	"long long unsigned int\000"
- 748      206C6F6E 
- 748      6720756E 
- 748      7369676E 
- 748      65642069 
- 749              	.LASF24:
- 750 0134 64725661 		.ascii	"drVal\000"
- 750      6C00
- 751              	.LASF18:
- 752 013a 6D6F6465 		.ascii	"mode\000"
- 752      00
- 753              	.LASF6:
- 754 013f 6C6F6E67 		.ascii	"long long int\000"
- 754      206C6F6E 
- 754      6720696E 
- 754      7400
- 755              	.LASF21:
- 756 014d 50696E5F 		.ascii	"Pin_not_SRCLR_ReadDataReg\000"
- 756      6E6F745F 
- 756      5352434C 
- 756      525F5265 
- 756      61644461 
- 757              	.LASF27:
- 758 0167 6D61736B 		.ascii	"maskedStatus\000"
- 758      65645374 
- 758      61747573 
- 758      00
- 759              	.LASF14:
- 760 0174 63686172 		.ascii	"char\000"
- 760      00
- 761              	.LASF19:
- 762 0179 76616C75 		.ascii	"value\000"
- 762      6500
- 763              	.LASF28:
- 764 017f 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 764      4320342E 
- 764      392E3320 
- 764      32303135 
- 764      30333033 
- 765 01b2 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
- 765      20726576 
- 765      6973696F 
- 765      6E203232 
- 765      31323230 
- 766 01e5 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccZatrte.s 			page 20
+ 745      676E6564 
+ 745      20696E74 
+ 745      00
+ 746              	.LASF7:
+ 747 00d7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 747      206C6F6E 
+ 747      6720756E 
+ 747      7369676E 
+ 747      65642069 
+ 748              	.LASF24:
+ 749 00ee 64725661 		.ascii	"drVal\000"
+ 749      6C00
+ 750              	.LASF18:
+ 751 00f4 6D6F6465 		.ascii	"mode\000"
+ 751      00
+ 752              	.LASF6:
+ 753 00f9 6C6F6E67 		.ascii	"long long int\000"
+ 753      206C6F6E 
+ 753      6720696E 
+ 753      7400
+ 754              	.LASF21:
+ 755 0107 50696E5F 		.ascii	"Pin_not_SRCLR_ReadDataReg\000"
+ 755      6E6F745F 
+ 755      5352434C 
+ 755      525F5265 
+ 755      61644461 
+ 756              	.LASF27:
+ 757 0121 6D61736B 		.ascii	"maskedStatus\000"
+ 757      65645374 
+ 757      61747573 
+ 757      00
+ 758              	.LASF14:
+ 759 012e 63686172 		.ascii	"char\000"
+ 759      00
+ 760              	.LASF28:
+ 761 0133 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 761      4320342E 
+ 761      392E3320 
+ 761      32303135 
+ 761      30333033 
+ 762 0166 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 762      20726576 
+ 762      6973696F 
+ 762      6E203232 
+ 762      31323230 
+ 763 0199 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 763      66756E63 
+ 763      74696F6E 
+ 763      2D736563 
+ 763      74696F6E 
+ 764              	.LASF2:
+ 765 01c1 73686F72 		.ascii	"short int\000"
+ 765      7420696E 
+ 765      7400
+ 766              	.LASF9:
+ 767 01cb 75696E74 		.ascii	"uint8\000"
+ 767      3800
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 20
 
 
- 766      66756E63 
- 766      74696F6E 
- 766      2D736563 
- 766      74696F6E 
- 767              	.LASF2:
- 768 020d 73686F72 		.ascii	"short int\000"
- 768      7420696E 
- 768      7400
- 769              	.LASF9:
- 770 0217 75696E74 		.ascii	"uint8\000"
- 770      3800
- 771              	.LASF22:
- 772 021d 50696E5F 		.ascii	"Pin_not_SRCLR_SetInterruptMode\000"
- 772      6E6F745F 
- 772      5352434C 
- 772      525F5365 
- 772      74496E74 
- 773              	.LASF4:
- 774 023c 6C6F6E67 		.ascii	"long int\000"
- 774      20696E74 
- 774      00
- 775              	.LASF0:
- 776 0245 7369676E 		.ascii	"signed char\000"
- 776      65642063 
- 776      68617200 
+ 768              	.LASF22:
+ 769 01d1 50696E5F 		.ascii	"Pin_not_SRCLR_SetInterruptMode\000"
+ 769      6E6F745F 
+ 769      5352434C 
+ 769      525F5365 
+ 769      74496E74 
+ 770              	.LASF4:
+ 771 01f0 6C6F6E67 		.ascii	"long int\000"
+ 771      20696E74 
+ 771      00
+ 772              	.LASF0:
+ 773 01f9 7369676E 		.ascii	"signed char\000"
+ 773      65642063 
+ 773      68617200 
+ 774              	.LASF30:
+ 775 0205 463A5C55 		.ascii	"F:\\Univer\\Dyplom\\BLEDyplomPSoCProg\\capsenseled."
+ 775      6E697665 
+ 775      725C4479 
+ 775      706C6F6D 
+ 775      5C424C45 
+ 776 0234 63796473 		.ascii	"cydsn\000"
+ 776      6E00
  777              	.LASF29:
- 778 0251 47656E65 		.ascii	"Generated_Source\\PSoC4\\Pin_not_SRCLR.c\000"
+ 778 023a 47656E65 		.ascii	"Generated_Source\\PSoC4\\Pin_not_SRCLR.c\000"
  778      72617465 
  778      645F536F 
  778      75726365 

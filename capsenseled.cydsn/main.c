@@ -6,6 +6,7 @@ uint16 fingerPosOld = 0xFFFF;
 
 uint8_t registers_ahead = 0b10101010;
 uint8_t registers_backward = 0b01010101;
+uint8_t registers_direction = 0b10101010;
 
 int capsenseNotify;
 
@@ -41,7 +42,21 @@ void updateGreenLed()
     tempHandle.value.len = 1;
     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED);  
 }
+
+void updateDirection() 
+{
+    CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
+   
+    //uint8 green_State = !green_Read();
     
+    if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
+        return;
+    
+    tempHandle.attrHandle = CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_HANDLE;
+  	//tempHandle.value.val = (uint8 *) &green_State;
+    tempHandle.value.len = 1;
+    CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED);  
+}
 
 /***************************************************************
  * Function to update the CapSesnse state in the GATT database
@@ -86,6 +101,7 @@ void BleCallBack(uint32 event, void* eventParam)
             updateLed();
             updateGreenLed();
             updateCapsense();  
+            updateDirection();
             pwm_Stop();
 		break;
 
@@ -109,7 +125,7 @@ void BleCallBack(uint32 event, void* eventParam)
                     CyBle_GattsWriteRsp(cyBle_connHandle);
                                         
                     CyDelay(1000);
-                    writeShiftRegisters(registers_ahead); // напрямок вперед
+                    writeShiftRegisters(registers_direction); // напрямок вперед
                     Pin_l293_IC1_EN_12_Write(1);
                     Pin_l293_IC1_EN_34_Write(0);
                     CyDelay(500);
@@ -150,7 +166,7 @@ void BleCallBack(uint32 event, void* eventParam)
                     
                          // -------------left motors ahead
                     CyDelay(1000);
-                    writeShiftRegisters(registers_ahead); // напрямок вперед
+                    writeShiftRegisters(registers_direction); // напрямок вперед
                     Pin_l293_IC1_EN_12_Write(0);
                     Pin_l293_IC1_EN_34_Write(1);
                     CyDelay(500);
@@ -158,22 +174,24 @@ void BleCallBack(uint32 event, void* eventParam)
                     //CyDelay(200);                   // left motor ends rotating later
                     Pin_l293_IC1_EN_34_Write(0);    // turns off right motor
                     }
-                    
-//                    green_Write(!wrReqParam->handleValPair.value.val[0]);
-//                    CyBle_GattsWriteRsp(cyBle_connHandle);
-//                    
-//                     // -------------right motors ahead
-//                    CyDelay(3000);
-//                    writeShiftRegisters(0b10101010); // напрямок вперед
-//                    Pin_l293_IC1_EN_12_Write(1);
-//                    Pin_l293_IC1_EN_34_Write(0);
-//                    CyDelay(500);
-//                    Pin_l293_IC1_EN_12_Write(0);    // turns off left motor
-//                    CyDelay(200);                   // left motor ends rotating later
-//                    Pin_l293_IC1_EN_34_Write(0);    // turns off right motor
-                    
                 }
             
+            }
+            
+             if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_HANDLE)
+            {
+                                /* only update the value and write the response if the requested write is allowed */
+                if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))
+                {
+                    if(!wrReqParam->handleValPair.value.val[0]) // off
+                    {
+                        registers_direction = registers_backward;
+                        CyBle_GattsWriteRsp(cyBle_connHandle);
+                    } else { // on
+                        registers_direction = registers_ahead;
+                        CyBle_GattsWriteRsp(cyBle_connHandle);
+                    }
+                }
             }
             
             /* request to update the CapSense notification */
