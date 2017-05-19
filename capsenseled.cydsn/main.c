@@ -4,6 +4,9 @@
 uint16 fingerPos    = 0xFFFF;
 uint16 fingerPosOld = 0xFFFF;
 
+uint8_t registers_ahead = 0b10101010;
+uint8_t registers_backward = 0b01010101;
+
 int capsenseNotify;
 
 /***************************************************************
@@ -106,7 +109,7 @@ void BleCallBack(uint32 event, void* eventParam)
                     CyBle_GattsWriteRsp(cyBle_connHandle);
                                         
                     CyDelay(1000);
-                    writeShiftRegisters(0b10101010); // напрямок вперед
+                    writeShiftRegisters(registers_ahead); // напрямок вперед
                     Pin_l293_IC1_EN_12_Write(1);
                     Pin_l293_IC1_EN_34_Write(0);
                     CyDelay(500);
@@ -147,7 +150,7 @@ void BleCallBack(uint32 event, void* eventParam)
                     
                          // -------------left motors ahead
                     CyDelay(1000);
-                    writeShiftRegisters(0b10101010); // напрямок вперед
+                    writeShiftRegisters(registers_ahead); // напрямок вперед
                     Pin_l293_IC1_EN_12_Write(0);
                     Pin_l293_IC1_EN_34_Write(1);
                     CyDelay(500);

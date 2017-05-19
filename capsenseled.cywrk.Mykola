@@ -13,9 +13,10 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="capsenseled\capsenseled">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="capsenseled\capsenseled\Generated_Source\PSoC4">
 <ExpandedNodeIds>
 <v>capsenseled</v>
+<v>capsenseled\capsenseled</v>
 <v>capsenseled\capsenseled\TopDesign</v>
 <v>capsenseled\capsenseled\capsenseled.cydwr\Pins</v>
 <v>capsenseled\capsenseled\capsenseled.cydwr\Analog</v>
@@ -30,7 +31,6 @@
 <v>capsenseled\capsenseled\Source Files\dc_motor_library.c</v>
 <v>capsenseled\capsenseled\Source Files\main.c</v>
 <v>capsenseled\capsenseled\Generated_Source</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4</v>
 <v>capsenseled\capsenseled\Generated_Source\PSoC4\ble</v>
 <v>capsenseled\capsenseled\Generated_Source\PSoC4\ble\ble.c</v>
 <v>capsenseled\capsenseled\Generated_Source\PSoC4\ble\ble.h</v>
@@ -184,6 +184,15 @@
 <VisibleNodeIds>
 <v>capsenseled</v>
 <v>capsenseled\capsenseled</v>
+<v>capsenseled\capsenseled\TopDesign</v>
+<v>capsenseled\capsenseled\capsenseled.cydwr</v>
+<v>capsenseled\capsenseled\Header Files</v>
+<v>capsenseled\capsenseled\Header Files\dc_motor_library.h</v>
+<v>capsenseled\capsenseled\Source Files</v>
+<v>capsenseled\capsenseled\Source Files\dc_motor_library.c</v>
+<v>capsenseled\capsenseled\Source Files\main.c</v>
+<v>capsenseled\capsenseled\Generated_Source</v>
+<v>capsenseled\capsenseled\Generated_Source\PSoC4</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
