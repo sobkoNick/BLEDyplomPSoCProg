@@ -26,36 +26,30 @@
 /* Maximum supported Custom Services */
 #define CYBLE_CUSTOMS_SERVICE_COUNT                  (0x01u)
 #define CYBLE_CUSTOMC_SERVICE_COUNT                  (0x00u)
-#define CYBLE_CUSTOM_SERVICE_CHAR_COUNT              (0x05u)
-#define CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x02u)
+#define CYBLE_CUSTOM_SERVICE_CHAR_COUNT              (0x04u)
+#define CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x01u)
 
 /* Below are the indexes and handles of the defined Custom Services and their characteristics */
 #define CYBLE_LEDCAPSENSE_SERVICE_INDEX   (0x00u) /* Index of ledcapsense service in the cyBle_customs array */
 #define CYBLE_LEDCAPSENSE_LED_CHAR_INDEX   (0x00u) /* Index of led characteristic */
 #define CYBLE_LEDCAPSENSE_LED_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CYBLE_LEDCAPSENSE_CAPSENSE_CHAR_INDEX   (0x01u) /* Index of capsense characteristic */
-#define CYBLE_LEDCAPSENSE_CAPSENSE_CAPSENSECCCD_DESC_INDEX   (0x00u) /* Index of capsensecccd descriptor */
-#define CYBLE_LEDCAPSENSE_CAPSENSE_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x01u) /* Index of Characteristic User Description descriptor */
-#define CYBLE_LEDCAPSENSE_GREEN_CHAR_INDEX   (0x02u) /* Index of green characteristic */
+#define CYBLE_LEDCAPSENSE_GREEN_CHAR_INDEX   (0x01u) /* Index of green characteristic */
 #define CYBLE_LEDCAPSENSE_GREEN_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_INDEX   (0x03u) /* Index of define_direction characteristic */
+#define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_INDEX   (0x02u) /* Index of define_direction characteristic */
 #define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_INDEX   (0x04u) /* Index of both_motors characteristic */
+#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_INDEX   (0x03u) /* Index of both_motors characteristic */
 #define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
 
 
 #define CYBLE_LEDCAPSENSE_SERVICE_HANDLE   (0x000Cu) /* Handle of ledcapsense service */
 #define CYBLE_LEDCAPSENSE_LED_CHAR_HANDLE   (0x000Eu) /* Handle of led characteristic */
 #define CYBLE_LEDCAPSENSE_LED_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x000Fu) /* Handle of Characteristic User Description descriptor */
-#define CYBLE_LEDCAPSENSE_CAPSENSE_CHAR_HANDLE   (0x0011u) /* Handle of capsense characteristic */
-#define CYBLE_LEDCAPSENSE_CAPSENSE_CAPSENSECCCD_DESC_HANDLE   (0x0012u) /* Handle of capsensecccd descriptor */
-#define CYBLE_LEDCAPSENSE_CAPSENSE_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0013u) /* Handle of Characteristic User Description descriptor */
-#define CYBLE_LEDCAPSENSE_GREEN_CHAR_HANDLE   (0x0015u) /* Handle of green characteristic */
-#define CYBLE_LEDCAPSENSE_GREEN_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0016u) /* Handle of Characteristic User Description descriptor */
-#define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_HANDLE   (0x0018u) /* Handle of define_direction characteristic */
-#define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0019u) /* Handle of Characteristic User Description descriptor */
-#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_HANDLE   (0x001Bu) /* Handle of both_motors characteristic */
-#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x001Cu) /* Handle of Characteristic User Description descriptor */
+#define CYBLE_LEDCAPSENSE_GREEN_CHAR_HANDLE   (0x0011u) /* Handle of green characteristic */
+#define CYBLE_LEDCAPSENSE_GREEN_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0012u) /* Handle of Characteristic User Description descriptor */
+#define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_HANDLE   (0x0014u) /* Handle of define_direction characteristic */
+#define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0015u) /* Handle of Characteristic User Description descriptor */
+#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_HANDLE   (0x0017u) /* Handle of both_motors characteristic */
+#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0018u) /* Handle of Characteristic User Description descriptor */
 
 
 

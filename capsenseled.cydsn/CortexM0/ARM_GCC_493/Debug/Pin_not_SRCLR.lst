@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
   30:Generated_Source\PSoC4/Pin_not_SRCLR.c ****         #define Pin_not_SRCLR_SetP4PinDriveMode(shift, mode)  \
   31:Generated_Source\PSoC4/Pin_not_SRCLR.c ****         do { \
   32:Generated_Source\PSoC4/Pin_not_SRCLR.c ****             Pin_not_SRCLR_USBIO_CTRL_REG = (Pin_not_SRCLR_USBIO_CTRL_REG & \
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 2
 
 
   33:Generated_Source\PSoC4/Pin_not_SRCLR.c ****                                     (uint32)(~(uint32)(Pin_not_SRCLR_DRIVE_MODE_IND_MASK << \
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
   75:Generated_Source\PSoC4/Pin_not_SRCLR.c ****     }
   38              		.loc 1 75 0
   39              		@ sp needed
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 3
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 3
 
 
   40 000e 7047     		bx	lr
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
   57              		.loc 1 112 0
   58              		.cfi_startproc
   59              	.LVL2:
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 4
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 4
 
 
  113:Generated_Source\PSoC4/Pin_not_SRCLR.c ****     uint8 drVal = (uint8)(Pin_not_SRCLR_DR & (uint8)(~Pin_not_SRCLR_MASK));
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  134:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  \snippet Pin_not_SRCLR_SUT.c usage_Pin_not_SRCLR_Read  
  135:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *******************************************************************************/
  136:Generated_Source\PSoC4/Pin_not_SRCLR.c **** uint8 Pin_not_SRCLR_Read(void)
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 5
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 5
 
 
  137:Generated_Source\PSoC4/Pin_not_SRCLR.c **** {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  118              		.loc 1 165 0
  119              		.cfi_startproc
  166:Generated_Source\PSoC4/Pin_not_SRCLR.c ****     return (uint8)((Pin_not_SRCLR_DR & Pin_not_SRCLR_MASK) >> Pin_not_SRCLR_SHIFT);
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 6
 
 
  120              		.loc 1 166 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  198:Generated_Source\PSoC4/Pin_not_SRCLR.c **** * \sideeffect
  199:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  It is recommended that the interrupt be disabled before calling this 
  200:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  function to avoid unintended interrupt requests. Note that the interrupt
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 7
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 7
 
 
  201:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  type is port wide, and therefore will trigger for any enabled pin on the 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  224:Generated_Source\PSoC4/Pin_not_SRCLR.c **** * \return 
  225:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  The right-shifted current value of the interrupt status register. Each pin 
  226:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  has one bit set if it generated an interrupt event. For example, bit 0 is 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 8
 
 
  227:Generated_Source\PSoC4/Pin_not_SRCLR.c **** *  for pin 0 and bit 1 is for pin 1 of the Pins component.
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  213 001d 00000000 		.4byte	0
  214 0021 00000000 		.4byte	.Ldebug_line0
  215 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 9
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 9
 
 
  216 0026 01       		.byte	0x1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  270 008c 02       		.uleb128 0x2
  271 008d 04       		.byte	0x4
  272 008e 04       		.byte	0x4
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 10
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 10
 
 
  273 008f 3D000000 		.4byte	.LASF12
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  327 010b 0A       		.uleb128 0xa
  328 010c 43000000 		.4byte	.LASF20
  329 0110 01       		.byte	0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 11
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 11
 
 
  330 0111 88       		.byte	0x88
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  384 0189 09       		.uleb128 0x9
  385 018a 21010000 		.4byte	.LASF27
  386 018e 01       		.byte	0x1
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 12
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 12
 
 
  387 018f EE       		.byte	0xee
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  441 002f 0B       		.uleb128 0xb
  442 0030 3B       		.uleb128 0x3b
  443 0031 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 13
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 13
 
 
  444 0032 49       		.uleb128 0x49
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  498 0069 3A       		.uleb128 0x3a
  499 006a 0B       		.uleb128 0xb
  500 006b 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 14
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 14
 
 
  501 006c 0B       		.uleb128 0xb
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  555 00a3 3B       		.uleb128 0x3b
  556 00a4 0B       		.uleb128 0xb
  557 00a5 49       		.uleb128 0x49
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 15
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 15
 
 
  558 00a6 13       		.uleb128 0x13
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  612 000f 18000000 		.4byte	.LFE0
  613 0013 0400     		.2byte	0x4
  614 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 16
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 16
 
 
  615 0016 01       		.uleb128 0x1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  669 0098 06       		.byte	0x6
  670 0099 9F       		.byte	0x9f
  671 009a 00000000 		.4byte	0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 17
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 17
 
 
  672 009e 00000000 		.4byte	0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  717      6E6F745F 
  717      5352434C 
  717      525F5772 
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 18
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 18
 
 
  717      69746500 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  743      43666700 
  744              	.LASF8:
  745 00ca 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 19
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 19
 
 
  745      676E6564 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 1
  766              	.LASF9:
  767 01cb 75696E74 		.ascii	"uint8\000"
  767      3800
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cclu04O1.s 			page 20
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cctVE9y5.s 			page 20
 
 
  768              	.LASF22:

@@ -20,18 +20,6 @@
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\red.c" value="SOURCE_C;CortexM0;;;;red" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\red.h" value="HEADER;;;;;red" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\red_aliases.h" value="HEADER;;;;;red" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense.c" value="SOURCE_C;CortexM0;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense.h" value="HEADER;;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_PM.c" value="SOURCE_C;CortexM0;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_CSHL.c" value="SOURCE_C;CortexM0;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_CSHL.h" value="HEADER;;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_INT.c" value="SOURCE_C;CortexM0;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_TunerHelper.c" value="SOURCE_C;CortexM0;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_TunerHelper.h" value="HEADER;;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_SMS.c" value="SOURCE_C;CortexM0;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_SMS.h" value="HEADER;;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_PVT.h" value="HEADER;;;;;capsense" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_IP.h" value="HEADER;;;;;capsense" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\ble_gatt.h" value="HEADER;;;;;ble" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\ble.h" value="HEADER;;;;;ble" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\ble.c" value="SOURCE_C;CortexM0;;;;ble" />
@@ -96,11 +84,6 @@
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\green.c" value="SOURCE_C;CortexM0;;;;green" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\green.h" value="HEADER;;;;;green" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\green_aliases.h" value="HEADER;;;;;green" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_SampleClk.c" value="SOURCE_C;CortexM0;;;;capsense_SampleClk" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_SampleClk.h" value="HEADER;;;;;capsense_SampleClk" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_Sns_aliases.h" value="HEADER;;;;;capsense_Sns" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_SenseClk.c" value="SOURCE_C;CortexM0;;;;capsense_SenseClk" />
-  <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\capsense_SenseClk.h" value="HEADER;;;;;capsense_SenseClk" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\ble_bless_isr.c" value="SOURCE_C;CortexM0;;;;ble_bless_isr" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\ble_bless_isr.h" value="HEADER;;;;;ble_bless_isr" />
   <file name="F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\codegentemp\cm0gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />

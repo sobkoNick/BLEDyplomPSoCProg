@@ -37,51 +37,36 @@ const CYBLE_CUSTOMS_T cyBle_customs[0x01u] = {
                 /* Array of Descriptors handles */
                 {
                     0x000Fu, /* Handle of the Characteristic User Description descriptor */ 
-                    CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
-                }, 
-            },
-
-            /* capsense characteristic */
-            {
-                0x0011u, /* Handle of the capsense characteristic */ 
-                
-                /* Array of Descriptors handles */
-                {
-                    0x0012u, /* Handle of the capsensecccd descriptor */ 
-                    0x0013u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
 
             /* green characteristic */
             {
-                0x0015u, /* Handle of the green characteristic */ 
+                0x0011u, /* Handle of the green characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0016u, /* Handle of the Characteristic User Description descriptor */ 
-                    CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                    0x0012u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
 
             /* define_direction characteristic */
             {
-                0x0018u, /* Handle of the define_direction characteristic */ 
+                0x0014u, /* Handle of the define_direction characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0019u, /* Handle of the Characteristic User Description descriptor */ 
-                    CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                    0x0015u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
 
             /* both_motors characteristic */
             {
-                0x001Bu, /* Handle of the both_motors characteristic */ 
+                0x0017u, /* Handle of the both_motors characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x001Cu, /* Handle of the Characteristic User Description descriptor */ 
-                    CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                    0x0018u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
         }, 

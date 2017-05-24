@@ -59,27 +59,6 @@
 <v>capsenseled\capsenseled\Generated_Source\PSoC4\blue\blue.c</v>
 <v>capsenseled\capsenseled\Generated_Source\PSoC4\blue\blue.h</v>
 <v>capsenseled\capsenseled\Generated_Source\PSoC4\blue\blue_aliases.h</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense.c</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense.h</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_CSHL.c</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_CSHL.h</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_INT.c</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_IP.h</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_PM.c</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_PVT.h</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_SMS.c</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_SMS.h</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_TunerHelper.c</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense\capsense_TunerHelper.h</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense_SampleClk</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense_SampleClk\capsense_SampleClk.c</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense_SampleClk\capsense_SampleClk.h</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense_SenseClk</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense_SenseClk\capsense_SenseClk.c</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense_SenseClk\capsense_SenseClk.h</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense_Sns</v>
-<v>capsenseled\capsenseled\Generated_Source\PSoC4\capsense_Sns\capsense_Sns_aliases.h</v>
 <v>capsenseled\capsenseled\Generated_Source\PSoC4\Clock_1</v>
 <v>capsenseled\capsenseled\Generated_Source\PSoC4\Clock_1\Clock_1.c</v>
 <v>capsenseled\capsenseled\Generated_Source\PSoC4\Clock_1\Clock_1.h</v>
@@ -225,14 +204,6 @@
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\ble_HAL_INT.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\ble_HAL_PVT.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\blue.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_CSHL.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_INT.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_PM.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_SampleClk.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_SenseClk.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_SMS.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_TunerHelper.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\Cm0Start.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
@@ -289,14 +260,6 @@
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\ble_HAL_INT.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\ble_HAL_PVT.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\blue.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_CSHL.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_INT.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_PM.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_SampleClk.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_SenseClk.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_SMS.lst</v>
-<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\capsense_TunerHelper.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\Cm0Start.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
@@ -305,6 +268,14 @@
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\CyLFClk.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
 <v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\dc_motor_library.lst</v>
+<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\green.lst</v>
+<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\Pin_l293_IC1_EN_12.lst</v>
+<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\Pin_l293_IC1_EN_12_PM.lst</v>
+<v>capsenseled\capsenseled\CortexM0\ARM_GCC_493\Debug\Listing Files\Pin_l293_IC1_EN_34.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -322,7 +293,6 @@
 <v>capsenseled\capsenseled\System Reference Guides\cy_boot_v5_20</v>
 <v>capsenseled\capsenseled\System Reference Guides\cy_lfclk_v1_0</v>
 <v>capsenseled\capsenseled\BLE_v2_30.pdf</v>
-<v>capsenseled\capsenseled\CapSense_CSD_P4_v2_30.pdf</v>
 <v>capsenseled\capsenseled\cy_clock_v2_20.pdf</v>
 <v>capsenseled\capsenseled\cy_constant_v1_0.pdf</v>
 <v>capsenseled\capsenseled\cy_pins_v2_10</v>
@@ -347,7 +317,6 @@
 <v>capsenseled\capsenseled\System Reference Guides\cy_boot_v5_20</v>
 <v>capsenseled\capsenseled\System Reference Guides\cy_lfclk_v1_0</v>
 <v>capsenseled\capsenseled\BLE_v2_30.pdf</v>
-<v>capsenseled\capsenseled\CapSense_CSD_P4_v2_30.pdf</v>
 <v>capsenseled\capsenseled\cy_clock_v2_20.pdf</v>
 <v>capsenseled\capsenseled\cy_constant_v1_0.pdf</v>
 <v>capsenseled\capsenseled\cy_pins_v2_10</v>
@@ -380,7 +349,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="872, 371" SelectedTabbedMdiWindow="d7761886-baf6-4917-8ea6-8cf06699bfc6"><DocumentWindow Key="3eee1553-af2e-4a76-b7a3-1dd3f483cf0b" Guid="1d58aaeb-910c-48f3-bc9a-ac876d0df979" /><DocumentWindow Key="14edb6d3-3f17-4999-9064-f2d3fe0f8bcc" Guid="d7761886-baf6-4917-8ea6-8cf06699bfc6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="872, 371" SelectedTabbedMdiWindow="8fbda535-5941-4cd0-9eba-8576227411da"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="3c2684ca-a86d-495f-9eee-bef5c4b2cf83" /><DocumentWindow Key="8a19cd53-96bc-4f6a-8bb0-d51aae5897c2" Guid="0704461b-2c22-4640-aa14-48599a91c58c" /><DocumentWindow Key="8a7bf215-71c9-43c9-99ee-78ae0f78b421" Guid="8fbda535-5941-4cd0-9eba-8576227411da" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
