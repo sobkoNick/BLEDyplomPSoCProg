@@ -26,7 +26,7 @@
 /* Maximum supported Custom Services */
 #define CYBLE_CUSTOMS_SERVICE_COUNT                  (0x01u)
 #define CYBLE_CUSTOMC_SERVICE_COUNT                  (0x00u)
-#define CYBLE_CUSTOM_SERVICE_CHAR_COUNT              (0x04u)
+#define CYBLE_CUSTOM_SERVICE_CHAR_COUNT              (0x05u)
 #define CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x02u)
 
 /* Below are the indexes and handles of the defined Custom Services and their characteristics */
@@ -40,6 +40,8 @@
 #define CYBLE_LEDCAPSENSE_GREEN_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
 #define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_INDEX   (0x03u) /* Index of define_direction characteristic */
 #define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_INDEX   (0x04u) /* Index of both_motors characteristic */
+#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
 
 
 #define CYBLE_LEDCAPSENSE_SERVICE_HANDLE   (0x000Cu) /* Handle of ledcapsense service */
@@ -52,6 +54,8 @@
 #define CYBLE_LEDCAPSENSE_GREEN_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0016u) /* Handle of Characteristic User Description descriptor */
 #define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_HANDLE   (0x0018u) /* Handle of define_direction characteristic */
 #define CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0019u) /* Handle of Characteristic User Description descriptor */
+#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_HANDLE   (0x001Bu) /* Handle of both_motors characteristic */
+#define CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x001Cu) /* Handle of Characteristic User Description descriptor */
 
 
 

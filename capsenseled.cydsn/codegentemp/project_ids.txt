@@ -1,5 +1,5 @@
-F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\capsenseled.cyprj|9e94eb1b-5a35-46f5-99a0-870904a2b444
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|fdbe47b5-9890-4256-83b6-31be7572bea1
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|82c07991-7c84-4bb5-9852-923d49f73d6e
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|574a8795-680c-4afe-a70b-680eefc001cc
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|cdcc125b-8e5b-4fac-bbc0-6ddeef6a3382
+F:\Univer\Dyplom\BLEDyplomPSoCProg\capsenseled.cydsn\capsenseled.cyprj|8f1a04f2-abe9-4534-aa24-a1ab4af9770d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|0b1cd219-0352-4391-b1f7-7d351b838d82
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|fb8bde2d-fe6e-4041-9a00-0d4973c9042d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|f5b06afe-307d-4253-a5f1-df5f9d7e2514
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|30335d60-63ec-4fe2-9254-21ea4af92c33

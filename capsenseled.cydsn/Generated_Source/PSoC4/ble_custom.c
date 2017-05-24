@@ -73,6 +73,17 @@ const CYBLE_CUSTOMS_T cyBle_customs[0x01u] = {
                     CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
+
+            /* both_motors characteristic */
+            {
+                0x001Bu, /* Handle of the both_motors characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    0x001Cu, /* Handle of the Characteristic User Description descriptor */ 
+                    CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
         }, 
     },
 };

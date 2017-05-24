@@ -58,6 +58,21 @@ void updateDirection()
     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED);  
 }
 
+void updateBothMotors() 
+{
+    CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
+   
+    //uint8 green_State = !green_Read();
+    
+    if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
+        return;
+    
+    tempHandle.attrHandle = CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_HANDLE;
+  	//tempHandle.value.val = (uint8 *) &green_State;
+    tempHandle.value.len = 1;
+    CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED);  
+}
+
 /***************************************************************
  * Function to update the CapSesnse state in the GATT database
  **************************************************************/
@@ -102,6 +117,7 @@ void BleCallBack(uint32 event, void* eventParam)
             updateGreenLed();
             updateCapsense();  
             updateDirection();
+            updateBothMotors();
             pwm_Stop();
 		break;
 
@@ -164,10 +180,37 @@ void BleCallBack(uint32 event, void* eventParam)
                     green_Write(!wrReqParam->handleValPair.value.val[0]);
                     CyBle_GattsWriteRsp(cyBle_connHandle);
                     
-                         // -------------left motors ahead
+                         // -------------left motor
                     CyDelay(1000);
                     writeShiftRegisters(registers_direction); // напрямок вперед
                     Pin_l293_IC1_EN_12_Write(0);
+                    Pin_l293_IC1_EN_34_Write(1);
+                    CyDelay(500);
+                    Pin_l293_IC1_EN_12_Write(0);    // turns off left motor
+                    //CyDelay(200);                   // left motor ends rotating later
+                    Pin_l293_IC1_EN_34_Write(0);    // turns off right motor
+                    }
+                }
+            
+            }
+            
+             if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_HANDLE)
+            {
+                /* only update the value and write the response if the requested write is allowed */
+                if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))
+                {
+                    if(!wrReqParam->handleValPair.value.val[0])
+                    {
+                    CyBle_GattsWriteRsp(cyBle_connHandle);
+                    }
+                    else
+                    {
+                    CyBle_GattsWriteRsp(cyBle_connHandle);
+                    
+                         // -------------all motors
+                    CyDelay(1000);
+                    writeShiftRegisters(registers_direction); // напрямок
+                    Pin_l293_IC1_EN_12_Write(1);
                     Pin_l293_IC1_EN_34_Write(1);
                     CyDelay(500);
                     Pin_l293_IC1_EN_12_Write(0);    // turns off left motor
