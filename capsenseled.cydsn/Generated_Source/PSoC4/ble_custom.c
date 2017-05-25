@@ -25,14 +25,14 @@
    The array index definitions are located in the CYBLE_custom.h file. */
 const CYBLE_CUSTOMS_T cyBle_customs[0x01u] = {
 
-    /* ledcapsense service */
+    /* robot service */
     {
-        0x000Cu, /* Handle of the ledcapsense service */ 
+        0x000Cu, /* Handle of the robot service */ 
         {
 
-            /* led characteristic */
+            /* right characteristic */
             {
-                0x000Eu, /* Handle of the led characteristic */ 
+                0x000Eu, /* Handle of the right characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
@@ -40,9 +40,9 @@ const CYBLE_CUSTOMS_T cyBle_customs[0x01u] = {
                 }, 
             },
 
-            /* green characteristic */
+            /* left characteristic */
             {
-                0x0011u, /* Handle of the green characteristic */ 
+                0x0011u, /* Handle of the left characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {

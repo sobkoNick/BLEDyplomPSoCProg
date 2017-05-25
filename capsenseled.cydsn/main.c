@@ -11,7 +11,7 @@ uint8_t registers_direction = 0b10101010;
 /***************************************************************
  * Function to update the LED state in the GATT database
  **************************************************************/
-void updateLed()
+void updateRight()
 {
     CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
    
@@ -20,13 +20,13 @@ void updateLed()
     if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
         return;
     
-    tempHandle.attrHandle = CYBLE_LEDCAPSENSE_LED_CHAR_HANDLE;
+    tempHandle.attrHandle = CYBLE_ROBOT_RIGHT_CHAR_HANDLE;
   	tempHandle.value.val = (uint8 *) &red_State;
     tempHandle.value.len = 1;
     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED);  
 }
 
-void updateGreenLed() 
+void updateLeft() 
 {
     CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
    
@@ -35,7 +35,7 @@ void updateGreenLed()
     if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
         return;
     
-    tempHandle.attrHandle = CYBLE_LEDCAPSENSE_GREEN_CHAR_HANDLE;
+    tempHandle.attrHandle = CYBLE_ROBOT_LEFT_CHAR_HANDLE;
   	tempHandle.value.val = (uint8 *) &green_State;
     tempHandle.value.len = 1;
     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED);  
@@ -48,7 +48,7 @@ void updateDirection()
     if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
         return;
     
-    tempHandle.attrHandle = CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_HANDLE;
+    tempHandle.attrHandle = CYBLE_ROBOT_DEFINE_DIRECTION_CHAR_HANDLE;
     tempHandle.value.len = 1;
     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED);  
 }
@@ -60,7 +60,7 @@ void updateBothMotors()
     if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
         return;
     
-    tempHandle.attrHandle = CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_HANDLE;
+    tempHandle.attrHandle = CYBLE_ROBOT_BOTH_MOTORS_CHAR_HANDLE;
     tempHandle.value.len = 1;
     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED);  
 }
@@ -83,8 +83,8 @@ void BleCallBack(uint32 event, void* eventParam)
         
         /* when a connection is made, update the LED and Capsense states in the GATT database and stop blinking the LED */    
         case CYBLE_EVT_GATT_CONNECT_IND:
-            updateLed();
-            updateGreenLed();
+            updateRight();
+            updateLeft();
             updateDirection();
             updateBothMotors();
             pwm_Stop();
@@ -95,7 +95,7 @@ void BleCallBack(uint32 event, void* eventParam)
             wrReqParam = (CYBLE_GATTS_WRITE_REQ_PARAM_T *) eventParam;
 			      
             /* request write the LED value */
-            if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_LED_CHAR_HANDLE)
+            if(wrReqParam->handleValPair.attrHandle == CYBLE_ROBOT_RIGHT_CHAR_HANDLE)
             {
                 /* only update the value and write the response if the requested write is allowed */
                 if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))
@@ -121,7 +121,7 @@ void BleCallBack(uint32 event, void* eventParam)
                     
                 }
             }
-             if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_GREEN_CHAR_HANDLE)
+             if(wrReqParam->handleValPair.attrHandle == CYBLE_ROBOT_LEFT_CHAR_HANDLE)
             {
                 /* only update the value and write the response if the requested write is allowed */
                 if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))
@@ -151,7 +151,7 @@ void BleCallBack(uint32 event, void* eventParam)
             
             }
             
-             if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_BOTH_MOTORS_CHAR_HANDLE)
+             if(wrReqParam->handleValPair.attrHandle == CYBLE_ROBOT_BOTH_MOTORS_CHAR_HANDLE)
             {
                 /* only update the value and write the response if the requested write is allowed */
                 if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))
@@ -178,7 +178,7 @@ void BleCallBack(uint32 event, void* eventParam)
             
             }
             
-             if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_DEFINE_DIRECTION_CHAR_HANDLE)
+             if(wrReqParam->handleValPair.attrHandle == CYBLE_ROBOT_DEFINE_DIRECTION_CHAR_HANDLE)
             {
                                 /* only update the value and write the response if the requested write is allowed */
                 if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))

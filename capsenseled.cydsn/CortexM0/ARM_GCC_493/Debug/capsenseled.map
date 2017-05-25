@@ -1251,7 +1251,7 @@ END GROUP
                 0x00000000                CY_APPL_LOADABLE = 0x0
                 0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
                 0x00000000                CY_APP_FOR_STACK_AND_COPIER = 0x0
-                0x20001e18                PROVIDE (__cy_heap_start, _end)
+                0x20001e20                PROVIDE (__cy_heap_start, _end)
                 0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
                 0x20004000                PROVIDE (__cy_stack, (ORIGIN (ram) + 0x4000))
                 0x20003800                PROVIDE (__cy_heap_end, (__cy_stack - 0x800))
@@ -1283,12 +1283,12 @@ END GROUP
                 0x00000214                . = MAX (., 0x100)
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x00000214       0x60 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
- .text.updateLed
+ .text.updateRight
                 0x00000274       0x3c .\CortexM0\ARM_GCC_493\Debug\main.o
-                0x00000274                updateLed
- .text.updateGreenLed
+                0x00000274                updateRight
+ .text.updateLeft
                 0x000002b0       0x3c .\CortexM0\ARM_GCC_493\Debug\main.o
-                0x000002b0                updateGreenLed
+                0x000002b0                updateLeft
  .text.updateDirection
                 0x000002ec       0x2c .\CortexM0\ARM_GCC_493\Debug\main.o
                 0x000002ec                updateDirection
@@ -7129,7 +7129,7 @@ i.CyBle_BleSSInterruptHandler
                 0x0001188c                __cy_regions = .
                 0x0001188c        0x4 LONG 0x12100 __cy_region_init_ram
                 0x00011890        0x4 LONG 0x200000c8 __cy_region_start_data
-                0x00011894        0x4 LONG 0x368 __cy_region_init_size_ram
+                0x00011894        0x4 LONG 0x370 __cy_region_init_size_ram
                 0x00011898        0x4 LONG 0x19e8 __cy_region_zero_size_ram
                 0x0001189c                __cy_regions_end = .
                 0x000118a0                . = ALIGN (0x8)
@@ -7197,7 +7197,7 @@ i.CyBle_BleSSInterruptHandler
  *(.noinit)
  .noinit        0x200000c0        0x4 .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
 
-.data           0x200000c8      0x368 load address 0x00012100
+.data           0x200000c8      0x370 load address 0x00012100
                 0x200000c8                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x200000c8        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
@@ -7218,314 +7218,314 @@ i.CyBle_BleSSInterruptHandler
                 0x20000108                cyBle_sflashDeviceAddress
                 0x2000010c                cyBle_deviceAddress
                 0x20000114                cyBle_discoveryParam
- .data          0x20000124       0xd0 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_gatt.o)
+ .data          0x20000124       0xd4 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_gatt.o)
                 0x20000124                cyBle_attValuesLen
- .data          0x200001f4        0x4 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_eventHandler.o)
-                0x200001f4                cyBle_authInfo
- .data          0x200001f8       0x10 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLib.o)
-                0x200001f8                cydelay32kMs
-                0x200001fc                cydelayFreqKhz
-                0x20000200                cydelayFreqMhz
-                0x20000204                cydelayFreqHz
- .data          0x20000208        0x4 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLFClk.o)
- .data          0x2000020c        0x2 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBle.o)
-                0x2000020c                CyBle_StackState
-                0x2000020d                gDataBufferPools
- .data          0x2000020e        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgrIP_Interface.o)
-                0x2000020e                cyBleStackMgr_State
- *fill*         0x2000020f        0x1 
- .data          0x20000210        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(BT_os.o)
-                0x20000210                bleBufferPoolInfo
-                0x20000214                BtOSMemPoolList
- .data          0x20000218        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgr_StackTaskHandler.o)
-                0x20000218                BLE_STACK_TASK_EVT
- .data          0x2000021c       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(transport_sf.o)
-                0x20000224                hci_soft_transport_pkt_recd_cb
-                0x20000228                hci_soft_transport_tx_completed_cb
- .data          0x2000022c        0xa C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgr_BleSSDriver.o)
-                0x2000022c                gConfigEnableDsm
-                0x2000022d                eventClose
-                0x2000022f                cyBleLowPowerMode
-                0x20000232                cyBleSsClockConfiguration
- *fill*         0x20000236        0x2 
- .data          0x20000238       0x14 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(storage_pl.o)
-                0x2000023c                g_sp_storage_wr_offset
-                0x20000240                g_sp_storage_rd_offset
-                0x20000248                p_sp_flash_length
- .data          0x2000024c        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os.o)
-                0x2000024c                mintos_heap_pointer
-                0x20000250                mintos_heap_memory
-                0x20000254                OS_MAX_HEAP_MEMORY
- .data          0x20000258        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os_queue.o)
-                0x20000258                OS_TOTAL_QUEUES
-                0x2000025c                queue_mgr
- .data          0x20000264       0x14 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os_task.o)
-                0x20000264                os_errno
-                0x20000268                OS_TOTAL_TASKS
-                0x2000026c                current_task_handle
-                0x20000270                task_mgr
- .data          0x20000278        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os_task.o)
-                0x20000278                idle_func_handler
+ .data          0x200001f8        0x4 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_eventHandler.o)
+                0x200001f8                cyBle_authInfo
+ .data          0x200001fc       0x10 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLib.o)
+                0x200001fc                cydelay32kMs
+                0x20000200                cydelayFreqKhz
+                0x20000204                cydelayFreqMhz
+                0x20000208                cydelayFreqHz
+ .data          0x2000020c        0x4 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLFClk.o)
+ .data          0x20000210        0x2 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBle.o)
+                0x20000210                CyBle_StackState
+                0x20000211                gDataBufferPools
+ .data          0x20000212        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgrIP_Interface.o)
+                0x20000212                cyBleStackMgr_State
+ *fill*         0x20000213        0x1 
+ .data          0x20000214        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(BT_os.o)
+                0x20000214                bleBufferPoolInfo
+                0x20000218                BtOSMemPoolList
+ .data          0x2000021c        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgr_StackTaskHandler.o)
+                0x2000021c                BLE_STACK_TASK_EVT
+ .data          0x20000220       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(transport_sf.o)
+                0x20000228                hci_soft_transport_pkt_recd_cb
+                0x2000022c                hci_soft_transport_tx_completed_cb
+ .data          0x20000230        0xa C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgr_BleSSDriver.o)
+                0x20000230                gConfigEnableDsm
+                0x20000231                eventClose
+                0x20000233                cyBleLowPowerMode
+                0x20000236                cyBleSsClockConfiguration
+ *fill*         0x2000023a        0x2 
+ .data          0x2000023c       0x14 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(storage_pl.o)
+                0x20000240                g_sp_storage_wr_offset
+                0x20000244                g_sp_storage_rd_offset
+                0x2000024c                p_sp_flash_length
+ .data          0x20000250        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os.o)
+                0x20000250                mintos_heap_pointer
+                0x20000254                mintos_heap_memory
+                0x20000258                OS_MAX_HEAP_MEMORY
+ .data          0x2000025c        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os_queue.o)
+                0x2000025c                OS_TOTAL_QUEUES
+                0x20000260                queue_mgr
+ .data          0x20000268       0x14 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os_task.o)
+                0x20000268                os_errno
+                0x2000026c                OS_TOTAL_TASKS
+                0x20000270                current_task_handle
+                0x20000274                task_mgr
  .data          0x2000027c        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os_task.o)
-                0x2000027c                start_schedule_func_handler
- .data          0x20000280       0x14 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_buf_mgmt.o)
-                0x20000280                MINT_BUF_MGMT_MAX_POOLS
-                0x20000282                MINT_BUF_MGMT_MAX_HEAP_MEMORY
-                0x20000284                mint_buf_mgmt_heap_pointer
-                0x20000288                mint_buf_mgmt_heap_memory
-                0x2000028c                mint_buf_mgmt_mgr
- .data          0x20000294        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleControllerIP_Interface.o)
-                0x20000294                gPingState
- .data          0x20000295        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll.o)
-                0x20000295                dsmEnteringState
- .data          0x20000296        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll_advertiser.o)
-                0x20000296                gAdvParam
- .data          0x2000029a        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll_connection.o)
-                0x2000029a                bleSlDsmFix
- .data          0x2000029e        0xe C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(llh_api.o)
-                0x2000029e                g_ll_current_interrupt_mask
-                0x200002a0                g_bb_intr_en_mask
-                0x200002a2                g_tx_pkt_opcode
-                0x200002a7                g_tx_pkt_llid
- .data          0x200002ac        0x2 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll_tasks.o)
-                0x200002ac                lastDsmExitSlot
- *fill*         0x200002ae        0x2 
- .data          0x200002b0        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(llf_task.o)
-                0x200002b0                llft_state
- .data          0x200002b8        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(host_main.o)
-                0x200002bc                att_app
-                0x200002c0                app_ev_cb
- .data          0x200002c4        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(att_init.o)
-                0x200002c4                att_application
- .data          0x200002c8        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(BT_common.o)
-                0x200002c8                stack_init_state
- .data          0x200002d0        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(device_queue.o)
-                0x200002d0                queue_current_count
-                0x200002d1                current_local_addr
- .data          0x200002d8        0x5 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap.o)
-                0x200002d8                gL2capBusyStatusState
-                0x200002d9                isL2capCbfcConfigSet
-                0x200002da                L2CAP_MAX_CHANNELS
-                0x200002db                L2CAP_MAX_CBFC_PSM
-                0x200002dc                L2CAP_RESPONSE_TIMEOUT
- *fill*         0x200002dd        0x3 
- .data          0x200002e0       0x30 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap_init.o)
-                0x200002e0                l2cap_tx_queue_flow_state
-                0x200002e1                l2cap_schedule_tx
-                0x200002e2                l2cap_sig_id_counter
-                0x200002e4                l2cap_lp_max_le_packets
-                0x200002e6                l2cap_lp_max_le_packet_size
-                0x200002e8                l2cap_fixed_channel_more_param
-                0x200002ec                l2cap_psm_cbfc
-                0x200002f0                l2cap_channels
-                0x200002f4                l2cap_buffer_num_available
-                0x200002f8                l2cap_tx_queue_lwm
-                0x200002fc                l2cap_tx_queue_hwm
-                0x20000300                l2cap_tx_queue_flow_cb
-                0x20000304                l2cap_tx_q_start
-                0x20000308                l2cap_tx_q_end
-                0x2000030c                l2cap_le_event_cb
- .data          0x20000310        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap_init.o)
-                0x20000310                l2cap_more_channel_param
- .data          0x20000314        0x2 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap_init.o)
-                0x20000314                l2cap_lp_num_le_packets
- .data          0x20000316        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gap.o)
-                0x20000316                gap_device_connected
- *fill*         0x2000031a        0x2 
- .data          0x2000031c        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
-                0x2000031c                gSignData
- .data          0x20000320       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
-                0x20000320                gAppMtuSize
-                0x20000322                gMaxAttMtuSize
-                0x20000324                gMaxAttributeLength
-                0x20000326                gConnHandleSignedWrite
-                0x20000328                gSignMac
- .data          0x20000330        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
-                0x20000330                gSignCreateCounter
+                0x2000027c                idle_func_handler
+ .data          0x20000280        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os_task.o)
+                0x20000280                start_schedule_func_handler
+ .data          0x20000284       0x14 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_buf_mgmt.o)
+                0x20000284                MINT_BUF_MGMT_MAX_POOLS
+                0x20000286                MINT_BUF_MGMT_MAX_HEAP_MEMORY
+                0x20000288                mint_buf_mgmt_heap_pointer
+                0x2000028c                mint_buf_mgmt_heap_memory
+                0x20000290                mint_buf_mgmt_mgr
+ .data          0x20000298        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleControllerIP_Interface.o)
+                0x20000298                gPingState
+ .data          0x20000299        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll.o)
+                0x20000299                dsmEnteringState
+ .data          0x2000029a        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll_advertiser.o)
+                0x2000029a                gAdvParam
+ .data          0x2000029e        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll_connection.o)
+                0x2000029e                bleSlDsmFix
+ .data          0x200002a2        0xe C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(llh_api.o)
+                0x200002a2                g_ll_current_interrupt_mask
+                0x200002a4                g_bb_intr_en_mask
+                0x200002a6                g_tx_pkt_opcode
+                0x200002ab                g_tx_pkt_llid
+ .data          0x200002b0        0x2 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll_tasks.o)
+                0x200002b0                lastDsmExitSlot
+ *fill*         0x200002b2        0x2 
+ .data          0x200002b4        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(llf_task.o)
+                0x200002b4                llft_state
+ .data          0x200002bc        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(host_main.o)
+                0x200002c0                att_app
+                0x200002c4                app_ev_cb
+ .data          0x200002c8        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(att_init.o)
+                0x200002c8                att_application
+ .data          0x200002cc        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(BT_common.o)
+                0x200002cc                stack_init_state
+ .data          0x200002d4        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(device_queue.o)
+                0x200002d4                queue_current_count
+                0x200002d5                current_local_addr
+ .data          0x200002dc        0x5 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap.o)
+                0x200002dc                gL2capBusyStatusState
+                0x200002dd                isL2capCbfcConfigSet
+                0x200002de                L2CAP_MAX_CHANNELS
+                0x200002df                L2CAP_MAX_CBFC_PSM
+                0x200002e0                L2CAP_RESPONSE_TIMEOUT
+ *fill*         0x200002e1        0x3 
+ .data          0x200002e4       0x30 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap_init.o)
+                0x200002e4                l2cap_tx_queue_flow_state
+                0x200002e5                l2cap_schedule_tx
+                0x200002e6                l2cap_sig_id_counter
+                0x200002e8                l2cap_lp_max_le_packets
+                0x200002ea                l2cap_lp_max_le_packet_size
+                0x200002ec                l2cap_fixed_channel_more_param
+                0x200002f0                l2cap_psm_cbfc
+                0x200002f4                l2cap_channels
+                0x200002f8                l2cap_buffer_num_available
+                0x200002fc                l2cap_tx_queue_lwm
+                0x20000300                l2cap_tx_queue_hwm
+                0x20000304                l2cap_tx_queue_flow_cb
+                0x20000308                l2cap_tx_q_start
+                0x2000030c                l2cap_tx_q_end
+                0x20000310                l2cap_le_event_cb
+ .data          0x20000314        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap_init.o)
+                0x20000314                l2cap_more_channel_param
+ .data          0x20000318        0x2 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap_init.o)
+                0x20000318                l2cap_lp_num_le_packets
+ .data          0x2000031a        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gap.o)
+                0x2000031a                gap_device_connected
+ *fill*         0x2000031e        0x2 
+ .data          0x20000320        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
+                0x20000320                gSignData
+ .data          0x20000324       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
+                0x20000324                gAppMtuSize
+                0x20000326                gMaxAttMtuSize
+                0x20000328                gMaxAttributeLength
+                0x2000032a                gConnHandleSignedWrite
+                0x2000032c                gSignMac
  .data          0x20000334        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
-                0x20000334                gSignVerifyCounter
- .data          0x20000338       0x18 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattClient.o)
- .data          0x20000350       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattServer.o)
-                0x2000035c                cyBleAttBuffer
- .data          0x20000360        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattDbHandler.o)
-                0x20000360                CyBle_GattDbTotalEntries
-                0x20000362                CyBle_GattDbMaxValLength
-                0x20000364                CyBle_GattDbInternal
- .data          0x20000368        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_events.o)
- *fill*         0x20000369        0x3 
- .data          0x2000036c       0x20 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
-                0x2000036c                hci_num_hci_command_packets
-                0x2000036d                hci_flow_control
-                0x2000036e                hci_schedule_command_tx
-                0x2000036f                hci_call_event_ind_callback
-                0x20000370                hci_bt_init_complete_call_cb
-                0x20000371                hci_encrypt_cmd_counter
-                0x20000372                hci_encrypt_cmd_cmplt_counter
-                0x20000374                hci_command_queue_start
-                0x20000376                hci_command_queue_end
-                0x20000378                hci_resolution_conn_handle
-                0x2000037c                hci_event_ind_cb
-                0x20000380                hci_local_bd_addr
-                0x20000386                hci_remote_devices
- .data          0x2000038c        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
-                0x2000038c                hci_le_device_role
- .data          0x2000038d        0x6 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
-                0x2000038d                hci_random_address
- .data          0x20000393        0x6 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
-                0x20000393                hci_config_random_address
- .data          0x20000399        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
-                0x20000399                hci_adv_addr_type
- .data          0x2000039a        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
-                0x2000039a                hci_config_adv_addr_type
- *fill*         0x2000039b        0x1 
- .data          0x2000039c        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_api.o)
- .data          0x200003a0        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_init.o)
-                0x200003a0                tbx_context
-                0x200003a1                smp_resolution_index
-                0x200003a4                smp_ui_notify
- .data          0x200003a8        0x6 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_init.o)
-                0x200003a8                smp_resolution_addr
- *fill*         0x200003ae        0x2 
- .data          0x200003b0        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(write_task.o)
-                0x200003b0                wt_state
- .data          0x200003b8        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(aes_cmac.o)
- .data          0x200003c0        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(status.o)
- .data          0x200003c4        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(drbg.o)
-                0x200003c4                input_entropy
- .data          0x200003c8       0x20 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(bt_fw_os_al.o)
-                0x200003c8                le_acl_tx_data_pool_handle
-                0x200003cc                le_acl_rx_data_pool_handle
-                0x200003d0                ll_pdu_tx_buffer_pool_handle
-                0x200003d4                ll_pdu_rx_buffer_pool_handle
-                0x200003d8                hci_le_cmd_buffer_pool_handle
-                0x200003dc                hci_le_event_buffer_pool_type1_handle
-                0x200003e0                hci_le_event_buffer_pool_type2_handle
-                0x200003e4                ll_txn_buffer_pool_handle
- .data          0x200003e8       0x45 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_pl.o)
-                0x200003e8                smp_io_capability_pl
-                0x200003eb                smp_rank_count_pl
- .data          0x2000042d        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattDbInternal.o)
-                0x2000042d                gAuthorize
-                0x20000430                . = ALIGN (0x8)
- *fill*         0x2000042e        0x2 
+                0x20000334                gSignCreateCounter
+ .data          0x20000338        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
+                0x20000338                gSignVerifyCounter
+ .data          0x2000033c       0x18 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattClient.o)
+ .data          0x20000354       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattServer.o)
+                0x20000360                cyBleAttBuffer
+ .data          0x20000364        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattDbHandler.o)
+                0x20000364                CyBle_GattDbTotalEntries
+                0x20000366                CyBle_GattDbMaxValLength
+                0x20000368                CyBle_GattDbInternal
+ .data          0x2000036c        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_events.o)
+ *fill*         0x2000036d        0x3 
+ .data          0x20000370       0x20 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
+                0x20000370                hci_num_hci_command_packets
+                0x20000371                hci_flow_control
+                0x20000372                hci_schedule_command_tx
+                0x20000373                hci_call_event_ind_callback
+                0x20000374                hci_bt_init_complete_call_cb
+                0x20000375                hci_encrypt_cmd_counter
+                0x20000376                hci_encrypt_cmd_cmplt_counter
+                0x20000378                hci_command_queue_start
+                0x2000037a                hci_command_queue_end
+                0x2000037c                hci_resolution_conn_handle
+                0x20000380                hci_event_ind_cb
+                0x20000384                hci_local_bd_addr
+                0x2000038a                hci_remote_devices
+ .data          0x20000390        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
+                0x20000390                hci_le_device_role
+ .data          0x20000391        0x6 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
+                0x20000391                hci_random_address
+ .data          0x20000397        0x6 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
+                0x20000397                hci_config_random_address
+ .data          0x2000039d        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
+                0x2000039d                hci_adv_addr_type
+ .data          0x2000039e        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
+                0x2000039e                hci_config_adv_addr_type
+ *fill*         0x2000039f        0x1 
+ .data          0x200003a0        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_api.o)
+ .data          0x200003a4        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_init.o)
+                0x200003a4                tbx_context
+                0x200003a5                smp_resolution_index
+                0x200003a8                smp_ui_notify
+ .data          0x200003ac        0x6 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_init.o)
+                0x200003ac                smp_resolution_addr
+ *fill*         0x200003b2        0x2 
+ .data          0x200003b4        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(write_task.o)
+                0x200003b4                wt_state
+ .data          0x200003bc        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(aes_cmac.o)
+ .data          0x200003c4        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(status.o)
+ .data          0x200003c8        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(drbg.o)
+                0x200003c8                input_entropy
+ .data          0x200003cc       0x20 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(bt_fw_os_al.o)
+                0x200003cc                le_acl_tx_data_pool_handle
+                0x200003d0                le_acl_rx_data_pool_handle
+                0x200003d4                ll_pdu_tx_buffer_pool_handle
+                0x200003d8                ll_pdu_rx_buffer_pool_handle
+                0x200003dc                hci_le_cmd_buffer_pool_handle
+                0x200003e0                hci_le_event_buffer_pool_type1_handle
+                0x200003e4                hci_le_event_buffer_pool_type2_handle
+                0x200003e8                ll_txn_buffer_pool_handle
+ .data          0x200003ec       0x45 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_pl.o)
+                0x200003ec                smp_io_capability_pl
+                0x200003ef                smp_rank_count_pl
+ .data          0x20000431        0x1 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattDbInternal.o)
+                0x20000431                gAuthorize
+                0x20000438                . = ALIGN (0x8)
+ *fill*         0x20000432        0x6 
  *(.ram)
-                0x20000430                _edata = .
+                0x20000438                _edata = .
 
-.igot.plt       0x20000430        0x0 load address 0x00012468
+.igot.plt       0x20000438        0x0 load address 0x00012470
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
 
-.bss            0x20000430     0x19e8 load address 0x00012468
-                0x20000430                PROVIDE (__bss_start__, .)
+.bss            0x20000438     0x19e8 load address 0x00012470
+                0x20000438                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x20000430       0x1c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
- .bss           0x2000044c       0x24 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble.o)
-                0x2000044c                cyBle_scanRspData
-                0x2000046c                cyBle_initVar
- .bss           0x20000470        0x1 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(pwm.o)
-                0x20000470                pwm_initVar
- *fill*         0x20000471        0x3 
- .bss           0x20000474       0x1c .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLFClk.o)
- .bss           0x20000490        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBle.o)
- .bss           0x2000049c        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgrIP_Interface.o)
-                0x2000049c                cyBleStackHeap
- .bss           0x200004a8        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(transport_sf.o)
- .bss           0x200004b4       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgr_PSoCHal.o)
-                0x200004b4                cyBleStackTimer
- .bss           0x200004c4      0x1a0 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(storage_pl.o)
-                0x200004c4                p_sp_ram_storage
-                0x20000634                flashBlocks
- .bss           0x20000664      0x130 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os.o)
-                0x20000764                g_queue_array
-                0x20000778                g_task_array
- .bss           0x20000794       0x54 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleControllerIP_Interface.o)
-                0x20000794                bt_config
- .bss           0x200007e8       0xbc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll.o)
-                0x200007e8                ll_self_device_data
-                0x20000898                lec_self_device_data
- .bss           0x200008a4       0x30 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll_utils.o)
-                0x200008a4                g_lec_event_buffer
- .bss           0x200008d4      0x168 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(llf_task.o)
- .bss           0x20000a3c       0x24 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(lec_hci_le.o)
-                0x20000a3c                g_lec_command_array
- .bss           0x20000a60       0x38 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(lec_hci_le_utils.o)
-                0x20000a60                hci_received_data_Q
- .bss           0x20000a98       0x64 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_td_api.o)
-                0x20000a98                hci_td_struct
- .bss           0x20000afc        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(att_init.o)
-                0x20000afc                att_connections
- .bss           0x20000b08       0x46 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(device_queue.o)
-                0x20000b08                device_queue
- *fill*         0x20000b4e        0x2 
- .bss           0x20000b50      0x14c C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap_init.o)
-                0x20000b50                l2cap_sigch_list
-                0x20000b68                l2cap_buffer_list
-                0x20000c30                l2cap_tx_pdu
-                0x20000c40                l2cap_fixed_channel
-                0x20000c58                l2cap_command_list
- .bss           0x20000c9c       0x91 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gap.o)
-                0x20000d1d                gLocalCsrk
- *fill*         0x20000d2d        0x3 
- .bss           0x20000d30       0x18 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
-                0x20000d30                gSignedWriteWithoutRspParam
- .bss           0x20000d48        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
-                0x20000d48                gSignature
- .bss           0x20000d54       0x5c C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattClient.o)
- .bss           0x20000db0       0xa0 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattServer.o)
- .bss           0x20000e50       0x40 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattDbHandler.o)
-                0x20000e50                GattDbAttrStatusBitMask
- .bss           0x20000e90       0x40 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_events.o)
- .bss           0x20000ed0       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
-                0x20000ed0                hci_command_queue
- .bss           0x20000ee0      0x248 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_init.o)
-                0x20000ee0                smp_devices
-                0x200010d4                smp_pvt_addr
-                0x200010e8                smp_cmac_context
- .bss           0x20001128       0x6c C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_init.o)
-                0x20001128                smp_context
- .bss           0x20001194       0x58 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(write_task.o)
- .bss           0x200011ec       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(storage.o)
- .bss           0x200011fc       0x30 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(BT_timer.o)
-                0x200011fc                timer_entity
- .bss           0x2000122c       0xbc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(drbg.o)
-                0x2000122c                gbuffin
-                0x20001248                gbuffout
-                0x20001288                g_buffer3
-                0x200012c8                g_buffer4
- .bss           0x200012e8       0x4b C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_pl.o)
+ .bss           0x20000438       0x1c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .bss           0x20000454       0x24 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble.o)
+                0x20000454                cyBle_scanRspData
+                0x20000474                cyBle_initVar
+ .bss           0x20000478        0x1 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(pwm.o)
+                0x20000478                pwm_initVar
+ *fill*         0x20000479        0x3 
+ .bss           0x2000047c       0x1c .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLFClk.o)
+ .bss           0x20000498        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBle.o)
+ .bss           0x200004a4        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgrIP_Interface.o)
+                0x200004a4                cyBleStackHeap
+ .bss           0x200004b0        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(transport_sf.o)
+ .bss           0x200004bc       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleStackMgr_PSoCHal.o)
+                0x200004bc                cyBleStackTimer
+ .bss           0x200004cc      0x1a0 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(storage_pl.o)
+                0x200004cc                p_sp_ram_storage
+                0x2000063c                flashBlocks
+ .bss           0x2000066c      0x130 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(mint_os.o)
+                0x2000076c                g_queue_array
+                0x20000780                g_task_array
+ .bss           0x2000079c       0x54 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(CyBleControllerIP_Interface.o)
+                0x2000079c                bt_config
+ .bss           0x200007f0       0xbc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll.o)
+                0x200007f0                ll_self_device_data
+                0x200008a0                lec_self_device_data
+ .bss           0x200008ac       0x30 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(ll_utils.o)
+                0x200008ac                g_lec_event_buffer
+ .bss           0x200008dc      0x168 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(llf_task.o)
+ .bss           0x20000a44       0x24 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(lec_hci_le.o)
+                0x20000a44                g_lec_command_array
+ .bss           0x20000a68       0x38 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(lec_hci_le_utils.o)
+                0x20000a68                hci_received_data_Q
+ .bss           0x20000aa0       0x64 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_td_api.o)
+                0x20000aa0                hci_td_struct
+ .bss           0x20000b04        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(att_init.o)
+                0x20000b04                att_connections
+ .bss           0x20000b10       0x46 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(device_queue.o)
+                0x20000b10                device_queue
+ *fill*         0x20000b56        0x2 
+ .bss           0x20000b58      0x14c C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(l2cap_init.o)
+                0x20000b58                l2cap_sigch_list
+                0x20000b70                l2cap_buffer_list
+                0x20000c38                l2cap_tx_pdu
+                0x20000c48                l2cap_fixed_channel
+                0x20000c60                l2cap_command_list
+ .bss           0x20000ca4       0x91 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gap.o)
+                0x20000d25                gLocalCsrk
+ *fill*         0x20000d35        0x3 
+ .bss           0x20000d38       0x18 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
+                0x20000d38                gSignedWriteWithoutRspParam
+ .bss           0x20000d50        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gatt.o)
+                0x20000d50                gSignature
+ .bss           0x20000d5c       0x5c C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattClient.o)
+ .bss           0x20000db8       0xa0 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattServer.o)
+ .bss           0x20000e58       0x40 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(gattDbHandler.o)
+                0x20000e58                GattDbAttrStatusBitMask
+ .bss           0x20000e98       0x40 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_events.o)
+ .bss           0x20000ed8       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(hci_init.o)
+                0x20000ed8                hci_command_queue
+ .bss           0x20000ee8      0x248 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_init.o)
+                0x20000ee8                smp_devices
+                0x200010dc                smp_pvt_addr
+                0x200010f0                smp_cmac_context
+ .bss           0x20001130       0x6c C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_init.o)
+                0x20001130                smp_context
+ .bss           0x2000119c       0x58 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(write_task.o)
+ .bss           0x200011f4       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(storage.o)
+ .bss           0x20001204       0x30 C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(BT_timer.o)
+                0x20001204                timer_entity
+ .bss           0x20001234       0xbc C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(drbg.o)
+                0x20001234                gbuffin
+                0x20001250                gbuffout
+                0x20001290                g_buffer3
+                0x200012d0                g_buffer4
+ .bss           0x200012f0       0x4b C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\BLE_v2_30\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a(smp_pl.o)
  *(COMMON)
- *fill*         0x20001333        0x5 
- COMMON         0x20001338      0xacd .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble.o)
-                0x20001338                cyBle_pendingFlashWrite
-                0x2000133c                CyBle_ApplCallback
-                0x20001340                cyBle_stackMemoryRam
-                0x20001e04                cyBle_peerBonding
- *fill*         0x20001e05        0x3 
- COMMON         0x20001e08        0x3 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_gatt.o)
-                0x20001e08                cyBle_attValuesCCCD
-                0x20001e0a                cyBle_state
- *fill*         0x20001e0b        0x1 
- COMMON         0x20001e0c        0x8 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_eventHandler.o)
-                0x20001e0c                cyBle_busyStatus
-                0x20001e10                cyBle_connHandle
-                0x20001e12                cyBle_advertisingIntervalType
-                0x20001e13                cyBle_eventHandlerFlag
-                0x20001e18                . = ALIGN (0x8)
- *fill*         0x20001e14        0x4 
+ *fill*         0x2000133b        0x5 
+ COMMON         0x20001340      0xacd .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble.o)
+                0x20001340                cyBle_pendingFlashWrite
+                0x20001344                CyBle_ApplCallback
+                0x20001348                cyBle_stackMemoryRam
+                0x20001e0c                cyBle_peerBonding
+ *fill*         0x20001e0d        0x3 
+ COMMON         0x20001e10        0x3 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_gatt.o)
+                0x20001e10                cyBle_attValuesCCCD
+                0x20001e12                cyBle_state
+ *fill*         0x20001e13        0x1 
+ COMMON         0x20001e14        0x8 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_eventHandler.o)
+                0x20001e14                cyBle_busyStatus
+                0x20001e18                cyBle_connHandle
+                0x20001e1a                cyBle_advertisingIntervalType
+                0x20001e1b                cyBle_eventHandlerFlag
+                0x20001e20                . = ALIGN (0x8)
+ *fill*         0x20001e1c        0x4 
  *(.ram.b)
-                0x20001e18                _end = .
-                0x20001e18                __end = .
-                0x20001e18                PROVIDE (end, .)
-                0x20001e18                PROVIDE (__bss_end__, .)
+                0x20001e20                _end = .
+                0x20001e20                __end = .
+                0x20001e20                PROVIDE (end, .)
+                0x20001e20                PROVIDE (__bss_end__, .)
                 0x00012100                __cy_region_init_ram = LOADADDR (.data)
-                0x00000368                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x00000370                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x000019e8                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x20001e18       0x80 load address 0x00012468
-                0x20001e18                . = _end
-                0x20001e98                . = (. + 0x80)
- *fill*         0x20001e18       0x80 
-                0x20001e98                __cy_heap_limit = .
+.heap           0x20001e20       0x80 load address 0x00012470
+                0x20001e20                . = _end
+                0x20001ea0                . = (. + 0x80)
+ *fill*         0x20001e20       0x80 
+                0x20001ea0                __cy_heap_limit = .
 
 .stack          0x20003800      0x800
                 0x20003800                __cy_stack_limit = .
@@ -7561,7 +7561,7 @@ i.CyBle_BleSSInterruptHandler
                 0x90600000        0x4 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
                 0x90600000                cy_meta_chipprotect
 
-.rel.dyn        0x00012468        0x0 load address 0x90600004
+.rel.dyn        0x00012470        0x0 load address 0x90600004
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
 
 .stab
@@ -8924,61 +8924,61 @@ i.CyBle_BleSSInterruptHandler
  .debug_frame   0x00014f38       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy.o)
  .debug_frame   0x00014f60       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x634b
+.debug_str      0x00000000     0x6349
  *(.debug_str)
- .debug_str     0x00000000     0x14f4 .\CortexM0\ARM_GCC_493\Debug\main.o
-                               0x1540 (size before relaxing)
- .debug_str     0x000014f4       0x57 .\CortexM0\ARM_GCC_493\Debug\dc_motor_library.o
+ .debug_str     0x00000000     0x14f2 .\CortexM0\ARM_GCC_493\Debug\main.o
+                               0x153e (size before relaxing)
+ .debug_str     0x000014f2       0x57 .\CortexM0\ARM_GCC_493\Debug\dc_motor_library.o
                                 0x1f4 (size before relaxing)
- .debug_str     0x0000154b       0x59 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+ .debug_str     0x00001549       0x59 .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
                                 0x1c1 (size before relaxing)
- .debug_str     0x000015a4      0x15a .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+ .debug_str     0x000015a2      0x15a .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
                                 0x2e8 (size before relaxing)
- .debug_str     0x000016fe      0x159 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(cyfitter_cfg.o)
+ .debug_str     0x000016fc      0x159 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(cyfitter_cfg.o)
                                 0x325 (size before relaxing)
- .debug_str     0x00001857       0x69 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(red.o)
+ .debug_str     0x00001855       0x69 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(red.o)
                                 0x1ee (size before relaxing)
- .debug_str     0x000018c0      0x714 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble.o)
+ .debug_str     0x000018be      0x714 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble.o)
                                0x1406 (size before relaxing)
- .debug_str     0x00001fd4     0x2242 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_gatt.o)
+ .debug_str     0x00001fd2     0x2242 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_gatt.o)
                                0x36b0 (size before relaxing)
- .debug_str     0x00004216      0xa6d .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_eventHandler.o)
+ .debug_str     0x00004214      0xa6d .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_eventHandler.o)
                                0x1ebe (size before relaxing)
- .debug_str     0x00004c83       0x9f .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_custom.o)
+ .debug_str     0x00004c81       0x9f .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_custom.o)
                                 0x915 (size before relaxing)
- .debug_str     0x00004d22      0x192 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(pwm.o)
+ .debug_str     0x00004d20      0x192 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(pwm.o)
                                 0x312 (size before relaxing)
- .debug_str     0x00004eb4      0x44d .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLib.o)
+ .debug_str     0x00004eb2      0x44d .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLib.o)
                                 0x69d (size before relaxing)
- .debug_str     0x00005301      0x50a .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLFClk.o)
+ .debug_str     0x000052ff      0x50a .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyLFClk.o)
                                 0x711 (size before relaxing)
- .debug_str     0x0000580b       0xda .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_l293_IC1_EN_12.o)
+ .debug_str     0x00005809       0xda .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_l293_IC1_EN_12.o)
                                 0x284 (size before relaxing)
- .debug_str     0x000058e5       0xc9 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_l293_IC1_EN_34.o)
+ .debug_str     0x000058e3       0xc9 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_l293_IC1_EN_34.o)
                                 0x284 (size before relaxing)
- .debug_str     0x000059ae       0xc9 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_l293_IC2_EN_12.o)
+ .debug_str     0x000059ac       0xc9 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_l293_IC2_EN_12.o)
                                 0x284 (size before relaxing)
- .debug_str     0x00005a77       0xc9 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_l293_IC2_EN_34.o)
+ .debug_str     0x00005a75       0xc9 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_l293_IC2_EN_34.o)
                                 0x284 (size before relaxing)
- .debug_str     0x00005b40       0x81 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_OE.o)
+ .debug_str     0x00005b3e       0x81 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_OE.o)
                                 0x230 (size before relaxing)
- .debug_str     0x00005bc1       0x8d .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_RCLK.o)
+ .debug_str     0x00005bbf       0x8d .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_RCLK.o)
                                 0x23e (size before relaxing)
- .debug_str     0x00005c4e       0x93 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_SRCLK.o)
+ .debug_str     0x00005c4c       0x93 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_SRCLK.o)
                                 0x245 (size before relaxing)
- .debug_str     0x00005ce1       0x87 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_SER.o)
+ .debug_str     0x00005cdf       0x87 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(Pin_SER.o)
                                 0x237 (size before relaxing)
- .debug_str     0x00005d68       0x59 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(green.o)
+ .debug_str     0x00005d66       0x59 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(green.o)
                                 0x1fa (size before relaxing)
- .debug_str     0x00005dc1      0x271 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_HAL_PVT.o)
+ .debug_str     0x00005dbf      0x271 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_HAL_PVT.o)
                                 0x42a (size before relaxing)
- .debug_str     0x00006032       0xf2 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_bless_isr.o)
+ .debug_str     0x00006030       0xf2 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_bless_isr.o)
                                 0x341 (size before relaxing)
- .debug_str     0x00006124      0x10a .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyFlash.o)
+ .debug_str     0x00006122      0x10a .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(CyFlash.o)
                                 0x2fc (size before relaxing)
- .debug_str     0x0000622e       0xc6 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(cyPm.o)
+ .debug_str     0x0000622c       0xc6 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(cyPm.o)
                                 0x29c (size before relaxing)
- .debug_str     0x000062f4       0x57 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_HAL_INT.o)
+ .debug_str     0x000062f2       0x57 .\CortexM0\ARM_GCC_493\Debug\capsenseled.a(ble_HAL_INT.o)
                                 0x1b9 (size before relaxing)
 
 .debug_loc      0x00000000     0x23f5
