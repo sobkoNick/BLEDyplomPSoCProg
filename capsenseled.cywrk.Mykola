@@ -13,11 +13,12 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="capsenseled\capsenseled\Generated_Source\PSoC4">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="capsenseled\capsenseled\Source Files\dc_motor_library.c">
 <ExpandedNodeIds>
 <v>capsenseled</v>
 <v>capsenseled\capsenseled</v>
 <v>capsenseled\capsenseled\TopDesign</v>
+<v>capsenseled\capsenseled\capsenseled.cydwr</v>
 <v>capsenseled\capsenseled\capsenseled.cydwr\Pins</v>
 <v>capsenseled\capsenseled\capsenseled.cydwr\Analog</v>
 <v>capsenseled\capsenseled\capsenseled.cydwr\Clocks</v>
@@ -165,6 +166,13 @@
 <v>capsenseled\capsenseled</v>
 <v>capsenseled\capsenseled\TopDesign</v>
 <v>capsenseled\capsenseled\capsenseled.cydwr</v>
+<v>capsenseled\capsenseled\capsenseled.cydwr\Pins</v>
+<v>capsenseled\capsenseled\capsenseled.cydwr\Analog</v>
+<v>capsenseled\capsenseled\capsenseled.cydwr\Clocks</v>
+<v>capsenseled\capsenseled\capsenseled.cydwr\Interrupts</v>
+<v>capsenseled\capsenseled\capsenseled.cydwr\System</v>
+<v>capsenseled\capsenseled\capsenseled.cydwr\Directives</v>
+<v>capsenseled\capsenseled\capsenseled.cydwr\Flash Security</v>
 <v>capsenseled\capsenseled\Header Files</v>
 <v>capsenseled\capsenseled\Header Files\dc_motor_library.h</v>
 <v>capsenseled\capsenseled\Source Files</v>
@@ -342,6 +350,9 @@
 <OpenDocs>
 <name v=".\capsenseled.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\capsenseled.cydsn\main.c" />
+<name v=".\capsenseled.cydsn\capsenseled.cydwr" />
+<name v=".\capsenseled.cydsn\dc_motor_library.c" />
+<name v=".\capsenseled.cydsn\dc_motor_library.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -349,7 +360,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="872, 371" SelectedTabbedMdiWindow="8fbda535-5941-4cd0-9eba-8576227411da"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="3c2684ca-a86d-495f-9eee-bef5c4b2cf83" /><DocumentWindow Key="8a19cd53-96bc-4f6a-8bb0-d51aae5897c2" Guid="0704461b-2c22-4640-aa14-48599a91c58c" /><DocumentWindow Key="8a7bf215-71c9-43c9-99ee-78ae0f78b421" Guid="8fbda535-5941-4cd0-9eba-8576227411da" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="928, 406" SelectedTabbedMdiWindow="61ae4d06-69bd-407c-9a50-fccd293a1098"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="3c2684ca-a86d-495f-9eee-bef5c4b2cf83" /><DocumentWindow Key="15fe4a54-34b1-4c54-a452-fe0d049046f1" Guid="61ae4d06-69bd-407c-9a50-fccd293a1098" /><DocumentWindow Key="0d8a6ed4-0ba1-4dd9-92b0-ec8c6366a8ca" Guid="7873cf96-6022-488a-bb32-1dbf79ada772" /><DocumentWindow Key="169e503e-d1b7-4878-95bc-22b6fe37aad1" Guid="b4e45306-61af-461a-826e-ae91eb121010" /><DocumentWindow Key="b8bad78f-2fb2-479b-8087-087d4103266e" Guid="003425f7-e47b-4570-8893-1aac168b27c0" /><DocumentWindow Key="6b90c8ee-e884-4e47-a826-cceb938df977" Guid="0487157c-9c0b-4abf-9b7f-46dd37b67892" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

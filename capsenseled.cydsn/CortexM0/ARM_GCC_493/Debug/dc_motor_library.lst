@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
   30:dc_motor_library.c **** void writeShiftRegisters(uint8_t shift_reg)
   31:dc_motor_library.c **** {
   26              		.loc 1 31 0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 2
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 2
 
 
   27              		.cfi_startproc
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
   70              		.loc 1 42 0 discriminator 3
   71 0030 0020     		mov	r0, #0
   72 0032 FFF7FEFF 		bl	Pin_SRCLK_Write
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 3
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 3
 
 
   73              	.LVL10:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  120 000c 45010000 		.4byte	.LASF21
  121 0010 01       		.byte	0x1
  122 0011 2A000000 		.4byte	.LASF22
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 4
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 4
 
 
  123 0015 AF000000 		.4byte	.LASF23
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  177 0081 03       		.uleb128 0x3
  178 0082 4C000000 		.4byte	.LASF11
  179 0086 04       		.byte	0x4
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 5
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 5
 
 
  180 0087 C2       		.byte	0xc2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  234 00f7 08       		.uleb128 0x8
  235 00f8 10000000 		.4byte	.LVL3
  236 00fc B3010000 		.4byte	0x1b3
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 6
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 6
 
 
  237 0100 0A010000 		.4byte	0x10a
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  291 0166 09       		.uleb128 0x9
  292 0167 01       		.uleb128 0x1
  293 0168 50       		.byte	0x50
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 7
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 7
 
 
  294 0169 01       		.uleb128 0x1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  348 01cf 0C       		.uleb128 0xc
  349 01d0 81000000 		.4byte	0x81
  350 01d4 00       		.byte	0
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 8
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 8
 
 
  351 01d5 0B       		.uleb128 0xb
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  405 0024 0B       		.uleb128 0xb
  406 0025 3B       		.uleb128 0x3b
  407 0026 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 9
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 9
 
 
  408 0027 49       		.uleb128 0x49
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  462 005e 00       		.byte	0
  463 005f 07       		.uleb128 0x7
  464 0060 34       		.uleb128 0x34
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 10
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 10
 
 
  465 0061 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  519 009e 19       		.uleb128 0x19
  520 009f 3C       		.uleb128 0x3c
  521 00a0 19       		.uleb128 0x19
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 11
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 11
 
 
  522 00a1 01       		.uleb128 0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  576 0037 9F       		.byte	0x9f
  577 0038 14000000 		.4byte	.LVL4
  578 003c 44000000 		.4byte	.LVL13
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 12
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 12
 
 
  579 0040 0100     		.2byte	0x1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  617      2E6300
  618              	.LASF20:
  619 003d 50696E5F 		.ascii	"Pin_RCLK_Write\000"
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 13
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 13
 
 
  619      52434C4B 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 1
  643              	.LASF14:
  644 00f8 646F7562 		.ascii	"double\000"
  644      6C6500
-ARM GAS  C:\Users\Mykola\AppData\Local\Temp\cc552znl.s 			page 14
+ARM GAS  C:\Users\Mykola\AppData\Local\Temp\ccaKuMZ8.s 			page 14
 
 
  645              	.LASF17:

@@ -1,9 +1,6 @@
 #include <project.h>
 #include <dc_motor_library.h>
 
-uint16 fingerPos    = 0xFFFF;
-uint16 fingerPosOld = 0xFFFF;
-
 uint8_t registers_ahead = 0b10101010;
 uint8_t registers_backward = 0b01010101;
 uint8_t registers_direction = 0b10101010;
@@ -83,7 +80,7 @@ void BleCallBack(uint32 event, void* eventParam)
         
         /* when a connection is made, update the LED and Capsense states in the GATT database and stop blinking the LED */    
         case CYBLE_EVT_GATT_CONNECT_IND:
-            updateRight();
+//            updateRight();
             updateLeft();
             updateDirection();
             updateBothMotors();
